@@ -5,6 +5,15 @@ dist/
 # dependencies
 node_modules/
 
+# media & binary assets (hosted on Cloudflare R2 docs.sml.com.pk)
+public/images/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.pdf
+
 # env files
 .env
 .env.*
