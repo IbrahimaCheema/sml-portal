@@ -1,0 +1,127 @@
+---
+const cards = [
+  {
+    image: "/images/segment-sugar.jpg",
+    icon: "fa-industry",
+    title: "Sugar & Allied Products",
+    text: "<b>Our Segments</b><br />Sugar, Biofuel",
+    link: "https://www.sml.com.pk/sugar/"
+  },
+  {
+    image: "/images/segment-biofuels.png",
+    icon: "fa-bolt",
+    title: "Biofuels & Power",
+    text: "Anhydrous ethanol distillery producing eco-friendly fuel-grade bio-ethanol and renewable export power.",
+    link: "https://www.sml.com.pk/biofuels/"
+  },
+  {
+    image: "/images/segment-sustainability.jpg",
+    icon: "fa-leaf",
+    title: "Sustainability",
+    text: "Health, Safety & Environment<br />Corporate Social Responsibility<br />Quality Assurance",
+    link: "https://www.sml.com.pk/health-safety-environment/"
+  }
+];
+---
+
+<section class="info_cards_section">
+  <div class="container">
+    <div class="cards_grid">
+      {cards.map((card) => (
+        <div class="info_card move">
+          <div class="card_image">
+            <img src={card.image} alt={card.title} width="350" height="250" loading="lazy" />
+          </div>
+          <div class="card_content">
+            <div class="card_header">
+              <div class="card_icon">
+                <i class={`fa ${card.icon}`}></i>
+              </div>
+              <h3 class="card_title">{card.title}</h3>
+            </div>
+            <p class="card_text" set:html={card.text} />
+            <a href={card.link} class="read_more">
+              read more <i class="fa fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .info_cards_section {
+    padding: 60px 0 40px;
+    background-color: #ffffff;
+  }
+  .cards_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
+  .info_card {
+    background: #f9f9f9;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card_image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .card_content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .card_header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+  }
+  .card_icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .card_title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222222;
+    font-family: var(--font-heading);
+  }
+  .card_text {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+  .read_more {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+  }
+  .read_more:hover {
+    color: #111;
+  }
+</style>

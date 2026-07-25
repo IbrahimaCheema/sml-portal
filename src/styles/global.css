@@ -1,0 +1,92 @@
+/* Global CSS for sml.com.pk clone */
+
+:root {
+  --primary-color: #32892a;
+  --primary-hover: #266b20;
+  --dark-bg: #32373c;
+  --footer-bg: #222529;
+  --footer-dark: #191b1e;
+  --light-bg: #f2f2f2;
+  --border-color: #e5e4e2;
+  --text-dark: #333333;
+  --text-muted: #666666;
+  --font-main: 'Open Sans', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: var(--font-main);
+  color: var(--text-dark);
+  background-color: #ffffff;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+ mark {
+  background: transparent;
+  color: var(--primary-color);
+}
+
+/* Animations */
+.move {
+  transition: transform 0.3s ease;
+}
+
+.move:hover {
+  transform: scale(1.05);
+}
+
+/* Utility buttons */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  color: #fff;
+}

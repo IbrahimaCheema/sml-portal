@@ -1,0 +1,166 @@
+---
+const products = [
+  {
+    title: "White Crystalline Sugar",
+    image: "/images/product-white-sugar.png",
+    description: "Shakarganj Limited's Crystalline White Sugar is meticulously crafted to offer the highest quality. It is pure, refined, and manufactured in a thoroughly hygienic environment. This premium sugar is carefully processed to ensure that every grain is of uniform size and sweetness, resulting in a consistent texture and flavor.",
+    available: "1kg, 2kg, 5kg and Sachet Pack"
+  },
+  {
+    title: "Crystal and Soft Brown Sugar",
+    image: "/images/product-brown-sugar.png",
+    description: "Shakarganj Limited's Crystal and Soft Brown sugar are two popular variations of sugar used in cooking and baking. Crystal brown sugar, often called light brown sugar, has a mild molasses flavor and a fine, sand-like texture. It's great for cookies and cakes. On the other hand, soft brown sugar, also known as dark brown sugar, has a stronger molasses taste and a moist, clumpy texture. It's ideal for rich, flavorful dishes like barbecue sauces and gingerbread. Both sugars bring their unique characteristics to recipes, adding depth and sweetness to a wide range of culinary delights.",
+    available: "0.5kg and Sachet Pack"
+  }
+];
+---
+
+<section class="product_section">
+  <div class="container">
+    <h2 class="section_title text-center">Crafting Sugar since 1972</h2>
+
+    <!-- Product Slider / Showcase -->
+    <div class="product_showcase">
+      <div class="product_nav text-center">
+        {products.map((prod, idx) => (
+          <button class={`prod_tab_btn ${idx === 0 ? 'active' : ''}`} data-prod={idx}>
+            {prod.title}
+          </button>
+        ))}
+      </div>
+
+      <div class="product_slides">
+        {products.map((prod, idx) => (
+          <div class={`product_slide ${idx === 0 ? 'active' : ''}`} id={`prod_slide_${idx}`}>
+            <div class="product_image">
+              <img src={prod.image} alt={prod.title} width="592" height="485" loading="lazy" />
+            </div>
+            <div class="product_details">
+              <h3>{prod.title}</h3>
+              <p class="description">{prod.description}</p>
+              <div class="availability">
+                <strong>Available in</strong>
+                <span>{prod.available}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product_section {
+    padding: 70px 0;
+    background-color: #ffffff;
+  }
+  .section_title {
+    font-size: 38px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 40px;
+  }
+
+  .product_nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+  .prod_tab_btn {
+    background: #f0f0f0;
+    border: none;
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: #555;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .prod_tab_btn.active, .prod_tab_btn:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+  }
+
+  .product_slide {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background: #fafafa;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+  }
+  .product_slide.active {
+    display: grid;
+  }
+
+  .product_image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+  }
+
+  .product_details h3 {
+    font-size: 30px;
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  .product_details .description {
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 25px;
+  }
+  .availability {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .availability strong {
+    color: #333;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .availability span {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .product_slide {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const tabBtns = document.querySelectorAll<HTMLElement>('.prod_tab_btn');
+  const slides = document.querySelectorAll<HTMLElement>('.product_slide');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = btn.getAttribute('data-prod');
+      tabBtns.forEach(b => b.classList.remove('active'));
+      slides.forEach(s => s.classList.remove('active'));
+
+      btn.classList.add('active');
+      document.getElementById(`prod_slide_${idx}`)?.classList.add('active');
+    });
+  });
+</script>

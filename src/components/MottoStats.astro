@@ -1,0 +1,142 @@
+---
+---
+
+<section class="motto_stats_section">
+  <div class="container">
+    <!-- Motto Heading -->
+    <div class="motto_header">
+      <div class="motto_icon">
+        <i class="fa fa-check-circle"></i>
+      </div>
+      <h2 class="motto_title">
+        <mark>Excellence Isn't an Accident.</mark><br />
+        It's a Track Record.
+      </h2>
+    </div>
+
+    <!-- Stats Grid (4 Counters) -->
+    <div class="stats_grid">
+      <div class="stat_box">
+        <h3 class="stat_number" data-target="50" data-suffix="+">0+</h3>
+        <p class="stat_label">Years of Industry Leadership</p>
+      </div>
+
+      <div class="stat_box">
+        <h3 class="stat_number" data-target="16000" data-suffix=" MT">0 MT</h3>
+        <p class="stat_label">Cane Crushing Capacity</p>
+      </div>
+
+      <div class="stat_box">
+        <h3 class="stat_number" data-target="350000" data-suffix=" L/Day">0 L/Day</h3>
+        <p class="stat_label">Biofuel & Ethanol Distillery</p>
+      </div>
+
+      <div class="stat_box">
+        <h3 class="stat_number" data-target="100" data-suffix="%">0%</h3>
+        <p class="stat_label">Zero-Waste Sustainable Model</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .motto_stats_section {
+    padding: 60px 0;
+    background-color: #f7f7f7;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+  }
+  .motto_header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+  .motto_icon {
+    font-size: 60px;
+    color: var(--primary-color);
+  }
+  .motto_title {
+    font-size: 38px;
+    line-height: 1.2;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #222222;
+  }
+
+  /* Stats Grid (4 columns) */
+  .stats_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+    background: #ffffff;
+    padding: 35px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  }
+  .stat_number {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+  .stat_label {
+    font-size: 14px;
+    color: #555555;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 991px) {
+    .stats_grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+  @media (max-width: 576px) {
+    .motto_title {
+      font-size: 28px;
+    }
+    .stats_grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+  }
+</style>
+
+<script>
+  function animateCounters() {
+    const counters = document.querySelectorAll<HTMLElement>('.stat_number');
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target') || '0', 10);
+      const suffix = counter.getAttribute('data-suffix') || '';
+      let current = 0;
+      const step = Math.ceil(target / 40);
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          counter.innerText = target.toLocaleString() + suffix;
+          clearInterval(timer);
+        } else {
+          counter.innerText = current.toLocaleString() + suffix;
+        }
+      }, 30);
+    });
+  }
+
+  // Trigger animation when scrolled into view
+  const section = document.querySelector('.motto_stats_section');
+  let animated = false;
+  window.addEventListener('scroll', () => {
+    if (section && !animated) {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.8) {
+        animateCounters();
+        animated = true;
+      }
+    }
+  });
+</script>

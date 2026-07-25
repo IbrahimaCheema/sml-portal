@@ -1,0 +1,237 @@
+---
+const slides = [
+  {
+    image: "/images/slide_1.jpg",
+    titleMarkup: `<span class="highlight">Building<br>Value</span><br>Strengthening<br>Communities.`,
+    text: ""
+  },
+  {
+    image: "/images/slide_2.jpg",
+    titleMarkup: `<span class="highlight">Principal Facility</span>`,
+    text: "Sugar<br>Biofuels<br>SSRI<br>Shakarganj Foundation"
+  },
+  {
+    image: "/images/slide_3.jpg",
+    titleMarkup: `<span class="highlight">Biofuels</span>`,
+    text: "Ethyl Alcohol<br>Denatured Spirit<br>Methylated Spirit<br>Fuel Bioethanol"
+  },
+  {
+    image: "/images/slide_4.jpg",
+    titleMarkup: `<span class="highlight">CSR</span>`,
+    text: `<span class="csr_text">Shakarganj Foundation</span>`
+  }
+];
+---
+
+<div class="hero_slider_container">
+  <div class="hero_slider" id="hero_slider">
+    {slides.map((slide, index) => (
+      <div class={`slide ${index === 0 ? 'active' : ''}`} style={`background-image: url(${slide.image})`}>
+        <div class="slide_overlay"></div>
+        <div class="container slide_content">
+          <div class="slide_box">
+            <h2 class="slide_title" set:html={slide.titleMarkup} />
+            {slide.text && <div class="slide_text" set:html={slide.text} />}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Arrows -->
+  <button class="slider_arrow arrow_left" id="prev_slide_btn" aria-label="Previous Slide">
+    <i class="fa fa-chevron-left"></i>
+  </button>
+  <button class="slider_arrow arrow_right" id="next_slide_btn" aria-label="Next Slide">
+    <i class="fa fa-chevron-right"></i>
+  </button>
+
+  <!-- Dots -->
+  <div class="slider_dots" id="slider_dots">
+    {slides.map((_, index) => (
+      <span class={`dot ${index === 0 ? 'active' : ''}`} data-index={index}></span>
+    ))}
+  </div>
+</div>
+
+<style>
+  .hero_slider_container {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+    background-color: #111;
+  }
+  .hero_slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center top;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    align-items: center;
+  }
+  .slide.active {
+    opacity: 1;
+    z-index: 2;
+  }
+  .slide_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 60%);
+  }
+  .slide_content {
+    position: relative;
+    z-index: 3;
+  }
+  .slide_box {
+    max-width: 500px;
+    color: #ffffff;
+    font-family: var(--font-heading);
+  }
+  .slide_title {
+    font-size: 38px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  :global(.slide_title .highlight) {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 2px 12px;
+    display: inline-block;
+  }
+  .slide_text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #f0f0f0;
+    font-weight: 400;
+  }
+  :global(.csr_text) {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #ffffff;
+    display: inline-block;
+    margin-top: 5px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  }
+
+  /* Arrows */
+  .slider_arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: background 0.3s ease;
+  }
+  .slider_arrow:hover {
+    background: var(--primary-color);
+  }
+  .arrow_left {
+    left: 20px;
+  }
+  .arrow_right {
+    right: 20px;
+  }
+
+  /* Dots */
+  .slider_dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+  }
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .dot.active, .dot:hover {
+    background: var(--primary-color);
+    transform: scale(1.2);
+  }
+
+  @media (max-width: 768px) {
+    .hero_slider_container {
+      height: 380px;
+    }
+    .slide_title {
+      font-size: 26px;
+    }
+    .slide_text {
+      font-size: 15px;
+    }
+    :global(.csr_text) {
+      font-size: 24px;
+    }
+  }
+</style>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll<HTMLElement>('.slide');
+  const dots = document.querySelectorAll<HTMLElement>('.dot');
+  const totalSlides = slides.length;
+
+  function showSlide(index: number) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    showSlide((currentSlide + 1) % totalSlides);
+  }
+
+  function prevSlide() {
+    showSlide((currentSlide - 1 + totalSlides) % totalSlides);
+  }
+
+  document.getElementById('next_slide_btn')?.addEventListener('click', nextSlide);
+  document.getElementById('prev_slide_btn')?.addEventListener('click', prevSlide);
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const idx = parseInt(target.getAttribute('data-index') || '0', 10);
+      showSlide(idx);
+    });
+  });
+
+  setInterval(nextSlide, 5000);
+</script>

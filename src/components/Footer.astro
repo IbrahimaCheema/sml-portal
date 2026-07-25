@@ -1,0 +1,216 @@
+---
+---
+
+<footer id="footer">
+  <!-- Widgets Row -->
+  <div class="footer_widgets_row">
+    <div class="container">
+      <div class="footer_grid">
+        <!-- Col 1 -->
+        <div class="footer_col">
+          <div class="footer_logo">
+            <a href="/">
+              <img src="/images/footer-logo.png" alt="Shakarganj Limited" width="182" height="60" />
+            </a>
+          </div>
+          <p class="footer_text">
+            Shakarganj Limited, incorporated in 1967, is listed on the Pakistan Stock Exchange with the symbol SML. The company is the market leader in several areas of business including refined sugar, biofuels, textiles.
+          </p>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="footer_col">
+          <h4 class="widget_title">Notices & Updates</h4>
+          <ul class="footer_notices">
+            <li>
+              <a href="https://www.sml.com.pk/financial-results-for-the-half-year-ended-31-mar-2026/">Financial results for the Half Year Ended 31 Mar 2026</a>
+              <span class="post_date">25 May, 2026</span>
+            </li>
+            <li>
+              <a href="https://www.sml.com.pk/notice-of-extraordinary-general-meeting-3/">Notice of Extraordinary General Meeting</a>
+              <span class="post_date">8 May, 2026</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer_col">
+          <h4 class="widget_title">Urdu Website</h4>
+          <div class="urdu_widget">
+            <p><a href="https://www.jamapunji.pk/" target="_blank" rel="noopener"><img src="/images/jama-punji.png" alt="Jama Punji" width="135" height="69" /></a></p>
+          </div>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer_col">
+          <div class="secp_footer_img">
+            <a href="https://sdms.secp.gov.pk/" target="_blank" rel="noopener"><img src="/images/secp2021.png" alt="SECP" width="280" /></a>
+          </div>
+
+          <!-- Search Widget -->
+          <form class="footer_search_form" action="https://www.sml.com.pk/" method="get">
+            <input type="search" name="s" placeholder="Search..." aria-label="Search" />
+            <button type="submit">Search</button>
+          </form>
+
+          <p class="updated_timestamp"><em>Updated on: 23 July, 2026</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright Row -->
+  <div class="copyright_row">
+    <div class="container copyright_flex">
+      <div class="social_links">
+        <a href="https://www.facebook.com/ShakarganjLimited" target="_blank" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/shakarganj-limited" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+      </div>
+      <div class="copyright_text">
+        Copyright © Shakarganj Limited
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  #footer {
+    background-color: var(--footer-bg);
+    color: #a0a0a0;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .footer_widgets_row {
+    padding: 60px 0 40px;
+  }
+
+  .footer_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .footer_col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer_logo img {
+    margin-bottom: 10px;
+  }
+  .footer_text {
+    color: #999;
+  }
+
+  .widget_title {
+    color: #ffffff;
+    font-size: 16px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 8px;
+    display: inline-block;
+  }
+
+  .footer_notices li {
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 10px;
+  }
+  .footer_notices a {
+    color: #ccc;
+    display: block;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+  .footer_notices a:hover {
+    color: var(--primary-color);
+  }
+  .post_date {
+    font-size: 11px;
+    color: #777;
+  }
+
+  .secp_footer_img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .footer_search_form {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  .footer_search_form input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid #444;
+    background: #181b1e;
+    color: #fff;
+    border-radius: 4px;
+    outline: none;
+  }
+  .footer_search_form button {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .footer_search_form button:hover {
+    background: var(--primary-hover);
+  }
+
+  .updated_timestamp {
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+  }
+
+  /* Copyright Row */
+  .copyright_row {
+    background-color: var(--footer-dark);
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .copyright_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .social_links {
+    display: flex;
+    gap: 15px;
+  }
+  .social_links a {
+    color: #888;
+    font-size: 16px;
+  }
+  .social_links a:hover {
+    color: var(--primary-color);
+  }
+  .copyright_text {
+    color: #888888;
+  }
+
+  @media (max-width: 991px) {
+    .footer_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 576px) {
+    .footer_grid {
+      grid-template-columns: 1fr;
+    }
+    .copyright_flex {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+</style>
