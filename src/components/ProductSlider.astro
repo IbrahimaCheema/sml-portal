@@ -161,6 +161,11 @@ const products = [
 
       btn.classList.add('active');
       document.getElementById(`prod_slide_${idx}`)?.classList.add('active');
+
+      // Re-trigger language translation engine for newly visible slide
+      if (typeof (window as any).applyCurrentLanguage === 'function') {
+        (window as any).applyCurrentLanguage();
+      }
     });
   });
 </script>

@@ -26,7 +26,7 @@ const {
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BDEL+Zxd8J6em8IBXw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -45,7 +45,71 @@ const {
       <i class="fa fa-chevron-up"></i>
     </button>
 
-    <style>
+    <style is:global>
+      /* Jameel Noori Nastaleeq Font Definition */
+      @font-face {
+        font-family: 'Jameel Noori Nastaleeq';
+        src: url('/fonts/JameelNooriNastaleeq.woff') format('woff'),
+             url('https://docs.sml.com.pk/fonts/JameelNooriNastaleeq.woff') format('woff'),
+             url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Unified Approved Jameel Noori Nastaleeq Font Style for Urdu Across the Entire Board */
+      html[lang="ur"],
+      html[dir="rtl"],
+      html[lang="ur"] body, html[lang="ur"] h1, html[lang="ur"] h2, html[lang="ur"] h3, html[lang="ur"] h4, html[lang="ur"] h5, html[lang="ur"] h6,
+      html[lang="ur"] p, html[lang="ur"] a, html[lang="ur"] span, html[lang="ur"] button, html[lang="ur"] div,
+      html[lang="ur"] li, html[lang="ur"] input, html[lang="ur"] select, html[lang="ur"] strong, html[lang="ur"] b, html[lang="ur"] mark,
+      html[dir="rtl"] body, html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4, html[dir="rtl"] h5, html[dir="rtl"] h6,
+      html[dir="rtl"] p, html[dir="rtl"] a, html[dir="rtl"] span, html[dir="rtl"] button, html[dir="rtl"] div,
+      html[dir="rtl"] li, html[dir="rtl"] input, html[dir="rtl"] select, html[dir="rtl"] strong, html[dir="rtl"] b, html[dir="rtl"] mark {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', 'Poppins', serif !important;
+      }
+
+      html[lang="ur"] body,
+      html[dir="rtl"] body {
+        direction: rtl !important;
+        text-align: right !important;
+        line-height: 1.9 !important;
+      }
+      html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4 {
+        line-height: 1.8 !important;
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+      html[dir="rtl"] p {
+        line-height: 2.0 !important;
+      }
+      html[dir="rtl"] .top_bar_right {
+        direction: ltr;
+      }
+      html[dir="rtl"] .main_menu {
+        direction: rtl;
+      }
+      html[dir="rtl"] .main_menu > li > a {
+        font-family: 'Jameel Noori Nastaleeq', serif !important;
+        font-size: 18px !important;
+        line-height: 1.8 !important;
+      }
+      html[dir="rtl"] .footer_grid {
+        direction: rtl;
+      }
+      html[dir="rtl"] .copyright_flex {
+        direction: rtl;
+      }
+      html[dir="rtl"] .read_more, html[dir="rtl"] .result_link {
+        font-family: 'Jameel Noori Nastaleeq', serif !important;
+        font-size: 16px !important;
+      }
+      html[dir="rtl"] .read_more i,
+      html[dir="rtl"] .result_link i {
+        transform: rotate(180deg);
+        display: inline-block;
+      }
+
       #scroll-to-top {
         position: fixed;
         bottom: 25px;
@@ -70,13 +134,210 @@ const {
       }
     </style>
 
-    <script>
+    <!-- Recursive Deep Text Node Urdu Translation Engine -->
+    <script is:inline>
+      const translationList = [
+        // SECP Complaint Cell Paragraph
+        ["In case your complaint has not been properly redressed by us, you may lodge your complaint with Securities and Exchange Commission of Pakistan (the “SECP”). However, please note that SECP will entertain only those complaints which were at first directly requested to be redressed by the company and the company has failed to redress the same. Further, the complaints that are not relevant to SECP’s regulatory domain/competence shall not be entertained by the SECP.", "اگر آپ کی شکایت کا ہماری طرف سے مناسب ازالہ نہیں کیا گیا ہے، تو آپ سیکورٹیز اینڈ ایکسچینج کمیشن آف پاکستان (SECP) کے پاس اپنی شکایت درج کروا سکتے ہیں۔ تاہم، برائے کرم نوٹ فرمائیں کہ SECP صرف وہی شکایات سنے گا جو پہلے براہ راست کمپنی سے ازالے کے لیے کی گئی ہوں اور کمپنی ازالہ کرنے میں ناکام رہی ہو۔"],
+        ["Company's Own Complaint Handling Cell", "کمپنی کا اپنا شکایات ازالہ سیل"],
+
+        // Product Showcase Paragraphs
+        ["Shakarganj Limited's Crystalline White Sugar is meticulously crafted to offer the highest quality. It is pure, refined, and manufactured in a thoroughly hygienic environment. This premium sugar is carefully processed to ensure that every grain is of uniform size and sweetness, resulting in a consistent texture and flavor.", "شکر گنج لمیٹڈ کی کرسٹلائن وائٹ شوگر کو اعلی ترین کوالٹی فراہم کرنے کے لیے نہایت احتیاط سے تیار کیا جاتا ہے۔ یہ مکمل طور پر خالص، ریفائنڈ اور حفظان صحت کے اصولوں کے مطابق جدید ماحول میں پروسیس کی جاتی ہے۔ ہر دانا یکساں سائز اور بہترین مٹھاس کا حامل ہے، جو بہترین ذائقہ اور معیار فراہم کرتا ہے۔"],
+        ["Shakarganj Limited's Crystal and Soft Brown sugar are two popular variations of sugar used in cooking and baking. Crystal brown sugar, often called light brown sugar, has a mild molasses flavor and a fine, sand-like texture. It's great for cookies and cakes. On the other hand, soft brown sugar, also known as dark brown sugar, has a stronger molasses taste and a moist, clumpy texture. It's ideal for rich, flavorful dishes like barbecue sauces and gingerbread. Both sugars bring their unique characteristics to recipes, adding depth and sweetness to a wide range of culinary delights.", "شکر گنج لمیٹڈ کی کرسٹل اور سوفٹ براؤن شوگر کھانا پکانے اور بیکنگ میں استعمال ہونے والی دو مقبول اقسام ہیں۔ کرسٹل براؤن شوگر میں ہلکا راب (molasses) ذائقہ ہوتا ہے جبکہ سوفٹ براؤن شوگر گہرے ذائقے اور نمی سے بھرپور ہوتی ہے۔ دونوں اقسام ڈشز اور بیکنگ مصنوعات کو منفرد رنگت، خوشبو اور مٹھاس بخشتی ہیں۔"],
+
+        // Stakeholder Engagement Paragraphs
+        ["Stakeholder Engagement Approach", "اسٹیک ہولڈرز کی شراکت داری کا طریقہ کار"],
+        ["To help grow shareholders investments and provide them with stable and attractive return", "شیئر ہولڈرز کی سرمایہ کاری میں اضافہ اور انہیں مستحکم اور پرکشش منافع کی فراہمی۔"],
+        ["To win and maintain customers by developing and providing products that offer value in terms of price and quality", "قیمت اور کوالٹی کے لحاظ سے بہترین مصنوعات کی فراہمی سے صارفین کا اعتماد حاصل کرنا۔"],
+        ["To respect and protect all rights of our employees with safe and healthy working conditions along with competitive terms of service", "محفوظ اور صحت مند ماحول اور بہترین شرائط کے ساتھ اپنے ملازمین کے حقوق کا تحفظ۔"],
+        ["To seek mutually beneficial relationships with our Farmers who form the backbone of our agricultural economy", "اپنے کسانوں کے ساتھ باہمی فائدے کے تعلقات قائم کرنا جو ہماری زرعی معیشت کی ریڑھ کی ہڈی ہیں۔"],
+        ["To conduct business as a responsible member of society, keeping in view our position as the largest employer in our local area", "معاشرے کے ایک ذمہ دار رکن اور علاقے کے سب سے بڑے روزگار فراہم کنندہ کے طور پر کاروبار کرنا۔"],
+        ["our home, our pride, our future, our freedom", "ہمارا گھر، ہمارا فخر، ہمارا مستقبل، ہماری آزادی"],
+
+        // Mottos & Banners
+        ["Excellence Isn't an Accident. It's a Track Record.", "فضیلت کوئی اتفاق نہیں، یہ ہمارا روشن ریکارڈ ہے۔"],
+        ["Excellence Isn't an Accident", "فضیلت کوئی اتفاق نہیں"],
+        ["It's a Track Record", "یہ ہمارا روشن ریکارڈ ہے"],
+
+        ["Sustainable Industrial Excellence Since 1967", "1967ء سے پائیدار صنعتی فضیلت"],
+        ["50+ Years of Corporate Legacy", "50+ سالہ کارپوریٹ وراثت"],
+        ["Leading Diversified Industrial Group", "پاکستان کا سرفہرست کثیر الشعبہ صنعتی گروپ"],
+        ["High-Grade Refined Sugar", "اعلیٰ معیار کی ریفائنڈ شوگر"],
+        ["Anhydrous Biofuel Ethanol", "ایکو فرینڈلی ایندھن کا بائیو ایتھنول"],
+        ["Principal Facilities", "اہم صنعتی سہولیات"],
+
+        ["Sugar & Allied Products", "شوگر اینڈ الائیڈ پروڈکٹس"],
+        ["High-grade refined food & pharmaceutical sugar serving top multinational beverage brands across Pakistan.", "پاکستان کے بہترین ملٹی نیشنل برانڈز کو اعلیٰ کوالٹی ریفائنڈ فوڈ اور فارماسیوٹیکل شوگر کی فراہمی۔"],
+        ["Biofuels & Power", "بائیو فیولز اینڈ پاور"],
+        ["Anhydrous ethanol distillery producing eco-friendly fuel-grade bio-ethanol and renewable export power.", "ایکو فرینڈلی ایندھن کے درجے کا بائیو ایتھنول اور قابل تجدید توانائی پیدا کرنے والی ڈسٹلری۔"],
+        ["Health, Safety & Environment, Corporate Social Responsibility, and Quality Assurance — our commitment to a sustainable approach.", "صحت، حفاظت، ماحول، کارپوریٹ سماجی ذمہ داری، اور کوالٹی اشورینس — پائیدار ترقی کے لیے ہمارا عزم۔"],
+
+        ["Crafting Sugar since 1972", "1972ء سے شوگر کی اعلیٰ کوالٹی تیاری"],
+        ["White Crystalline Sugar", "سفید کرسٹل شوگر"],
+        ["Refined White Sugar", "ریفائنڈ وائٹ شوگر"],
+        ["Crystal and Soft Brown Sugar", "کرسٹل اور سوفٹ براؤن شوگر"],
+        ["Specialty Brown Sugar", "براؤن شوگر"],
+        ["Available in", "دستیاب پیکنگ"],
+        ["1kg, 2kg, 5kg and Sachet Pack", "1 کلو، 2 کلو، 5 کلو اور ساشے پیک"],
+        ["0.5kg and Sachet Pack", "0.5 کلو گرام اور ساشے پیک"],
+
+        ["Notices & Updates", "اطلاعات اور اپ ڈیٹس"],
+        ["Condensed Interim Financial Information for Half Year Ended March 31, 2026", "31 مارچ 2026ء کو ختم ہونے والے نصف سال کی مالیاتی معلومات"],
+        ["Notice of Extraordinary General Meeting (EGM)", "غیر معمولی عام اجلاس (EGM) کا نوٹس"],
+        ["Corporate Briefing Session 2025 Presentation", "کارپوریٹ بریفنگ سیشن 2025ء کی پریزنٹیشن"],
+        ["Quarterly Report First Quarter Ended December 31, 2025", "31 دسمبر 2025ء کو ختم ہونے والی پہلی سہ ماہی رپورٹ"],
+
+        ["Shakarganj Limited, incorporated in 1967, is a leading diversified industrial group in Pakistan producing high-grade refined sugar, biofuels, and power.", "شکر گنج لمیٹڈ 1967ء میں قائم شدہ پاکستان کا ممتاز صنعتی گروپ ہے جو اعلیٰ معیار کی ریفائنڈ شوگر، بائیو فیول اور بجلی پیدا کرتا ہے۔"],
+
+        ["Company Registration Number", "کمپنی رجسٹریشن نمبر"],
+        ["National Tax Number", "قومی ٹیکس نمبر (NTN)"],
+        ["Sales Tax Number", "سیلز ٹیکس نمبر"],
+        ["Registration / NTN", "رجسٹریشن / این ٹی این"],
+        ["Quick Links", "اہم لنکس"],
+        ["Company Profile", "کمپنی پروفائل"],
+        ["Financial Highlights", "مالیاتی جھلکیاں"],
+        ["Notices & Updates", "اطلاعات اور اپ ڈیٹس"],
+        ["Search portal...", "پورٹل تلاش کریں..."],
+        ["Search", "تلاش کریں"],
+
+        // Single Words & Menu Items
+        ["Our Shareholders", "ہمارے شیئر ہولڈرز"],
+        ["Our Customers", "ہمارے صارفین"],
+        ["Our People", "ہمارے ملازمین"],
+        ["Our Farmers", "ہمارے کسان"],
+        ["Our Society", "ہمارا معاشرہ"],
+        ["Our Country", "ہمارا وطن"],
+        ["Shareholders", "شیئر ہولڈرز"],
+        ["Customers", "صارفین"],
+        ["Employees", "ملازمین"],
+        ["Suppliers", "سپلائرز"],
+        ["Communities", "مقامی کمیونٹیز"],
+        ["Regulators", "ریگولیٹری ادارے"],
+
+        ["Home", "صفحہ اول"],
+        ["About Us", "ہمارے بارے میں"],
+        ["Segments", "ہمارے شعبہ جات"],
+        ["Sugar", "شوگر"],
+        ["Biofuels", "بائیو فیول"],
+        ["Investor Relations", "سرمایہ کار پورٹل"],
+        ["Sustainability", "پائیداری"],
+        ["Media", "میڈیا"],
+        ["Contact Us", "رابطہ کریں"],
+        ["Company's Profile", "کمپنی پروفائل"],
+        ["Mission and Vision", "مشن اور وژن"],
+        ["Company History", "کمپنی کی تاریخ"],
+        ["Associated Companies", "منسلک کمپنیاں"],
+        ["Corporate Strategy", "کارپوریٹ حکمت عملی"],
+        ["Sitemap", "سائٹ میپ"],
+        ["Historical Reports", "تاریخی رپورٹس"],
+        ["Financial Reports", "مالیاتی رپورٹس"],
+        ["Investor Information", "سرمایہ کاروں کی معلومات"],
+        ["Shareholder Information", "شیئر ہولڈر کی معلومات"],
+        ["Pattern of Shareholding", "شیئر ہولڈنگ کا طریقہ کار"],
+        ["Free Float Shares", "فری فلوٹ شیئرز"],
+        ["Dividend Details", "ڈیویڈنڈ تفصیلات"],
+        ["Director's Report", "ڈائریکٹرز رپورٹ"],
+        ["Proxy Form", "پراکسی فارم"],
+        ["E-Voting", "ای ووٹنگ"],
+        ["Investor Feedback", "سرمایہ کاروں کی رائے"],
+        ["Health Safety & Environment", "صحت، حفاظت اور ماحول"],
+        ["Corporate Social Responsibility", "کارپوریٹ سماجی ذمہ داری"],
+        ["Quality Assurance", "کوالٹی اشورینس"],
+        ["Awards and Accolades", "اعزازات اور انعامات"],
+        ["Certifications", "سرٹیفیکیشنز"],
+        ["Careers", "ملازمت کے مواقع"],
+        ["Years of Industry Leadership", "صنعتی قیادت کے سال"],
+        ["Cane Crushing Capacity", "گنا کرشنگ کی صلاحیت"],
+        ["Biofuel & Ethanol Distillery", "بائیو فیول ڈسٹلری کی صلاحیت"],
+        ["Zero-Waste Sustainable Model", "زیرو ویسٹ پائیدار ماڈل"],
+        ["read more", "مزید تفصیلات"],
+        ["READ MORE", "مزید تفصیلات"]
+      ];
+
+      function escapeRegex(str) {
+        return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      }
+
+      // Recursive Text Node Walker that translates all text nodes inside any HTML structure
+      function translateDOMNode(node, lang) {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const raw = node.nodeValue;
+          if (!raw || !raw.trim()) return;
+
+          if (!node._origValue) {
+            node._origValue = raw;
+          }
+
+          if (lang === 'ur') {
+            let val = node._origValue;
+            for (const [en, ur] of translationList) {
+              if (val.includes(en)) {
+                val = val.replace(new RegExp(escapeRegex(en), 'g'), ur);
+              }
+            }
+            node.nodeValue = val;
+          } else {
+            node.nodeValue = node._origValue;
+          }
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+          const tag = node.tagName;
+          if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'INPUT' || tag === 'TEXTAREA' || node.id === 'live_results_dropdown' || node.id === 'footer_live_dropdown') {
+            return;
+          }
+          for (let i = 0; i < node.childNodes.length; i++) {
+            translateDOMNode(node.childNodes[i], lang);
+          }
+        }
+      }
+
+      function applyLanguage(lang) {
+        const html = document.documentElement;
+        if (lang === 'ur') {
+          html.setAttribute('lang', 'ur');
+          html.setAttribute('dir', 'rtl');
+        } else {
+          html.setAttribute('lang', 'en-US');
+          html.setAttribute('dir', 'ltr');
+        }
+
+        // Run deep text node walker across entire body
+        translateDOMNode(document.body, lang);
+
+        // Sync dropdown selectors
+        const langDropdowns = document.querySelectorAll('#lang_select, .lang_dropdown');
+        langDropdowns.forEach(select => {
+          select.value = lang;
+        });
+
+        localStorage.setItem('sml_lang', lang);
+      }
+
+      window.applyCurrentLanguage = function() {
+        const savedLang = localStorage.getItem('sml_lang') || 'en';
+        applyLanguage(savedLang);
+      };
+
+      // Initialize language on DOM Ready
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('sml_lang') || 'en';
+        if (savedLang === 'ur') {
+          applyLanguage('ur');
+        }
+
+        document.addEventListener('change', (e) => {
+          if (e.target && (e.target.id === 'lang_select' || e.target.classList.contains('lang_dropdown'))) {
+            applyLanguage(e.target.value);
+          }
+        });
+      });
+
+      // Scroll to Top
       const scrollBtn = document.getElementById('scroll-to-top');
       window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
-          scrollBtn.style.display = 'flex';
+          if (scrollBtn) scrollBtn.style.display = 'flex';
         } else {
-          scrollBtn.style.display = 'none';
+          if (scrollBtn) scrollBtn.style.display = 'none';
         }
       });
       scrollBtn?.addEventListener('click', () => {

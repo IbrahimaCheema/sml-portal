@@ -25,6 +25,9 @@ function getMimeType(filePath) {
   if (ext === '.webp') return 'image/webp';
   if (ext === '.ico') return 'image/x-icon';
   if (ext === '.pdf') return 'application/pdf';
+  if (ext === '.woff') return 'font/woff';
+  if (ext === '.woff2') return 'font/woff2';
+  if (ext === '.ttf') return 'font/ttf';
   return 'application/octet-stream';
 }
 
@@ -70,7 +73,7 @@ async function deleteNonMedia() {
 }
 
 async function main() {
-  console.log(`Cleaning non-media files and syncing ONLY media files to Cloudflare R2 bucket: ${BUCKET_NAME}...`);
+  console.log(`Cleaning non-media files and syncing ONLY media files & fonts to Cloudflare R2 bucket: ${BUCKET_NAME}...`);
   
   // 1. Remove non-media HTML/CSS objects from R2
   await deleteNonMedia();
@@ -82,7 +85,14 @@ async function main() {
     await uploadFolder(imagesDir, 'images');
   }
 
-  console.log('\n🎉 CLOUDFLARE R2 BUCKET IS NOW 100% CLEAN — CONTAINING ONLY MEDIA ASSETS (images/docs/PDFs)!');
+  // 3. Upload fonts
+  const fontsDir = path.resolve('public/fonts');
+  if (fs.existsSync(fontsDir)) {
+    console.log('\n--- Uploading fonts (public/fonts) ---');
+    await uploadFolder(fontsDir, 'fonts');
+  }
+
+  console.log('\n🎉 CLOUDFLARE R2 BUCKET IS NOW 100% CLEAN — CONTAINING ONLY MEDIA ASSETS & FONTS (images/fonts/docs/PDFs)!');
 }
 
 main().catch(err => {

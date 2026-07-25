@@ -1,0 +1,645 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const query = Astro.url.searchParams.get('s') || '';
+
+// Indexed searchable portal pages & documents
+const portalIndex = [
+  {
+    title: "Sugar & Allied Products Division",
+    category: "Segments",
+    description: "High-grade refined food & pharmaceutical sugar serving top multinational beverage brands across Pakistan. Manufactured in hygienic facilities in Jhang and Bhakkar.",
+    link: "https://www.sml.com.pk/sugar/",
+    tags: ["sml", "shakarganj", "sugar", "refined", "crystalline", "molasses", "allied", "beverage", "capacity", "16,000", "cane", "food", "pharmaceutical"]
+  },
+  {
+    title: "Refined White Sugar Specifications",
+    category: "Products",
+    description: "Pure ICUMSA Max 45/100, 99.8% Min Polarization, 0.04% Max Moisture. Available in 1kg, 2kg, 5kg and Sachet Pack.",
+    link: "https://www.sml.com.pk/sugar/",
+    tags: ["sml", "shakarganj", "white sugar", "refined", "icumsa", "polarization", "sachet", "product", "specs"]
+  },
+  {
+    title: "Specialty Crystal & Soft Brown Sugar",
+    category: "Products",
+    description: "Rich molasses aroma, natural mineral content, food grade certified. Available in 0.5kg and Sachet Pack.",
+    link: "https://www.sml.com.pk/sugar/",
+    tags: ["sml", "shakarganj", "brown sugar", "crystal", "soft", "molasses", "sachet", "product", "specs"]
+  },
+  {
+    title: "Biofuels & Power Division",
+    category: "Segments",
+    description: "Anhydrous ethanol distillery producing eco-friendly fuel-grade bio-ethanol (350,000 L/Day capacity) and self-sufficient renewable export power.",
+    link: "https://www.sml.com.pk/biofuels/",
+    tags: ["sml", "shakarganj", "biofuel", "ethanol", "distillery", "power", "350,000", "litres", "renewable", "energy", "anhydrous", "export"]
+  },
+  {
+    title: "Financial Reports & Annual Statements",
+    category: "Investor Relations",
+    description: "Condensed Interim Financial Information for Half Year Ended March 31, 2026, Q1 Dec 2025, and historical annual audited accounts.",
+    link: "https://www.sml.com.pk/financial-reports/",
+    tags: ["sml", "shakarganj", "financial", "reports", "quarterly", "annual", "interim", "audit", "balance sheet", "results", "2026", "2025", "half year", "statements"]
+  },
+  {
+    title: "Company Profile & 50+ Years Corporate Legacy",
+    category: "About Us",
+    description: "Incorporated in 1967, Shakarganj Limited is a premier Pakistani industrial conglomerate listed on PSX with leadership in refined sugar, biofuels, and power.",
+    link: "https://www.sml.com.pk/company-profile/",
+    tags: ["sml", "shakarganj", "company", "profile", "about", "history", "legacy", "1967", "jhang", "bhakkar", "corporate", "50+ years"]
+  },
+  {
+    title: "Board of Directors & Management",
+    category: "Corporate Governance",
+    description: "Meet the Board of Directors, Chairman, Chief Executive Officer, Audit Committee, and executive leadership steering Shakarganj Limited.",
+    link: "https://www.sml.com.pk/board-of-directors/",
+    tags: ["sml", "shakarganj", "board", "directors", "leadership", "management", "governance", "executive", "ceo", "audit committee"]
+  },
+  {
+    title: "Corporate Social Responsibility (CSR) & Shakarganj Foundation",
+    category: "Sustainability",
+    description: "Health care centers, technical training institutes, schools, clean water projects, and community welfare driven by Shakarganj Foundation.",
+    link: "https://www.sml.com.pk/csr/",
+    tags: ["sml", "shakarganj", "csr", "sustainability", "health", "safety", "environment", "foundation", "education", "community", "social", "schools"]
+  },
+  {
+    title: "Notices of General Meetings (EGM) & CBS Presentations",
+    category: "Notices",
+    description: "Notice of Extraordinary General Meeting (EGM), Corporate Briefing Session (CBS) 2025 presentation, and official regulatory announcements.",
+    link: "https://www.sml.com.pk/notices-and-updates/",
+    tags: ["sml", "shakarganj", "notices", "updates", "egm", "general meeting", "corporate briefing", "announcements", "shareholders", "cbs"]
+  },
+  {
+    title: "Company's Own Complaint Handling Cell & SECP SDMS",
+    category: "Regulatory",
+    description: "Dedicated shareholder complaint portal and direct link to Securities and Exchange Commission of Pakistan Service Desk Management System (SDMS) & Jama Punji.",
+    link: "https://www.sml.com.pk/shareholder-information/",
+    tags: ["sml", "shakarganj", "complaint", "secp", "sdms", "jama punji", "investor", "shareholder", "helpdesk", "grievance", "cell"]
+  },
+  {
+    title: "Pattern of Shareholding, NTN & Free Float Shares",
+    category: "Investor Relations",
+    description: "Registration # 0002546, NTN # 1413603-1, Sales Tax # 04-06-1703-002-46. Detailed shareholding breakdown and PSX free float shares.",
+    link: "https://www.sml.com.pk/pattern-of-shareholding/",
+    tags: ["sml", "shakarganj", "shareholding", "pattern", "free float", "psx", "stock", "shares", "investor", "ntn", "registration", "tax"]
+  },
+  {
+    title: "Careers & Employment Opportunities",
+    category: "Human Resources",
+    description: "Join Shakarganj Limited: Engineering apprenticeships, management trainee programs, operational roles, and professional career growth.",
+    link: "https://www.sml.com.pk/careers/",
+    tags: ["sml", "shakarganj", "careers", "jobs", "hiring", "employment", "apply", "engineering", "talent", "vacancies"]
+  },
+  {
+    title: "Contact Us & Principal Facilities",
+    category: "Contact",
+    description: "Executive Floor, IT Tower 73 E 1, Hali Road Gulberg 3, Lahore. Phone: +92 42 111 111 765. Mills: Jhang and Bhakkar, Punjab.",
+    link: "https://www.sml.com.pk/contact-us/",
+    tags: ["sml", "shakarganj", "contact", "address", "phone", "email", "lahore", "jhang", "bhakkar", "office", "factory"]
+  }
+];
+
+// Perform search matching server-side
+const searchQuery = query.trim().toLowerCase();
+const searchResults = searchQuery
+  ? portalIndex.filter(item => {
+      const inTitle = item.title.toLowerCase().includes(searchQuery);
+      const inDesc = item.description.toLowerCase().includes(searchQuery);
+      const inCat = item.category.toLowerCase().includes(searchQuery);
+      const inTags = item.tags.some(tag => tag.includes(searchQuery));
+      return inTitle || inDesc || inCat || inTags;
+    })
+  : [];
+---
+
+<Layout title={`Search Portal - Shakarganj Limited`}>
+  <section class="search_page_section">
+    <div class="container">
+      <div class="search_header">
+        <h1 class="page_title">SML Portal Search</h1>
+        <p class="search_subtitle">Search across divisions, financial reports, notices, products & corporate information</p>
+        
+        <!-- Live Autocomplete Search Box Container -->
+        <div class="live_search_box">
+          <form action="/search" method="get" class="search_bar_form" id="search_form">
+            <div class="input_wrapper">
+              <i class="fa fa-search search_icon"></i>
+              <input 
+                type="search" 
+                name="s" 
+                id="search_input"
+                value={query} 
+                placeholder="Type to search (e.g. sugar, biofuel, reports, SML, notices)..." 
+                autocomplete="off"
+                required 
+                autofocus 
+                aria-label="Search term"
+              />
+              <button type="button" id="clear_search_btn" class="clear_btn" style={query ? 'display: block;' : 'display: none;'}>
+                <i class="fa fa-times-circle"></i>
+              </button>
+            </div>
+            <button type="submit" class="search_btn">Search</button>
+          </form>
+
+          <!-- Live Instant Autocomplete Dropdown List -->
+          <div id="live_results_dropdown" class="live_dropdown_box"></div>
+        </div>
+      </div>
+
+      <div class="search_results_container" id="static_results_container">
+        {query ? (
+          <div>
+            <p class="results_count">
+              Showing <strong>{searchResults.length}</strong> result{searchResults.length === 1 ? '' : 's'} for "<span class="highlight">{query}</span>"
+            </p>
+
+            {searchResults.length > 0 ? (
+              <div class="results_grid">
+                {searchResults.map(item => (
+                  <div class="result_card">
+                    <span class="category_badge">{item.category}</span>
+                    <h2 class="result_title">
+                      <a href={item.link}>{item.title}</a>
+                    </h2>
+                    <p class="result_desc">{item.description}</p>
+                    <a href={item.link} class="result_link">
+                      Visit Link <i class="fa fa-arrow-right"></i>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div class="no_results_box">
+                <i class="fa fa-folder-open-o no_results_icon"></i>
+                <h3>No exact matches found for "{query}"</h3>
+                <p>Try searching for keywords like <strong>sugar</strong>, <strong>biofuel</strong>, <strong>financial</strong>, <strong>csr</strong>, or <strong>sml</strong>.</p>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div class="search_prompt_box">
+            <h3>Start typing above or click popular portal topics below:</h3>
+            <div class="popular_tags">
+              <span>Quick topics:</span>
+              <a href="/search?s=sugar" class="tag_link"><i class="fa fa-industry"></i> Sugar Division</a>
+              <a href="/search?s=biofuel" class="tag_link"><i class="fa fa-bolt"></i> Biofuels & Power</a>
+              <a href="/search?s=financial" class="tag_link"><i class="fa fa-file-text-o"></i> Financial Reports</a>
+              <a href="/search?s=notices" class="tag_link"><i class="fa fa-bullhorn"></i> Notices & Updates</a>
+              <a href="/search?s=csr" class="tag_link"><i class="fa fa-leaf"></i> CSR & Sustainability</a>
+              <a href="/search?s=board" class="tag_link"><i class="fa fa-users"></i> Board of Directors</a>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script is:inline define:vars={{ portalIndex }}>
+  const searchInput = document.getElementById('search_input');
+  const liveDropdown = document.getElementById('live_results_dropdown');
+  const clearBtn = document.getElementById('clear_search_btn');
+
+  function renderLiveResults(val) {
+    const term = val.trim().toLowerCase();
+    
+    if (!term) {
+      liveDropdown.style.display = 'none';
+      liveDropdown.innerHTML = '';
+      if (clearBtn) clearBtn.style.display = 'none';
+      return;
+    }
+
+    if (clearBtn) clearBtn.style.display = 'block';
+
+    const matches = portalIndex.filter(item => {
+      const inTitle = item.title.toLowerCase().includes(term);
+      const inDesc = item.description.toLowerCase().includes(term);
+      const inCat = item.category.toLowerCase().includes(term);
+      const inTags = item.tags.some(tag => tag.includes(term));
+      return inTitle || inDesc || inCat || inTags;
+    });
+
+    if (matches.length === 0) {
+      liveDropdown.innerHTML = `
+        <div class="no_live_match">
+          <i class="fa fa-search"></i> No instant matches for "<strong>${escapeHtml(term)}</strong>". Press Enter to search.
+        </div>
+      `;
+    } else {
+      liveDropdown.innerHTML = `
+        <div class="live_header_bar">
+          Found <strong>${matches.length}</strong> matching page${matches.length === 1 ? '' : 's'}
+        </div>
+        <ul class="live_items_list">
+          ${matches.map(item => `
+            <li class="live_item">
+              <a href="${item.link}">
+                <div class="item_top">
+                  <span class="item_title">${highlightText(item.title, term)}</span>
+                  <span class="item_badge">${escapeHtml(item.category)}</span>
+                </div>
+                <div class="item_desc">${highlightText(item.description, term)}</div>
+                <div class="item_url"><i class="fa fa-link"></i> ${escapeHtml(item.link)}</div>
+              </a>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+    }
+
+    liveDropdown.style.display = 'block';
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function highlightText(text, term) {
+    if (!term) return escapeHtml(text);
+    const escapedText = escapeHtml(text);
+    const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return escapedText.replace(regex, '<mark>$1</mark>');
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      renderLiveResults(e.target.value);
+    });
+
+    searchInput.addEventListener('focus', () => {
+      if (searchInput.value.trim()) {
+        renderLiveResults(searchInput.value);
+      }
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        searchInput.focus();
+      }
+      renderLiveResults('');
+    });
+  }
+
+  // Close live dropdown on outside click
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.live_search_box')) {
+      if (liveDropdown) liveDropdown.style.display = 'none';
+    }
+  });
+</script>
+
+<style>
+  .search_page_section {
+    padding: 60px 0 80px;
+    background-color: #fcfcfc;
+    min-height: 65vh;
+  }
+
+  .search_header {
+    max-width: 850px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+
+  .page_title {
+    font-family: var(--font-heading);
+    font-size: 38px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 8px;
+  }
+
+  .search_subtitle {
+    font-size: 16px;
+    color: #64748b;
+    margin-bottom: 25px;
+  }
+
+  .live_search_box {
+    position: relative;
+    width: 100%;
+  }
+
+  .search_bar_form {
+    display: flex;
+    gap: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    padding: 6px;
+    background: #ffffff;
+    border: 2px solid var(--primary-color);
+  }
+
+  .input_wrapper {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0 16px;
+    gap: 12px;
+  }
+
+  .search_icon {
+    color: var(--primary-color);
+    font-size: 20px;
+  }
+
+  .input_wrapper input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    color: #1e293b;
+    padding: 12px 0;
+    background: transparent;
+  }
+
+  .clear_btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .clear_btn:hover {
+    color: #ef4444;
+  }
+
+  .search_btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .search_btn:hover {
+    background-color: var(--primary-hover);
+  }
+
+  /* Live Autocomplete Results Dropdown */
+  .live_dropdown_box {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.14);
+    z-index: 999;
+    max-height: 480px;
+    overflow-y: auto;
+    text-align: left;
+  }
+
+  .live_header_bar {
+    padding: 10px 18px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
+    color: #475569;
+  }
+
+  .live_items_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .live_item {
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .live_item:last-child {
+    border-bottom: none;
+  }
+
+  .live_item a {
+    display: block;
+    padding: 16px 18px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .live_item a:hover {
+    background: #f0fdf4;
+  }
+
+  .item_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .item_title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    font-family: var(--font-heading);
+  }
+
+  .item_badge {
+    background-color: rgba(0, 80, 0, 0.1);
+    color: var(--primary-color);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .item_desc {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .item_url {
+    font-size: 11px;
+    color: #005000;
+    font-weight: 600;
+  }
+
+  .no_live_match {
+    padding: 20px;
+    color: #64748b;
+    font-size: 14px;
+  }
+
+  :global(mark) {
+    background-color: #fef08a;
+    color: #854d0e;
+    padding: 0 2px;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+
+  .search_results_container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .results_count {
+    font-size: 15px;
+    color: #475569;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .highlight {
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+
+  .results_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .result_card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .result_card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  }
+
+  .category_badge {
+    display: inline-block;
+    background-color: rgba(0, 80, 0, 0.08);
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .result_title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .result_title a {
+    color: #0f172a;
+    text-decoration: none;
+  }
+
+  .result_title a:hover {
+    color: var(--primary-color);
+  }
+
+  .result_desc {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .result_link {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+  }
+
+  .no_results_box, .search_prompt_box {
+    background: #ffffff;
+    padding: 45px 30px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  }
+
+  .no_results_icon {
+    font-size: 48px;
+    color: #94a3b8;
+    margin-bottom: 15px;
+  }
+
+  .no_results_box h3, .search_prompt_box h3 {
+    font-size: 20px;
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+  }
+
+  .no_results_box p {
+    color: #64748b;
+    font-size: 15px;
+  }
+
+  .popular_tags {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+  }
+
+  .popular_tags span {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .tag_link {
+    background: #f1f5f9;
+    color: #334155;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .tag_link:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+  }
+
+  @media (max-width: 600px) {
+    .search_bar_form {
+      flex-direction: column;
+    }
+    .search_btn {
+      width: 100%;
+    }
+  }
+</style>

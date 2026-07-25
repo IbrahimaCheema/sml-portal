@@ -50,12 +50,13 @@
         </div>
 
         <!-- Column 4: Search & Language -->
-        <div class="footer_col">
+        <div class="footer_col" style="position: relative;">
           <!-- 1. Search Bar -->
-          <form class="footer_search_form" action="https://www.sml.com.pk/" method="get">
-            <input type="search" name="s" placeholder="Search portal..." aria-label="Search portal" />
+          <form class="footer_search_form" action="/search" method="get">
+            <input type="search" name="s" id="footer_search_input" placeholder="Search portal..." aria-label="Search portal" autocomplete="off" />
             <button type="submit">Search</button>
           </form>
+          <div id="footer_live_dropdown" class="footer_live_dropdown_box"></div>
 
           <!-- 2. Language Dropdown -->
           <div class="language_selector">
@@ -249,6 +250,43 @@
     margin-top: 5px;
   }
 
+  .footer_live_dropdown_box {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+    background: #1e2429;
+    border: 1px solid var(--primary-color);
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 1000;
+    max-height: 350px;
+    overflow-y: auto;
+  }
+  .footer_live_item {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer_live_item a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+  }
+  .footer_live_item a:hover {
+    color: var(--primary-color);
+  }
+  .footer_live_title {
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .footer_live_cat {
+    font-size: 10px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
   /* Copyright Row */
   .copyright_row {
     background-color: var(--footer-dark);
@@ -290,3 +328,53 @@
     }
   }
 </style>
+
+<script is:inline>
+  const footerInput = document.getElementById('footer_search_input');
+  const footerDropdown = document.getElementById('footer_live_dropdown');
+
+  const footerPortalIndex = [
+    { title: "Sugar & Allied Products Division", link: "https://www.sml.com.pk/sugar/", cat: "Segments", tags: ["sugar", "refined", "sml", "shakarganj"] },
+    { title: "Biofuels & Renewable Power", link: "https://www.sml.com.pk/biofuels/", cat: "Segments", tags: ["biofuel", "ethanol", "power", "sml", "shakarganj"] },
+    { title: "Financial Reports & Highlights", link: "https://www.sml.com.pk/financial-reports/", cat: "Investor Relations", tags: ["financial", "reports", "quarterly", "annual", "sml", "shakarganj"] },
+    { title: "Company Profile & 50+ Years Legacy", link: "https://www.sml.com.pk/company-profile/", cat: "About Us", tags: ["company", "profile", "history", "sml", "shakarganj"] },
+    { title: "Board of Directors & Management", link: "https://www.sml.com.pk/board-of-directors/", cat: "Governance", tags: ["board", "directors", "management", "sml", "shakarganj"] },
+    { title: "Corporate Social Responsibility (CSR)", link: "https://www.sml.com.pk/csr/", cat: "Sustainability", tags: ["csr", "sustainability", "foundation", "sml", "shakarganj"] },
+    { title: "Notices of General Meetings (EGM & CBS)", link: "https://www.sml.com.pk/notices-and-updates/", cat: "Notices", tags: ["notices", "egm", "cbs", "updates", "sml", "shakarganj"] },
+    { title: "Complaint Handling Cell & SECP SDMS", link: "https://www.sml.com.pk/shareholder-information/", cat: "Regulatory", tags: ["complaint", "secp", "jama punji", "sdms", "sml", "shakarganj"] },
+    { title: "Pattern of Shareholding, NTN & Shares", link: "https://www.sml.com.pk/pattern-of-shareholding/", cat: "Investor Relations", tags: ["shareholding", "ntn", "registration", "free float", "sml", "shakarganj"] },
+    { title: "Careers & Opportunities", link: "https://www.sml.com.pk/careers/", cat: "HR", tags: ["careers", "jobs", "hiring", "sml", "shakarganj"] }
+  ];
+
+  if (footerInput && footerDropdown) {
+    footerInput.addEventListener('input', (e) => {
+      const term = e.target.value.trim().toLowerCase();
+      if (!term) {
+        footerDropdown.style.display = 'none';
+        return;
+      }
+      const matches = footerPortalIndex.filter(item => {
+        return item.title.toLowerCase().includes(term) || item.cat.toLowerCase().includes(term) || item.tags.some(t => t.includes(term));
+      });
+      if (matches.length === 0) {
+        footerDropdown.innerHTML = `<div style="padding: 10px; font-size: 12px; color: #aaa;">No instant matches. Press enter to search.</div>`;
+      } else {
+        footerDropdown.innerHTML = matches.map(m => `
+          <div class="footer_live_item">
+            <a href="${m.link}">
+              <div class="footer_live_cat">${m.cat}</div>
+              <div class="footer_live_title">${m.title}</div>
+            </a>
+          </div>
+        `).join('');
+      }
+      footerDropdown.style.display = 'block';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('#footer_search_input') && !e.target.closest('#footer_live_dropdown')) {
+        footerDropdown.style.display = 'none';
+      }
+    });
+  }
+</script>
