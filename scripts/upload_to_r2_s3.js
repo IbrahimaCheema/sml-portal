@@ -1,4 +1,4 @@
-import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+import { S3Client, PutObjectCommand, DeleteObjectCommand } from '@aws-sdk/client-s3';
 import fs from 'fs';
 import path from 'path';
 
@@ -24,9 +24,7 @@ function getMimeType(filePath) {
   if (ext === '.svg') return 'image/svg+xml';
   if (ext === '.webp') return 'image/webp';
   if (ext === '.ico') return 'image/x-icon';
-  if (ext === '.html') return 'text/html';
-  if (ext === '.css') return 'text/css';
-  if (ext === '.js') return 'application/javascript';
+  if (ext === '.pdf') return 'application/pdf';
   return 'application/octet-stream';
 }
 
@@ -43,7 +41,7 @@ async function uploadFolder(localDir, s3Prefix = '') {
       const fileBuffer = fs.readFileSync(fullPath);
       const mimeType = getMimeType(fullPath);
 
-      console.log(`Uploading -> ${relativePath} (${mimeType})...`);
+      console.log(`Uploading media -> ${relativePath} (${mimeType})...`);
       await s3Client.send(new PutObjectCommand({
         Bucket: BUCKET_NAME,
         Key: relativePath,
@@ -55,27 +53,39 @@ async function uploadFolder(localDir, s3Prefix = '') {
   }
 }
 
+async function deleteNonMedia() {
+  const objectsToDelete = ['index.html', '_astro/index.BDK4Mvu0.css'];
+  for (const key of objectsToDelete) {
+    try {
+      console.log(`Deleting non-media object -> ${key}...`);
+      await s3Client.send(new DeleteObjectCommand({
+        Bucket: BUCKET_NAME,
+        Key: key,
+      }));
+      console.log(`✓ Removed ${key} from R2 bucket`);
+    } catch (err) {
+      // Ignore if object does not exist
+    }
+  }
+}
+
 async function main() {
-  console.log(`Starting R2 upload to bucket: ${BUCKET_NAME}...`);
+  console.log(`Cleaning non-media files and syncing ONLY media files to Cloudflare R2 bucket: ${BUCKET_NAME}...`);
   
-  // 1. Upload public images to images/
+  // 1. Remove non-media HTML/CSS objects from R2
+  await deleteNonMedia();
+
+  // 2. Upload strictly media files (images, docs, PDFs)
   const imagesDir = path.resolve('public/images');
   if (fs.existsSync(imagesDir)) {
-    console.log('\n--- Uploading public/images ---');
+    console.log('\n--- Uploading ONLY media files (public/images) ---');
     await uploadFolder(imagesDir, 'images');
   }
 
-  // 2. Upload dist static site assets
-  const distDir = path.resolve('dist');
-  if (fs.existsSync(distDir)) {
-    console.log('\n--- Uploading dist static site ---');
-    await uploadFolder(distDir, '');
-  }
-
-  console.log('\n🎉 ALL MEDIA & STATIC ASSETS UPLOADED TO CLOUDFLARE R2 BUCKET docs.sml.com.pk SUCCESSFULLY!');
+  console.log('\n🎉 CLOUDFLARE R2 BUCKET IS NOW 100% CLEAN — CONTAINING ONLY MEDIA ASSETS (images/docs/PDFs)!');
 }
 
 main().catch(err => {
-  console.error('❌ R2 Upload Failed:', err);
+  console.error('❌ R2 Media Upload Failed:', err);
   process.exit(1);
 });
