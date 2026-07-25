@@ -37,27 +37,36 @@
           </ul>
         </div>
 
-        <!-- Column 3: Governance & Regulatory -->
+        <!-- Column 3: Quick Links -->
         <div class="footer_col">
-          <h4 class="footer_title">Governance & Compliance</h4>
+          <h4 class="footer_title">Quick Links</h4>
           <ul class="footer_links">
-            <li><a href="https://www.sml.com.pk/shareholder-information/">Complaint Handling Cell</a></li>
-            <li><a href="https://www.sml.com.pk/pattern-of-shareholding/">Pattern of Shareholding</a></li>
-            <li><a href="https://www.sml.com.pk/free-float-shares/">Free Float Shares</a></li>
-            <li><a href="https://www.sml.com.pk/csr/">CSR & Sustainability</a></li>
+            <li><a href="https://www.sml.com.pk/company-profile/">Company Profile</a></li>
+            <li><a href="https://www.sml.com.pk/financial-reports/">Financial Highlights</a></li>
+            <li><a href="https://www.sml.com.pk/csr/">Corporate Social Responsibility</a></li>
+            <li><a href="https://www.sml.com.pk/notices-and-updates/">Notices & Updates</a></li>
             <li><a href="https://www.sml.com.pk/careers/">Careers</a></li>
           </ul>
         </div>
 
-        <!-- Column 4: Investor Portal -->
+        <!-- Column 4: Search & Language -->
         <div class="footer_col">
-          <h4 class="footer_title">Investor Portal</h4>
-
-          <!-- Search Widget -->
+          <!-- 1. Search Bar -->
           <form class="footer_search_form" action="https://www.sml.com.pk/" method="get">
-            <input type="search" name="s" placeholder="Search..." aria-label="Search" />
+            <input type="search" name="s" placeholder="Search portal..." aria-label="Search portal" />
             <button type="submit">Search</button>
           </form>
+
+          <!-- 2. Language Dropdown -->
+          <div class="language_selector">
+            <label for="lang_select" class="lang_label">
+              <i class="fa fa-globe"></i> Language / زبان
+            </label>
+            <select id="lang_select" class="lang_dropdown" aria-label="Select Language">
+              <option value="en" selected>English</option>
+              <option value="ur">اردو (Urdu)</option>
+            </select>
+          </div>
 
           <p class="updated_timestamp"><em>Updated on: 23 July, 2026</em></p>
         </div>
@@ -197,6 +206,41 @@
   }
   .footer_search_form button:hover {
     background: var(--primary-hover);
+  }
+
+  .language_selector {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+  }
+  .lang_label {
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-heading);
+  }
+  .lang_label i {
+    color: var(--primary-color);
+  }
+  .lang_dropdown {
+    width: 100%;
+    padding: 9px 12px;
+    background: #181b1e;
+    color: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .lang_dropdown:focus, .lang_dropdown:hover {
+    border-color: var(--primary-color);
   }
 
   .updated_timestamp {
