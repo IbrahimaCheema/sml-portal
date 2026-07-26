@@ -1,0 +1,861 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const reportsData = [
+  {
+    year: "2026",
+    reports: [
+      {
+        title: "Half Year Ended 31st March 2026",
+        quarter: "Q2 - Half Yearly",
+        period: "Period Ended: March 31, 2026",
+        badgeColor: "#005000",
+        thumb: "https://docs.sml.com.pk/images/report_2026_q2_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2026.03.31-Q2.pdf"
+      },
+      {
+        title: "1st Quarter Ended 31st December 2025",
+        quarter: "Q1 - First Quarter",
+        period: "Period Ended: December 31, 2025",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2026_q1_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2025.12.31-Q1.pdf"
+      }
+    ]
+  },
+  {
+    year: "2025",
+    reports: [
+      {
+        title: "Annual Audited Report 2025",
+        quarter: "Annual Report",
+        period: "Year Ended: September 30, 2025",
+        badgeColor: "#854d0e",
+        thumb: "https://docs.sml.com.pk/images/report_2025_annual_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2025.09.30.pdf"
+      },
+      {
+        title: "3rd Quarter Ended 30th June 2025",
+        quarter: "Q3 - Third Quarter",
+        period: "Period Ended: June 30, 2025",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2025_q3_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2025.06.30-Q3.pdf"
+      },
+      {
+        title: "Half Year Ended 31st March 2025",
+        quarter: "Q2 - Half Yearly",
+        period: "Period Ended: March 31, 2025",
+        badgeColor: "#005000",
+        thumb: "https://docs.sml.com.pk/images/report_2025_q2_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2025.03.31-Q2.pdf"
+      },
+      {
+        title: "1st Quarter Ended 31st December 2024",
+        quarter: "Q1 - First Quarter",
+        period: "Period Ended: December 31, 2024",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2025_q1_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2024.12.31-Q1.pdf"
+      }
+    ]
+  },
+  {
+    year: "2024",
+    reports: [
+      {
+        title: "Annual Audited Report 2024",
+        quarter: "Annual Report",
+        period: "Year Ended: September 30, 2024",
+        badgeColor: "#854d0e",
+        thumb: "https://docs.sml.com.pk/images/report_2024_annual_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2024.09.30.pdf"
+      },
+      {
+        title: "3rd Quarter Ended 30th June 2024",
+        quarter: "Q3 - Third Quarter",
+        period: "Period Ended: June 30, 2024",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2024_q3_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2024.06.30-Q3.pdf"
+      },
+      {
+        title: "Half Year Ended 31st March 2024",
+        quarter: "Q2 - Half Yearly",
+        period: "Period Ended: March 31, 2024",
+        badgeColor: "#005000",
+        thumb: "https://docs.sml.com.pk/images/report_2024_q2_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2024.03.31-Q2.pdf"
+      },
+      {
+        title: "1st Quarter Ended 31st December 2023",
+        quarter: "Q1 - First Quarter",
+        period: "Period Ended: December 31, 2023",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2024_q1_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2023.12.31-Q1.pdf"
+      }
+    ]
+  },
+  {
+    year: "2023",
+    reports: [
+      {
+        title: "Annual Audited Report 2023",
+        quarter: "Annual Report",
+        period: "Year Ended: September 30, 2023",
+        badgeColor: "#854d0e",
+        thumb: "https://docs.sml.com.pk/images/report_2023_annual_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2023.09.30.pdf"
+      },
+      {
+        title: "3rd Quarter Ended 30th June 2023",
+        quarter: "Q3 - Third Quarter",
+        period: "Period Ended: June 30, 2023",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2023_q3_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2023.06.30-Q3.pdf"
+      },
+      {
+        title: "Half Year Ended 31st March 2023",
+        quarter: "Q2 - Half Yearly",
+        period: "Period Ended: March 31, 2023",
+        badgeColor: "#005000",
+        thumb: "https://docs.sml.com.pk/images/report_2023_q2_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2023.03.31-Q2.pdf"
+      },
+      {
+        title: "1st Quarter Ended 31st December 2022",
+        quarter: "Q1 - First Quarter",
+        period: "Period Ended: December 31, 2022",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2023_q1_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2022.12.31-Q1.pdf"
+      }
+    ]
+  },
+  {
+    year: "2022",
+    reports: [
+      {
+        title: "Annual Audited Report 2022",
+        quarter: "Annual Report",
+        period: "Year Ended: September 30, 2022",
+        badgeColor: "#854d0e",
+        thumb: "https://docs.sml.com.pk/images/report_2022_annual_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2022.09.30.pdf"
+      },
+      {
+        title: "3rd Quarter Ended 30th June 2022",
+        quarter: "Q3 - Third Quarter",
+        period: "Period Ended: June 30, 2022",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2022_q3_thumb.png",
+        pdf: "https://docs.sml.com.pk/docs/SML-2022.06.30-Q3.pdf"
+      },
+      {
+        title: "Half Year Ended 31st March 2022",
+        quarter: "Q2 - Half Yearly",
+        period: "Period Ended: March 31, 2022",
+        badgeColor: "#005000",
+        thumb: "https://docs.sml.com.pk/images/report_2022_q2_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2022.03.31-Q2.pdf"
+      },
+      {
+        title: "1st Quarter Ended 31st December 2021",
+        quarter: "Q1 - First Quarter",
+        period: "Period Ended: December 31, 2021",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2022_q1_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2021.12.31-Q1.pdf"
+      }
+    ]
+  },
+  {
+    year: "2021",
+    reports: [
+      {
+        title: "Annual Audited Report 2021",
+        quarter: "Annual Report",
+        period: "Year Ended: September 30, 2021",
+        badgeColor: "#854d0e",
+        thumb: "https://docs.sml.com.pk/images/report_2021_annual_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2021.09.30.pdf"
+      },
+      {
+        title: "3rd Quarter Ended 30th June 2021",
+        quarter: "Q3 - Third Quarter",
+        period: "Period Ended: June 30, 2021",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2021_q3_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2021.06.30-Q3.pdf"
+      },
+      {
+        title: "Half Year Ended 31st March 2021",
+        quarter: "Q2 - Half Yearly",
+        period: "Period Ended: March 31, 2021",
+        badgeColor: "#005000",
+        thumb: "https://docs.sml.com.pk/images/report_2021_q2_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2021.03.31-Q2.pdf"
+      },
+      {
+        title: "1st Quarter Ended 31st December 2020",
+        quarter: "Q1 - First Quarter",
+        period: "Period Ended: December 31, 2020",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2021_q1_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2020.12.31-Q1.pdf"
+      }
+    ]
+  },
+  {
+    year: "2020",
+    reports: [
+      {
+        title: "Annual Audited Report 2020",
+        quarter: "Annual Report",
+        period: "Year Ended: September 30, 2020",
+        badgeColor: "#854d0e",
+        thumb: "https://docs.sml.com.pk/images/report_2020_annual_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2020.09.30.pdf"
+      },
+      {
+        title: "3rd Quarter Ended 30th June 2020",
+        quarter: "Q3 - Third Quarter",
+        period: "Period Ended: June 30, 2020",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2020_q3_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2020.06.30-Q3.pdf"
+      },
+      {
+        title: "Half Year Ended 31st March 2020",
+        quarter: "Q2 - Half Yearly",
+        period: "Period Ended: March 31, 2020",
+        badgeColor: "#005000",
+        thumb: "https://docs.sml.com.pk/images/report_2020_q2_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2020.03.31-Q2.pdf"
+      },
+      {
+        title: "1st Quarter Ended 31st December 2019",
+        quarter: "Q1 - First Quarter",
+        period: "Period Ended: December 31, 2019",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2020_q1_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2019.12.31-Q1.pdf"
+      }
+    ]
+  },
+  {
+    year: "2019",
+    reports: [
+      {
+        title: "Annual Audited Report 2019",
+        quarter: "Annual Report",
+        period: "Year Ended: September 30, 2019",
+        badgeColor: "#854d0e",
+        thumb: "https://docs.sml.com.pk/images/report_2019_annual_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2019.09.30.pdf"
+      },
+      {
+        title: "3rd Quarter Ended 30th June 2019",
+        quarter: "Q3 - Third Quarter",
+        period: "Period Ended: June 30, 2019",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2019_q3_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2019.06.30-Q3.pdf"
+      },
+      {
+        title: "Half Year Ended 31st March 2019",
+        quarter: "Q2 - Half Yearly",
+        period: "Period Ended: March 31, 2019",
+        badgeColor: "#005000",
+        thumb: "https://docs.sml.com.pk/images/report_2019_q2_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2019.03.31-Q2.pdf"
+      },
+      {
+        title: "1st Quarter Ended 31st December 2018",
+        quarter: "Q1 - First Quarter",
+        period: "Period Ended: December 31, 2018",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2019_q1_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2018.12.31-Q1.pdf"
+      }
+    ]
+  },
+  {
+    year: "2018",
+    reports: [
+      {
+        title: "Annual Audited Report 2018",
+        quarter: "Annual Report",
+        period: "Year Ended: September 30, 2018",
+        badgeColor: "#854d0e",
+        thumb: "https://docs.sml.com.pk/images/report_2018_annual_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2018.09.30.pdf"
+      },
+      {
+        title: "3rd Quarter Ended 30th June 2018",
+        quarter: "Q3 - Third Quarter",
+        period: "Period Ended: June 30, 2018",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2018_q3_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2018.06.30-Q3.pdf"
+      },
+      {
+        title: "Half Year Ended 31st March 2018",
+        quarter: "Q2 - Half Yearly",
+        period: "Period Ended: March 31, 2018",
+        badgeColor: "#005000",
+        thumb: "https://docs.sml.com.pk/images/report_2018_q2_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2018.03.31-Q2.pdf"
+      },
+      {
+        title: "1st Quarter Ended 31st December 2017",
+        quarter: "Q1 - First Quarter",
+        period: "Period Ended: December 31, 2017",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2018_q1_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2017.12.31-Q1.pdf"
+      }
+    ]
+  },
+  {
+    year: "2017",
+    reports: [
+      {
+        title: "Annual Audited Report 2017",
+        quarter: "Annual Report",
+        period: "Year Ended: September 30, 2017",
+        badgeColor: "#854d0e",
+        thumb: "https://docs.sml.com.pk/images/report_2017_annual_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2017.09.30.pdf"
+      },
+      {
+        title: "3rd Quarter Ended 30th June 2017",
+        quarter: "Q3 - Third Quarter",
+        period: "Period Ended: June 30, 2017",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2017_q3_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2017.06.30-Q3.pdf"
+      },
+      {
+        title: "Half Year Ended 31st March 2017",
+        quarter: "Q2 - Half Yearly",
+        period: "Period Ended: March 31, 2017",
+        badgeColor: "#005000",
+        thumb: "https://docs.sml.com.pk/images/report_2017_q2_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2017.03.31-Q2.pdf"
+      },
+      {
+        title: "1st Quarter Ended 31st December 2016",
+        quarter: "Q1 - First Quarter",
+        period: "Period Ended: December 31, 2016",
+        badgeColor: "#33809e",
+        thumb: "https://docs.sml.com.pk/images/report_2017_q1_thumb.jpg",
+        pdf: "https://docs.sml.com.pk/docs/SML-2016.12.31-Q1.pdf"
+      }
+    ]
+  }
+];
+---
+
+<Layout title="Financial Reports - Shakarganj Limited">
+  <!-- Page Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>Investor Relations</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Financial Reports</span>
+      </div>
+      <h1 class="hero_page_title">Financial Reports</h1>
+      <p class="hero_subtitle">Audited annual financial statements, half-yearly reviews, and quarterly reports for Shakarganj Limited investors (10 Years Archive: 2017 – 2026).</p>
+      
+      <!-- Key Financial Metrics Ribbon -->
+      <div class="metrics_ribbon">
+        <div class="metric_item">
+          <i class="fa fa-line-chart"></i>
+          <div>
+            <strong>PSX Symbol</strong>
+            <span>SML (Sugar & Allied)</span>
+          </div>
+        </div>
+        <div class="metric_item">
+          <i class="fa fa-calendar-check-o"></i>
+          <div>
+            <strong>Fiscal Year End</strong>
+            <span>September 30</span>
+          </div>
+        </div>
+        <div class="metric_item">
+          <i class="fa fa-file-pdf-o"></i>
+          <div>
+            <strong>Latest Report</strong>
+            <span>Half Year March 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Financial Reports Section -->
+  <section class="financial_section">
+    <div class="container">
+
+      <!-- Year Pill Navigation Tabs -->
+      <div class="year_tabs_container">
+        <span class="tabs_label"><i class="fa fa-filter"></i> Select Year:</span>
+        <div class="year_tabs">
+          {reportsData.map((yData, idx) => (
+            <button 
+              class={`year_tab_btn ${idx === 0 ? 'active' : ''}`}
+              data-year={yData.year}
+            >
+              <i class="fa fa-folder"></i> {yData.year}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Year Content Panels -->
+      <div class="year_panels_container">
+        {reportsData.map((yData, idx) => (
+          <div 
+            class={`year_panel ${idx === 0 ? 'active' : ''}`}
+            id={`panel_${yData.year}`}
+          >
+            <div class="panel_header">
+              <h2><i class="fa fa-calendar"></i> Fiscal Year {yData.year} Financial Statements</h2>
+              <span class="reports_count_badge">{yData.reports.length} Reports Published</span>
+            </div>
+
+            <div class="reports_grid">
+              {yData.reports.map((rep) => (
+                <div class="report_card">
+                  <div class="card_thumb_wrapper">
+                    <img src={rep.thumb} alt={rep.title} loading="lazy" />
+                    <div class="thumb_overlay">
+                      <a href={rep.pdf} target="_blank" class="overlay_view_btn">
+                        <i class="fa fa-eye"></i> Quick View
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="card_details">
+                    <div class="card_meta">
+                      <span class="quarter_badge" style={`background-color: ${rep.badgeColor};`}>
+                        {rep.quarter}
+                      </span>
+                      <span class="period_text"><i class="fa fa-clock-o"></i> {rep.period}</span>
+                    </div>
+
+                    <h3 class="report_title">{rep.title}</h3>
+
+                    <div class="card_actions">
+                      <a href={rep.pdf} target="_blank" class="download_btn">
+                        <i class="fa fa-download"></i> Download PDF
+                      </a>
+                      <a href={rep.pdf} target="_blank" class="open_btn" title="Open in new tab">
+                        <i class="fa fa-external-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabBtns = document.querySelectorAll('.year_tab_btn');
+    const panels = document.querySelectorAll('.year_panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const year = btn.getAttribute('data-year');
+
+        // Toggle active button
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Toggle active panel
+        panels.forEach(p => {
+          if (p.id === `panel_${year}`) {
+            p.classList.add('active');
+          } else {
+            p.classList.remove('active');
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Page Hero Banner */
+  .page_hero_banner {
+    background: linear-gradient(135deg, #004d00 0%, #002b00 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 800px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+  }
+
+  /* Metrics Ribbon */
+  .metrics_ribbon {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 16px 24px;
+    border-radius: 10px;
+    max-width: 800px;
+  }
+  .metric_item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .metric_item i {
+    font-size: 22px;
+    color: #4ade80;
+  }
+  .metric_item strong {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #a0c8a0;
+  }
+  .metric_item span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  /* Main Financial Section */
+  .financial_section {
+    padding: 60px 0 80px;
+    background-color: #f8faf8;
+  }
+
+  /* Year Tabs Navigation */
+  .year_tabs_container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    background: #ffffff;
+    padding: 16px 24px;
+    border-radius: 12px;
+    border: 1px solid #e5e9e5;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  }
+  .tabs_label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #222222;
+    font-family: var(--font-heading);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tabs_label i {
+    color: var(--primary-color);
+  }
+
+  .year_tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .year_tab_btn {
+    background: #f0f4f0;
+    color: #444444;
+    border: 1px solid #e0e6e0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+  }
+  .year_tab_btn:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+  }
+  .year_tab_btn.active {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 80, 0, 0.25);
+  }
+
+  /* Year Panels */
+  .year_panel {
+    display: none;
+  }
+  .year_panel.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .panel_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e5e9e5;
+  }
+  .panel_header h2 {
+    font-size: 22px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #1a202c;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .panel_header h2 i {
+    color: var(--primary-color);
+  }
+  .reports_count_badge {
+    background: rgba(0, 80, 0, 0.08);
+    color: var(--primary-color);
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+
+  /* Reports Grid (4 columns) */
+  .reports_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+
+  .report_card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e5e9e5;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .report_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  }
+
+  .card_thumb_wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    background: #f0f4f0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #eee;
+  }
+  .card_thumb_wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s ease;
+  }
+  .report_card:hover .card_thumb_wrapper img {
+    transform: scale(1.05);
+  }
+
+  .thumb_overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 43, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .report_card:hover .thumb_overlay {
+    opacity: 1;
+  }
+  .overlay_view_btn {
+    background: #ffffff;
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+  }
+  .overlay_view_btn:hover {
+    transform: scale(1.05);
+  }
+
+  .card_details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  .card_meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .quarter_badge {
+    align-self: flex-start;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 4px;
+    letter-spacing: 0.4px;
+  }
+  .period_text {
+    font-size: 12px;
+    color: #777777;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .report_title {
+    font-size: 15.5px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1.4;
+    margin-bottom: 18px;
+  }
+
+  .card_actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .download_btn {
+    flex-grow: 1;
+    background: var(--primary-color);
+    color: #ffffff !important;
+    text-align: center;
+    padding: 9.5px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none !important;
+    transition: background 0.3s ease;
+  }
+  .download_btn:hover {
+    background: var(--primary-hover);
+  }
+
+  .open_btn {
+    background: #f0f4f0;
+    color: var(--primary-color);
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+  .open_btn:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+  }
+
+  @media (max-width: 1199px) {
+    .reports_grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 850px) {
+    .reports_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 550px) {
+    .reports_grid {
+      grid-template-columns: 1fr;
+    }
+    .metrics_ribbon {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+</style>
+</Layout>
