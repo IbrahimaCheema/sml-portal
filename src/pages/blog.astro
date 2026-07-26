@@ -119,13 +119,13 @@ const years = ['All Years', '2026', '2025', '2024'];
               </div>
 
               <div class="card_footer">
-                {post.pdfUrl ? (
+                {post.pdfUrl && post.pdfUrl.startsWith('http') ? (
                   <a href={post.pdfUrl} target="_blank" rel="noopener noreferrer" class="btn_action pdf_btn">
-                    <i class="fa fa-file-pdf-o"></i> Download Document
+                    <i class="fa fa-external-link"></i> View Notice Document
                   </a>
                 ) : (
                   <a href={post.linkUrl} class="btn_action link_btn">
-                    Read Announcement <i class="fa fa-arrow-right"></i>
+                    View Financial Reports <i class="fa fa-arrow-right"></i>
                   </a>
                 )}
               </div>

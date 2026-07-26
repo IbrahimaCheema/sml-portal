@@ -21,7 +21,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Condensed interim financial information and operational performance highlights of Shakarganj Limited for the half year ended 31 March 2026.",
     "featuredImage": "https://docs.sml.com.pk/images/news_2026_q2_thumb.jpg",
     "linkUrl": "/financial-reports",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-2026.03.31-Q2.pdf"
+    "pdfUrl": "/financial-reports"
   },
   {
     "id": "notice-extraordinary-general-meeting-may-2026",
@@ -31,8 +31,8 @@ export const newsPosts: NewsPost[] = [
     "category": "Shareholder Notice",
     "excerpt": "Notice is hereby given that an Extraordinary General Meeting (EGM) of Shakarganj Limited will be held to transact special corporate business.",
     "featuredImage": "https://docs.sml.com.pk/images/news_egm_2026_thumb.png",
-    "linkUrl": "/shareholder-information",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-EGM-Notice-2026.pdf"
+    "linkUrl": "https://dps.psx.com.pk/download/document/276918.pdf",
+    "pdfUrl": "https://dps.psx.com.pk/download/document/276918.pdf"
   },
   {
     "id": "corporate-briefing-session-2025",
@@ -42,8 +42,8 @@ export const newsPosts: NewsPost[] = [
     "category": "Investor Relations",
     "excerpt": "Shakarganj Limited hosted its annual Corporate Briefing Session to present financial performance and strategic vision for FY 2025.",
     "featuredImage": "https://docs.sml.com.pk/images/news_corp_brief_2025_thumb.png",
-    "linkUrl": "/shareholder-information",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-Corporate-Briefing-2025.pdf"
+    "linkUrl": "https://dps.psx.com.pk/download/document/271326.pdf",
+    "pdfUrl": "https://dps.psx.com.pk/download/document/271326.pdf"
   },
   {
     "id": "quarterly-report-31-december-2025",
@@ -54,7 +54,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Un-audited financial statements of Shakarganj Limited for the first quarter ended 31 December 2025.",
     "featuredImage": "https://docs.sml.com.pk/images/news_2025_q1_thumb.jpg",
     "linkUrl": "/financial-reports",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-2025.12.31-Q1.pdf"
+    "pdfUrl": "/financial-reports"
   },
   {
     "id": "notice-board-meeting-feb-2026",
@@ -64,8 +64,8 @@ export const newsPosts: NewsPost[] = [
     "category": "Corporate Notice",
     "excerpt": "Meeting of the Board of Directors of Shakarganj Limited scheduled to consider quarterly financial statements.",
     "featuredImage": "https://docs.sml.com.pk/images/news_board_meeting_thumb.jpg",
-    "linkUrl": "/shareholder-information",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-Board-Meeting-Notice-Feb-2026.pdf"
+    "linkUrl": "https://dps.psx.com.pk/download/document/269619.pdf",
+    "pdfUrl": "https://dps.psx.com.pk/download/document/269619.pdf"
   },
   {
     "id": "annual-report-30-september-2025",
@@ -76,7 +76,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Comprehensive audited annual financial statements and directors report of Shakarganj Limited for the year ended 30 September 2025.",
     "featuredImage": "https://docs.sml.com.pk/images/news_annual_2025_thumb.jpg",
     "linkUrl": "/financial-reports",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-2025-Annual-Report.pdf"
+    "pdfUrl": "/financial-reports"
   },
   {
     "id": "notice-annual-general-meeting-jan-2026",
@@ -86,8 +86,8 @@ export const newsPosts: NewsPost[] = [
     "category": "Shareholder Notice",
     "excerpt": "Notice is hereby given that the Annual General Meeting of Shakarganj Limited will be held on Thursday, 12 February 2026.",
     "featuredImage": "https://docs.sml.com.pk/images/news_agm_thumb.jpg",
-    "linkUrl": "/shareholder-information",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-AGM-Notice-2026.pdf"
+    "linkUrl": "https://dps.psx.com.pk/download/document/268823.pdf",
+    "pdfUrl": "https://dps.psx.com.pk/download/document/268823.pdf"
   },
   {
     "id": "financial-results-3rd-quarter-30-june-2025",
@@ -98,7 +98,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Un-audited financial accounts of Shakarganj Limited for the third quarter ended 30 June 2025.",
     "featuredImage": "https://docs.sml.com.pk/images/news_2025_q3_thumb.jpg",
     "linkUrl": "/financial-reports",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-2025.06.30-Q3.pdf"
+    "pdfUrl": "/financial-reports"
   },
   {
     "id": "notice-board-meeting-july-2025",
@@ -108,8 +108,8 @@ export const newsPosts: NewsPost[] = [
     "category": "Corporate Notice",
     "excerpt": "Meeting of the Board of Directors of Shakarganj Limited to review Q3 accounts.",
     "featuredImage": "https://docs.sml.com.pk/images/news_board_meeting_thumb_2.jpg",
-    "linkUrl": "/shareholder-information",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-Board-Meeting-Notice-July-2025.pdf"
+    "linkUrl": "https://www.sml.com.pk/wp-content/uploads/2025/07/Notice_BOD_072025.pdf",
+    "pdfUrl": "https://www.sml.com.pk/wp-content/uploads/2025/07/Notice_BOD_072025.pdf"
   },
   {
     "id": "financial-results-half-year-31-mar-2025",
@@ -120,7 +120,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Interim report and financial results for the half year ended 31 March 2025.",
     "featuredImage": "https://docs.sml.com.pk/images/news_2025_q2_thumb.jpg",
     "linkUrl": "/financial-reports",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-2025.03.31-Q2.pdf"
+    "pdfUrl": "/financial-reports"
   },
   {
     "id": "notice-board-meeting-may-2025",
@@ -130,8 +130,8 @@ export const newsPosts: NewsPost[] = [
     "category": "Corporate Notice",
     "excerpt": "Board meeting notice for reviewing half-yearly financial statements.",
     "featuredImage": "https://docs.sml.com.pk/images/news_board_meeting_thumb_3.jpg",
-    "linkUrl": "/shareholder-information",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-Board-Meeting-Notice-May-2025.pdf"
+    "linkUrl": "https://dps.psx.com.pk/download/document/254171.pdf",
+    "pdfUrl": "https://dps.psx.com.pk/download/document/254171.pdf"
   },
   {
     "id": "corporate-briefing-session-2024",
@@ -141,8 +141,8 @@ export const newsPosts: NewsPost[] = [
     "category": "Investor Relations",
     "excerpt": "Shakarganj Limited corporate presentation for analysts and investors reviewing performance.",
     "featuredImage": "https://docs.sml.com.pk/images/news_corp_brief_2024_thumb.png",
-    "linkUrl": "/shareholder-information",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-Corporate-Briefing-2024.pdf"
+    "linkUrl": "https://dps.psx.com.pk/download/document/247850.pdf",
+    "pdfUrl": "https://dps.psx.com.pk/download/document/247850.pdf"
   },
   {
     "id": "quarterly-report-31-december-2024",
@@ -153,7 +153,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Financial accounts for the first quarter ended 31 December 2024.",
     "featuredImage": "https://docs.sml.com.pk/images/news_2024_q1_thumb.jpg",
     "linkUrl": "/financial-reports",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-2024.12.31-Q1.pdf"
+    "pdfUrl": "/financial-reports"
   },
   {
     "id": "annual-report-30-september-2024",
@@ -164,7 +164,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Audited Annual Financial Statements of Shakarganj Limited for FY 2024.",
     "featuredImage": "https://docs.sml.com.pk/images/news_annual_2024_thumb.jpg",
     "linkUrl": "/financial-reports",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-2024-Annual-Report.pdf"
+    "pdfUrl": "/financial-reports"
   },
   {
     "id": "notice-annual-general-meeting-jan-2025",
@@ -174,8 +174,8 @@ export const newsPosts: NewsPost[] = [
     "category": "Shareholder Notice",
     "excerpt": "Notice of Annual General Meeting for shareholders of Shakarganj Limited.",
     "featuredImage": "https://docs.sml.com.pk/images/news_agm_2025_thumb.jpg",
-    "linkUrl": "/shareholder-information",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-AGM-Notice-2025.pdf"
+    "linkUrl": "https://dps.psx.com.pk/download/document/245538.pdf",
+    "pdfUrl": "https://dps.psx.com.pk/download/document/245538.pdf"
   },
   {
     "id": "financial-results-3rd-quarter-30-june-2024",
@@ -186,7 +186,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Quarterly financial report of Shakarganj Limited for Q3 ended 30 June 2024.",
     "featuredImage": "https://docs.sml.com.pk/images/news_2024_q3_thumb.jpg",
     "linkUrl": "/financial-reports",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-2024.06.30-Q3.pdf"
+    "pdfUrl": "/financial-reports"
   },
   {
     "id": "financial-results-half-year-31-mar-2024",
@@ -197,7 +197,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Interim financial information of Shakarganj Limited for half year ended 31 March 2024.",
     "featuredImage": "https://docs.sml.com.pk/images/news_2024_q2_thumb.jpg",
     "linkUrl": "/financial-reports",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-2024.03.31-Q2.pdf"
+    "pdfUrl": "/financial-reports"
   },
   {
     "id": "corporate-briefing-session-fy-2023",
@@ -207,8 +207,8 @@ export const newsPosts: NewsPost[] = [
     "category": "Investor Relations",
     "excerpt": "Corporate Briefing Session for investors and shareholders on FY 2023 financial metrics.",
     "featuredImage": "https://docs.sml.com.pk/images/news_corp_brief_2023_thumb.png",
-    "linkUrl": "/shareholder-information",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-Corporate-Briefing-2023.pdf"
+    "linkUrl": "https://dps.psx.com.pk/download/document/227681.pdf",
+    "pdfUrl": "https://dps.psx.com.pk/download/document/227681.pdf"
   },
   {
     "id": "quarterly-report-31-december-2023",
@@ -219,7 +219,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Un-audited report for the first quarter ended 31 December 2023.",
     "featuredImage": "https://docs.sml.com.pk/images/news_2023_q1_thumb.jpg",
     "linkUrl": "/financial-reports",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-2023.12.31-Q1.pdf"
+    "pdfUrl": "/financial-reports"
   },
   {
     "id": "annual-report-30-september-2023",
@@ -230,6 +230,6 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Annual audited financial accounts and reports of Shakarganj Limited for FY 2023.",
     "featuredImage": "https://docs.sml.com.pk/images/news_annual_2023_thumb.jpg",
     "linkUrl": "/financial-reports",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-2023-Annual-Report.pdf"
+    "pdfUrl": "/financial-reports"
   }
 ];
