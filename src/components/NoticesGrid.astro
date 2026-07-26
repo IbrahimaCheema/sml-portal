@@ -15,33 +15,41 @@ const latestNotices = newsPosts.slice(0, 4);
     </div>
 
     <div class="notices_grid">
-      {latestNotices.map((notice) => (
-        <div class="notice_card move">
-          <div class="notice_image">
-            <a href={notice.pdfUrl || notice.linkUrl} target={notice.pdfUrl ? "_blank" : "_self"}>
-              <img 
-                src={notice.featuredImage} 
-                alt={notice.title} 
-                width="350" 
-                height="250" 
-                loading="lazy" 
-                onerror="this.src='https://docs.sml.com.pk/images/report_2026_q2_thumb.jpg'"
-              />
-            </a>
-            <span class="notice_cat_badge">{notice.category}</span>
-          </div>
-          <div class="notice_body">
-            <h3 class="notice_title">
+      {latestNotices.map((notice) => {
+        let badgeClass = 'badge_general';
+        if (notice.category === 'Financial Results') badgeClass = 'badge_financial';
+        if (notice.category === 'Shareholder Notice') badgeClass = 'badge_shareholder';
+        if (notice.category === 'Corporate Notice') badgeClass = 'badge_corporate';
+        if (notice.category === 'Investor Relations') badgeClass = 'badge_investor';
+
+        return (
+          <div class="notice_card move">
+            <div class="notice_image">
               <a href={notice.pdfUrl || notice.linkUrl} target={notice.pdfUrl ? "_blank" : "_self"}>
-                {notice.title}
+                <img 
+                  src={notice.featuredImage} 
+                  alt={notice.title} 
+                  width="350" 
+                  height="250" 
+                  loading="lazy" 
+                  onerror="this.src='https://docs.sml.com.pk/images/report_2026_q2_thumb.jpg'"
+                />
               </a>
-            </h3>
-            <div class="notice_date">
-              <i class="fa fa-calendar"></i> {notice.displayDate}
+              <span class={`notice_cat_badge ${badgeClass}`}>{notice.category}</span>
+            </div>
+            <div class="notice_body">
+              <h3 class="notice_title">
+                <a href={notice.pdfUrl || notice.linkUrl} target={notice.pdfUrl ? "_blank" : "_self"}>
+                  {notice.title}
+                </a>
+              </h3>
+              <div class="notice_date">
+                <i class="fa fa-calendar"></i> {notice.displayDate}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>
@@ -104,17 +112,22 @@ const latestNotices = newsPosts.slice(0, 4);
     position: absolute;
     top: 10px;
     right: 10px;
-    padding: 3px 8px;
-    background: rgba(15, 23, 42, 0.85);
-    color: #ffffff;
-    font-size: 10px;
-    font-weight: 700;
+    padding: 4px 10px;
     border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    backdrop-filter: blur(4px);
+    letter-spacing: 0.3px;
     z-index: 2;
   }
+
+  .badge_financial { background: #166534; }
+  .badge_shareholder { background: #1e40af; }
+  .badge_corporate { background: #374151; }
+  .badge_investor { background: #854d0e; }
+  .badge_general { background: #475569; }
 
   .notices_grid {
     display: grid;
