@@ -48,11 +48,23 @@ const portalIndex = [
     tags: ["sml", "shakarganj", "company", "profile", "about", "history", "legacy", "1967", "jhang", "bhakkar", "corporate", "50+ years"]
   },
   {
-    title: "Board of Directors & Management",
+    title: "Profile of Board of Directors & Management",
     category: "Corporate Governance",
-    description: "Meet the Board of Directors, Chairman, Chief Executive Officer, Audit Committee, and executive leadership steering Shakarganj Limited.",
-    link: "https://www.sml.com.pk/board-of-directors/",
-    tags: ["sml", "shakarganj", "board", "directors", "leadership", "management", "governance", "executive", "ceo", "audit committee"]
+    description: "Meet the Chairman Mr. Manzoor Hussain, CEO Mr. Muhammad Pervez Akhtar, Deputy CEO Mr. Ali Altaf Saleem, Board Members, Audit Committee, HR Committee, Risk Management Committee & Executive Leadership.",
+    link: "/board-of-directors",
+    tags: [
+      "sml", "shakarganj", "board", "directors", "leadership", "management", "governance", "executive", "ceo", "cfo", "cio", 
+      "audit committee", "hr committee", "risk management", "business strategy", "system and technology",
+      "manzoor hussain", "pervez akhtar", "ali altaf saleem", "baber zaman", "adil qureshi", 
+      "mustapha altaf saleem", "sana atif", "waqas shafeeq", "asif ali", "muhammad asif", "ibrahim cheema", "saifullah"
+    ]
+  },
+  {
+    title: "Board Committees & Executive Leadership",
+    category: "Investor Relations",
+    description: "Detailed profiles of Audit Committee, HR & Remuneration Committee, Risk Management Committee, and Management Committees of Shakarganj Limited.",
+    link: "/board-of-directors",
+    tags: ["audit", "hr", "remuneration", "nomination", "risk", "management", "committees", "executive committee", "strategy", "technology", "governance"]
   },
   {
     title: "Corporate Social Responsibility (CSR) & Shakarganj Foundation",
@@ -128,7 +140,7 @@ const searchResults = searchQuery
                 name="s" 
                 id="search_input"
                 value={query} 
-                placeholder="Type to search (e.g. sugar, biofuel, reports, SML, notices)..." 
+                placeholder="Type to search (e.g. sugar, biofuel, directors, CEO, notices)..." 
                 autocomplete="off"
                 required 
                 autofocus 
@@ -172,7 +184,7 @@ const searchResults = searchQuery
               <div class="no_results_box">
                 <i class="fa fa-folder-open-o no_results_icon"></i>
                 <h3>No exact matches found for "{query}"</h3>
-                <p>Try searching for keywords like <strong>sugar</strong>, <strong>biofuel</strong>, <strong>financial</strong>, <strong>csr</strong>, or <strong>sml</strong>.</p>
+                <p>Try searching for keywords like <strong>sugar</strong>, <strong>biofuel</strong>, <strong>directors</strong>, <strong>financial</strong>, or <strong>sml</strong>.</p>
               </div>
             )}
           </div>
@@ -181,12 +193,12 @@ const searchResults = searchQuery
             <h3>Start typing above or click popular portal topics below:</h3>
             <div class="popular_tags">
               <span>Quick topics:</span>
+              <a href="/search?s=board" class="tag_link"><i class="fa fa-users"></i> Board of Directors</a>
               <a href="/search?s=sugar" class="tag_link"><i class="fa fa-industry"></i> Sugar Division</a>
               <a href="/search?s=biofuel" class="tag_link"><i class="fa fa-bolt"></i> Biofuels & Power</a>
               <a href="/search?s=financial" class="tag_link"><i class="fa fa-file-text-o"></i> Financial Reports</a>
               <a href="/search?s=notices" class="tag_link"><i class="fa fa-bullhorn"></i> Notices & Updates</a>
               <a href="/search?s=csr" class="tag_link"><i class="fa fa-leaf"></i> CSR & Sustainability</a>
-              <a href="/search?s=board" class="tag_link"><i class="fa fa-users"></i> Board of Directors</a>
             </div>
           </div>
         )}
