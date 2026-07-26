@@ -8,7 +8,11 @@ const metaDescription = "Official corporate notices, financial results, sharehol
 
 // Extract unique categories and years for dynamic filters
 const categories = ['All', 'Financial Results', 'Shareholder Notice', 'Corporate Notice', 'Investor Relations'];
-const years = ['All Years', '2026', '2025', '2024'];
+const uniqueYears = Array.from(
+  new Set(newsPosts.map((post) => post.date.substring(0, 4)))
+).filter(y => y && y.length === 4 && parseInt(y) > 2000).sort((a, b) => parseInt(b) - parseInt(a));
+
+const years = ['All Years', ...uniqueYears];
 ---
 
 <Layout title={pageTitle} description={metaDescription}>
