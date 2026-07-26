@@ -212,6 +212,11 @@ const slides = [
       dot.classList.toggle('active', i === index);
     });
     currentSlide = index;
+
+    // Re-trigger language translation engine for newly active slide
+    if (typeof (window as any).applyCurrentLanguage === 'function') {
+      (window as any).applyCurrentLanguage();
+    }
   }
 
   function nextSlide() {
