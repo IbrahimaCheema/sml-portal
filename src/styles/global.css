@@ -314,19 +314,22 @@ img {
     display: none;
   }
 
-  /* Top Bar 2-Row Mobile Responsive Grid */
+  /* Top Bar 2-Row Mobile Responsive Layout */
   .top_bar {
-    padding: 6px 0;
+    padding: 5px 0;
   }
   .top_bar_info_wr {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    row-gap: 4px;
-    column-gap: 8px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
   .top_bar_info {
-    display: contents;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 6px;
   }
   .top_bar_info li {
     font-size: 11px;
@@ -336,34 +339,36 @@ img {
   }
   /* Row 1 Left: Phone */
   .top_bar_info li.info_phone {
-    grid-column: 1;
-    grid-row: 1;
+    order: 1;
+  }
+  /* Row 1 Middle: Language */
+  .top_bar_info li.info_lang {
+    order: 2;
   }
   /* Row 1 Right: Social Icons */
   .top_bar_socials {
-    grid-column: 2;
-    grid-row: 1;
-    margin-left: 0;
+    order: 3;
+    margin-left: auto;
     gap: 6px;
-    justify-self: end;
+    display: flex;
+    align-items: center;
   }
   .top_bar_socials a {
     width: 22px;
     height: 22px;
   }
-  /* Row 2 Left: Address */
+  /* Row 2 Full Width: Complete Full Address (No Cutting Off!) */
   .top_bar_info li.info_address {
-    grid-column: 1;
-    grid-row: 2;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 230px;
-  }
-  /* Row 2 Right: Language Selector */
-  .top_bar_info li.info_lang {
-    grid-column: 2;
-    grid-row: 2;
-    justify-self: end;
+    order: 4;
+    width: 100%;
+    font-size: 10.5px;
+    line-height: 1.3;
+    white-space: normal;
+    text-align: center;
+    border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    padding-top: 3px;
+    margin-top: 1px;
+    color: #e0e0e0;
   }
 }
 
