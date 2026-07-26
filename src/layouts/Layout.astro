@@ -6,11 +6,13 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  isHome?: boolean;
 }
 
 const { 
   title = "Shakarganj Limited - SML",
-  description = "Shakarganj Limited, incorporated in 1967, is listed on the Pakistan Stock Exchange. Market leader in refined sugar and biofuels."
+  description = "Shakarganj Limited, incorporated in 1967, is listed on the Pakistan Stock Exchange. Market leader in refined sugar and biofuels.",
+  isHome
 } = Astro.props;
 ---
 
@@ -37,7 +39,7 @@ const {
       <main id="main">
         <slot />
       </main>
-      <Footer />
+      <Footer isHome={isHome} />
     </div>
 
     <!-- Scroll to Top Button -->

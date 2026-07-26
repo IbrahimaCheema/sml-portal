@@ -1,82 +1,95 @@
 ---
+interface Props {
+  isHome?: boolean;
+}
+
+const { isHome } = Astro.props;
+
+// Auto-detect if current page is main index page
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
+const isMainIndex = isHome !== undefined 
+  ? isHome 
+  : (currentPath === '' || currentPath === '/index' || currentPath === '/index.html');
 ---
 
-<footer id="footer">
-  <!-- Widgets Row -->
-  <div class="footer_widgets_row">
-    <div class="container">
-      <div class="footer_grid">
-        <!-- Col 1 -->
-        <div class="footer_col">
-          <div class="footer_logo">
-            <a href="/">
-              <img src="https://docs.sml.com.pk/images/footer-logo.png" alt="Shakarganj Limited" width="182" height="60" />
-            </a>
-          </div>
-          <p class="about_text">
-            Shakarganj Limited, incorporated in 1967, is a leading diversified industrial group in Pakistan producing high-grade refined sugar, biofuels, and power.
-          </p>
-        </div>
-
-        <!-- Column 2: Registration / NTN -->
-        <div class="footer_col">
-          <h4 class="footer_title">Registration / NTN</h4>
-          <ul class="registration_info">
-            <li>
-              <strong>Company Registration Number</strong>
-              <span>0002546</span>
-            </li>
-            <li>
-              <strong>National Tax Number</strong>
-              <span>1413603-1</span>
-            </li>
-            <li>
-              <strong>Sales Tax Number</strong>
-              <span>04-06-1703-002-46</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Column 3: Quick Links -->
-        <div class="footer_col">
-          <h4 class="footer_title">Quick Links</h4>
-          <ul class="footer_links">
-            <li><a href="https://www.sml.com.pk/company-profile/">Company Profile</a></li>
-            <li><a href="/board-of-directors">Board of Directors</a></li>
-            <li><a href="https://www.sml.com.pk/financial-reports/">Financial Highlights</a></li>
-            <li><a href="https://www.sml.com.pk/csr/">Corporate Social Responsibility</a></li>
-            <li><a href="https://www.sml.com.pk/notices-and-updates/">Notices & Updates</a></li>
-            <li><a href="https://www.sml.com.pk/careers/">Careers</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 4: Search & Language -->
-        <div class="footer_col" style="position: relative;">
-          <!-- 1. Search Bar -->
-          <form class="footer_search_form" action="/search" method="get">
-            <input type="search" name="s" id="footer_search_input" placeholder="Search portal..." aria-label="Search portal" autocomplete="off" />
-            <button type="submit">Search</button>
-          </form>
-          <div id="footer_live_dropdown" class="footer_live_dropdown_box"></div>
-
-          <!-- 2. Language Dropdown -->
-          <div class="language_selector">
-            <label for="lang_select" class="lang_label">
-              <i class="fa fa-globe"></i> Language / زبان
-            </label>
-            <select id="lang_select" class="lang_dropdown" aria-label="Select Language">
-              <option value="en" selected>English</option>
-              <option value="ur">اردو (Urdu)</option>
-            </select>
+<footer id="footer" class={!isMainIndex ? 'compact_footer' : ''}>
+  {isMainIndex && (
+    <!-- Widgets Row (Rich Footer on Main Index Page Only) -->
+    <div class="footer_widgets_row">
+      <div class="container">
+        <div class="footer_grid">
+          <!-- Col 1 -->
+          <div class="footer_col">
+            <div class="footer_logo">
+              <a href="/">
+                <img src="https://docs.sml.com.pk/images/footer-logo.png" alt="Shakarganj Limited" width="182" height="60" />
+              </a>
+            </div>
+            <p class="about_text">
+              Shakarganj Limited, incorporated in 1967, is a leading diversified industrial group in Pakistan producing high-grade refined sugar, biofuels, and power.
+            </p>
           </div>
 
-          <p class="updated_timestamp"><em>Updated on: 23 July, 2026</em></p>
+          <!-- Column 2: Registration / NTN -->
+          <div class="footer_col">
+            <h4 class="footer_title">Registration / NTN</h4>
+            <ul class="registration_info">
+              <li>
+                <strong>Company Registration Number</strong>
+                <span>0002546</span>
+              </li>
+              <li>
+                <strong>National Tax Number</strong>
+                <span>1413603-1</span>
+              </li>
+              <li>
+                <strong>Sales Tax Number</strong>
+                <span>04-06-1703-002-46</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Quick Links -->
+          <div class="footer_col">
+            <h4 class="footer_title">Quick Links</h4>
+            <ul class="footer_links">
+              <li><a href="https://www.sml.com.pk/company-profile/">Company Profile</a></li>
+              <li><a href="/board-of-directors">Board of Directors</a></li>
+              <li><a href="/financial-reports">Financial Reports</a></li>
+              <li><a href="/shareholder-information">Shareholder's Information</a></li>
+              <li><a href="https://www.sml.com.pk/notices-and-updates/">Notices & Updates</a></li>
+              <li><a href="https://www.sml.com.pk/careers/">Careers</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Search & Language -->
+          <div class="footer_col" style="position: relative;">
+            <!-- 1. Search Bar -->
+            <form class="footer_search_form" action="/search" method="get">
+              <input type="search" name="s" id="footer_search_input" placeholder="Search portal..." aria-label="Search portal" autocomplete="off" />
+              <button type="submit">Search</button>
+            </form>
+            <div id="footer_live_dropdown" class="footer_live_dropdown_box"></div>
+
+            <!-- 2. Language Dropdown -->
+            <div class="language_selector">
+              <label for="lang_select" class="lang_label">
+                <i class="fa fa-globe"></i> Language / زبان
+              </label>
+              <select id="lang_select" class="lang_dropdown" aria-label="Select Language">
+                <option value="en" selected>English</option>
+                <option value="ur">اردو (Urdu)</option>
+              </select>
+            </div>
+
+            <p class="updated_timestamp"><em>Updated on: 26 July, 2026</em></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  )}
 
-  <!-- Copyright Row -->
+  <!-- Copyright Row (Universal on All Pages) -->
   <div class="copyright_row">
     <div class="container copyright_flex">
       <div class="social_links">
@@ -98,6 +111,10 @@
     line-height: 1.6;
   }
 
+  .compact_footer {
+    background-color: var(--footer-dark) !important;
+  }
+
   .footer_widgets_row {
     padding: 60px 0 40px;
   }
@@ -117,11 +134,11 @@
   .footer_logo img {
     margin-bottom: 10px;
   }
-  .footer_text {
+  .about_text {
     color: #999;
   }
 
-  .widget_title {
+  .footer_title {
     color: #ffffff;
     font-size: 16px;
     font-family: var(--font-heading);
@@ -132,22 +149,12 @@
     display: inline-block;
   }
 
-  .footer_notices li {
-    margin-bottom: 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    padding-bottom: 10px;
-  }
-  .footer_notices a {
-    color: #ccc;
-    display: block;
-    line-height: 1.4;
-    margin-bottom: 4px;
-  }
-  .footer_notices a:hover {
-    color: var(--primary-color);
-  }
   .footer_links li {
     margin-bottom: 8px;
+  }
+  .footer_links a {
+    color: #a0a0a0;
+    transition: color 0.2s ease;
   }
   .footer_links a:hover {
     color: var(--primary-color);
@@ -171,16 +178,6 @@
   .registration_info span {
     color: #a0a0a0;
     font-size: 13px;
-  }
-  .post_date {
-    font-size: 11px;
-    color: #777;
-  }
-
-  .secp_footer_img img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
   }
 
   .footer_search_form {
@@ -337,7 +334,7 @@
   const footerPortalIndex = [
     { title: "Sugar & Allied Products Division", link: "https://www.sml.com.pk/sugar/", cat: "Segments", tags: ["sugar", "white sugar", "brown sugar", "refined", "sml", "shakarganj"] },
     { title: "Biofuels & Renewable Power", link: "https://www.sml.com.pk/biofuels/", cat: "Segments", tags: ["biofuel", "ethanol", "power", "sml", "shakarganj"] },
-    { title: "Financial Reports & Highlights", link: "https://www.sml.com.pk/financial-reports/", cat: "Investor Relations", tags: ["financial", "reports", "quarterly", "annual", "sml", "shakarganj"] },
+    { title: "Financial Reports & Highlights", link: "/financial-reports", cat: "Investor Relations", tags: ["financial", "reports", "quarterly", "annual", "sml", "shakarganj"] },
     { title: "Company Profile & 50+ Years Legacy", link: "https://www.sml.com.pk/company-profile/", cat: "About Us", tags: ["company", "profile", "history", "sml", "shakarganj"] },
     { 
       title: "Board of Directors & Executive Management", 
@@ -357,7 +354,7 @@
     },
     { title: "Corporate Social Responsibility (CSR)", link: "https://www.sml.com.pk/csr/", cat: "Sustainability", tags: ["csr", "sustainability", "foundation", "sml", "shakarganj"] },
     { title: "Notices of General Meetings (EGM & CBS)", link: "https://www.sml.com.pk/notices-and-updates/", cat: "Notices", tags: ["notices", "egm", "cbs", "updates", "sml", "shakarganj"] },
-    { title: "Complaint Handling Cell & SECP SDMS", link: "https://www.sml.com.pk/shareholder-information/", cat: "Regulatory", tags: ["complaint", "secp", "jama punji", "sdms", "sml", "shakarganj"] },
+    { title: "Complaint Handling Cell & SECP SDMS", link: "/shareholder-information", cat: "Regulatory", tags: ["complaint", "secp", "jama punji", "sdms", "sml", "shakarganj"] },
     { title: "Pattern of Shareholding, NTN & Shares", link: "https://www.sml.com.pk/pattern-of-shareholding/", cat: "Investor Relations", tags: ["shareholding", "ntn", "registration", "free float", "sml", "shakarganj"] },
     { title: "Careers & Opportunities", link: "https://www.sml.com.pk/careers/", cat: "HR", tags: ["careers", "jobs", "hiring", "sml", "shakarganj"] }
   ];
