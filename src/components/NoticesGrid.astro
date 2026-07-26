@@ -1,46 +1,43 @@
 ---
-const notices = [
-  {
-    image: "https://docs.sml.com.pk/images/notice-q2-2026.jpg",
-    title: "Condensed Interim Financial Information for Half Year Ended March 31, 2026",
-    link: "https://www.sml.com.pk/financial-reports/"
-  },
-  {
-    image: "https://docs.sml.com.pk/images/notice-egm.png",
-    title: "Notice of Extraordinary General Meeting (EGM)",
-    link: "https://www.sml.com.pk/notice-of-general-meetings/"
-  },
-  {
-    image: "https://docs.sml.com.pk/images/notice-corp-brief.png",
-    title: "Corporate Briefing Session 2025 Presentation",
-    link: "https://www.sml.com.pk/notices-and-updates/"
-  },
-  {
-    image: "https://docs.sml.com.pk/images/notice-q1-2025.jpg",
-    title: "Quarterly Report First Quarter Ended December 31, 2025",
-    link: "https://www.sml.com.pk/financial-reports/"
-  }
-];
+import { newsPosts } from '../data/newsPosts';
+
+// Get latest 4 posts
+const latestNotices = newsPosts.slice(0, 4);
 ---
 
 <section class="notices_section">
   <div class="container">
-    <h2 class="section_title text-center">Notices & Updates</h2>
+    <div class="notices_header_flex">
+      <h2 class="section_title">Notices & Updates</h2>
+      <a href="/blog" class="view_all_link">
+        View All Notices <i class="fa fa-arrow-right"></i>
+      </a>
+    </div>
 
     <div class="notices_grid">
-      {notices.map((notice) => (
+      {latestNotices.map((notice) => (
         <div class="notice_card move">
           <div class="notice_image">
-            <a href={notice.link}>
-              <img src={notice.image} alt={notice.title} width="350" height="250" loading="lazy" />
+            <a href={notice.pdfUrl || notice.linkUrl} target={notice.pdfUrl ? "_blank" : "_self"}>
+              <img 
+                src={notice.featuredImage} 
+                alt={notice.title} 
+                width="350" 
+                height="250" 
+                loading="lazy" 
+                onerror="this.src='https://docs.sml.com.pk/images/report_2026_q2_thumb.jpg'"
+              />
             </a>
+            <span class="notice_cat_badge">{notice.category}</span>
           </div>
           <div class="notice_body">
             <h3 class="notice_title">
-              <a href={notice.link}>{notice.title}</a>
+              <a href={notice.pdfUrl || notice.linkUrl} target={notice.pdfUrl ? "_blank" : "_self"}>
+                {notice.title}
+              </a>
             </h3>
             <div class="notice_date">
-              <i class="fa fa-calendar"></i> {notice.date}
+              <i class="fa fa-calendar"></i> {notice.displayDate}
             </div>
           </div>
         </div>
@@ -54,12 +51,59 @@ const notices = [
     padding: 70px 0;
     background-color: #f9f9f9;
   }
+  .notices_header_flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
   .section_title {
-    font-size: 38px;
+    font-size: 32px;
     font-family: var(--font-heading);
     font-weight: 700;
     color: #222222;
-    margin-bottom: 40px;
+    margin: 0;
+  }
+
+  .view_all_link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(46, 125, 50, 0.25);
+  }
+
+  .view_all_link:hover {
+    background: var(--primary-hover);
+    transform: translateX(3px);
+  }
+
+  .notice_image {
+    position: relative;
+  }
+
+  .notice_cat_badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 3px 8px;
+    background: rgba(15, 23, 42, 0.85);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(4px);
   }
 
   .notices_grid {
