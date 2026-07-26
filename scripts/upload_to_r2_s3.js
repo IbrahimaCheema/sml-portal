@@ -1,4 +1,4 @@
-import { S3Client, PutObjectCommand, DeleteObjectCommand } from '@aws-sdk/client-s3';
+import { S3Client, PutObjectCommand, DeleteObjectCommand, ListObjectsV2Command } from '@aws-sdk/client-s3';
 import fs from 'fs';
 import path from 'path';
 
@@ -56,46 +56,80 @@ async function uploadFolder(localDir, s3Prefix = '') {
   }
 }
 
-async function deleteNonMedia() {
-  const objectsToDelete = ['index.html', '_astro/index.BDK4Mvu0.css'];
-  for (const key of objectsToDelete) {
-    try {
-      console.log(`Deleting non-media object -> ${key}...`);
-      await s3Client.send(new DeleteObjectCommand({
-        Bucket: BUCKET_NAME,
-        Key: key,
-      }));
-      console.log(`✓ Removed ${key} from R2 bucket`);
-    } catch (err) {
-      // Ignore if object does not exist
+async function sanitizeStaleR2Assets() {
+  console.log('\n--- Sanitizing Stale & Obsolete Objects in Cloudflare R2 ---');
+  try {
+    const listResp = await s3Client.send(new ListObjectsV2Command({
+      Bucket: BUCKET_NAME
+    }));
+
+    if (listResp.Contents && listResp.Contents.length > 0) {
+      for (const obj of listResp.Contents) {
+        const key = obj.Key;
+        if (!key) continue;
+
+        let shouldDelete = false;
+
+        // If key starts with images/
+        if (key.startsWith('images/')) {
+          const relativeFile = key.replace('images/', '');
+          const localFile = path.resolve('public/images', relativeFile);
+          if (!fs.existsSync(localFile)) {
+            shouldDelete = true;
+          }
+        }
+        // If key starts with fonts/
+        else if (key.startsWith('fonts/')) {
+          const relativeFile = key.replace('fonts/', '');
+          const localFile = path.resolve('public/fonts', relativeFile);
+          if (!fs.existsSync(localFile)) {
+            shouldDelete = true;
+          }
+        }
+        // Delete non-media HTML/CSS/JS files
+        else if (key.endsWith('.html') || key.endsWith('.css') || key.endsWith('.js') || key.startsWith('_astro/')) {
+          shouldDelete = true;
+        }
+
+        if (shouldDelete) {
+          console.log(`🗑️ Deleting stale/obsolete object from R2 -> ${key}...`);
+          await s3Client.send(new DeleteObjectCommand({
+            Bucket: BUCKET_NAME,
+            Key: key,
+          }));
+          console.log(`✓ Sanitized/Removed ${key}`);
+        }
+      }
     }
+  } catch (err) {
+    console.error('Error during sanitization:', err);
   }
 }
 
 async function main() {
   console.log(`Cleaning non-media files and syncing ONLY media files & fonts to Cloudflare R2 bucket: ${BUCKET_NAME}...`);
   
-  // 1. Remove non-media HTML/CSS objects from R2
-  await deleteNonMedia();
-
-  // 2. Upload strictly media files (images, docs, PDFs)
+  // 1. Upload strictly media files (images, docs, PDFs)
   const imagesDir = path.resolve('public/images');
   if (fs.existsSync(imagesDir)) {
     console.log('\n--- Uploading ONLY media files (public/images) ---');
     await uploadFolder(imagesDir, 'images');
   }
 
-  // 3. Upload fonts
+  // 2. Upload fonts
   const fontsDir = path.resolve('public/fonts');
   if (fs.existsSync(fontsDir)) {
     console.log('\n--- Uploading fonts (public/fonts) ---');
     await uploadFolder(fontsDir, 'fonts');
   }
 
-  console.log('\n🎉 CLOUDFLARE R2 BUCKET IS NOW 100% CLEAN — CONTAINING ONLY MEDIA ASSETS & FONTS (images/fonts/docs/PDFs)!');
+  // 3. Sanitize obsolete files in R2 (e.g. old director-* files)
+  await sanitizeStaleR2Assets();
+
+  console.log('\n🎉 CLOUDFLARE R2 BUCKET IS NOW 100% SANITIZED AND SYNCED!');
 }
 
 main().catch(err => {
-  console.error('❌ R2 Media Upload Failed:', err);
+  console.error('❌ R2 Media Sync & Sanitization Failed:', err);
   process.exit(1);
 });

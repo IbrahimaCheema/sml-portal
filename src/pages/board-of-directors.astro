@@ -1,0 +1,682 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const directors = [
+  {
+    name: "Mr. Manzoor Hussain",
+    role: "Chairman (Non-Executive Director)",
+    badge: "Chairman",
+    joined: "2023",
+    image: "https://docs.sml.com.pk/images/manzoor-hussain.png",
+    address: "Chak No. 77/5-L, P.O Chak No. 78/5-L, Tehsil & Dist. Sahiwal"
+  },
+  {
+    name: "Mr. Muhammad Pervez Akhtar",
+    role: "Chief Executive Officer",
+    badge: "CEO",
+    joined: "2026",
+    image: "https://docs.sml.com.pk/images/muhammad-pervez-akhtar.jpg",
+    address: "Executive Floor, IT Tower, 73 E 1, Hali Road, Gulberg III, Lahore"
+  },
+  {
+    name: "Mr. Ali Altaf Saleem",
+    role: "Deputy CEO (Executive Director)",
+    badge: "Deputy CEO",
+    joined: "2010",
+    image: "https://docs.sml.com.pk/images/ali-altaf-saleem.png",
+    address: "Executive Floor, IT Tower, 73 E 1, Hali Road, Gulberg III, Lahore",
+    engagements: ["Solution de Energy (Pvt) Ltd", "Lahore Trading Corp (Pvt) Ltd", "CS Capital (Pvt) Ltd", "SML (Pvt) Ltd"]
+  },
+  {
+    name: "Mr. Baber Zaman",
+    role: "Non-Executive Director",
+    badge: "Non-Executive",
+    joined: "2026",
+    image: "https://docs.sml.com.pk/images/baber-zaman.png",
+    address: "Gulberg Greens Residencia, Islamabad"
+  },
+  {
+    name: "Mr. Muhammad Adil Qureshi",
+    role: "Independent Director",
+    badge: "Independent",
+    joined: "2025",
+    image: "https://docs.sml.com.pk/images/muhammad-adil-qureshi.jpg",
+    address: "Madina Town, Faisalabad"
+  },
+  {
+    name: "Mr. Mustapha Altaf Saleem",
+    role: "Executive Director",
+    badge: "Executive",
+    joined: "2023",
+    image: "https://docs.sml.com.pk/images/mustapha-altaf-saleem.png",
+    address: "Executive Floor, IT Tower, 73 E 1, Hali Road, Gulberg III, Lahore"
+  },
+  {
+    name: "Mrs. Sana Atif",
+    role: "Independent Director",
+    badge: "Independent",
+    joined: "2023",
+    image: "https://docs.sml.com.pk/images/sana-atif.png",
+    address: "Abdullah Gardens, Faisalabad"
+  },
+  {
+    name: "Mr. Waqas Shafeeq",
+    role: "Non-Executive Director",
+    badge: "Non-Executive",
+    joined: "2026",
+    image: "https://docs.sml.com.pk/images/waqas-shafeeq.png",
+    address: "Punjab Small Industrial State Society, Bedian Road, Lahore"
+  }
+];
+
+const auditCommittee = [
+  {
+    name: "Mrs. Sana Atif",
+    role: "Chairperson (Independent Director)",
+    image: "https://docs.sml.com.pk/images/sana-atif.png"
+  },
+  {
+    name: "Mr. Manzoor Hussain",
+    role: "Member (Non-Executive Director)",
+    image: "https://docs.sml.com.pk/images/manzoor-hussain.png"
+  },
+  {
+    name: "Mr. Muhammad Adil Qureshi",
+    role: "Member (Independent Director)",
+    image: "https://docs.sml.com.pk/images/muhammad-adil-qureshi.jpg"
+  }
+];
+
+const hrCommittee = [
+  {
+    name: "Mrs. Sana Atif",
+    role: "Chairperson (Independent Director)",
+    image: "https://docs.sml.com.pk/images/sana-atif.png"
+  },
+  {
+    name: "Mr. Mustapha Altaf Saleem",
+    role: "Member (Executive Director)",
+    image: "https://docs.sml.com.pk/images/mustapha-altaf-saleem.png"
+  },
+  {
+    name: "Mr. Muhammad Adil Qureshi",
+    role: "Member (Independent Director)",
+    image: "https://docs.sml.com.pk/images/muhammad-adil-qureshi.jpg"
+  }
+];
+
+const riskCommittee = [
+  {
+    name: "Mr. Muhammad Adil Qureshi",
+    role: "Chairman (Independent Director)",
+    image: "https://docs.sml.com.pk/images/muhammad-adil-qureshi.jpg"
+  },
+  {
+    name: "Mr. Ali Altaf Saleem",
+    role: "Member (Executive Director)",
+    image: "https://docs.sml.com.pk/images/ali-altaf-saleem.png"
+  },
+  {
+    name: "Mrs. Sana Atif",
+    role: "Member (Independent Director)",
+    image: "https://docs.sml.com.pk/images/sana-atif.png"
+  }
+];
+
+const management = [
+  {
+    name: "Mr. Muhammad Pervez Akhtar",
+    role: "Chief Executive Officer",
+    image: "https://docs.sml.com.pk/images/muhammad-pervez-akhtar.jpg"
+  },
+  {
+    name: "Mr. Ali Altaf Saleem",
+    role: "Deputy Chief Executive Officer",
+    image: "https://docs.sml.com.pk/images/ali-altaf-saleem.png"
+  },
+  {
+    name: "Mr. Mustapha Altaf Saleem",
+    role: "Vice President (Operations)",
+    image: "https://docs.sml.com.pk/images/mustapha-altaf-saleem.png"
+  },
+  {
+    name: "Mr. Asif Ali",
+    role: "Company Secretary",
+    image: "https://docs.sml.com.pk/images/asif-ali.jpg"
+  },
+  {
+    name: "Mr. Muhammad Asif",
+    role: "Chief Financial Officer",
+    image: "https://docs.sml.com.pk/images/muhammad-asif.jpg"
+  },
+  {
+    name: "Mr. Ibrahim A. Cheema",
+    role: "Chief Information Officer",
+    image: "https://docs.sml.com.pk/images/ibrahim-a-cheema.png"
+  }
+];
+
+const managementCommittees = [
+  {
+    title: "Executive Committee",
+    members: [
+      { name: "Mr. Muhammad Saifullah", role: "Chairman", image: "https://docs.sml.com.pk/images/muhammad-saifullah.png" },
+      { name: "Mr. Muhammad Pervez Akhtar", role: "Member", image: "https://docs.sml.com.pk/images/muhammad-pervez-akhtar.jpg" },
+      { name: "Mr. Mustapha Altaf Saleem", role: "Member", image: "https://docs.sml.com.pk/images/mustapha-altaf-saleem.png" }
+    ]
+  },
+  {
+    title: "Business Strategy Committee",
+    members: [
+      { name: "Mr. Ali Altaf Saleem", role: "Chairman", image: "https://docs.sml.com.pk/images/ali-altaf-saleem.png" },
+      { name: "Mr. Muhammad Pervez Akhtar", role: "Member", image: "https://docs.sml.com.pk/images/muhammad-pervez-akhtar.jpg" },
+      { name: "Mr. Muhammad Asif", role: "Member", image: "https://docs.sml.com.pk/images/muhammad-asif.jpg" }
+    ]
+  },
+  {
+    title: "System & Technology Committee",
+    members: [
+      { name: "Mr. Muhammad Pervez Akhtar", role: "Chairman", image: "https://docs.sml.com.pk/images/muhammad-pervez-akhtar.jpg" },
+      { name: "Mr. Muhammad Asif", role: "Member", image: "https://docs.sml.com.pk/images/muhammad-asif.jpg" },
+      { name: "Mr. Ibrahim A. Cheema", role: "Member", image: "https://docs.sml.com.pk/images/ibrahim-a-cheema.png" }
+    ]
+  }
+];
+---
+
+<Layout title="Board of Directors & Management - Shakarganj Limited">
+  <!-- Modernized Page Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>Investor Relations</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Board of Directors</span>
+      </div>
+      <h1 class="hero_page_title">Profile of Board of Directors & Management</h1>
+      <p class="hero_subtitle">Guiding Shakarganj Limited with integrity, strategic vision, and corporate governance excellence.</p>
+    </div>
+  </section>
+
+  <!-- Main Content Container with Tabs -->
+  <section class="directors_section">
+    <div class="container">
+      <!-- Modern Interactive Tab Navigation Bar -->
+      <div class="tab_navigation_bar">
+        <button class="dir_tab_btn active" data-tab="tab_bod">Board of Directors</button>
+        <button class="dir_tab_btn" data-tab="tab_audit">Audit Committee</button>
+        <button class="dir_tab_btn" data-tab="tab_hr">HR & Remuneration</button>
+        <button class="dir_tab_btn" data-tab="tab_risk">Risk Management</button>
+        <button class="dir_tab_btn" data-tab="tab_mgmt">The Management</button>
+        <button class="dir_tab_btn" data-tab="tab_mgmt_comm">Management Committees</button>
+      </div>
+
+      <!-- Tab Content 1: Board of Directors -->
+      <div class="tab_panel active" id="tab_bod">
+        <div class="section_intro text-center">
+          <h2>Board of Directors</h2>
+          <div class="heading_divider"></div>
+        </div>
+        <div class="directors_grid">
+          {directors.map((person) => (
+            <div class="director_card">
+              <div class="director_image_wrapper">
+                <img src={person.image} alt={person.name} loading="lazy" />
+                <span class="role_badge">{person.badge}</span>
+              </div>
+              <div class="director_info">
+                <h3>{person.name}</h3>
+                <p class="role_title">{person.role}</p>
+                <div class="joined_year"><i class="fa fa-calendar"></i> Joined Board: {person.joined}</div>
+                <div class="address_box">
+                  <strong>Address:</strong>
+                  <p>{person.address}</p>
+                </div>
+                {person.engagements && (
+                  <div class="engagements_box">
+                    <strong>Other Engagements:</strong>
+                    <ul>
+                      {person.engagements.map((eng) => <li><i class="fa fa-angle-right"></i> {eng}</li>)}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Tab Content 2: Audit Committee -->
+      <div class="tab_panel" id="tab_audit">
+        <div class="section_intro text-center">
+          <h2>Audit Committee</h2>
+          <div class="heading_divider"></div>
+        </div>
+        <div class="committees_grid">
+          {auditCommittee.map((person) => (
+            <div class="committee_card">
+              <div class="card_img">
+                <img src={person.image} alt={person.name} loading="lazy" />
+              </div>
+              <div class="card_details">
+                <h3>{person.name}</h3>
+                <p class="role_text">{person.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Tab Content 3: HR & Remuneration -->
+      <div class="tab_panel" id="tab_hr">
+        <div class="section_intro text-center">
+          <h2>HR, Remuneration and Nomination Committee</h2>
+          <div class="heading_divider"></div>
+        </div>
+        <div class="committees_grid">
+          {hrCommittee.map((person) => (
+            <div class="committee_card">
+              <div class="card_img">
+                <img src={person.image} alt={person.name} loading="lazy" />
+              </div>
+              <div class="card_details">
+                <h3>{person.name}</h3>
+                <p class="role_text">{person.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Tab Content 4: Risk Management -->
+      <div class="tab_panel" id="tab_risk">
+        <div class="section_intro text-center">
+          <h2>Risk Management Committee of the Board</h2>
+          <div class="heading_divider"></div>
+        </div>
+        <div class="committees_grid">
+          {riskCommittee.map((person) => (
+            <div class="committee_card">
+              <div class="card_img">
+                <img src={person.image} alt={person.name} loading="lazy" />
+              </div>
+              <div class="card_details">
+                <h3>{person.name}</h3>
+                <p class="role_text">{person.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Tab Content 5: The Management -->
+      <div class="tab_panel" id="tab_mgmt">
+        <div class="section_intro text-center">
+          <h2>The Management</h2>
+          <div class="heading_divider"></div>
+        </div>
+        <div class="committees_grid">
+          {management.map((person) => (
+            <div class="committee_card">
+              <div class="card_img">
+                <img src={person.image} alt={person.name} loading="lazy" />
+              </div>
+              <div class="card_details">
+                <h3>{person.name}</h3>
+                <p class="role_text">{person.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Tab Content 6: Management Committees -->
+      <div class="tab_panel" id="tab_mgmt_comm">
+        <div class="section_intro text-center">
+          <h2>Management Committees</h2>
+          <div class="heading_divider"></div>
+        </div>
+        
+        {managementCommittees.map((comm) => (
+          <div class="mgmt_sub_group">
+            <h3 class="comm_group_title">{comm.title}</h3>
+            <div class="committees_grid">
+              {comm.members.map((person) => (
+                <div class="committee_card">
+                  <div class="card_img">
+                    <img src={person.image} alt={person.name} loading="lazy" />
+                  </div>
+                  <div class="card_details">
+                    <h3>{person.name}</h3>
+                    <p class="role_text">{person.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Page Hero Banner */
+  .page_hero_banner {
+    background: linear-gradient(135deg, #004d00 0%, #002b00 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
+  }
+
+  /* Main Directors Section */
+  .directors_section {
+    padding: 60px 0 80px;
+    background-color: #f9f9f9;
+  }
+
+  /* Tab Navigation Bar */
+  .tab_navigation_bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 50px;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  }
+  .dir_tab_btn {
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: #555555;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .dir_tab_btn.active, .dir_tab_btn:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+  }
+
+  /* Tab Panels */
+  .tab_panel {
+    display: none;
+  }
+  .tab_panel.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section_intro {
+    margin-bottom: 40px;
+  }
+  .section_intro h2 {
+    font-size: 32px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #222222;
+  }
+  .heading_divider {
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+
+  /* Directors Grid (4 columns) */
+  .directors_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+
+  .director_card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    border: 1px solid #eaeaea;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .director_card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  }
+
+  .director_image_wrapper {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background-color: #f4f4f4;
+  }
+  .director_image_wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .role_badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .director_info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .director_info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    margin-bottom: 4px;
+  }
+  .role_title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  .joined_year {
+    font-size: 12px;
+    color: #777777;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .address_box, .engagements_box {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 12.5px;
+    color: #666666;
+    line-height: 1.45;
+  }
+  .address_box strong, .engagements_box strong {
+    color: #222222;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .engagements_box ul {
+    margin-top: 4px;
+  }
+  .engagements_box li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+
+  /* Committees Grid (3-4 columns) */
+  .committees_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  .committee_card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    display: flex;
+    gap: 20px;
+    padding: 18px;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  .committee_card:hover {
+    transform: translateY(-4px);
+  }
+  .card_img {
+    width: 90px;
+    height: 110px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f0f0f0;
+  }
+  .card_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .card_details h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    margin-bottom: 4px;
+  }
+  .role_text {
+    font-size: 13px;
+    color: #555555;
+    font-weight: 500;
+  }
+
+  /* Management Committees Sub Groups */
+  .mgmt_sub_group {
+    margin-bottom: 45px;
+  }
+  .comm_group_title {
+    font-size: 22px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+  }
+
+  @media (max-width: 991px) {
+    .directors_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .committees_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .directors_grid {
+      grid-template-columns: 1fr;
+    }
+    .committees_grid {
+      grid-template-columns: 1fr;
+    }
+    .tab_navigation_bar {
+      flex-direction: column;
+    }
+    .dir_tab_btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  const tabBtns = document.querySelectorAll<HTMLElement>('.dir_tab_btn');
+  const tabPanels = document.querySelectorAll<HTMLElement>('.tab_panel');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-tab');
+
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanels.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      if (targetId) {
+        document.getElementById(targetId)?.classList.add('active');
+      }
+
+      // Re-trigger language translation engine for newly active tab
+      if (typeof (window as any).applyCurrentLanguage === 'function') {
+        (window as any).applyCurrentLanguage();
+      }
+    });
+  });
+</script>
