@@ -313,5 +313,58 @@ img {
   .floating_social_dock {
     display: none;
   }
+
+  /* Top Bar 2-Row Mobile Responsive Grid */
+  .top_bar {
+    padding: 6px 0;
+  }
+  .top_bar_info_wr {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 4px;
+    column-gap: 8px;
+    align-items: center;
+  }
+  .top_bar_info {
+    display: contents;
+  }
+  .top_bar_info li {
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+  /* Row 1 Left: Phone */
+  .top_bar_info li.info_phone {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  /* Row 1 Right: Social Icons */
+  .top_bar_socials {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: 0;
+    gap: 6px;
+    justify-self: end;
+  }
+  .top_bar_socials a {
+    width: 22px;
+    height: 22px;
+  }
+  /* Row 2 Left: Address */
+  .top_bar_info li.info_address {
+    grid-column: 1;
+    grid-row: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 230px;
+  }
+  /* Row 2 Right: Language Selector */
+  .top_bar_info li.info_lang {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+  }
 }
+
 
