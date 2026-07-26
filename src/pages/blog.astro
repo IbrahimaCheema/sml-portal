@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import { newsPosts } from '../data/newsPosts';
 
 // Page Title & Metadata
@@ -13,8 +11,8 @@ const categories = ['All', 'Financial Results', 'Shareholder Notice', 'Corporate
 const years = ['All Years', '2026', '2025', '2024'];
 ---
 
-<Layout title={pageTitle}>
-  <Header />
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Hero Section -->
 
   <!-- Hero Section -->
   <section class="news_hero">
@@ -149,8 +147,6 @@ const years = ['All Years', '2026', '2025', '2024'];
 
     </div>
   </section>
-
-  <Footer />
 </Layout>
 
 <style>
@@ -372,20 +368,27 @@ const years = ['All Years', '2026', '2025', '2024'];
   .card_image_wrapper {
     position: relative;
     width: 100%;
-    height: 190px;
+    height: 200px;
     overflow: hidden;
-    background: #f1f5f9;
+    background: radial-gradient(circle, #ffffff 0%, #f1f5f9 100%);
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
   }
 
   .card_thumb {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
   }
 
   .news_card:hover .card_thumb {
-    transform: scale(1.05);
+    transform: scale(1.04);
   }
 
   .category_badge {
