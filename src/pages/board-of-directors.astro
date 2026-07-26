@@ -492,14 +492,15 @@ const managementCommittees = [
   .director_image_wrapper {
     position: relative;
     width: 100%;
-    height: 320px;
-    background-color: #f4f4f4;
+    aspect-ratio: 3 / 4;
+    background-color: #0f273b;
+    overflow: hidden;
   }
   .director_image_wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
+    object-position: 50% 12%;
   }
 
   .role_badge {
@@ -514,6 +515,8 @@ const managementCommittees = [
     padding: 4px 10px;
     border-radius: 4px;
     letter-spacing: 0.5px;
+    z-index: 2;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   }
 
   .director_info {
@@ -591,18 +594,18 @@ const managementCommittees = [
     transform: translateY(-4px);
   }
   .card_img {
-    width: 90px;
-    height: 110px;
+    width: 95px;
+    height: 120px;
     border-radius: 6px;
     overflow: hidden;
     flex-shrink: 0;
-    background: #f0f0f0;
+    background: #0f273b;
   }
   .card_img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
+    object-position: 50% 12%;
   }
   .card_details h3 {
     font-size: 16px;
@@ -640,9 +643,13 @@ const managementCommittees = [
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 680px) {
     .directors_grid {
       grid-template-columns: 1fr;
+    }
+    .director_image_wrapper {
+      width: 100%;
+      aspect-ratio: 3 / 4;
     }
     .committees_grid {
       grid-template-columns: 1fr;
