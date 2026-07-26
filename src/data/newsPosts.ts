@@ -893,17 +893,6 @@ export const newsPosts: NewsPost[] = [
     "pdfUrl": "https://www.sml.com.pk/notice-of-180th-board-of-directors-meeting/"
   },
   {
-    "id": "draw-result-successful-candidates-hajj-2018-81",
-    "title": "Draw result successful candidates Hajj 2018",
-    "date": "2018-01-16",
-    "displayDate": "16 January 2018",
-    "category": "Corporate Notice",
-    "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_81_2018.png",
-    "linkUrl": "https://www.sml.com.pk/hajj-draw-2018/",
-    "pdfUrl": "https://www.sml.com.pk/hajj-draw-2018/"
-  },
-  {
     "id": "financial-results-for-the-1st-quarter-ended-31-dec-2017-82",
     "title": "Financial results for the 1st quarter ended 31 Dec 2017",
     "date": "2018-01-10",
@@ -935,17 +924,6 @@ export const newsPosts: NewsPost[] = [
     "featuredImage": "https://docs.sml.com.pk/images/news_thumb_84_2017.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
-  },
-  {
-    "id": "crushing-season-2017-18-startup-85",
-    "title": "Crushing Season 2017-18 Startup",
-    "date": "2017-12-25",
-    "displayDate": "25 December 2017",
-    "category": "Corporate Notice",
-    "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_85_2017.jpg",
-    "linkUrl": "https://www.sml.com.pk/crushing-season-2017-18-startup/",
-    "pdfUrl": "https://www.sml.com.pk/crushing-season-2017-18-startup/"
   },
   {
     "id": "notice-of-49th-annual-general-meeting-86",
