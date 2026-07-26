@@ -123,9 +123,13 @@ img {
   gap: 15px;
 }
 
-.top_icon {
+.top_icon, .top_icon_svg {
+  fill: var(--primary-color) !important;
   color: var(--primary-color) !important;
   font-size: 13px;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .top_bar_socials {
