@@ -414,6 +414,9 @@ const reportsData = [
               <i class="fa fa-folder"></i> {yData.year}
             </button>
           ))}
+          <a href="/historical-reports" class="year_tab_btn historical_btn">
+            <i class="fa fa-history"></i> Historical Reports (1979–2016)
+          </a>
         </div>
       </div>
 
@@ -635,6 +638,18 @@ const reportsData = [
     color: #ffffff;
     border-color: var(--primary-color);
     box-shadow: 0 4px 12px rgba(0, 80, 0, 0.25);
+  }
+  .historical_btn {
+    background: linear-gradient(135deg, #181b1e 0%, #2c353d 100%) !important;
+    color: #ffb800 !important;
+    border: 1px solid rgba(255, 184, 0, 0.5) !important;
+    text-decoration: none;
+  }
+  .historical_btn:hover {
+    background: var(--primary-color) !important;
+    color: #ffffff !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 4px 14px rgba(184, 18, 30, 0.35) !important;
   }
 
   /* Year Panels */
