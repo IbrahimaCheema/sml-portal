@@ -1,0 +1,697 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const electionDocs = [
+  {
+    title: "Notice under Section 159(4) of Companies Act 2017",
+    date: "01 June 2026",
+    enPdf: "https://docs.sml.com.pk/docs/Notice-159-english-2026.pdf",
+    urPdf: "https://docs.sml.com.pk/docs/Notice-159-Urdu-2026.pdf"
+  },
+  {
+    title: "Notice of Election of Directors (EOGM)",
+    date: "01 June 2026",
+    enPdf: "https://docs.sml.com.pk/docs/eogm-2026-e.pdf",
+    urPdf: "https://docs.sml.com.pk/docs/eogm-2026-u.pdf"
+  },
+  {
+    title: "Form of Proxy for Election of Directors",
+    date: "01 June 2026",
+    enPdf: "https://docs.sml.com.pk/docs/eogm-proxy-2026-e.pdf",
+    urPdf: "https://docs.sml.com.pk/docs/eogm-proxy-2026-u.pdf"
+  }
+];
+
+const electionResultsDocs = [
+  {
+    title: "List of Shareholders for EOGM",
+    pdf: "https://docs.sml.com.pk/docs/List-of-Shareholders-for-EOGM.pdf",
+    note: "Contact Company Secretary for Login Details"
+  },
+  {
+    title: "Election of Directors Results 2026",
+    pdf: "https://docs.sml.com.pk/docs/results2026.pdf",
+    note: "Official Voting Results"
+  },
+  {
+    title: "Report of Scrutinizer 2026",
+    pdf: "https://docs.sml.com.pk/docs/Report-of-Scrutinizer-2026.pdf",
+    note: "Independent Scrutinizer Audit Report"
+  }
+];
+
+const governanceDocs = [
+  {
+    title: "Code of Conduct",
+    category: "Ethics & Compliance",
+    pdf: "https://docs.sml.com.pk/docs/Code-of-Conduct.pdf"
+  },
+  {
+    title: "Policies Register",
+    category: "Corporate Policies",
+    pdf: "https://docs.sml.com.pk/docs/Policies-Register.pdf"
+  },
+  {
+    title: "Website Compliance Certificate (Sep 2025)",
+    category: "Regulatory Compliance",
+    pdf: "https://docs.sml.com.pk/docs/Website_Compliance_Certificate_Sep_2025.pdf"
+  },
+  {
+    title: "Gender Pay Gap Statement (Circular 10 of 2024)",
+    category: "Corporate Governance",
+    pdf: "https://docs.sml.com.pk/docs/Gender_Pay_Gap_Statement_2025.pdf"
+  },
+  {
+    title: "Unclaimed Dividend Details 2023",
+    category: "Shareholder Claims",
+    pdf: "https://docs.sml.com.pk/docs/Detail-of-Pending-Dividend-2023.pdf"
+  }
+];
+---
+
+<Layout title="Shareholder's Information - Shakarganj Limited">
+  <!-- Page Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>Investor Relations</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Shareholder's Information</span>
+      </div>
+      <h1 class="hero_page_title">Shareholder's Information</h1>
+      <p class="hero_subtitle">Essential corporate disclosures, stock registrar contacts, governance policies, and election results for Shakarganj Limited investors.</p>
+    </div>
+  </section>
+
+  <!-- Main Shareholder Information Section -->
+  <section class="shareholder_section">
+    <div class="container">
+
+      <!-- Top Contact Cards: Company Secretary & Share Registrar -->
+      <div class="contacts_grid">
+        <div class="contact_card">
+          <div class="card_header">
+            <i class="fa fa-user-tie icon"></i>
+            <div>
+              <h3>Company Secretary</h3>
+              <p class="name">Mr. Asif Ali</p>
+            </div>
+          </div>
+          <div class="card_body">
+            <p><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:asif.ali@shakarganj.pk">asif.ali@shakarganj.pk</a></p>
+            <p><i class="fa fa-phone"></i> <strong>Tel:</strong> +92 47 111 111 765</p>
+            <p><i class="fa fa-fax"></i> <strong>Fax:</strong> +92 47 763 1011</p>
+          </div>
+        </div>
+
+        <div class="contact_card">
+          <div class="card_header">
+            <i class="fa fa-building icon"></i>
+            <div>
+              <h3>Share Registrar</h3>
+              <p class="name">M/s CorpTec Associates (Pvt) Ltd</p>
+            </div>
+          </div>
+          <div class="card_body">
+            <p><i class="fa fa-map-marker"></i> 503-E, Johar Town, Lahore, Pakistan</p>
+            <p><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@corptec.com.pk">info@corptec.com.pk</a></p>
+            <p><i class="fa fa-phone"></i> <strong>Tel:</strong> +92 42 3517 0336 – 37</p>
+            <p><i class="fa fa-fax"></i> <strong>Fax:</strong> +92 42 3517 0338</p>
+          </div>
+        </div>
+
+        <div class="contact_card stock_card">
+          <div class="card_header">
+            <i class="fa fa-line-chart icon"></i>
+            <div>
+              <h3>Stock Exchange Listing</h3>
+              <p class="name">Pakistan Stock Exchange (PSX)</p>
+            </div>
+          </div>
+          <div class="card_body">
+            <p><strong>Trading Symbol:</strong> <span class="stock_badge">SML</span></p>
+            <p><strong>Sector:</strong> Sugar & Allied Industries</p>
+            <div class="stock_actions">
+              <a href="https://dps.psx.com.pk/company/SML" target="_blank" class="stock_btn">PSX Live Portal <i class="fa fa-external-link"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Governance Policies & Certificates -->
+      <div class="info_block">
+        <div class="block_header">
+          <i class="fa fa-file-text-o"></i>
+          <h2>Corporate Governance Policies & Statements</h2>
+        </div>
+        <div class="block_body">
+          <div class="governance_grid">
+            {governanceDocs.map((doc) => (
+              <div class="gov_card">
+                <div class="gov_icon"><i class="fa fa-file-pdf-o"></i></div>
+                <div class="gov_details">
+                  <span class="gov_cat">{doc.category}</span>
+                  <h4>{doc.title}</h4>
+                </div>
+                <a href={doc.pdf} target="_blank" class="gov_download_btn"><i class="fa fa-download"></i> Download</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Election of Directors Section -->
+      <div class="info_block">
+        <div class="block_header">
+          <i class="fa fa-gavel"></i>
+          <h2>Election of Directors (01 June 2026)</h2>
+        </div>
+        <div class="block_body">
+          <p class="lead_text">The Election of the Board of Directors of Shakarganj Limited was held on <strong>Monday, 01 June 2026</strong> for a term of three years.</p>
+          
+          <div class="doc_cards_grid">
+            {electionDocs.map((doc) => (
+              <div class="doc_card">
+                <div class="doc_title">{doc.title}</div>
+                <div class="doc_btns">
+                  <a href={doc.enPdf} target="_blank" class="pdf_btn en"><i class="fa fa-file-pdf-o"></i> English Notice</a>
+                  <a href={doc.urPdf} target="_blank" class="pdf_btn ur"><i class="fa fa-file-pdf-o"></i> Urdu Notice (اردو)</a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h4 class="sub_group_title"><i class="fa fa-poll"></i> Election Results & Scrutinizer Reports</h4>
+          <div class="doc_cards_grid">
+            {electionResultsDocs.map((doc) => (
+              <div class="doc_card">
+                <div class="doc_title">{doc.title}</div>
+                <p class="doc_note">{doc.note}</p>
+                <a href={doc.pdf} target="_blank" class="pdf_btn en full_btn"><i class="fa fa-download"></i> View / Download Document</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Regulatory & Advisors Grid -->
+      <div class="advisors_grid">
+        <!-- SECP Complaint Cell -->
+        <div class="advisor_box secp_box">
+          <h3><i class="fa fa-shield"></i> SECP Investor Complaint Section</h3>
+          <p>In case your complaint has not been properly redressed by us, you may lodge your complaint directly with the <strong>Securities and Exchange Commission of Pakistan (SECP)</strong>.</p>
+          <div class="secp_actions">
+            <a href="https://sdms.secp.gov.pk/" target="_blank" class="secp_link">Lodge Complaint via SECP SDMS Portal <i class="fa fa-external-link"></i></a>
+            <div class="secp_images_row">
+              <a href="https://sdms.secp.gov.pk/" target="_blank" class="secp_banner_card">
+                <img src="https://docs.sml.com.pk/images/secp2021.png" alt="SECP Service Desk Management System" />
+              </a>
+              <a href="https://www.jamapunji.pk/" target="_blank" class="jama_link">
+                <img src="https://docs.sml.com.pk/images/jama-punji.png" alt="Jama Punji" />
+                <span>Investor Awareness</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Auditors & Legal Advisors & Bankers -->
+        <div class="advisor_box">
+          <h3><i class="fa fa-balance-scale"></i> Corporate Auditors & Advisors</h3>
+          <ul class="advisor_list">
+            <li>
+              <strong>Auditors:</strong>
+              <p>M/s. Kreston Hyder Bhimji & Co. (Chartered Accountants)</p>
+            </li>
+            <li>
+              <strong>Legal Advisors:</strong>
+              <p>Masud & Mirza Associates | Siddiqui Bari Kasuri & Co.</p>
+            </li>
+            <li>
+              <strong>Bankers:</strong>
+              <p>MCB Bank Limited | National Bank of Pakistan</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Page Hero Banner */
+  .page_hero_banner {
+    background: linear-gradient(135deg, #004d00 0%, #002b00 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 800px;
+    line-height: 1.5;
+  }
+
+  /* Main Shareholder Section */
+  .shareholder_section {
+    padding: 60px 0 80px;
+    background-color: #f8faf8;
+  }
+
+  /* Contacts Top Grid (3 columns) */
+  .contacts_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 45px;
+  }
+
+  .contact_card {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e5e9e5;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .contact_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  }
+
+  .card_header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #f0f4f0;
+  }
+  .card_header .icon {
+    font-size: 26px;
+    color: var(--primary-color);
+    background: rgba(0,80,0,0.08);
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card_header h3 {
+    font-size: 18px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #222222;
+  }
+  .card_header .name {
+    font-size: 13.5px;
+    color: #555555;
+    font-weight: 600;
+  }
+
+  .card_body p {
+    font-size: 13.5px;
+    color: #555555;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card_body a {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  .card_body a:hover {
+    text-decoration: underline;
+  }
+
+  .stock_badge {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+
+  .stock_actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+  }
+  .stock_btn {
+    background: var(--primary-color) !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    text-align: center;
+    padding: 11px 16px;
+    border-radius: 6px;
+    font-size: 13.5px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+  }
+  .stock_btn:hover {
+    background: var(--primary-hover) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0,80,0,0.25);
+  }
+
+  /* Info Blocks (Accordion Style Cards) */
+  .info_block {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e5e9e5;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .block_header {
+    background: linear-gradient(135deg, #004d00 0%, #003300 100%);
+    color: #ffffff;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .block_header i {
+    font-size: 20px;
+    color: #a0c8a0;
+  }
+  .block_header h2 {
+    font-size: 20px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .block_body {
+    padding: 28px 24px;
+  }
+  .lead_text {
+    font-size: 15px;
+    color: #333333;
+    margin-bottom: 25px;
+  }
+
+  .sub_group_title {
+    font-size: 18px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 30px 0 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Document Cards Grid */
+  .doc_cards_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .doc_card {
+    background: #fdfdfd;
+    border: 1px solid #e8ede8;
+    border-radius: 8px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  .doc_title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #222222;
+    font-family: var(--font-heading);
+    line-height: 1.4;
+  }
+  .doc_note {
+    font-size: 12px;
+    color: #777777;
+  }
+  .doc_btns {
+    display: flex;
+    gap: 10px;
+  }
+  .pdf_btn {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .pdf_btn.en {
+    background: var(--primary-color);
+    color: #ffffff;
+  }
+  .pdf_btn.en:hover {
+    background: var(--primary-hover);
+  }
+  .pdf_btn.ur {
+    background: #eef5ee;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+  }
+  .pdf_btn.ur:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+  }
+  .full_btn {
+    width: 100%;
+  }
+
+  /* Governance Cards Grid */
+  .governance_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .gov_card {
+    background: #fdfdfd;
+    border: 1px solid #e8ede8;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .gov_icon {
+    font-size: 28px;
+    color: #d9534f;
+    flex-shrink: 0;
+  }
+  .gov_details {
+    flex-grow: 1;
+  }
+  .gov_cat {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+  }
+  .gov_details h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #222222;
+    margin-top: 2px;
+    font-family: var(--font-heading);
+  }
+  .gov_download_btn {
+    background: #f0f4f0;
+    color: var(--primary-color);
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+  .gov_download_btn:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+  }
+
+  /* Advisors Grid */
+  .advisors_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  .advisor_box {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e5e9e5;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  }
+  .advisor_box h3 {
+    font-size: 18px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .advisor_box p {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+  .secp_actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .secp_link {
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .secp_link:hover {
+    background: var(--primary-hover);
+    color: #ffffff;
+  }
+  .secp_images_row {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 12px;
+    align-items: center;
+    margin-top: 4px;
+  }
+  .secp_banner_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+  }
+  .secp_banner_card:hover, .jama_link:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .secp_banner_card img {
+    max-height: 34px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .jama_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    color: #444;
+    font-weight: 600;
+    font-size: 13px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+  }
+  .jama_link img {
+    height: 30px;
+    width: auto;
+  }
+
+  .advisor_list li {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .advisor_list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .advisor_list strong {
+    color: #222222;
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+  .advisor_list p {
+    margin: 4px 0 0;
+    color: #555555;
+    font-size: 13.5px;
+  }
+
+  @media (max-width: 991px) {
+    .contacts_grid {
+      grid-template-columns: 1fr;
+    }
+    .doc_cards_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .governance_grid {
+      grid-template-columns: 1fr;
+    }
+    .advisors_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .doc_cards_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</Layout>

@@ -86,6 +86,14 @@ async function sanitizeStaleR2Assets() {
             shouldDelete = true;
           }
         }
+        // If key starts with docs/
+        else if (key.startsWith('docs/')) {
+          const relativeFile = key.replace('docs/', '');
+          const localFile = path.resolve('public/docs', relativeFile);
+          if (!fs.existsSync(localFile)) {
+            shouldDelete = true;
+          }
+        }
         // Delete non-media HTML/CSS/JS files
         else if (key.endsWith('.html') || key.endsWith('.css') || key.endsWith('.js') || key.startsWith('_astro/')) {
           shouldDelete = true;
@@ -107,23 +115,30 @@ async function sanitizeStaleR2Assets() {
 }
 
 async function main() {
-  console.log(`Cleaning non-media files and syncing ONLY media files & fonts to Cloudflare R2 bucket: ${BUCKET_NAME}...`);
+  console.log(`Cleaning non-media files and syncing ONLY media files, PDFs & fonts to Cloudflare R2 bucket: ${BUCKET_NAME}...`);
   
-  // 1. Upload strictly media files (images, docs, PDFs)
+  // 1. Upload strictly media files (images)
   const imagesDir = path.resolve('public/images');
   if (fs.existsSync(imagesDir)) {
     console.log('\n--- Uploading ONLY media files (public/images) ---');
     await uploadFolder(imagesDir, 'images');
   }
 
-  // 2. Upload fonts
+  // 2. Upload PDFs (docs)
+  const docsDir = path.resolve('public/docs');
+  if (fs.existsSync(docsDir)) {
+    console.log('\n--- Uploading PDFs & Documents (public/docs) ---');
+    await uploadFolder(docsDir, 'docs');
+  }
+
+  // 3. Upload fonts
   const fontsDir = path.resolve('public/fonts');
   if (fs.existsSync(fontsDir)) {
     console.log('\n--- Uploading fonts (public/fonts) ---');
     await uploadFolder(fontsDir, 'fonts');
   }
 
-  // 3. Sanitize obsolete files in R2 (e.g. old director-* files)
+  // 4. Sanitize obsolete files in R2
   await sanitizeStaleR2Assets();
 
   console.log('\n🎉 CLOUDFLARE R2 BUCKET IS NOW 100% SANITIZED AND SYNCED!');

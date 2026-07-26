@@ -60,11 +60,15 @@ const portalIndex = [
     ]
   },
   {
-    title: "Board Committees & Executive Leadership",
+    title: "Shareholder's Information & Registrar Contacts",
     category: "Investor Relations",
-    description: "Detailed profiles of Audit Committee, HR & Remuneration Committee, Risk Management Committee, and Management Committees of Shakarganj Limited.",
-    link: "/board-of-directors",
-    tags: ["audit", "hr", "remuneration", "nomination", "risk", "management", "committees", "executive committee", "strategy", "technology", "governance"]
+    description: "Share Registrar CorpTec Associates, Election of Directors notices, Code of Conduct, Policies Register, Unclaimed Dividend details, SECP complaint cell & PSX listing.",
+    link: "/shareholder-information",
+    tags: [
+      "sml", "shakarganj", "shareholder", "shareholders", "registrar", "corptec", "dividend", "unclaimed", 
+      "election", "proxy", "scrutinizer", "results", "code of conduct", "policies", "compliance", 
+      "gender pay gap", "secp", "sdms", "jama punji", "psx", "stock"
+    ]
   },
   {
     title: "Corporate Social Responsibility (CSR) & Shakarganj Foundation",
@@ -84,7 +88,7 @@ const portalIndex = [
     title: "Company's Own Complaint Handling Cell & SECP SDMS",
     category: "Regulatory",
     description: "Dedicated shareholder complaint portal and direct link to Securities and Exchange Commission of Pakistan Service Desk Management System (SDMS) & Jama Punji.",
-    link: "https://www.sml.com.pk/shareholder-information/",
+    link: "/shareholder-information",
     tags: ["sml", "shakarganj", "complaint", "secp", "sdms", "jama punji", "investor", "shareholder", "helpdesk", "grievance", "cell"]
   },
   {
@@ -140,7 +144,7 @@ const searchResults = searchQuery
                 name="s" 
                 id="search_input"
                 value={query} 
-                placeholder="Type to search (e.g. sugar, biofuel, directors, CEO, notices)..." 
+                placeholder="Type to search (e.g. sugar, biofuel, registrar, dividend, notices)..." 
                 autocomplete="off"
                 required 
                 autofocus 
@@ -184,7 +188,7 @@ const searchResults = searchQuery
               <div class="no_results_box">
                 <i class="fa fa-folder-open-o no_results_icon"></i>
                 <h3>No exact matches found for "{query}"</h3>
-                <p>Try searching for keywords like <strong>sugar</strong>, <strong>biofuel</strong>, <strong>directors</strong>, <strong>financial</strong>, or <strong>sml</strong>.</p>
+                <p>Try searching for keywords like <strong>sugar</strong>, <strong>biofuel</strong>, <strong>shareholder</strong>, <strong>financial</strong>, or <strong>sml</strong>.</p>
               </div>
             )}
           </div>
@@ -193,12 +197,12 @@ const searchResults = searchQuery
             <h3>Start typing above or click popular portal topics below:</h3>
             <div class="popular_tags">
               <span>Quick topics:</span>
+              <a href="/search?s=shareholder" class="tag_link"><i class="fa fa-file-text-o"></i> Shareholder Info</a>
               <a href="/search?s=board" class="tag_link"><i class="fa fa-users"></i> Board of Directors</a>
               <a href="/search?s=sugar" class="tag_link"><i class="fa fa-industry"></i> Sugar Division</a>
               <a href="/search?s=biofuel" class="tag_link"><i class="fa fa-bolt"></i> Biofuels & Power</a>
-              <a href="/search?s=financial" class="tag_link"><i class="fa fa-file-text-o"></i> Financial Reports</a>
+              <a href="/search?s=financial" class="tag_link"><i class="fa fa-calculator"></i> Financial Reports</a>
               <a href="/search?s=notices" class="tag_link"><i class="fa fa-bullhorn"></i> Notices & Updates</a>
-              <a href="/search?s=csr" class="tag_link"><i class="fa fa-leaf"></i> CSR & Sustainability</a>
             </div>
           </div>
         )}
