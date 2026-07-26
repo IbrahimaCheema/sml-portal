@@ -92,7 +92,6 @@ const years = ['All Years', '2026', '2025', '2024'];
               data-category={post.category}
               data-year={postYear}
               data-title={post.title.toLowerCase()}
-              data-excerpt={post.excerpt.toLowerCase()}
             >
               <div class="card_image_wrapper">
                 <img 
@@ -117,8 +116,6 @@ const years = ['All Years', '2026', '2025', '2024'];
                     {post.title}
                   </a>
                 </h3>
-
-                <p class="card_excerpt">{post.excerpt}</p>
               </div>
 
               <div class="card_footer">
@@ -562,13 +559,10 @@ const years = ['All Years', '2026', '2025', '2024'];
         const cardCategory = card.dataset.category || '';
         const cardYear = card.dataset.year || '';
         const cardTitle = card.dataset.title || '';
-        const cardExcerpt = card.dataset.excerpt || '';
 
         const matchCategory = selectedCategory === 'All' || cardCategory === selectedCategory;
         const matchYear = selectedYear === 'All Years' || cardYear === selectedYear;
-        const matchSearch = searchQuery === '' || 
-                            cardTitle.includes(searchQuery) || 
-                            cardExcerpt.includes(searchQuery);
+        const matchSearch = searchQuery === '' || cardTitle.includes(searchQuery);
 
         if (matchCategory && matchYear && matchSearch) {
           card.style.display = 'flex';
