@@ -32,7 +32,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Notice is hereby given that an Extraordinary General Meeting (EGM) of Shakarganj Limited will be held to transact special corporate business.",
     "featuredImage": "https://docs.sml.com.pk/images/news_egm_2026_thumb.png",
     "linkUrl": "/shareholder-information",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-EGM-2026.pdf"
+    "pdfUrl": "https://docs.sml.com.pk/docs/SML-EGM-Notice-2026.pdf"
   },
   {
     "id": "corporate-briefing-session-2025",
@@ -43,7 +43,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Shakarganj Limited hosted its annual Corporate Briefing Session to present financial performance and strategic vision for FY 2025.",
     "featuredImage": "https://docs.sml.com.pk/images/news_corp_brief_2025_thumb.png",
     "linkUrl": "/shareholder-information",
-    "pdfUrl": "https://docs.sml.com.pk/docs/SML-CBS-2025.pdf"
+    "pdfUrl": "https://docs.sml.com.pk/docs/SML-Corporate-Briefing-2025.pdf"
   },
   {
     "id": "quarterly-report-31-december-2025",
@@ -65,7 +65,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Meeting of the Board of Directors of Shakarganj Limited scheduled to consider quarterly financial statements.",
     "featuredImage": "https://docs.sml.com.pk/images/news_board_meeting_thumb.jpg",
     "linkUrl": "/shareholder-information",
-    "pdfUrl": null
+    "pdfUrl": "https://docs.sml.com.pk/docs/SML-Board-Meeting-Notice-Feb-2026.pdf"
   },
   {
     "id": "annual-report-30-september-2025",
@@ -87,7 +87,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Notice is hereby given that the Annual General Meeting of Shakarganj Limited will be held on Thursday, 12 February 2026.",
     "featuredImage": "https://docs.sml.com.pk/images/news_agm_thumb.jpg",
     "linkUrl": "/shareholder-information",
-    "pdfUrl": null
+    "pdfUrl": "https://docs.sml.com.pk/docs/SML-AGM-Notice-2026.pdf"
   },
   {
     "id": "financial-results-3rd-quarter-30-june-2025",
@@ -109,7 +109,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Meeting of the Board of Directors of Shakarganj Limited to review Q3 accounts.",
     "featuredImage": "https://docs.sml.com.pk/images/news_board_meeting_thumb_2.jpg",
     "linkUrl": "/shareholder-information",
-    "pdfUrl": null
+    "pdfUrl": "https://docs.sml.com.pk/docs/SML-Board-Meeting-Notice-July-2025.pdf"
   },
   {
     "id": "financial-results-half-year-31-mar-2025",
@@ -131,7 +131,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Board meeting notice for reviewing half-yearly financial statements.",
     "featuredImage": "https://docs.sml.com.pk/images/news_board_meeting_thumb_3.jpg",
     "linkUrl": "/shareholder-information",
-    "pdfUrl": null
+    "pdfUrl": "https://docs.sml.com.pk/docs/SML-Board-Meeting-Notice-May-2025.pdf"
   },
   {
     "id": "corporate-briefing-session-2024",
@@ -142,7 +142,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Shakarganj Limited corporate presentation for analysts and investors reviewing performance.",
     "featuredImage": "https://docs.sml.com.pk/images/news_corp_brief_2024_thumb.png",
     "linkUrl": "/shareholder-information",
-    "pdfUrl": null
+    "pdfUrl": "https://docs.sml.com.pk/docs/SML-Corporate-Briefing-2024.pdf"
   },
   {
     "id": "quarterly-report-31-december-2024",
@@ -175,7 +175,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Notice of Annual General Meeting for shareholders of Shakarganj Limited.",
     "featuredImage": "https://docs.sml.com.pk/images/news_agm_2025_thumb.jpg",
     "linkUrl": "/shareholder-information",
-    "pdfUrl": null
+    "pdfUrl": "https://docs.sml.com.pk/docs/SML-AGM-Notice-2025.pdf"
   },
   {
     "id": "financial-results-3rd-quarter-30-june-2024",
@@ -208,7 +208,7 @@ export const newsPosts: NewsPost[] = [
     "excerpt": "Corporate Briefing Session for investors and shareholders on FY 2023 financial metrics.",
     "featuredImage": "https://docs.sml.com.pk/images/news_corp_brief_2023_thumb.png",
     "linkUrl": "/shareholder-information",
-    "pdfUrl": null
+    "pdfUrl": "https://docs.sml.com.pk/docs/SML-Corporate-Briefing-2023.pdf"
   },
   {
     "id": "quarterly-report-31-december-2023",
