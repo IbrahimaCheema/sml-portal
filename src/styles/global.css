@@ -90,3 +90,228 @@ img {
   background-color: var(--primary-hover);
   color: #fff;
 }
+
+/* Social Media Access Icons Design System */
+.top_bar_info_wr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top_bar_socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.top_bar_socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ccc;
+  font-size: 11px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.top_bar_socials a:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.header_socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header_socials .social_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: #f4f5f7;
+  color: #4a5568;
+  font-size: 13px;
+  transition: all 0.25s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.header_socials .social_btn.fb:hover {
+  background: #1877F2;
+  color: #fff;
+  border-color: #1877F2;
+  box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
+}
+
+.header_socials .social_btn.x:hover {
+  background: #000000;
+  color: #fff;
+  border-color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.header_socials .social_btn.li:hover {
+  background: #0A66C2;
+  color: #fff;
+  border-color: #0A66C2;
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
+}
+
+/* Footer Social Block */
+.footer_social_block {
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer_social_label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.footer_social_icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer_social_icons .social_icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2d3748;
+  color: #e2e8f0;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer_social_icons .social_icon.fb:hover {
+  background: #1877F2;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(24, 119, 242, 0.4);
+}
+
+.footer_social_icons .social_icon.x:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.3);
+}
+
+.footer_social_icons .social_icon.li:hover {
+  background: #0A66C2;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(10, 102, 194, 0.4);
+}
+
+.social_links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social_links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #cbd5e0;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.social_links a:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Floating Corporate Social Media Dock (Right Edge) */
+.floating_social_dock {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: -2px 0 15px rgba(0, 0, 0, 0.15);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  overflow: hidden;
+}
+
+.dock_btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 42px;
+  height: 42px;
+  padding: 0 14px;
+  background: #1a202c;
+  color: #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.dock_btn .dock_label {
+  opacity: 0;
+  max-width: 0;
+  margin-left: 0;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.dock_btn:hover {
+  width: 130px;
+  padding-left: 14px;
+}
+
+.dock_btn:hover .dock_label {
+  opacity: 1;
+  max-width: 90px;
+  margin-left: 10px;
+}
+
+.dock_btn.fb {
+  background: #1877F2;
+}
+
+.dock_btn.x {
+  background: #000000;
+}
+
+.dock_btn.li {
+  background: #0A66C2;
+}
+
+@media (max-width: 768px) {
+  .floating_social_dock {
+    display: none;
+  }
+}
+
