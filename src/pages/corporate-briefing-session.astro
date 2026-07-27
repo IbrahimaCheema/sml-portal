@@ -19,24 +19,16 @@ const sessions: CbsItem[] = cbsData;
 ---
 
 <Layout title={pageTitle} description={metaDescription}>
-  <!-- Hero Section -->
-  <section class="cbs_hero">
+  <!-- Modernized Page Hero Banner -->
+  <section class="page_hero_banner">
     <div class="container">
-      <div class="breadcrumbs">
-        <a href="/" class="home_link">Home</a>
-        <span class="sep"><i class="fa fa-angle-right"></i></span>
-        <a href="#" class="sub_link">Investor Relations</a>
-        <span class="sep"><i class="fa fa-angle-right"></i></span>
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>Investor Relations</span> <i class="fa fa-angle-right"></i>
         <span class="current">Corporate Briefing Session</span>
       </div>
-
-      <div class="hero_content_box">
-        <span class="hero_badge">Investor Relations • Corporate Briefings</span>
-        <h1 class="hero_title">Corporate Briefing Session</h1>
-        <p class="hero_subtitle">
-          Official investor presentation materials, corporate briefing session decks, business segment updates, and financial performance summaries presented to analysts, fund managers, and shareholders.
-        </p>
-      </div>
+      <h1 class="hero_page_title">Corporate Briefing Session</h1>
+      <p class="hero_subtitle">Official investor presentation materials, corporate briefing session decks, business segment updates, and financial performance summaries presented to analysts, fund managers, and shareholders.</p>
     </div>
   </section>
 
@@ -78,73 +70,47 @@ const sessions: CbsItem[] = cbsData;
 </Layout>
 
 <style>
-  /* Hero Section */
-  .cbs_hero {
-    background: linear-gradient(135deg, #0b1d12 0%, #15321f 50%, #0d2215 100%);
-    padding: 35px 0 45px 0;
+  /* Page Hero Banner */
+  .page_hero_banner {
+    background: linear-gradient(135deg, #004d00 0%, #002b00 100%);
     color: #ffffff;
+    padding: 55px 0 45px;
     border-bottom: 3px solid var(--primary-color);
   }
-
-  .cbs_hero .breadcrumbs {
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 13px;
-    color: #a0aec0;
-    margin-bottom: 20px;
   }
-
-  .cbs_hero .breadcrumbs a {
-    color: #cbd5e0;
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
     text-decoration: none;
     transition: color 0.2s ease;
   }
-
-  .cbs_hero .breadcrumbs a:hover {
-    color: var(--primary-color);
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
   }
-
-  .cbs_hero .breadcrumbs .sep {
-    color: #718096;
-    font-size: 11px;
-  }
-
-  .cbs_hero .breadcrumbs .current {
+  .hero_breadcrumbs .current {
     color: #ffffff;
     font-weight: 600;
   }
-
-  .hero_content_box {
-    max-width: 800px;
-  }
-
-  .hero_badge {
-    display: inline-block;
-    padding: 4px 12px;
-    background: rgba(46, 125, 50, 0.25);
-    border: 1px solid rgba(76, 175, 80, 0.4);
-    color: #81c784;
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 12px;
-  }
-
-  .hero_title {
-    font-size: 32px;
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
     font-weight: 700;
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
+    line-height: 1.2;
     color: #ffffff;
   }
-
   .hero_subtitle {
-    font-size: 15px;
-    color: #cbd5e0;
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
     margin: 0;
-    line-height: 1.6;
   }
 
   /* Grid Section */
