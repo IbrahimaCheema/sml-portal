@@ -36,7 +36,7 @@ export const newsPosts: NewsPost[] = [
   },
   {
     "id": "corporate-briefing-session-3",
-    "title": "Corporate Briefing Session",
+    "title": "Corporate Briefing Session FY 2025",
     "date": "2026-02-27",
     "displayDate": "27 February 2026",
     "category": "Investor Relations",
@@ -135,7 +135,7 @@ export const newsPosts: NewsPost[] = [
   },
   {
     "id": "corporate-briefing-session-12",
-    "title": "Corporate Briefing Session",
+    "title": "Corporate Briefing Session FY 2024",
     "date": "2025-02-20",
     "displayDate": "20 February 2025",
     "category": "Investor Relations",
