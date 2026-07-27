@@ -1,0 +1,802 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Page Metadata
+const pageTitle = "Company History | Shakarganj Limited";
+const metaDescription = "Explore the rich history and corporate milestones of Shakarganj Limited (SML) since its incorporation in 1967. From pioneering sugar production to bio-energy and sustainable innovation.";
+
+// Cloudflare R2 Image Endpoint & Fallback
+const pioneerImgUrl = "https://docs.sml.com.pk/images/mian_altaf_m_saleem.png";
+const pioneerImgLocal = "/images/mian_altaf_m_saleem.png";
+
+// Historical Milestones Dataset
+const era1Milestones = [
+  {
+    year: "1967",
+    category: "FOUNDATION",
+    title: "Incorporation & First Factory",
+    icon: "building",
+    description: "Incorporation of Shakarganj Limited as a Public Limited Company. Erection of our First Sugar Factory with an initial crushing capacity of 1,500 Tons of Cane per Day (TCD)."
+  },
+  {
+    year: "1972",
+    category: "COMMERCIAL LAUNCH",
+    title: "Start of Commercial Operations",
+    icon: "cog",
+    description: "Commenced commercial sugar refining operations in Jhang District, laying the foundation for Pakistan's premier agro-industrial complex."
+  },
+  {
+    year: "1979",
+    category: "PSX LISTED",
+    title: "Public Listing on Stock Exchange",
+    icon: "line-chart",
+    description: "Listed as a public limited company on the Karachi Stock Exchange (now Pakistan Stock Exchange - PSX: SML)."
+  },
+  {
+    year: "1982",
+    category: "INDUSTRIAL EXPANSION",
+    title: "Capacity Expansion to 4,000 TCD",
+    icon: "sliders",
+    description: "Crushing capacity expanded significantly to 4,000 TCD to meet growing national sugar demand."
+  },
+  {
+    year: "1983",
+    category: "RESEARCH & DEVELOPMENT",
+    title: "Shakarganj Sugar Research Institute",
+    icon: "flask",
+    description: "Establishment of the Shakarganj Sugar Research Institute (SSRI), fostering agricultural R&D and high-yield sugarcane crop breeding."
+  },
+  {
+    year: "1984",
+    category: "AGRICULTURE INNOVATION",
+    title: "Sugarcane Breeding Facility",
+    icon: "leaf",
+    description: "Initiated Pakistan's first sugarcane breeding facility under a controlled environmental shed."
+  },
+  {
+    year: "1985",
+    category: "RENEWABLE ENERGY",
+    title: "First Biofuel Distillery & Sugar Journal",
+    icon: "bolt",
+    description: "Erection of First Biofuel Plant with a production capacity of 40,000 Litres per Day (LPD). Launched the first issue of the Pakistan Sugar Journal under SSRI."
+  },
+  {
+    year: "1988",
+    category: "CORPORATE AWARD",
+    title: "KSE Top Company Award",
+    icon: "trophy",
+    description: "Awarded the Top Company Award on Exceptional Performance by the Karachi Stock Exchange."
+  },
+  {
+    year: "1990",
+    category: "DIVERSIFICATION",
+    title: "SSRI Library & Kane Wood Plant",
+    icon: "book",
+    description: "Established SSRI Central Research Library and launched Particle Board manufacturing plant under the brand name 'Kane Wood'."
+  },
+  {
+    year: "1992",
+    category: "CAPACITY EXPANSION",
+    title: "12,000 TCD Capacity & Pathology Lab",
+    icon: "microscope",
+    description: "Crushing capacity expanded threefold to 12,000 TCD. Established Sugarcane Pathology Laboratory for crop disease prevention."
+  },
+  {
+    year: "1993",
+    category: "CO-GENERATION",
+    title: "Co-Generation Division Established",
+    icon: "plug",
+    description: "Established Co-Generation Division for captive eco-friendly power generation from sugarcane bagasse."
+  },
+  {
+    year: "1995",
+    category: "BIOLOGICAL R&D",
+    title: "Insect Pest Bio Control Laboratory",
+    icon: "shield",
+    description: "Established Bio Control of Insect Pest Laboratory to promote eco-friendly organic farming solutions."
+  },
+  {
+    year: "1996",
+    category: "CROP PROTECTION",
+    title: "Biological Control of Borers Complex",
+    icon: "bug",
+    description: "Initiated field-scale Biological Control of Borers Complex across Punjab sugarcane farming regions."
+  },
+  {
+    year: "1997",
+    category: "GLOBAL SYMPOSIUM",
+    title: "ISSCT International Workshop Host",
+    icon: "globe",
+    description: "SSRI hosted the Engineering and Energy Workshop on Factory Design organized by the International Society of Sugar Cane Technologists (ISSCT)."
+  },
+  {
+    year: "1999",
+    category: "VARIETY APPROVAL",
+    title: "Variety 'SPSG-26' & Bio-Compost Plant",
+    icon: "check-circle",
+    description: "Official government approval of high-yield Sugarcane Variety 'SPSG-26'. Established Bio-Compost Plant, Bio-Technology Project, and Nestle Molasses Feed Project."
+  }
+];
+
+const era2Milestones = [
+  {
+    year: "2000",
+    category: "HUMAN CAPITAL",
+    title: "Teachers Training & R&D Symposium",
+    icon: "graduation-cap",
+    description: "Organized first R&D Workshop and established Teachers Training and Resource Center (TARC) for community education."
+  },
+  {
+    year: "2001",
+    category: "CSR & ARTS",
+    title: "Tissue Culture Lab & Jhang Art Gallery",
+    icon: "paint-brush",
+    description: "Established Tissue Culture Laboratory, sponsored Jhang Art Gallery, launched Shakarganj Social Action Program, and won Best Presented Annual Report Award."
+  },
+  {
+    year: "2002",
+    category: "BIOENERGY EXPANSION",
+    title: "Biofuel Expansion to 80,000 LPD",
+    icon: "tint",
+    description: "Expanded Biofuel Production Plant capacity to 80,000 Litres per Day. Launched Shakarganj Scholarship Program and 26 Adult Literacy Centers."
+  },
+  {
+    year: "2003",
+    category: "CORPORATE GROWTH",
+    title: "Crescent Ujala Merger & 120k LPD Biofuel",
+    icon: "handshake-o",
+    description: "Amalgamated with Crescent Ujala Limited. Biofuel capacity expanded to 120,000 LPD. Won Best Corporate Report Award, adopted 33 schools, and launched mobile dispensaries."
+  },
+  {
+    year: "2004",
+    category: "DAIRY & FOUNDATION",
+    title: "160k LPD Biofuel, Farms & Dairies",
+    icon: "cubes",
+    description: "Expanded Biofuel to 160,000 LPD. Established Shakarganj Farms Division, Shakarganj Foundation, Shakarganj Dairies, and approved Sugarcane Variety 'SPSG-394'."
+  },
+  {
+    year: "2005",
+    category: "2ND SUGAR FACTORY",
+    title: "Second Sugar Factory (8,000 TCD)",
+    icon: "industry",
+    description: "Erection of Second Sugar Factory with 8,000 TCD crushing capacity. Installed First Molecular Sieve Dehydration Plant (100,000 LPD). Won Best Corporate Report Award."
+  },
+  {
+    year: "2006",
+    category: "ORGANIC CERTIFICATION",
+    title: "Control Union Organic Sugar Certification",
+    icon: "certificate",
+    description: "Organic Sugar Project officially certified by Control Union International Netherlands. Approved Sugarcane Varieties 'NSG-311' and 'NSG-555'."
+  },
+  {
+    year: "2008",
+    category: "GRID POWER SUPPLY",
+    title: "8 MW Bio Power House to National Grid",
+    icon: "plug",
+    description: "Established 8 MW Bio Power House and commenced power supply to Pakistan's national grid. Installed Second Molecular Sieve Dehydration Plant (100,000 LPD)."
+  },
+  {
+    year: "2009",
+    category: "INTERNATIONAL CSR",
+    title: "Intel-AIM Singapore CSR Award",
+    icon: "award",
+    description: "Won Intel-AIM Corporate Responsibility Award under Asia's foremost CSR Awards Program in Singapore for outstanding community projects."
+  },
+  {
+    year: "2010",
+    category: "COMMUNITY AID",
+    title: "PARB Project & Flood Relief",
+    icon: "heartbeat",
+    description: "Launched nationwide Flood Relief Program. Executed PARB-funded Sugarcane Plant Improvement Project."
+  },
+  {
+    year: "2013",
+    category: "GLOBAL STANDARDS",
+    title: "Bonsucro Certification & USAID Project",
+    icon: "globe",
+    description: "Achieved Bonsucro Membership for Better Sugarcane Initiative. Established Tiger Compost Plant and executed USAID Adult Female Literacy Project."
+  },
+  {
+    year: "2016",
+    category: "FOOD GRADE CO2",
+    title: "Joint Venture Food Grade CO2 Plant",
+    icon: "glass",
+    description: "Established Joint Venture Food Grade Carbon Dioxide (CO2) Plant with a production capacity of 50 Metric Tons per Day."
+  },
+  {
+    year: "2017",
+    category: "GOLDEN JUBILEE",
+    title: "50th Anniversary Golden Jubilee",
+    icon: "star",
+    description: "Celebrated 50th Anniversary Golden Jubilee of Shakarganj Limited, announcing strong financial performance dividend."
+  },
+  {
+    year: "2023",
+    category: "SUSTAINABLE FUTURE",
+    title: "Continuous Industrial Leadership",
+    icon: "check-circle",
+    description: "Sustaining market leadership across refined sugar and biofuels with eco-friendly innovation and digital modernization."
+  }
+];
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Hero Section -->
+  <section class="history_hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/" class="home_link">Home</a>
+        <span class="sep"><i class="fa fa-angle-right"></i></span>
+        <a href="#" class="sub_link">About Us</a>
+        <span class="sep"><i class="fa fa-angle-right"></i></span>
+        <span class="current">Company History</span>
+      </div>
+
+      <div class="hero_content">
+        <span class="hero_badge">About Us • Our Heritage</span>
+        <h1 class="hero_title">Company History</h1>
+        <p class="hero_subtitle">
+          Over 55 years of visionary industrial leadership, agricultural innovation, renewable energy, and community development.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Section -->
+  <section class="history_main_section">
+    <div class="container">
+
+      <!-- Pioneer Leadership Tribute Card -->
+      <div class="pioneer_card">
+        <div class="pioneer_grid">
+          <div class="pioneer_image_col">
+            <div class="portrait_wrapper">
+              <img 
+                src={pioneerImgUrl} 
+                alt="Mian Altaf M. Saleem - Shakarganj Limited" 
+                width="150"
+                height="150"
+                loading="eager"
+                onerror={`this.src='${pioneerImgLocal}'`}
+              />
+              <span class="portrait_badge">Pioneer Leader</span>
+            </div>
+          </div>
+
+          <div class="pioneer_info_col">
+            <span class="pioneer_tag"><i class="fa fa-star"></i> ARCHITECT OF GROWTH</span>
+            <h2 class="pioneer_name">Mian Altaf M. Saleem</h2>
+            <span class="pioneer_sub">A Name Behind the Success Story of Shakarganj</span>
+            <p class="pioneer_bio">
+              Mian Altaf M. Saleem joined Shakarganj in 1973 during the establishment of our first sugar factory. Working under the guidance of our founding Chief Executive Officer, Haji Muhammad Shafi, he later succeeded him as CEO in November 1978, steering Shakarganj into a market-leading diversified corporate enterprise.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Navigation Tabs -->
+      <div class="timeline_nav_wrapper">
+        <div class="timeline_header">
+          <span class="sub_title">INNOVATION & EXPANSION</span>
+          <h2 class="main_title">Chronological Milestones</h2>
+          <p class="header_desc">Toggle between corporate eras to explore our historic milestones.</p>
+        </div>
+
+        <div class="era_tab_buttons">
+          <button class="era_btn active" id="tab_all" data-era="all">
+            <i class="fa fa-list"></i> All Milestones (1967 – Present)
+          </button>
+          <button class="era_btn" id="tab_era1" data-era="era1">
+            <i class="fa fa-university"></i> Era I: 1967 – 1999
+          </button>
+          <button class="era_btn" id="tab_era2" data-era="era2">
+            <i class="fa fa-rocket"></i> Era II: 2000 – Present
+          </button>
+        </div>
+      </div>
+
+      <!-- Timeline Container -->
+      <div class="timeline_container">
+        <div class="timeline_spine"></div>
+
+        <!-- ERA I Section -->
+        <div class="era_section" id="section_era1">
+          <div class="era_heading_pill">
+            <span>ERA I • FOUNDATION & INDUSTRIAL GROWTH (1967 – 1999)</span>
+          </div>
+
+          <div class="timeline_grid">
+            {era1Milestones.map((item, index) => (
+              <div class={`timeline_item ${index % 2 === 0 ? 'left_item' : 'right_item'}`}>
+                <div class="timeline_node">
+                  <span class="node_dot"></span>
+                </div>
+                
+                <div class="timeline_card">
+                  <div class="card_meta_row">
+                    <span class="year_badge">{item.year}</span>
+                    <span class="category_tag">{item.category}</span>
+                  </div>
+                  <h3 class="milestone_title">{item.title}</h3>
+                  <p class="milestone_desc">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- ERA II Section -->
+        <div class="era_section" id="section_era2">
+          <div class="era_heading_pill era2_pill">
+            <span>ERA II • DIVERSIFICATION & SUSTAINABILITY (2000 – PRESENT)</span>
+          </div>
+
+          <div class="timeline_grid">
+            {era2Milestones.map((item, index) => (
+              <div class={`timeline_item ${index % 2 === 0 ? 'left_item' : 'right_item'}`}>
+                <div class="timeline_node">
+                  <span class="node_dot"></span>
+                </div>
+                
+                <div class="timeline_card">
+                  <div class="card_meta_row">
+                    <span class="year_badge era2_badge">{item.year}</span>
+                    <span class="category_tag era2_tag">{item.category}</span>
+                  </div>
+                  <h3 class="milestone_title">{item.title}</h3>
+                  <p class="milestone_desc">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabAll = document.getElementById('tab_all');
+    const tabEra1 = document.getElementById('tab_era1');
+    const tabEra2 = document.getElementById('tab_era2');
+    const sectionEra1 = document.getElementById('section_era1');
+    const sectionEra2 = document.getElementById('section_era2');
+
+    if (!tabAll || !tabEra1 || !tabEra2) return;
+
+    function setActiveTab(btn) {
+      [tabAll, tabEra1, tabEra2].forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    tabAll.addEventListener('click', () => {
+      setActiveTab(tabAll);
+      sectionEra1.style.display = 'block';
+      sectionEra2.style.display = 'block';
+    });
+
+    tabEra1.addEventListener('click', () => {
+      setActiveTab(tabEra1);
+      sectionEra1.style.display = 'block';
+      sectionEra2.style.display = 'none';
+    });
+
+    tabEra2.addEventListener('click', () => {
+      setActiveTab(tabEra2);
+      sectionEra1.style.display = 'none';
+      sectionEra2.style.display = 'block';
+    });
+  });
+</script>
+
+<style>
+  /* Hero Section */
+  .history_hero {
+    background: linear-gradient(135deg, #0b1d12 0%, #15321f 50%, #0d2215 100%);
+    padding: 40px 0 50px 0;
+    color: #ffffff;
+    border-bottom: 3px solid var(--primary-color);
+  }
+
+  .history_hero .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #a0aec0;
+    margin-bottom: 20px;
+  }
+
+  .history_hero .breadcrumbs a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .history_hero .breadcrumbs a:hover {
+    color: var(--primary-color);
+  }
+
+  .history_hero .breadcrumbs .sep {
+    color: #718096;
+    font-size: 11px;
+  }
+
+  .history_hero .breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .hero_content {
+    max-width: 800px;
+  }
+
+  .hero_badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(46, 125, 50, 0.25);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    color: #81c784;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .hero_title {
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: #ffffff;
+  }
+
+  .hero_subtitle {
+    font-size: 16px;
+    color: #cbd5e0;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Main Section */
+  .history_main_section {
+    padding: 45px 0 75px 0;
+    background: #f8fafc;
+  }
+
+  /* Pioneer Leadership Tribute Card */
+  .pioneer_card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    padding: 32px;
+    margin-bottom: 50px;
+  }
+
+  .pioneer_grid {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .pioneer_image_col {
+    flex-shrink: 0;
+  }
+
+  .portrait_wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #81c784 100%);
+    box-shadow: 0 8px 20px rgba(22, 101, 52, 0.25);
+  }
+
+  .portrait_wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #ffffff;
+  }
+
+  .portrait_badge {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .pioneer_info_col {
+    flex-grow: 1;
+  }
+
+  .pioneer_tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+  }
+
+  .pioneer_name {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 4px 0;
+  }
+
+  .pioneer_sub {
+    font-size: 14px;
+    font-weight: 600;
+    color: #166534;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .pioneer_bio {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* Timeline Navigation Tabs */
+  .timeline_nav_wrapper {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .sub_title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .main_title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 8px 0;
+  }
+
+  .header_desc {
+    font-size: 15px;
+    color: #64748b;
+    margin: 0 0 24px 0;
+  }
+
+  .era_tab_buttons {
+    display: inline-flex;
+    gap: 10px;
+    background: #ffffff;
+    padding: 6px;
+    border-radius: 30px;
+    border: 1px solid #cbd5e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .era_btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 24px;
+    border: none;
+    background: transparent;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .era_btn:hover {
+    color: #1e293b;
+  }
+
+  .era_btn.active {
+    background: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(22, 101, 52, 0.3);
+  }
+
+  /* Vertical Timeline */
+  .timeline_container {
+    position: relative;
+    padding: 20px 0;
+  }
+
+  .timeline_spine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: linear-gradient(180deg, var(--primary-color) 0%, #22c55e 50%, var(--primary-color) 100%);
+    transform: translateX(-50%);
+    border-radius: 2px;
+    z-index: 1;
+  }
+
+  .era_section {
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  .era_heading_pill {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 35px;
+  }
+
+  .era_heading_pill span {
+    display: inline-block;
+    padding: 8px 24px;
+    background: #1c3c28;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 20px;
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 12px rgba(28, 60, 40, 0.3);
+  }
+
+  .era_heading_pill.era2_pill span {
+    background: #0f172a;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
+  }
+
+  .timeline_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .timeline_item {
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+
+  .timeline_item.left_item {
+    justify-content: flex-start;
+  }
+
+  .timeline_item.right_item {
+    justify-content: flex-end;
+  }
+
+  .timeline_node {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(22, 101, 52, 0.2);
+    z-index: 3;
+  }
+
+  .timeline_card {
+    width: 44%;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 22px 24px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline_card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e0;
+  }
+
+  .card_meta_row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .year_badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .year_badge.era2_badge {
+    background: #1e40af;
+  }
+
+  .category_tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .milestone_title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 8px 0;
+  }
+
+  .milestone_desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* Responsive Timeline */
+  @media (max-width: 868px) {
+    .pioneer_grid {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .pioneer_tag {
+      justify-content: center;
+    }
+
+    .timeline_spine {
+      left: 24px;
+      transform: none;
+    }
+
+    .timeline_node {
+      left: 24px;
+      transform: translateX(-50%);
+    }
+
+    .timeline_item.left_item,
+    .timeline_item.right_item {
+      justify-content: flex-end;
+    }
+
+    .timeline_card {
+      width: calc(100% - 50px);
+    }
+  }
+</style>
