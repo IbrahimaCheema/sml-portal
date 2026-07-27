@@ -1,0 +1,582 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Page Metadata
+const pageTitle = "Company's Profile | Shakarganj Limited";
+const metaDescription = "Company Profile of Shakarganj Limited (SML), incorporated in 1967. Market leader in refined sugar and biofuels with manufacturing facilities in Jhang District, Pakistan.";
+
+// Cloudflare R2 Image Endpoints & Local Fallbacks
+const sugarImgUrl = "https://docs.sml.com.pk/images/company_profile_sugar.jpg";
+const sugarImgLocal = "/images/company_profile_sugar.jpg";
+const biofuelImgUrl = "https://docs.sml.com.pk/images/company_profile_biofuel.jpg";
+const biofuelImgLocal = "/images/company_profile_biofuel.jpg";
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Hero Section -->
+  <section class="profile_hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/" class="home_link">Home</a>
+        <span class="sep"><i class="fa fa-angle-right"></i></span>
+        <a href="#" class="sub_link">About Us</a>
+        <span class="sep"><i class="fa fa-angle-right"></i></span>
+        <span class="current">Company's Profile</span>
+      </div>
+
+      <div class="hero_content">
+        <span class="hero_badge">About Us • Corporate Overview</span>
+        <h1 class="hero_title">Company's Profile</h1>
+        <p class="hero_subtitle">
+          Leading Pakistan's renewable agro-industrial transformation since 1967 with premier manufacturing in refined sugar and biofuels.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile Content Section -->
+  <section class="profile_main_section">
+    <div class="container">
+      
+      <!-- Executive Overview Card -->
+      <div class="overview_card">
+        <div class="overview_header">
+          <div class="overview_icon">
+            <i class="fa fa-building"></i>
+          </div>
+          <div>
+            <h2 class="overview_title">Profile of Company</h2>
+            <span class="overview_tagline">Shakarganj Limited (PSX: SML)</span>
+          </div>
+        </div>
+
+        <div class="overview_body">
+          <p>
+            <strong>Shakarganj Limited</strong>, incorporated in 1967, is listed on the Pakistan Stock Exchange with the trading symbol <strong>SML</strong>. The company is a recognized market leader across key agro-industrial business sectors, transforming renewable crops such as sugarcane into high-value added products comprising refined sugar and biofuels.
+          </p>
+          <p>
+            Shakarganj operates two state-of-the-art manufacturing complexes strategically located in the Jhang District of Punjab, supported by a registered Head Office in Lahore. 
+          </p>
+          <p>
+            In addition to core operations, Shakarganj Limited holds a controlling interest in <strong>Shakarganj Food Products Limited (SFPL)</strong>, a leading manufacturer and marketer of premium dairy and beverage products that has become a household consumer brand in Pakistan since 2006.
+          </p>
+        </div>
+      </div>
+
+      <!-- Corporate Information Grid -->
+      <div class="meta_section">
+        <h3 class="section_heading">Corporate Information & Regulatory Credentials</h3>
+        <div class="meta_grid">
+          
+          <div class="meta_card">
+            <div class="meta_icon"><i class="fa fa-certificate"></i></div>
+            <div class="meta_info">
+              <span class="meta_label">Registration Number</span>
+              <span class="meta_value">0002546</span>
+            </div>
+          </div>
+
+          <div class="meta_card">
+            <div class="meta_icon"><i class="fa fa-file-text-o"></i></div>
+            <div class="meta_info">
+              <span class="meta_label">National Tax Number (NTN)</span>
+              <span class="meta_value">1413603-1</span>
+            </div>
+          </div>
+
+          <div class="meta_card">
+            <div class="meta_icon"><i class="fa fa-calculator"></i></div>
+            <div class="meta_info">
+              <span class="meta_label">Sales Tax Number (STRN)</span>
+              <span class="meta_value">04-06-1703-002-46</span>
+            </div>
+          </div>
+
+          <div class="meta_card">
+            <div class="meta_icon"><i class="fa fa-calendar-check-o"></i></div>
+            <div class="meta_info">
+              <span class="meta_label">Incorporation Date</span>
+              <span class="meta_value">20 September 1967</span>
+            </div>
+          </div>
+
+          <div class="meta_card">
+            <div class="meta_icon"><i class="fa fa-line-chart"></i></div>
+            <div class="meta_info">
+              <span class="meta_label">PSX Symbol</span>
+              <span class="meta_value symbol_tag">SML</span>
+            </div>
+          </div>
+
+          <div class="meta_card">
+            <div class="meta_icon"><i class="fa fa-envelope-o"></i></div>
+            <div class="meta_info">
+              <span class="meta_label">Official Contact</span>
+              <a href="mailto:info@shakarganj.com.pk" class="meta_link">info@shakarganj.com.pk</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Business Activities Section (Ignoring Textile as instructed) -->
+      <div class="activities_section">
+        <div class="activities_header">
+          <h3 class="section_heading">Core Business Activities</h3>
+          <p class="section_sub">Discover our primary industrial production segments transforming natural resources.</p>
+        </div>
+
+        <div class="activities_grid">
+          
+          <!-- Sugar Card -->
+          <div class="activity_card">
+            <div class="activity_image_box">
+              <img 
+                src={sugarImgUrl} 
+                alt="Refined Sugar Manufacturing - Shakarganj Limited" 
+                width="350"
+                height="250"
+                loading="lazy"
+                onerror={`this.src='${sugarImgLocal}'`}
+              />
+              <span class="activity_badge">Core Segment</span>
+            </div>
+            <div class="activity_body">
+              <div class="activity_title_row">
+                <i class="fa fa-industry activity_title_icon"></i>
+                <h4 class="activity_title">Sugar</h4>
+              </div>
+              <p class="activity_desc">
+                Comprising pharmaceutical, beverage, commercial grades, soft brown, cubes, sachets and retail packs sugar.
+              </p>
+              <a href="https://www.sml.com.pk/sugar/" class="activity_btn">
+                <span>Explore Segment</span> <i class="fa fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Biofuel Card -->
+          <div class="activity_card">
+            <div class="activity_image_box">
+              <img 
+                src={biofuelImgUrl} 
+                alt="Biofuels Distilleries - Shakarganj Limited" 
+                width="350"
+                height="250"
+                loading="lazy"
+                onerror={`this.src='${biofuelImgLocal}'`}
+              />
+              <span class="activity_badge renewable">Renewable Energy</span>
+            </div>
+            <div class="activity_body">
+              <div class="activity_title_row">
+                <i class="fa fa-flask activity_title_icon"></i>
+                <h4 class="activity_title">Biofuel</h4>
+              </div>
+              <p class="activity_desc">
+                We have distilleries located at Jhang and Bhone where various grades of biofuel are produced.
+              </p>
+              <a href="https://www.sml.com.pk/biofuels/" class="activity_btn">
+                <span>Explore Segment</span> <i class="fa fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero Section */
+  .profile_hero {
+    background: linear-gradient(135deg, #0b1d12 0%, #15321f 50%, #0d2215 100%);
+    padding: 40px 0 50px 0;
+    color: #ffffff;
+    border-bottom: 3px solid var(--primary-color);
+  }
+
+  .profile_hero .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #a0aec0;
+    margin-bottom: 20px;
+  }
+
+  .profile_hero .breadcrumbs a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .profile_hero .breadcrumbs a:hover {
+    color: var(--primary-color);
+  }
+
+  .profile_hero .breadcrumbs .sep {
+    color: #718096;
+    font-size: 11px;
+  }
+
+  .profile_hero .breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .hero_content {
+    max-width: 800px;
+  }
+
+  .hero_badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(46, 125, 50, 0.25);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    color: #81c784;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .hero_title {
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: #ffffff;
+  }
+
+  .hero_subtitle {
+    font-size: 16px;
+    color: #cbd5e0;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Main Content Section */
+  .profile_main_section {
+    padding: 45px 0 65px 0;
+    background: #f8fafc;
+  }
+
+  /* Executive Overview Card */
+  .overview_card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    padding: 32px;
+    margin-bottom: 40px;
+  }
+
+  .overview_header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f1f5f9;
+  }
+
+  .overview_icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    background: rgba(22, 101, 52, 0.1);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+  .overview_title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 4px 0;
+  }
+
+  .overview_tagline {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+
+  .overview_body {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #475569;
+  }
+
+  .overview_body p {
+    margin: 0 0 16px 0;
+  }
+
+  .overview_body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Corporate Information Grid */
+  .meta_section {
+    margin-bottom: 45px;
+  }
+
+  .section_heading {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 20px 0;
+    position: relative;
+    padding-left: 14px;
+  }
+
+  .section_heading::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+  }
+
+  .meta_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .meta_card {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+  }
+
+  .meta_card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    border-color: #cbd5e0;
+  }
+
+  .meta_icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .meta_info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .meta_label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .meta_value {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+  }
+
+  .symbol_tag {
+    color: var(--primary-color);
+    font-size: 16px;
+  }
+
+  .meta_link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  .meta_link:hover {
+    text-decoration: underline;
+  }
+
+  /* Business Activities Grid */
+  .activities_header {
+    margin-bottom: 24px;
+  }
+
+  .section_sub {
+    font-size: 14px;
+    color: #64748b;
+    margin: 4px 0 0 14px;
+  }
+
+  .activities_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .activity_card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .activity_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e0;
+  }
+
+  .activity_image_box {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #0f172a;
+  }
+
+  .activity_image_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .activity_card:hover .activity_image_box img {
+    transform: scale(1.05);
+  }
+
+  .activity_badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(22, 101, 52, 0.9);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .activity_badge.renewable {
+    background: rgba(30, 64, 175, 0.9);
+  }
+
+  .activity_body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .activity_title_row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .activity_title_icon {
+    font-size: 18px;
+    color: var(--primary-color);
+  }
+
+  .activity_title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+  }
+
+  .activity_desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+  }
+
+  .activity_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: #f1f5f9;
+    color: #1e293b;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    width: fit-content;
+  }
+
+  .activity_btn:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(22, 101, 52, 0.25);
+  }
+
+  /* Responsive Layout */
+  @media (max-width: 992px) {
+    .meta_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .profile_hero {
+      padding: 30px 0 40px 0;
+    }
+
+    .hero_title {
+      font-size: 26px;
+    }
+
+    .meta_grid {
+      grid-template-columns: 1fr;
+    }
+
+    .activities_grid {
+      grid-template-columns: 1fr;
+    }
+
+    .overview_card {
+      padding: 20px;
+    }
+  }
+</style>
