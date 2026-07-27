@@ -1,0 +1,539 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Page Metadata
+const pageTitle = "Corporate Strategy | Shakarganj Limited";
+const metaDescription = "Corporate strategy and operational vision of Shakarganj Limited. Focused on customer-driven growth, strong capital management, operational agility, and sustainable innovation.";
+
+// R2 Hosted Strategy Icon
+const strategyIconUrl = "https://docs.sml.com.pk/images/corporate_strategy_icon.png";
+const localStrategyIconUrl = "/images/corporate_strategy_icon.png";
+
+// 4 Operational Pillars Dataset
+const operationalPillars = [
+  {
+    num: "01",
+    title: "Customer-Driven Business",
+    badge: "MARKET CENTRIC",
+    desc: "Delivering value-added, high-quality products across local and export markets while aligning operational capabilities directly with customer needs and market demand."
+  },
+  {
+    num: "02",
+    title: "Strong Capital Position",
+    badge: "FINANCIAL STRENGTH",
+    desc: "Maintaining optimal resource allocation, disciplined capital expenditure, robust balance sheet health, and sustainable profitability to maximize shareholder returns."
+  },
+  {
+    num: "03",
+    title: "Conservative Risk Management",
+    badge: "RISK GOVERNANCE",
+    desc: "Implementing sound, conservative risk mitigation policies to navigate volatile economic environments, energy challenges, and national fiscal adjustments."
+  },
+  {
+    num: "04",
+    title: "Operational Agility & Cost Leadership",
+    badge: "PROCESS EFFICIENCY",
+    desc: "Sustaining cost and quality leadership through continuous plant modernization, operational flexibility, and process innovation."
+  }
+];
+
+// Strategic Growth Drivers Dataset
+const growthDrivers = [
+  {
+    title: "Industrial & Export Expansion",
+    category: "ORGANIC & ACQUISITIVE GROWTH",
+    desc: "Continuous expansion across the Food & Beverage, Energy, and Agro-Industrial sectors—both organically and through strategic acquisitions—defending top-line revenue and expanding global export footprints."
+  },
+  {
+    title: "Plant & Machinery Overhaul",
+    category: "OPERATIONAL EXCELLENCE",
+    desc: "Systematic upgrading and overhauling of refining plant equipment to improve extraction rates, enhance product purity, lower energy consumption, and boost asset returns."
+  },
+  {
+    title: "Digital ERP & Knowledge Assets",
+    category: "BUSINESS INTELLIGENCE",
+    desc: "Leveraging Enterprise Resource Planning (ERP) systems, operational intelligence, and human capital development to accelerate decision-making agility and empower our workforce."
+  },
+  {
+    title: "CSR & Environmental Sustainability",
+    category: "CORPORATE CITIZENSHIP",
+    desc: "Strategic management-driven CSR initiatives supporting community education, healthcare, zero-waste bio-composting, and sustainable energy conservation across all operations."
+  }
+];
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Modernized Page Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>About Us</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Corporate Strategy</span>
+      </div>
+      <h1 class="hero_page_title">Corporate Strategy</h1>
+      <p class="hero_subtitle">Fostering operational agility, financial growth, sustainable innovation, and market leadership across Pakistan's agro-industrial sector.</p>
+    </div>
+  </section>
+
+  <!-- Main Section -->
+  <section class="strategy_main_section">
+    <div class="container">
+      
+      <!-- Executive Strategy Review Card -->
+      <div class="strategy_review_card">
+        <div class="review_grid">
+          <div class="review_icon_col">
+            <div class="icon_emblem_wrapper">
+              <img 
+                src={strategyIconUrl} 
+                alt="Corporate Strategy Icon" 
+                width="130" 
+                height="130"
+                loading="eager"
+                onerror={`this.src='${localStrategyIconUrl}'`}
+              />
+            </div>
+          </div>
+
+          <div class="review_text_col">
+            <span class="review_tag"><i class="fa fa-line-chart"></i> STRATEGY REVIEW & OUTLOOK</span>
+            <h2 class="review_title">Adaptive Growth & Resilience</h2>
+            <p class="review_statement">
+              As part of our regular strategy review, Shakarganj has continuously refined its corporate strategy to meet evolving macroeconomic challenges. While adapting to market dynamics, our long-term vision remains steadfast: driving growth through industrial efficiency, product diversification, and sustainable energy integration.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Operational Pillars Section -->
+      <div class="pillars_section">
+        <div class="section_intro text-center">
+          <span class="sub_title">CORE STRATEGIC FOUNDATIONS</span>
+          <h2 class="main_title">Four Operational Pillars</h2>
+          <div class="heading_divider"></div>
+          <p class="header_desc">
+            Our operational framework is built upon four fundamental strategic imperatives driving daily performance.
+          </p>
+        </div>
+
+        <div class="pillars_grid">
+          {operationalPillars.map((pillar) => (
+            <div class="pillar_card">
+              <div class="pillar_header">
+                <div class="pillar_icon_box">
+                  {pillar.num === '01' && (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <circle cx="12" cy="12" r="6"></circle>
+                      <circle cx="12" cy="12" r="2"></circle>
+                    </svg>
+                  )}
+                  {pillar.num === '02' && (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                  )}
+                  {pillar.num === '03' && (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  )}
+                  {pillar.num === '04' && (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                  )}
+                </div>
+                <span class="pillar_num">{pillar.num}</span>
+              </div>
+
+              <span class="pillar_badge">{pillar.badge}</span>
+              <h3 class="pillar_title">{pillar.title}</h3>
+              <p class="pillar_desc">{pillar.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Strategic Growth Drivers Section -->
+      <div class="growth_section">
+        <div class="section_intro text-center">
+          <span class="sub_title">VALUE CREATION & EXPANSION</span>
+          <h2 class="main_title">Strategic Growth Drivers</h2>
+          <div class="heading_divider"></div>
+          <p class="header_desc">Key initiatives steering Shakarganj toward long-term competitiveness and community impact.</p>
+        </div>
+
+        <div class="growth_grid">
+          {growthDrivers.map((driver) => (
+            <div class="growth_card">
+              <span class="driver_cat">{driver.category}</span>
+              <h3 class="driver_title">{driver.title}</h3>
+              <p class="driver_desc">{driver.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Operational Agility Quote Banner -->
+      <div class="agility_banner">
+        <div class="agility_content text-center">
+          <span class="quote_icon"><i class="fa fa-quote-left"></i></span>
+          <blockquote class="agility_quote">
+            "The engine for growth in Pakistan is an expanded and efficient industrial and energy sector. Shakarganj remains committed to quality leadership, continuous product diversification, and sustainable community empowerment."
+          </blockquote>
+          <span class="quote_author">— Corporate Strategy Committee, Shakarganj Limited</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Page Hero Banner */
+  .page_hero_banner {
+    background: linear-gradient(135deg, #004d00 0%, #002b00 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Main Section */
+  .strategy_main_section {
+    padding: 55px 0 80px 0;
+    background: #f8fafc;
+  }
+
+  /* Strategy Review Card */
+  .strategy_review_card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    padding: 32px;
+    margin-bottom: 55px;
+  }
+
+  .review_grid {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .review_icon_col {
+    flex-shrink: 0;
+  }
+
+  .icon_emblem_wrapper {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #81c784 100%);
+    box-shadow: 0 8px 20px rgba(22, 101, 52, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon_emblem_wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #ffffff;
+  }
+
+  .review_text_col {
+    flex-grow: 1;
+  }
+
+  .review_tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+  }
+
+  .review_title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 10px 0;
+  }
+
+  .review_statement {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* Section Intro */
+  .section_intro {
+    margin-bottom: 40px;
+  }
+
+  .sub_title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .main_title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 10px 0;
+  }
+
+  .heading_divider {
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 0 auto 14px auto;
+    border-radius: 2px;
+  }
+
+  .header_desc {
+    font-size: 15px;
+    color: #64748b;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  /* 4 Operational Pillars Grid */
+  .pillars_section {
+    margin-bottom: 60px;
+  }
+
+  .pillars_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .pillar_card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    padding: 26px 22px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pillar_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e0;
+  }
+
+  .pillar_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .pillar_icon_box {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #f0fdf4;
+    border: 1px solid #dcfce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pillar_num {
+    font-size: 22px;
+    font-weight: 800;
+    color: #cbd5e0;
+  }
+
+  .pillar_badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--primary-color);
+    background: rgba(22, 101, 52, 0.08);
+    padding: 3px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+
+  .pillar_title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+
+  .pillar_desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* Growth Drivers Grid */
+  .growth_section {
+    margin-bottom: 55px;
+  }
+
+  .growth_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .growth_card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    padding: 28px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+  }
+
+  .growth_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+    border-color: #cbd5e0;
+  }
+
+  .driver_cat {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+  }
+
+  .driver_title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 10px 0;
+  }
+
+  .driver_desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* Agility Quote Banner */
+  .agility_banner {
+    background: linear-gradient(135deg, #0f291e 0%, #166534 100%);
+    border-radius: 14px;
+    padding: 40px;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(22, 101, 52, 0.25);
+  }
+
+  .quote_icon {
+    font-size: 28px;
+    color: #81c784;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .agility_quote {
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.7;
+    color: #f1f5f9;
+    max-width: 850px;
+    margin: 0 auto 16px auto;
+  }
+
+  .quote_author {
+    font-size: 13px;
+    font-weight: 700;
+    color: #81c784;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .pillars_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .growth_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .review_grid {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .pillars_grid {
+      grid-template-columns: 1fr;
+    }
+
+    .review_tag {
+      justify-content: center;
+    }
+  }
+</style>
