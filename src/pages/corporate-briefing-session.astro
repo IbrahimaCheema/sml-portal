@@ -66,21 +66,9 @@ const sessions: CbsItem[] = cbsData;
             </div>
 
             <div class="cbs_card_body">
-              <span class="doc_type_tag"><i class="fa fa-file-pdf-o"></i> PDF Presentation</span>
-              <h3 class="cbs_card_title">
-                <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer">
-                  {item.title}
-                </a>
-              </h3>
-              
-              <div class="cbs_action_buttons">
-                <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" class="btn_view">
-                  <i class="fa fa-eye"></i> View PDF
-                </a>
-                <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" class="btn_download" download={`${item.title}.pdf`}>
-                  <i class="fa fa-download"></i> Download
-                </a>
-              </div>
+              <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" class="btn_view">
+                <i class="fa fa-file-pdf-o"></i> View Presentation
+              </a>
             </div>
           </div>
         ))}
@@ -256,81 +244,36 @@ const sessions: CbsItem[] = cbsData;
   }
 
   .cbs_card_body {
-    padding: 18px;
+    padding: 14px 16px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-  }
-
-  .doc_type_tag {
-    font-size: 11px;
-    font-weight: 600;
-    color: #ef4444;
-    margin-bottom: 6px;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .cbs_card_title {
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.4;
-    margin: 0 0 16px 0;
-    color: #1e293b;
-    flex-grow: 1;
-  }
-
-  .cbs_card_title a {
-    color: #1e293b;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .cbs_card_title a:hover {
-    color: var(--primary-color);
-  }
-
-  .cbs_action_buttons {
-    display: flex;
-    gap: 8px;
-  }
-
-  .btn_view, .btn_download {
-    flex: 1;
-    display: inline-flex;
-    align-items: center;
     justify-content: center;
-    gap: 6px;
-    padding: 8px 10px;
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    text-align: center;
   }
 
   .btn_view {
-    background: #f1f5f9;
-    color: #334155;
-    border: 1px solid #cbd5e0;
-  }
-
-  .btn_view:hover {
-    background: #e2e8f0;
-    color: #0f172a;
-  }
-
-  .btn_download {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
     background: var(--primary-color);
     color: #ffffff;
     border: none;
+    box-shadow: 0 2px 6px rgba(22, 101, 52, 0.25);
+    transition: all 0.25s ease;
+    text-align: center;
   }
 
-  .btn_download:hover {
+  .btn_view:hover {
     background: var(--primary-hover);
     color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(22, 101, 52, 0.35);
   }
 
   /* Responsive Grid Breakpoints */
