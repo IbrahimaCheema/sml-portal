@@ -16,25 +16,18 @@ const years = ['All Years', ...uniqueYears];
 ---
 
 <Layout title={pageTitle} description={metaDescription}>
-  <!-- Hero Section -->
-
-  <!-- Hero Section -->
-  <section class="news_hero">
+  <!-- Modernized Page Hero Banner -->
+  <section class="page_hero_banner">
     <div class="container">
-      <div class="breadcrumbs">
-        <a href="/" class="home_link">Home</a>
-        <span class="sep"><i class="fa fa-angle-right"></i></span>
-        <a href="#" class="sub_link">Media</a>
-        <span class="sep"><i class="fa fa-angle-right"></i></span>
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>Media</span> <i class="fa fa-angle-right"></i>
         <span class="current">Notices & Updates</span>
       </div>
-      <div class="news_hero_content">
-        <span class="hero_badge">Corporate Information Feed</span>
-        <h1 class="news_hero_title">Notices & Updates</h1>
-        <p class="news_hero_subtitle">
-          Official corporate announcements, financial statements, shareholder meeting notices, and event updates from Shakarganj Limited.
-        </p>
-      </div>
+      <h1 class="hero_page_title">Notices & Updates</h1>
+      <p class="hero_subtitle">
+        Official corporate announcements, financial statements, shareholder meeting notices, and event updates from Shakarganj Limited.
+      </p>
     </div>
   </section>
 
@@ -151,73 +144,47 @@ const years = ['All Years', ...uniqueYears];
 </Layout>
 
 <style>
-  /* News Hero Section */
-  .news_hero {
-    background: linear-gradient(135deg, #0b1d12 0%, #15321f 50%, #0d2215 100%);
-    padding: 35px 0 45px 0;
+  /* Page Hero Banner */
+  .page_hero_banner {
+    background: linear-gradient(135deg, #004d00 0%, #002b00 100%);
     color: #ffffff;
+    padding: 55px 0 45px;
     border-bottom: 3px solid var(--primary-color);
   }
-
-  .news_hero .breadcrumbs {
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 13px;
-    color: #a0aec0;
-    margin-bottom: 20px;
   }
-
-  .news_hero .breadcrumbs a {
-    color: #cbd5e0;
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
     text-decoration: none;
     transition: color 0.2s ease;
   }
-
-  .news_hero .breadcrumbs a:hover {
-    color: var(--primary-color);
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
   }
-
-  .news_hero .breadcrumbs .sep {
-    color: #718096;
-    font-size: 11px;
-  }
-
-  .news_hero .breadcrumbs .current {
+  .hero_breadcrumbs .current {
     color: #ffffff;
     font-weight: 600;
   }
-
-  .news_hero_content {
-    max-width: 800px;
-  }
-
-  .hero_badge {
-    display: inline-block;
-    padding: 4px 12px;
-    background: rgba(46, 125, 50, 0.25);
-    border: 1px solid rgba(76, 175, 80, 0.4);
-    color: #81c784;
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 12px;
-  }
-
-  .news_hero_title {
-    font-size: 32px;
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
     font-weight: 700;
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
+    line-height: 1.2;
     color: #ffffff;
   }
-
-  .news_hero_subtitle {
-    font-size: 15px;
-    color: #cbd5e0;
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
     margin: 0;
-    line-height: 1.6;
   }
 
   /* News Feed Section */
