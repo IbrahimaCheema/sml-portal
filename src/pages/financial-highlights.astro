@@ -38,9 +38,6 @@ const localPdfUrl = "/docs/SML-Financial-Highlights.pdf";
           <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="btn_action fullscreen_btn">
             <i class="fa fa-external-link"></i> Open Fullscreen
           </a>
-          <button onclick="window.print()" class="btn_action print_btn" aria-label="Print Document">
-            <i class="fa fa-print"></i> Print
-          </button>
         </div>
       </div>
     </div>
@@ -64,16 +61,22 @@ const localPdfUrl = "/docs/SML-Financial-Highlights.pdf";
 
         <!-- Embedded Full Page PDF Viewer -->
         <div class="pdf_embed_container">
-          <iframe 
-            src={`${pdfUrl}#toolbar=1&navpanes=0&scrollbar=1`}
-            title="Shakarganj Limited Financial Highlights PDF"
-            class="pdf_iframe"
-            loading="lazy"
+          <object
+            data={`${pdfUrl}#view=FitH&toolbar=1&navpanes=0`}
+            type="application/pdf"
+            class="pdf_object"
           >
-            <p>Your browser does not support embedded PDF viewing. 
-              <a href={pdfUrl} target="_blank" rel="noopener noreferrer">Click here to view or download the PDF document directly.</a>
-            </p>
-          </iframe>
+            <iframe 
+              src={`${pdfUrl}#view=FitH&toolbar=1&navpanes=0`}
+              title="Shakarganj Limited Financial Highlights PDF"
+              class="pdf_iframe"
+              loading="lazy"
+            >
+              <p>Your browser does not support embedded PDF viewing. 
+                <a href={pdfUrl} target="_blank" rel="noopener noreferrer">Click here to view or download the PDF document directly.</a>
+              </p>
+            </iframe>
+          </object>
         </div>
 
         <!-- Card Footer Info -->
@@ -273,16 +276,19 @@ const localPdfUrl = "/docs/SML-Financial-Highlights.pdf";
 
   .pdf_embed_container {
     width: 100%;
-    height: 850px;
+    height: clamp(600px, 82vh, 1050px);
     background: #525659;
     position: relative;
+    overflow: hidden;
   }
 
+  .pdf_object,
   .pdf_iframe {
     width: 100%;
     height: 100%;
     border: none;
     display: block;
+    overflow: hidden;
   }
 
   .pdf_card_footer {
