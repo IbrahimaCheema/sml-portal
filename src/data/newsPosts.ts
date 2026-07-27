@@ -19,7 +19,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "22 July 2026",
     "category": "Corporate Notice",
     "excerpt": "Official notification regarding the upcoming meeting of the Board of Directors of Shakarganj Limited.",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_2_2026.png",
+    "featuredImage": "https://docs.sml.com.pk/images/notice_board_meeting_jul2026.jpg",
     "linkUrl": "https://docs.sml.com.pk/pdf/notice_board_meeting_2026_07_22.pdf",
     "pdfUrl": "https://docs.sml.com.pk/pdf/notice_board_meeting_2026_07_22.pdf"
   },
