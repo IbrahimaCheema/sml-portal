@@ -1,0 +1,581 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Page Metadata
+const pageTitle = "Quality & Compliance Certifications | Shakarganj Limited";
+const metaDescription = "Explore the ISO 9001, ISO 14001, FSSC 22000, HALAL, Organic EU, and Shariah compliance certifications accredited to Shakarganj Limited.";
+
+// 8 Accredited Certifications Dataset
+const certifications = [
+  {
+    title: "Quality Management System",
+    code: "ISO 9001:2015",
+    validity: "Valid: 06 Mar 2025",
+    status: "active",
+    statusText: "Active / Accredited",
+    r2Url: "https://docs.sml.com.pk/images/cert_iso_9001.jpg",
+    localUrl: "/images/cert_iso_9001.jpg",
+    issuer: "Lloyd's Register / International Accreditation Board"
+  },
+  {
+    title: "Environmental Management System",
+    code: "ISO 14001:2015",
+    validity: "Valid: 06 Mar 2025",
+    status: "active",
+    statusText: "Active / Accredited",
+    r2Url: "https://docs.sml.com.pk/images/cert_iso_14001.jpg",
+    localUrl: "/images/cert_iso_14001.jpg",
+    issuer: "Environmental Management Standards Authority"
+  },
+  {
+    title: "Food Safety System Certification",
+    code: "FSSC 22000 (Jhang Unit)",
+    validity: "Valid: 13 Apr 2026",
+    status: "active",
+    statusText: "Active / Verified",
+    r2Url: "https://docs.sml.com.pk/images/cert_fssc_22000_jhang.png",
+    localUrl: "/images/cert_fssc_22000_jhang.png",
+    issuer: "FSSC 22000 Global Food Safety Accreditation"
+  },
+  {
+    title: "Food Safety System Certification",
+    code: "FSSC 22000 (Bhone Unit)",
+    validity: "Valid: 18 Apr 2026",
+    status: "active",
+    statusText: "Active / Verified",
+    r2Url: "https://docs.sml.com.pk/images/cert_fssc_22000_bhone.png",
+    localUrl: "/images/cert_fssc_22000_bhone.png",
+    issuer: "FSSC 22000 Global Food Safety Accreditation"
+  },
+  {
+    title: "HALAL Food Management System",
+    code: "Halal Certificate (Jhang)",
+    validity: "Valid: 30 Apr 2024",
+    status: "valid",
+    statusText: "Accredited Halal",
+    r2Url: "https://docs.sml.com.pk/images/cert_halal_jhang.jpg",
+    localUrl: "/images/cert_halal_jhang.jpg",
+    issuer: "Pakistan Halal Authority & Global Halal Bodies"
+  },
+  {
+    title: "HALAL Food Management System",
+    code: "IHC Halal Certificate",
+    validity: "Valid: 30 Apr 2024",
+    status: "valid",
+    statusText: "Accredited Halal",
+    r2Url: "https://docs.sml.com.pk/images/cert_halal_ihc.jpg",
+    localUrl: "/images/cert_halal_ihc.jpg",
+    issuer: "International Halal Certification (IHC)"
+  },
+  {
+    title: "Organic Production Methods",
+    code: "Organic EU Certificate",
+    validity: "Status: Valid / Renewal in process",
+    status: "process",
+    statusText: "Organic Accredited",
+    r2Url: "https://docs.sml.com.pk/images/cert_organic_eu.jpg",
+    localUrl: "/images/cert_organic_eu.jpg",
+    issuer: "European Union Organic Standards Body"
+  },
+  {
+    title: "Shariah Compliance Certificate",
+    code: "SHARIAH Compliance",
+    validity: "Issued: 13 Dec 2017",
+    status: "valid",
+    statusText: "Shariah Compliant",
+    r2Url: "https://docs.sml.com.pk/images/cert_shariah.jpg",
+    localUrl: "/images/cert_shariah.jpg",
+    issuer: "Shariah Advisory Board"
+  }
+];
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Modernized Page Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>Media</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Certifications</span>
+      </div>
+      <h1 class="hero_page_title">Quality & Compliance Certifications</h1>
+      <p class="hero_subtitle">Accredited international standards governing ISO quality management, food safety, environmental stewardship, Halal compliance, and Shariah governance.</p>
+    </div>
+  </section>
+
+  <!-- Main Certifications Section -->
+  <section class="cert_main_section">
+    <div class="container">
+      
+      <!-- Section Intro -->
+      <div class="section_intro text-center">
+        <span class="sub_title">GLOBAL STANDARDS & ACCREDITATIONS</span>
+        <h2 class="main_title">Official Quality & Compliance Documents</h2>
+        <div class="heading_divider"></div>
+        <p class="header_desc">
+          Shakarganj Limited strictly adheres to rigorous international quality, environmental, and food safety standards to deliver world-class products.
+        </p>
+      </div>
+
+      <!-- Certifications 4-Column Grid -->
+      <div class="cert_grid">
+        {certifications.map((item) => (
+          <div class="cert_card">
+            <div class="cert_preview_box" data-img={item.r2Url} data-title={`${item.title} (${item.code})`}>
+              <img 
+                src={item.r2Url} 
+                alt={item.title} 
+                loading="lazy"
+                onerror={`this.src='${item.localUrl}'`}
+              />
+              <div class="preview_overlay">
+                <span class="zoom_icon"><i class="fa fa-search-plus"></i> View Certificate</span>
+              </div>
+            </div>
+
+            <div class="cert_info">
+              <span class={`status_pill ${item.status}`}>{item.statusText}</span>
+              <h3 class="cert_title">{item.title}</h3>
+              <span class="cert_code">{item.code}</span>
+              <span class="cert_validity"><i class="fa fa-calendar-check-o"></i> {item.validity}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Certificate Image Modal Lightbox -->
+  <div class="cert_modal" id="certModal" aria-hidden="true">
+    <div class="modal_backdrop" id="modalBackdrop"></div>
+    <div class="modal_container">
+      <button class="modal_close_btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <div class="modal_header">
+        <h3 class="modal_title" id="modalTitle">Certificate Preview</h3>
+      </div>
+      <div class="modal_body">
+        <img id="modalImg" src="" alt="Full Certificate View" />
+      </div>
+      <div class="modal_footer">
+        <a id="modalDownloadBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn_action download_btn" download>
+          <i class="fa fa-download"></i> Download Image
+        </a>
+        <a id="modalOpenBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn_action fullscreen_btn">
+          <i class="fa fa-external-link"></i> Open Fullscreen
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const previewBoxes = document.querySelectorAll('.cert_preview_box');
+    const modal = document.getElementById('certModal');
+    const backdrop = document.getElementById('modalBackdrop');
+    const closeBtn = document.getElementById('modalCloseBtn');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDownloadBtn = document.getElementById('modalDownloadBtn');
+    const modalOpenBtn = document.getElementById('modalOpenBtn');
+
+    if (!modal || !modalImg) return;
+
+    function openModal(imgSrc, titleText) {
+      modalImg.src = imgSrc;
+      modalTitle.textContent = titleText;
+      modalDownloadBtn.href = imgSrc;
+      modalOpenBtn.href = imgSrc;
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+
+    previewBoxes.forEach(box => {
+      box.addEventListener('click', () => {
+        const imgSrc = box.getAttribute('data-img');
+        const titleText = box.getAttribute('data-title');
+        openModal(imgSrc, titleText);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('show')) {
+        closeModal();
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Page Hero Banner */
+  .page_hero_banner {
+    background: linear-gradient(135deg, #004d00 0%, #002b00 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Main Section */
+  .cert_main_section {
+    padding: 55px 0 80px 0;
+    background: #f8fafc;
+  }
+
+  /* Section Intro */
+  .section_intro {
+    margin-bottom: 45px;
+  }
+
+  .sub_title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .main_title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 10px 0;
+  }
+
+  .heading_divider {
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 0 auto 14px auto;
+    border-radius: 2px;
+  }
+
+  .header_desc {
+    font-size: 15px;
+    color: #64748b;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  /* Certifications 4-Column Grid */
+  .cert_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+
+  .cert_card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .cert_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e0;
+  }
+
+  .cert_preview_box {
+    position: relative;
+    background: #f1f5f9;
+    height: 260px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .cert_preview_box img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .preview_overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .cert_preview_box:hover .preview_overlay {
+    opacity: 1;
+  }
+
+  .zoom_icon {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    background: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .cert_info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .status_pill {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+
+  .status_pill.active {
+    background: rgba(22, 101, 52, 0.1);
+    color: var(--primary-color);
+  }
+
+  .status_pill.valid {
+    background: rgba(2, 132, 199, 0.1);
+    color: #0284c7;
+  }
+
+  .status_pill.process {
+    background: rgba(217, 119, 6, 0.1);
+    color: #d97706;
+  }
+
+  .cert_title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+  }
+
+  .cert_code {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+
+  }
+
+  .cert_validity {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Modal Lightbox */
+  .cert_modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .cert_modal.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal_backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(4px);
+  }
+
+  .modal_container {
+    position: relative;
+    z-index: 10;
+    background: #ffffff;
+    border-radius: 16px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .modal_close_btn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    color: #64748b;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease;
+  }
+
+  .modal_close_btn:hover {
+    color: #0f172a;
+  }
+
+  .modal_header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .modal_title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    padding-right: 30px;
+  }
+
+  .modal_body {
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+  }
+
+  .modal_body img {
+    max-height: 60vh;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal_footer {
+    padding: 16px 24px;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .btn_action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .download_btn {
+    background: var(--primary-color);
+    color: #ffffff;
+  }
+
+  .download_btn:hover {
+    background: #14532d;
+    color: #ffffff;
+  }
+
+  .fullscreen_btn {
+    background: #f1f5f9;
+    color: #334155;
+  }
+
+  .fullscreen_btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .cert_grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .cert_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cert_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
