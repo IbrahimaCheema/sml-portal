@@ -83,11 +83,11 @@ export const newsPosts: NewsPost[] = [
     "title": "Notice Of Annual General Meeting",
     "date": "2026-01-16",
     "displayDate": "16 January 2026",
-    "category": "Financial Results",
+    "category": "Shareholder Notice",
     "excerpt": "",
     "featuredImage": "https://docs.sml.com.pk/images/news_thumb_7_2026.jpg",
-    "linkUrl": "/financial-reports",
-    "pdfUrl": "/financial-reports"
+    "linkUrl": "https://dps.psx.com.pk/download/document/268823.pdf",
+    "pdfUrl": "https://dps.psx.com.pk/download/document/268823.pdf"
   },
   {
     "id": "financial-results-for-the-3rd-quarter-ended-30-june-2025-8",
