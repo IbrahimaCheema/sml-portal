@@ -1,0 +1,528 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Page Metadata
+const pageTitle = "Awards & Accolades | Shakarganj Limited";
+const metaDescription = "Explore five decades of prestigious awards, export trophies, corporate governance honors, CSR recognition, and environmental excellence accredited to Shakarganj Limited.";
+
+// Major Featured Awards Dataset
+const featuredAwards = [
+  {
+    title: "Asian CSR Award (Intel - AIM)",
+    year: "2009",
+    category: "INTERNATIONAL CSR",
+    issuer: "Asian Forum on CSR • Singapore",
+    icon: "star",
+    badge: "HISTORIC FIRST FOR PAKISTAN",
+    description: "Shakarganj became the first Pakistani company to win the Intel-AIM Corporate Responsibility Award at the Asian Forum on CSR in Singapore. Selected from among 170 international nominations across 15 countries by a panel of globally recognized judges."
+  },
+  {
+    title: "FPCCI Export Trophy Awards",
+    year: "10-Time Winner",
+    category: "EXPORT EXCELLENCE",
+    issuer: "Federation of Pakistan Chambers of Commerce & Industry",
+    icon: "trophy",
+    badge: "1999 – 2014 RECIPIENT",
+    description: "Presented by the Federation of Pakistan Chambers of Commerce and Industry (FPCCI) to the company demonstrating the highest export performance and market expansion in its industrial sector."
+  },
+  {
+    title: "Best Taxpayer Award (FBR)",
+    year: "2005 & 2009",
+    category: "NATIONAL CONTRIBUTION",
+    issuer: "Federal Board of Revenue (FBR)",
+    icon: "building",
+    badge: "LARGEST SECTOR TAXPAYER",
+    description: "Recognized by the Federal Board of Revenue (FBR) multiple times for making the largest tax contributions to the national exchequer within its industrial refining sector."
+  },
+  {
+    title: "Best Corporate Report Awards",
+    year: "5-Time Winner",
+    category: "FINANCIAL GOVERNANCE",
+    issuer: "Joint Committee of ICAP & ICMA",
+    icon: "file-text",
+    badge: "TRANSPARENCY & REPORTING",
+    description: "Shakarganj Annual Report was declared one of the best corporate reports by a joint evaluation committee of the Institute of Chartered Accountants of Pakistan (ICAP) and ICMA Pakistan."
+  },
+  {
+    title: "Environmental Excellence Award",
+    year: "2008",
+    category: "SUSTAINABILITY",
+    issuer: "UN Environment Programme (UNEP) & NFEH",
+    icon: "leaf",
+    badge: "ECO-INDUSTRIAL RECOGNITION",
+    description: "Awarded by the National Forum for Environment & Health in collaboration with the United Nations Environment Programme for eco-friendly zero-waste processes and bio-energy."
+  },
+  {
+    title: "KSE Top Company Award",
+    year: "1988",
+    category: "STOCK EXCHANGE HONOR",
+    issuer: "Karachi Stock Exchange (PSX)",
+    icon: "line-chart",
+    badge: "EXCEPTIONAL PERFORMANCE",
+    description: "Awarded the Top Company Award by the Karachi Stock Exchange in recognition of outstanding operational performance, profitability, and dividend distribution."
+  }
+];
+
+// Full Historic Honor Roll Dataset
+const honorRoll = [
+  { year: "2014", title: "FPCCI Best Export Performance Award", category: "export", issuer: "FPCCI" },
+  { year: "2013", title: "FPCCI Best Export Performance Award", category: "export", issuer: "FPCCI" },
+  { year: "2012", title: "FPCCI Best Export Performance Award", category: "export", issuer: "FPCCI" },
+  { year: "2011", title: "FPCCI Best Export Performance Award", category: "export", issuer: "FPCCI" },
+  { year: "2009", title: "Asian CSR Award (Intel - AIM)", category: "csr", issuer: "AFCSR Singapore" },
+  { year: "2009", title: "UN Global Compact Recognition", category: "csr", issuer: "UN Global Compact Pakistan" },
+  { year: "2009", title: "FBR Best Taxpayer Award", category: "tax", issuer: "Federal Board of Revenue" },
+  { year: "2009", title: "FPCCI Special Merit Export Award", category: "export", issuer: "FPCCI" },
+  { year: "2008", title: "UNEP & NFEH Annual Environmental Excellence Award", category: "csr", issuer: "UNEP & NFEH" },
+  { year: "2008", title: "ICAP & ICMA Best Corporate Report Award", category: "reporting", issuer: "ICAP / ICMA" },
+  { year: "2008", title: "FPCCI Best Export Performance Award", category: "export", issuer: "FPCCI" },
+  { year: "2007", title: "FPCCI Best Export Performance Award", category: "export", issuer: "FPCCI" },
+  { year: "2005", title: "FBR Best Taxpayer Award", category: "tax", issuer: "Federal Board of Revenue" },
+  { year: "2005", title: "ICAP & ICMA Best Corporate Report Award", category: "reporting", issuer: "ICAP / ICMA" },
+  { year: "2004", title: "ICAP & ICMA Best Corporate Report Award", category: "reporting", issuer: "ICAP / ICMA" },
+  { year: "2004", title: "FPCCI Merit Trophy Award", category: "export", issuer: "FPCCI" },
+  { year: "2003", title: "ICAP & ICMA Best Corporate Report Award", category: "reporting", issuer: "ICAP / ICMA" },
+  { year: "2003", title: "FPCCI Merit Trophy Award", category: "export", issuer: "FPCCI" },
+  { year: "2001", title: "Best Presented Annual Report Award", category: "reporting", issuer: "ICAP / ICMA" },
+  { year: "1999", title: "FPCCI Merit Certificate", category: "export", issuer: "FPCCI" },
+  { year: "1988", title: "KSE Top Company Award", category: "tax", issuer: "Karachi Stock Exchange" }
+];
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Modernized Page Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>Media</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Awards and Accolades</span>
+      </div>
+      <h1 class="hero_page_title">Awards & Accolades</h1>
+      <p class="hero_subtitle">Recognizing five decades of industrial excellence, export leadership, corporate governance, CSR, and environmental stewardship.</p>
+    </div>
+  </section>
+
+  <!-- Main Section -->
+  <section class="awards_main_section">
+    <div class="container">
+      
+      <!-- Introductory Quote Box -->
+      <div class="intro_quote_box">
+        <div class="quote_content">
+          <div class="quote_icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+          </div>
+          <p class="quote_text">
+            "Over the past five decades, Shakarganj Limited has been accredited with numerous national and international awards, trophies, and certifications celebrating our commitment to quality, financial transparency, community welfare, and export performance."
+          </p>
+        </div>
+      </div>
+
+      <!-- Featured Major Honors Section -->
+      <div class="featured_section">
+        <div class="section_intro text-center">
+          <span class="sub_title">HALL OF FAME</span>
+          <h2 class="main_title">Featured Corporate Recognitions</h2>
+          <div class="heading_divider"></div>
+          <p class="header_desc">Major national and international accolades awarded to Shakarganj Limited by global forums and regulatory authorities.</p>
+        </div>
+
+        <div class="featured_grid">
+          {featuredAwards.map((item) => (
+            <div class="featured_card">
+              <div class="card_top">
+                <span class="badge_pill">{item.badge}</span>
+                <span class="year_tag">{item.year}</span>
+              </div>
+
+              <h3 class="award_title">{item.title}</h3>
+              <span class="issuer_name"><i class="fa fa-university"></i> {item.issuer}</span>
+              <p class="award_desc">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Comprehensive Honor Roll Filter & Grid -->
+      <div class="honor_roll_section">
+        <div class="section_intro text-center">
+          <span class="sub_title">HISTORIC CHRONICLE</span>
+          <h2 class="main_title">Complete Accredited Honor Roll</h2>
+          <div class="heading_divider"></div>
+          <p class="header_desc">Filter historical accreditations and awards across corporate categories.</p>
+        </div>
+
+        <!-- Filter Tab Buttons -->
+        <div class="award_tab_buttons">
+          <button class="award_tab_btn active" id="tab_all" data-filter="all">All Honors ({honorRoll.length})</button>
+          <button class="award_tab_btn" id="tab_export" data-filter="export">Export Trophies (10)</button>
+          <button class="award_tab_btn" id="tab_csr" data-filter="csr">CSR & Environment (3)</button>
+          <button class="award_tab_btn" id="tab_reporting" data-filter="reporting">Reporting & Governance (5)</button>
+          <button class="award_tab_btn" id="tab_tax" data-filter="tax">Tax & Stock Exchange (3)</button>
+        </div>
+
+        <!-- Honor Roll Grid -->
+        <div class="honor_grid" id="honor_grid">
+          {honorRoll.map((award) => (
+            <div class="honor_card" data-category={award.category}>
+              <div class="honor_year_node">{award.year}</div>
+              <div class="honor_info">
+                <h4 class="honor_title">{award.title}</h4>
+                <span class="honor_issuer"><i class="fa fa-certificate"></i> {award.issuer}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.award_tab_btn');
+    const cards = document.querySelectorAll('.honor_card');
+
+    if (!buttons.length || !cards.length) return;
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || filter === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Page Hero Banner */
+  .page_hero_banner {
+    background: linear-gradient(135deg, #004d00 0%, #002b00 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Main Section */
+  .awards_main_section {
+    padding: 55px 0 80px 0;
+    background: #f8fafc;
+  }
+
+  /* Intro Quote Box */
+  .intro_quote_box {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    padding: 28px 32px;
+    margin-bottom: 50px;
+  }
+
+  .quote_content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .quote_icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(22, 101, 52, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .quote_text {
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0;
+  }
+
+  /* Section Intro */
+  .section_intro {
+    margin-bottom: 40px;
+  }
+
+  .sub_title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .main_title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 10px 0;
+  }
+
+  .heading_divider {
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 0 auto 14px auto;
+    border-radius: 2px;
+  }
+
+  .header_desc {
+    font-size: 15px;
+    color: #64748b;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  /* Featured Awards Grid */
+  .featured_section {
+    margin-bottom: 65px;
+  }
+
+  .featured_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .featured_card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    padding: 26px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .featured_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e0;
+  }
+
+  .card_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .badge_pill {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--primary-color);
+    background: rgba(22, 101, 52, 0.08);
+    padding: 4px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .year_tag {
+    font-size: 12px;
+    font-weight: 800;
+    color: #ffffff;
+    background: #0f172a;
+    padding: 3px 10px;
+    border-radius: 6px;
+  }
+
+  .award_title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+  }
+
+  .issuer_name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .award_desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* Honor Roll Section */
+  .award_tab_buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 35px;
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 30px;
+    border: 1px solid #cbd5e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  .award_tab_btn {
+    padding: 9px 18px;
+    border-radius: 20px;
+    border: none;
+    background: transparent;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .award_tab_btn:hover {
+    color: #1e293b;
+  }
+
+  .award_tab_btn.active {
+    background: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(22, 101, 52, 0.3);
+  }
+
+  .honor_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .honor_card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+  }
+
+  .honor_card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .honor_year_node {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .honor_info {
+    flex-grow: 1;
+  }
+
+  .honor_title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+  }
+
+  .honor_issuer {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .featured_grid,
+    .honor_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .featured_grid,
+    .honor_grid {
+      grid-template-columns: 1fr;
+    }
+
+    .quote_content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
