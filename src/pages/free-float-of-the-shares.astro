@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Page Metadata
+const pageTitle = "Free Float of The Shares | Shakarganj Limited";
+const metaDescription = "Official free float certificate, quarterly shareholding distribution, floating capital metrics, and listing compliance details for Shakarganj Limited.";
+
+// Cloudflare R2 hosted PDF & local fallback
+const pdfUrl = "https://docs.sml.com.pk/docs/SML-Free-Float-Shares.pdf";
+const localPdfUrl = "/docs/SML-Free-Float-Shares.pdf";
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Hero Section -->
+  <section class="float_hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/" class="home_link">Home</a>
+        <span class="sep"><i class="fa fa-angle-right"></i></span>
+        <a href="#" class="sub_link">Investor Relations</a>
+        <span class="sep"><i class="fa fa-angle-right"></i></span>
+        <span class="current">Free Float of The Shares</span>
+      </div>
+
+      <div class="hero_content_flex">
+        <div class="hero_text_box">
+          <span class="hero_badge">Investor Relations • Capital Structure</span>
+          <h1 class="hero_title">Free Float of The Shares</h1>
+          <p class="hero_subtitle">
+            Official free float certificate, quarterly floating capital distribution, public vs. strategic shareholding metrics, and Pakistan Stock Exchange (PSX) regulatory filings for Shakarganj Limited.
+          </p>
+        </div>
+
+        <div class="hero_actions">
+          <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="btn_action download_btn" download="SML-Free-Float-Shares.pdf">
+            <i class="fa fa-download"></i> Download PDF
+          </a>
+          <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="btn_action fullscreen_btn">
+            <i class="fa fa-external-link"></i> Open Fullscreen
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PDF Viewer Section -->
+  <section class="pdf_viewer_section">
+    <div class="container">
+      
+      <!-- Viewer Container Card -->
+      <div class="pdf_card_wrapper">
+        <!-- Embedded Full Page PDF Viewer (Toolbar Hidden for Pure Content View) -->
+        <div class="pdf_embed_container">
+          <object
+            data={`${pdfUrl}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
+            type="application/pdf"
+            class="pdf_object"
+          >
+            <iframe 
+              src={`${pdfUrl}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
+              title="Shakarganj Limited Free Float of The Shares PDF"
+              class="pdf_iframe"
+              loading="lazy"
+            >
+              <p>Your browser does not support embedded PDF viewing. 
+                <a href={pdfUrl} target="_blank" rel="noopener noreferrer">Click here to view or download the PDF document directly.</a>
+              </p>
+            </iframe>
+          </object>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero Section */
+  .float_hero {
+    background: linear-gradient(135deg, #0b1d12 0%, #15321f 50%, #0d2215 100%);
+    padding: 35px 0 45px 0;
+    color: #ffffff;
+    border-bottom: 3px solid var(--primary-color);
+  }
+
+  .float_hero .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #a0aec0;
+    margin-bottom: 20px;
+  }
+
+  .float_hero .breadcrumbs a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .float_hero .breadcrumbs a:hover {
+    color: var(--primary-color);
+  }
+
+  .float_hero .breadcrumbs .sep {
+    color: #718096;
+    font-size: 11px;
+  }
+
+  .float_hero .breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .hero_content_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .hero_text_box {
+    max-width: 750px;
+  }
+
+  .hero_badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(46, 125, 50, 0.25);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    color: #81c784;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .hero_title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+  }
+
+  .hero_subtitle {
+    font-size: 15px;
+    color: #cbd5e0;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .hero_actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .btn_action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .download_btn {
+    background: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+  }
+
+  .download_btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+  }
+
+  .fullscreen_btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .fullscreen_btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+  }
+
+  /* PDF Viewer Section */
+  .pdf_viewer_section {
+    padding: 40px 0 60px 0;
+    background: #f8fafc;
+  }
+
+  .pdf_card_wrapper {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #cbd5e0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+
+  .pdf_embed_container {
+    width: 100%;
+    height: clamp(600px, 82vh, 1050px);
+    background: #525659;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pdf_object,
+  .pdf_iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    overflow: hidden;
+  }
+
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .float_hero {
+      padding: 25px 0 35px 0;
+    }
+
+    .hero_title {
+      font-size: 24px;
+    }
+
+    .hero_content_flex {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .hero_actions {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    .pdf_embed_container {
+      height: 600px;
+    }
+  }
+</style>
