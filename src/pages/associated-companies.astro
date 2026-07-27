@@ -1,0 +1,407 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Page Metadata
+const pageTitle = "Associated Companies | Shakarganj Limited";
+const metaDescription = "Explore the associated companies, strategic equity investments, and affiliated corporate entities of Shakarganj Limited across dairy, steel, engineering, and renewable energy.";
+
+// Associated Companies Data
+const companies = [
+  {
+    name: "Shakarganj Food Products Limited",
+    shortName: "SFPL",
+    sector: "Dairy & Consumer Foods",
+    badge: "DAIRY & BEVERAGE",
+    logoUrl: "https://docs.sml.com.pk/images/sfpl_logo.png",
+    localLogoUrl: "/images/sfpl_logo.png",
+    websiteUrl: "https://shakarganjfood.com/",
+    description: "Shakarganj Food Products Limited (SFPL) is a leading Pakistani food and beverage manufacturer. Incorporated to process and package high-quality dairy and beverage products, SFPL has built household consumer brands including Good Milk, farm-fresh milk, and pure fruit juices using modern UHT processing technology."
+  },
+  {
+    name: "Crescent Steel and Allied Products Limited",
+    shortName: "CSAPL",
+    sector: "Steel, Textiles & Capital Markets",
+    badge: "ENGINEERING & CONGLOMERATE",
+    logoUrl: "https://docs.sml.com.pk/images/crescent_steel_logo.png",
+    localLogoUrl: "/images/crescent_steel_logo.png",
+    websiteUrl: "https://www.crescent.com.pk/",
+    description: "Crescent Steel and Allied Products Limited is a premier publicly listed conglomerate on the Pakistan Stock Exchange (PSX: CSAP). The company manufactures large-diameter spiral submerged arc welded (SAW) steel linepipes, operates cotton spinning units, and manages diversified portfolios in energy and capital markets."
+  },
+  {
+    name: "Solution De Energy (Private) Limited",
+    shortName: "Solution De Energy",
+    sector: "Renewable Energy & Power Generation",
+    badge: "CLEAN ENERGY & HYDRO",
+    logoUrl: "https://docs.sml.com.pk/images/solution_de_energy_logo.jpg",
+    localLogoUrl: "/images/solution_de_energy_logo.jpg",
+    websiteUrl: "#",
+    description: "Solution De Energy (Private) Limited is a specialized power generation company dedicated to developing renewable energy infrastructure, solar power projects, and sustainable energy solutions to meet Pakistan's growing clean energy requirements."
+  }
+];
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Modernized Page Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>About Us</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Associated Companies</span>
+      </div>
+      <h1 class="hero_page_title">Associated Companies</h1>
+      <p class="hero_subtitle">Strategic equity holdings, joint ventures, and affiliated corporate entities driving industrial growth across energy, manufacturing, and consumer sectors.</p>
+    </div>
+  </section>
+
+  <!-- Main Section -->
+  <section class="associated_main_section">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section_intro text-center">
+        <span class="sub_title">Corporate Synergy & Investment Portfolio</span>
+        <h2 class="main_title">Our Affiliated Corporate Network</h2>
+        <div class="heading_divider"></div>
+        <p class="header_desc">
+          Shakarganj Limited maintains strategic partnerships and equity investments in leading industrial enterprises across Pakistan.
+        </p>
+      </div>
+
+      <!-- Companies 3-Column Grid -->
+      <div class="companies_grid">
+        {companies.map((comp) => (
+          <div class="company_card">
+            <div class="card_header">
+              <span class="sector_badge">{comp.badge}</span>
+              <div class="logo_container">
+                <img 
+                  src={comp.logoUrl} 
+                  alt={comp.name} 
+                  loading="lazy"
+                  onerror={`this.src='${comp.localLogoUrl}'`}
+                />
+              </div>
+            </div>
+
+            <div class="card_body">
+              <h3 class="company_name">{comp.name}</h3>
+              <span class="company_sector"><i class="fa fa-industry"></i> {comp.sector}</span>
+              <p class="company_desc">{comp.description}</p>
+            </div>
+
+            <div class="card_footer">
+              {comp.websiteUrl !== '#' ? (
+                <a href={comp.websiteUrl} target="_blank" rel="noopener noreferrer" class="visit_btn">
+                  <span>Visit Official Website</span>
+                  <i class="fa fa-external-link"></i>
+                </a>
+              ) : (
+                <span class="affiliate_tag">
+                  <i class="fa fa-check-circle"></i> Affiliated Entity
+                </span>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Corporate Synergy Banner Box -->
+      <div class="synergy_box">
+        <div class="synergy_content">
+          <div class="synergy_icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <div class="synergy_text">
+            <h3>Shared Governance & Corporate Excellence</h3>
+            <p>
+              Our associated companies adhere to high standards of corporate governance, environmental stewardship, and operational transparency, reinforcing Shakarganj's commitment to long-term shareholder value and national industrial development.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Page Hero Banner */
+  .page_hero_banner {
+    background: linear-gradient(135deg, #004d00 0%, #002b00 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Main Section */
+  .associated_main_section {
+    padding: 55px 0 80px 0;
+    background: #f8fafc;
+  }
+
+  .section_intro {
+    margin-bottom: 45px;
+  }
+
+  .sub_title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .main_title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 10px 0;
+  }
+
+  .heading_divider {
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 0 auto 14px auto;
+    border-radius: 2px;
+  }
+
+  .header_desc {
+    font-size: 15px;
+    color: #64748b;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  /* Companies Grid */
+  .companies_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  .company_card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .company_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e0;
+  }
+
+  .card_header {
+    background: #f1f5f9;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    position: relative;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .sector_badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(22, 101, 52, 0.1);
+    color: var(--primary-color);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .logo_container {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo_container img {
+    max-height: 55px;
+    max-width: 180px;
+    object-fit: contain;
+  }
+
+  .card_body {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .company_name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+  }
+
+  .company_sector {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .company_desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+  }
+
+  .card_footer {
+    padding: 16px 24px;
+    background: #fafafa;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .visit_btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 16px;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.25s ease;
+  }
+
+  .visit_btn:hover {
+    background: #14532d;
+    color: #ffffff;
+  }
+
+  .affiliate_tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+  }
+
+  /* Synergy Box */
+  .synergy_box {
+    background: linear-gradient(135deg, #0f291e 0%, #166534 100%);
+    border-radius: 14px;
+    padding: 30px 35px;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(22, 101, 52, 0.25);
+  }
+
+  .synergy_content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .synergy_icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .synergy_text h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    color: #ffffff;
+  }
+
+  .synergy_text p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e2e8f0;
+    margin: 0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .companies_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .companies_grid {
+      grid-template-columns: 1fr;
+    }
+
+    .synergy_content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
