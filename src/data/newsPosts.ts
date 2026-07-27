@@ -108,8 +108,8 @@ export const newsPosts: NewsPost[] = [
     "category": "Corporate Notice",
     "excerpt": "",
     "featuredImage": "https://docs.sml.com.pk/images/news_thumb_9_2025.jpg",
-    "linkUrl": "https://www.sml.com.pk/notice-of-board-of-directors-meeting-10/",
-    "pdfUrl": "https://www.sml.com.pk/notice-of-board-of-directors-meeting-10/"
+    "linkUrl": "https://dps.psx.com.pk/download/document/256839.pdf",
+    "pdfUrl": "https://dps.psx.com.pk/download/document/256839.pdf"
   },
   {
     "id": "financial-results-for-the-half-year-ended-31-mar-2025-10",
