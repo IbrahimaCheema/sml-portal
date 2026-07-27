@@ -7,24 +7,16 @@ const metaDescription = "Corporate Mission and Vision of Shakarganj Limited (SML
 ---
 
 <Layout title={pageTitle} description={metaDescription}>
-  <!-- Hero Section -->
-  <section class="mv_hero">
+  <!-- Modernized Page Hero Banner -->
+  <section class="page_hero_banner">
     <div class="container">
-      <div class="breadcrumbs">
-        <a href="/" class="home_link">Home</a>
-        <span class="sep"><i class="fa fa-angle-right"></i></span>
-        <a href="#" class="sub_link">About Us</a>
-        <span class="sep"><i class="fa fa-angle-right"></i></span>
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>About Us</span> <i class="fa fa-angle-right"></i>
         <span class="current">Mission and Vision</span>
       </div>
-
-      <div class="hero_content">
-        <span class="hero_badge">About Us • Corporate Governance</span>
-        <h1 class="hero_title">Mission & Vision</h1>
-        <p class="hero_subtitle">
-          Guided by sustainable principles, operational excellence, and long-term value creation for all stakeholders.
-        </p>
-      </div>
+      <h1 class="hero_page_title">Mission & Vision</h1>
+      <p class="hero_subtitle">Guided by sustainable principles, operational excellence, and long-term value creation for all stakeholders.</p>
     </div>
   </section>
 
@@ -194,73 +186,47 @@ const metaDescription = "Corporate Mission and Vision of Shakarganj Limited (SML
 </Layout>
 
 <style>
-  /* Hero Section */
-  .mv_hero {
-    background: linear-gradient(135deg, #0b1d12 0%, #15321f 50%, #0d2215 100%);
-    padding: 40px 0 50px 0;
+  /* Page Hero Banner */
+  .page_hero_banner {
+    background: linear-gradient(135deg, #004d00 0%, #002b00 100%);
     color: #ffffff;
+    padding: 55px 0 45px;
     border-bottom: 3px solid var(--primary-color);
   }
-
-  .mv_hero .breadcrumbs {
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 13px;
-    color: #a0aec0;
-    margin-bottom: 20px;
   }
-
-  .mv_hero .breadcrumbs a {
-    color: #cbd5e0;
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
     text-decoration: none;
     transition: color 0.2s ease;
   }
-
-  .mv_hero .breadcrumbs a:hover {
-    color: var(--primary-color);
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
   }
-
-  .mv_hero .breadcrumbs .sep {
-    color: #718096;
-    font-size: 11px;
-  }
-
-  .mv_hero .breadcrumbs .current {
+  .hero_breadcrumbs .current {
     color: #ffffff;
     font-weight: 600;
   }
-
-  .hero_content {
-    max-width: 800px;
-  }
-
-  .hero_badge {
-    display: inline-block;
-    padding: 4px 12px;
-    background: rgba(46, 125, 50, 0.25);
-    border: 1px solid rgba(76, 175, 80, 0.4);
-    color: #81c784;
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 12px;
-  }
-
-  .hero_title {
-    font-size: 34px;
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
     font-weight: 700;
-    margin: 0 0 12px 0;
+    margin-bottom: 10px;
+    line-height: 1.2;
     color: #ffffff;
   }
-
   .hero_subtitle {
     font-size: 16px;
-    color: #cbd5e0;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
     margin: 0;
-    line-height: 1.6;
   }
 
   /* Main Section */
