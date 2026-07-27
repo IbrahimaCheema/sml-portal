@@ -1,0 +1,444 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Page Metadata
+const pageTitle = "Mission and Vision | Shakarganj Limited";
+const metaDescription = "Corporate Mission and Vision of Shakarganj Limited (SML). Committed to industry leadership, sustainable value creation, environmental stewardship, and social responsibility.";
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Hero Section -->
+  <section class="mv_hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/" class="home_link">Home</a>
+        <span class="sep"><i class="fa fa-angle-right"></i></span>
+        <a href="#" class="sub_link">About Us</a>
+        <span class="sep"><i class="fa fa-angle-right"></i></span>
+        <span class="current">Mission and Vision</span>
+      </div>
+
+      <div class="hero_content">
+        <span class="hero_badge">About Us • Corporate Governance</span>
+        <h1 class="hero_title">Mission & Vision</h1>
+        <p class="hero_subtitle">
+          Guided by sustainable principles, operational excellence, and long-term value creation for all stakeholders.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="mv_main_section">
+    <div class="container">
+
+      <!-- Vision Card -->
+      <div class="vision_card">
+        <div class="vision_badge_strip">
+          <span class="vision_tag"><i class="fa fa-eye"></i> Strategic Direction</span>
+        </div>
+        <div class="vision_content">
+          <div class="vision_icon_box">
+            <i class="fa fa-compass"></i>
+          </div>
+          <div class="vision_text_box">
+            <h2 class="vision_heading">Our Vision</h2>
+            <p class="vision_statement">
+              "To excel across all our operations and deliver sustainable value to all stakeholders."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission Section -->
+      <div class="mission_container">
+        <div class="section_header text-center">
+          <span class="sub_title">Corporate Objectives</span>
+          <h2 class="main_title">Our Mission</h2>
+          <p class="header_desc">
+            Seven core pillars driving our daily operations, strategic decision-making, and community engagement.
+          </p>
+        </div>
+
+        <div class="mission_grid">
+          
+          <!-- Pillar 1 -->
+          <div class="mission_card">
+            <div class="card_header_row">
+              <div class="pillar_icon"><i class="fa fa-trophy"></i></div>
+              <span class="pillar_num">01</span>
+            </div>
+            <h3 class="pillar_title">Industry Leadership</h3>
+            <p class="pillar_desc">
+              To gain and maintain a leadership position in the industries we operate in by maintaining customer satisfaction, delivering quality products, committing to continuous process improvement and investing in technology, infrastructure and human resources.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="mission_card">
+            <div class="card_header_row">
+              <div class="pillar_icon"><i class="fa fa-line-chart"></i></div>
+              <span class="pillar_num">02</span>
+            </div>
+            <h3 class="pillar_title">Shareholder Returns</h3>
+            <p class="pillar_desc">
+              To maximize returns to our shareholders by optimal allocation of resources by pursuing growth opportunities in high value markets and ensuring sustainable profitability.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="mission_card">
+            <div class="card_header_row">
+              <div class="pillar_icon"><i class="fa fa-star"></i></div>
+              <span class="pillar_num">03</span>
+            </div>
+            <h3 class="pillar_title">Customer Value</h3>
+            <p class="pillar_desc">
+              To provide the best value products and services to our customers through investment in technology, infrastructure and human resources.
+            </p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="mission_card">
+            <div class="card_header_row">
+              <div class="pillar_icon"><i class="fa fa-handshake-o"></i></div>
+              <span class="pillar_num">04</span>
+            </div>
+            <h3 class="pillar_title">Strategic Partnerships</h3>
+            <p class="pillar_desc">
+              To work with our farmers, suppliers and distributors to develop long-term mutually beneficial partnerships.
+            </p>
+          </div>
+
+          <!-- Pillar 5 -->
+          <div class="mission_card">
+            <div class="card_header_row">
+              <div class="pillar_icon"><i class="fa fa-leaf"></i></div>
+              <span class="pillar_num">05</span>
+            </div>
+            <h3 class="pillar_title">Environmental Stewardship</h3>
+            <p class="pillar_desc">
+              To pursue environmentally friendly policies by effectively and efficiently using our energy resources, aiming for zero waste and a clean healthy environment in our community.
+            </p>
+          </div>
+
+          <!-- Pillar 6 -->
+          <div class="mission_card">
+            <div class="card_header_row">
+              <div class="pillar_icon"><i class="fa fa-heartbeat"></i></div>
+              <span class="pillar_num">06</span>
+            </div>
+            <h3 class="pillar_title">Social Responsibility</h3>
+            <p class="pillar_desc">
+              To be a socially responsible corporate citizen, supporting education, health, environment and socioeconomic development of our society.
+            </p>
+          </div>
+
+          <!-- Pillar 7 -->
+          <div class="mission_card highlight_card">
+            <div class="card_header_row">
+              <div class="pillar_icon"><i class="fa fa-users"></i></div>
+              <span class="pillar_num">07</span>
+            </div>
+            <h3 class="pillar_title">Workforce Empowerment</h3>
+            <p class="pillar_desc">
+              To provide the best working environment to our employees and provide them opportunities to enhance their skills.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero Section */
+  .mv_hero {
+    background: linear-gradient(135deg, #0b1d12 0%, #15321f 50%, #0d2215 100%);
+    padding: 40px 0 50px 0;
+    color: #ffffff;
+    border-bottom: 3px solid var(--primary-color);
+  }
+
+  .mv_hero .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #a0aec0;
+    margin-bottom: 20px;
+  }
+
+  .mv_hero .breadcrumbs a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .mv_hero .breadcrumbs a:hover {
+    color: var(--primary-color);
+  }
+
+  .mv_hero .breadcrumbs .sep {
+    color: #718096;
+    font-size: 11px;
+  }
+
+  .mv_hero .breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .hero_content {
+    max-width: 800px;
+  }
+
+  .hero_badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(46, 125, 50, 0.25);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    color: #81c784;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .hero_title {
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: #ffffff;
+  }
+
+  .hero_subtitle {
+    font-size: 16px;
+    color: #cbd5e0;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Main Section */
+  .mv_main_section {
+    padding: 45px 0 65px 0;
+    background: #f8fafc;
+  }
+
+  /* Vision Card */
+  .vision_card {
+    background: linear-gradient(135deg, #1c3c28 0%, #166534 100%);
+    border-radius: 14px;
+    padding: 36px 40px;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(22, 101, 52, 0.25);
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vision_card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .vision_badge_strip {
+    margin-bottom: 20px;
+  }
+
+  .vision_tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #81c784;
+  }
+
+  .vision_content {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .vision_icon_box {
+    width: 68px;
+    height: 68px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #ffffff;
+    flex-shrink: 0;
+  }
+
+  .vision_text_box {
+    flex-grow: 1;
+  }
+
+  .vision_heading {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+  }
+
+  .vision_statement {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0;
+    color: #f0fdf4;
+    font-style: italic;
+  }
+
+  /* Mission Section */
+  .section_header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+  }
+
+  .sub_title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .main_title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 10px 0;
+  }
+
+  .header_desc {
+    font-size: 15px;
+    color: #64748b;
+    margin: 0;
+  }
+
+  /* Mission Grid */
+  .mission_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .mission_card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 28px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .mission_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e0;
+  }
+
+  .card_header_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+
+  .pillar_icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: rgba(22, 101, 52, 0.08);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .pillar_num {
+    font-size: 24px;
+    font-weight: 800;
+    color: #cbd5e0;
+    font-family: inherit;
+  }
+
+  .pillar_title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 12px 0;
+  }
+
+  .pillar_desc {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* Responsive Grid */
+  @media (max-width: 992px) {
+    .mission_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mv_hero {
+      padding: 30px 0 40px 0;
+    }
+
+    .hero_title {
+      font-size: 26px;
+    }
+
+    .vision_card {
+      padding: 24px;
+    }
+
+    .vision_content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .vision_statement {
+      font-size: 17px;
+    }
+
+    .mission_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
