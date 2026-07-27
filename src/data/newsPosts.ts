@@ -13,6 +13,17 @@ export interface NewsPost {
 
 export const newsPosts: NewsPost[] = [
   {
+    "id": "notice-of-board-meeting-2026-07-22",
+    "title": "Notice of Board Meeting",
+    "date": "2026-07-22",
+    "displayDate": "22 July 2026",
+    "category": "Corporate Notice",
+    "excerpt": "Official notification regarding the upcoming meeting of the Board of Directors of Shakarganj Limited.",
+    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_2_2026.png",
+    "linkUrl": "https://docs.sml.com.pk/pdf/notice_board_meeting_2026_07_22.pdf",
+    "pdfUrl": "https://docs.sml.com.pk/pdf/notice_board_meeting_2026_07_22.pdf"
+  },
+  {
     "id": "financial-results-for-the-half-year-ended-31-mar-2026-1",
     "title": "Financial results for the Half Year Ended 31 Mar 2026",
     "date": "2026-05-25",
