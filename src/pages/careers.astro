@@ -185,30 +185,6 @@ const cultureValues = [
             </form>
           </div>
         </div>
-
-        <!-- Facility Photo & HR Info Column -->
-        <div class="info_col">
-          <div class="photo_card">
-            <img 
-              src={careersPhoto} 
-              alt="Shakarganj Industrial Facility" 
-              loading="lazy"
-              onerror={`this.src='${localCareersPhoto}'`}
-            />
-            <div class="photo_caption">
-              <h4>Modern Industrial Operations</h4>
-              <p>Join over 3,000+ professionals shaping Pakistan's agro-industrial future across sugar, bio-energy, and consumer product divisions.</p>
-            </div>
-          </div>
-
-          <div class="hr_contact_card">
-            <h3><i class="fa fa-building-o"></i> Human Resources Division</h3>
-            <p><strong>Head Office:</strong> Shakarganj Limited, Executive HR Tower, Lahore / Jhang, Pakistan.</p>
-            <p><strong>Official Email:</strong> <a href="mailto:info@shakarganj.pk">info@shakarganj.pk</a></p>
-            <p><strong>Work Hours:</strong> Monday – Friday: 9:00 AM – 5:00 PM (PKT)</p>
-          </div>
-        </div>
-
       </div>
 
       <!-- Why Work With Us Section -->
@@ -412,12 +388,10 @@ const cultureValues = [
     text-decoration: underline;
   }
 
-  /* Form & Facility Grid */
+  /* Form Section */
   .application_section_grid {
-    display: grid;
-    grid-template-columns: 7fr 5fr;
-    gap: 35px;
-    margin-bottom: 65px;
+    max-width: 900px;
+    margin: 0 auto 65px auto;
   }
 
   .form_card {
