@@ -2,37 +2,37 @@
 import Layout from '../layouts/Layout.astro';
 
 // Page Metadata
-const pageTitle = "Financial Highlights | Shakarganj Limited";
-const metaDescription = "Multi-year financial performance highlights, operational metrics, profitability, balance sheet summary, and key financial ratios for Shakarganj Limited.";
+const pageTitle = "Shareholding Pattern | Shakarganj Limited";
+const metaDescription = "Official pattern of shareholding, distribution of equity shares, categories of shareholders, and capital structure details for Shakarganj Limited.";
 
 // Cloudflare R2 hosted PDF & local fallback
-const pdfUrl = "https://docs.sml.com.pk/docs/SML-Financial-Highlights.pdf";
-const localPdfUrl = "/docs/SML-Financial-Highlights.pdf";
+const pdfUrl = "https://docs.sml.com.pk/docs/SML-Shareholding-Pattern.pdf";
+const localPdfUrl = "/docs/SML-Shareholding-Pattern.pdf";
 ---
 
 <Layout title={pageTitle} description={metaDescription}>
   <!-- Hero Section -->
-  <section class="highlights_hero">
+  <section class="pattern_hero">
     <div class="container">
       <div class="breadcrumbs">
         <a href="/" class="home_link">Home</a>
         <span class="sep"><i class="fa fa-angle-right"></i></span>
         <a href="#" class="sub_link">Investor Relations</a>
         <span class="sep"><i class="fa fa-angle-right"></i></span>
-        <span class="current">Financial Highlights</span>
+        <span class="current">Shareholding Pattern</span>
       </div>
 
       <div class="hero_content_flex">
         <div class="hero_text_box">
-          <span class="hero_badge">Investor Relations • Performance Metrics</span>
-          <h1 class="hero_title">Financial Highlights</h1>
+          <span class="hero_badge">Investor Relations • Capital Structure</span>
+          <h1 class="hero_title">Shareholding Pattern</h1>
           <p class="hero_subtitle">
-            Comprehensive financial performance indicators, multi-year revenue growth, capital expenditure, profitability metrics, and balance sheet summary for Shakarganj Limited.
+            Official pattern of shareholding, distribution of equity shares among directors, executives, associated companies, financial institutions, and general public for Shakarganj Limited.
           </p>
         </div>
 
         <div class="hero_actions">
-          <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="btn_action download_btn" download="SML-Financial-Highlights.pdf">
+          <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="btn_action download_btn" download="SML-Shareholding-Pattern.pdf">
             <i class="fa fa-download"></i> Download PDF
           </a>
           <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="btn_action fullscreen_btn">
@@ -58,7 +58,7 @@ const localPdfUrl = "/docs/SML-Financial-Highlights.pdf";
           >
             <iframe 
               src={`${pdfUrl}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
-              title="Shakarganj Limited Financial Highlights PDF"
+              title="Shakarganj Limited Shareholding Pattern PDF"
               class="pdf_iframe"
               loading="lazy"
             >
@@ -73,7 +73,7 @@ const localPdfUrl = "/docs/SML-Financial-Highlights.pdf";
         <div class="pdf_card_footer">
           <div class="footer_note">
             <i class="fa fa-info-circle"></i>
-            <span>Official audited financial metrics filed with Pakistan Stock Exchange (PSX). For detailed quarter-wise reports, visit <a href="/financial-reports">Financial Reports</a>.</span>
+            <span>Official audited shareholding distribution filed with Pakistan Stock Exchange (PSX) and SECP.</span>
           </div>
           <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="direct_link">
             Direct PDF Link <i class="fa fa-arrow-right"></i>
@@ -87,14 +87,14 @@ const localPdfUrl = "/docs/SML-Financial-Highlights.pdf";
 
 <style>
   /* Hero Section */
-  .highlights_hero {
+  .pattern_hero {
     background: linear-gradient(135deg, #0b1d12 0%, #15321f 50%, #0d2215 100%);
     padding: 35px 0 45px 0;
     color: #ffffff;
     border-bottom: 3px solid var(--primary-color);
   }
 
-  .highlights_hero .breadcrumbs {
+  .pattern_hero .breadcrumbs {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -103,22 +103,22 @@ const localPdfUrl = "/docs/SML-Financial-Highlights.pdf";
     margin-bottom: 20px;
   }
 
-  .highlights_hero .breadcrumbs a {
+  .pattern_hero .breadcrumbs a {
     color: #cbd5e0;
     text-decoration: none;
     transition: color 0.2s ease;
   }
 
-  .highlights_hero .breadcrumbs a:hover {
+  .pattern_hero .breadcrumbs a:hover {
     color: var(--primary-color);
   }
 
-  .highlights_hero .breadcrumbs .sep {
+  .pattern_hero .breadcrumbs .sep {
     color: #718096;
     font-size: 11px;
   }
 
-  .highlights_hero .breadcrumbs .current {
+  .pattern_hero .breadcrumbs .current {
     color: #ffffff;
     font-weight: 600;
   }
@@ -206,17 +206,6 @@ const localPdfUrl = "/docs/SML-Financial-Highlights.pdf";
     color: #ffffff;
   }
 
-  .print_btn {
-    background: transparent;
-    color: #cbd5e0;
-    border: 1px solid #4a5568;
-  }
-
-  .print_btn:hover {
-    background: #2d3748;
-    color: #ffffff;
-  }
-
   /* PDF Viewer Section */
   .pdf_viewer_section {
     padding: 40px 0 60px 0;
@@ -229,39 +218,6 @@ const localPdfUrl = "/docs/SML-Financial-Highlights.pdf";
     border: 1px solid #cbd5e0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-  }
-
-  .pdf_toolbar_strip {
-    background: #1e293b;
-    color: #ffffff;
-    padding: 12px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #334155;
-  }
-
-  .toolbar_left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    font-weight: 600;
-  }
-
-  .pdf_icon {
-    color: #ef4444;
-    font-size: 18px;
-  }
-
-  .badge_r2_live {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 12px;
-    background: rgba(59, 130, 246, 0.2);
-    color: #60a5fa;
-    border: 1px solid rgba(96, 165, 250, 0.3);
   }
 
   .pdf_embed_container {
@@ -304,16 +260,6 @@ const localPdfUrl = "/docs/SML-Financial-Highlights.pdf";
     color: var(--primary-color);
   }
 
-  .footer_note a {
-    color: var(--primary-color);
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  .footer_note a:hover {
-    text-decoration: underline;
-  }
-
   .direct_link {
     font-size: 13px;
     font-weight: 600;
@@ -331,7 +277,7 @@ const localPdfUrl = "/docs/SML-Financial-Highlights.pdf";
 
   /* Responsive Styling */
   @media (max-width: 768px) {
-    .highlights_hero {
+    .pattern_hero {
       padding: 25px 0 35px 0;
     }
 
