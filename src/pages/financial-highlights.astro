@@ -59,15 +59,15 @@ const localPdfUrl = "/docs/SML-Financial-Highlights.pdf";
           </div>
         </div>
 
-        <!-- Embedded Full Page PDF Viewer -->
+        <!-- Embedded Full Page PDF Viewer (Toolbar Hidden for Pure Content View) -->
         <div class="pdf_embed_container">
           <object
-            data={`${pdfUrl}#view=FitH&toolbar=1&navpanes=0`}
+            data={`${pdfUrl}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
             type="application/pdf"
             class="pdf_object"
           >
             <iframe 
-              src={`${pdfUrl}#view=FitH&toolbar=1&navpanes=0`}
+              src={`${pdfUrl}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
               title="Shakarganj Limited Financial Highlights PDF"
               class="pdf_iframe"
               loading="lazy"
