@@ -1,0 +1,359 @@
+---
+import Layout from '../layouts/Layout.astro';
+import cbsData from '../data/corporateBriefingSessions.json';
+
+// Page Metadata
+const pageTitle = "Corporate Briefing Session | Shakarganj Limited";
+const metaDescription = "Official investor presentation materials, corporate briefing session decks, operational overviews, and financial performance briefings for analysts and shareholders.";
+
+interface CbsItem {
+  year: string;
+  title: string;
+  pdfUrl: string;
+  localPdfUrl: string;
+  thumbUrl: string;
+  localThumbUrl: string;
+}
+
+const sessions: CbsItem[] = cbsData;
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Hero Section -->
+  <section class="cbs_hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/" class="home_link">Home</a>
+        <span class="sep"><i class="fa fa-angle-right"></i></span>
+        <a href="#" class="sub_link">Investor Relations</a>
+        <span class="sep"><i class="fa fa-angle-right"></i></span>
+        <span class="current">Corporate Briefing Session</span>
+      </div>
+
+      <div class="hero_content_box">
+        <span class="hero_badge">Investor Relations • Corporate Briefings</span>
+        <h1 class="hero_title">Corporate Briefing Session</h1>
+        <p class="hero_subtitle">
+          Official investor presentation materials, corporate briefing session decks, business segment updates, and financial performance summaries presented to analysts, fund managers, and shareholders.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Cards Per Row Grid Section -->
+  <section class="cbs_grid_section">
+    <div class="container">
+      <div class="section_header_strip">
+        <h2 class="grid_heading">Briefing Presentation Decks</h2>
+        <span class="grid_count">{sessions.length} Documents Available</span>
+      </div>
+
+      <div class="cbs_4col_grid">
+        {sessions.map((item) => (
+          <div class="cbs_card">
+            <div class="cbs_image_container">
+              <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer">
+                <img 
+                  src={item.thumbUrl} 
+                  alt={item.title}
+                  width="350"
+                  height="260"
+                  loading="lazy"
+                  onerror={`this.src='${item.localThumbUrl}'`}
+                />
+              </a>
+              <span class="year_badge">FY {item.year}</span>
+            </div>
+
+            <div class="cbs_card_body">
+              <span class="doc_type_tag"><i class="fa fa-file-pdf-o"></i> PDF Presentation</span>
+              <h3 class="cbs_card_title">
+                <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer">
+                  {item.title}
+                </a>
+              </h3>
+              
+              <div class="cbs_action_buttons">
+                <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" class="btn_view">
+                  <i class="fa fa-eye"></i> View PDF
+                </a>
+                <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" class="btn_download" download={`${item.title}.pdf`}>
+                  <i class="fa fa-download"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero Section */
+  .cbs_hero {
+    background: linear-gradient(135deg, #0b1d12 0%, #15321f 50%, #0d2215 100%);
+    padding: 35px 0 45px 0;
+    color: #ffffff;
+    border-bottom: 3px solid var(--primary-color);
+  }
+
+  .cbs_hero .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #a0aec0;
+    margin-bottom: 20px;
+  }
+
+  .cbs_hero .breadcrumbs a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .cbs_hero .breadcrumbs a:hover {
+    color: var(--primary-color);
+  }
+
+  .cbs_hero .breadcrumbs .sep {
+    color: #718096;
+    font-size: 11px;
+  }
+
+  .cbs_hero .breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .hero_content_box {
+    max-width: 800px;
+  }
+
+  .hero_badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(46, 125, 50, 0.25);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    color: #81c784;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .hero_title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+  }
+
+  .hero_subtitle {
+    font-size: 15px;
+    color: #cbd5e0;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Grid Section */
+  .cbs_grid_section {
+    padding: 50px 0 70px 0;
+    background: #f8fafc;
+  }
+
+  .section_header_strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+  }
+
+  .grid_heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+  }
+
+  .grid_count {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    background: #e2e8f0;
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+
+  /* 4 Cards in a Row Grid Layout */
+  .cbs_4col_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .cbs_card {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .cbs_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    border-color: var(--primary-color);
+  }
+
+  .cbs_image_container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: radial-gradient(circle, #ffffff 0%, #f1f5f9 100%);
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px;
+  }
+
+  .cbs_image_container img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .cbs_card:hover .cbs_image_container img {
+    transform: scale(1.04);
+  }
+
+  .year_badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #166534;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .cbs_card_body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .doc_type_tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: #ef4444;
+    margin-bottom: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .cbs_card_title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 16px 0;
+    color: #1e293b;
+    flex-grow: 1;
+  }
+
+  .cbs_card_title a {
+    color: #1e293b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .cbs_card_title a:hover {
+    color: var(--primary-color);
+  }
+
+  .cbs_action_buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn_view, .btn_download {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+
+  .btn_view {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e0;
+  }
+
+  .btn_view:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+  }
+
+  .btn_download {
+    background: var(--primary-color);
+    color: #ffffff;
+    border: none;
+  }
+
+  .btn_download:hover {
+    background: var(--primary-hover);
+    color: #ffffff;
+  }
+
+  /* Responsive Grid Breakpoints */
+  @media (max-width: 1024px) {
+    .cbs_4col_grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .cbs_4col_grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .hero_title {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cbs_4col_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
