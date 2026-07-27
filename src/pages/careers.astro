@@ -1,0 +1,743 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Page Metadata
+const pageTitle = "Careers | Shakarganj Limited";
+const metaDescription = "Explore career opportunities, internships, and executive roles at Shakarganj Limited. Register your CV with our HR division.";
+
+// R2 Asset URLs
+const careerSignIcon = "https://docs.sml.com.pk/images/career_sign_icon.jpg";
+const localCareerSignIcon = "/images/career_sign_icon.jpg";
+const careersPhoto = "https://docs.sml.com.pk/images/careers_banner_photo.jpg";
+const localCareersPhoto = "/images/careers_banner_photo.jpg";
+
+// Departments List
+const departments = [
+  "Sugar Production & Engineering",
+  "Biofuels & Chemical Processing",
+  "Finance, Audit & Accounting",
+  "Supply Chain & Procurement",
+  "Quality Assurance & R&D",
+  "Human Resources & Admin",
+  "IT, ERP & Systems Development",
+  "Sales, Marketing & Export"
+];
+
+// Why Work With Us Data
+const cultureValues = [
+  {
+    icon: "user-plus",
+    title: "Talent Development",
+    desc: "Continuous executive training, technical workshops, and structured mentorship programs designed to accelerate professional growth."
+  },
+  {
+    icon: "shield",
+    title: "Equal Opportunity",
+    desc: "A progressive, inclusive, and meritocratic workplace environment committed to diversity and equal career progression for all."
+  },
+  {
+    icon: "bolt",
+    title: "Operational Excellence",
+    desc: "Hands-on exposure to state-of-the-art bio-refineries, high-capacity UHT processing, and advanced industrial automation."
+  },
+  {
+    icon: "heartbeat",
+    title: "Community & Impact",
+    desc: "Purpose-driven careers aligned with national economic development, renewable power generation, and community welfare initiatives."
+  }
+];
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Modernized Page Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>Media</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Careers</span>
+      </div>
+      <h1 class="hero_page_title">Careers at Shakarganj</h1>
+      <p class="hero_subtitle">Build a rewarding career with Pakistan's leading agro-industrial conglomerate. Explore opportunities, register your CV, and join our high-performance team.</p>
+    </div>
+  </section>
+
+  <!-- Main Careers Section -->
+  <section class="careers_main_section">
+    <div class="container">
+      
+      <!-- HR Division Invitation Card -->
+      <div class="hr_invitation_card">
+        <div class="invitation_grid">
+          <div class="invitation_icon_col">
+            <div class="icon_circle">
+              <img 
+                src={careerSignIcon} 
+                alt="Career Opportunity Emblem" 
+                width="120"
+                height="120"
+                loading="eager"
+                onerror={`this.src='${localCareerSignIcon}'`}
+              />
+            </div>
+          </div>
+
+          <div class="invitation_text_col">
+            <span class="hr_badge"><i class="fa fa-users"></i> HR DIVISION INVITATION</span>
+            <h2 class="invitation_title">Join Our Talent Network</h2>
+            <p class="invitation_desc">
+              Thank you for your interest in seeking career opportunities with Shakarganj Limited. You can register your CV with our talent bank for upcoming job positions. Your application will be thoroughly reviewed and routed to the most suitable department relevant to your qualifications, experience, and career aspirations.
+            </p>
+            <p class="hr_email_line">
+              <i class="fa fa-envelope-o"></i> Direct HR Contact for Inquiries & Internships: 
+              <a href="mailto:info@shakarganj.pk" class="email_link">info@shakarganj.pk</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Application Form & Facility Section Grid -->
+      <div class="application_section_grid">
+        
+        <!-- Form Column -->
+        <div class="form_col">
+          <div class="form_card">
+            <div class="form_header">
+              <h3 class="form_title"><i class="fa fa-cloud-upload"></i> Upload Your Resume</h3>
+              <p class="form_subtitle">Complete the details below to register your CV with Shakarganj HR Division.</p>
+            </div>
+
+            <form id="careerForm" class="career_form">
+              <div class="form_row">
+                <div class="form_group">
+                  <label for="fullName">Full Name <span class="req">*</span></label>
+                  <input type="text" id="fullName" name="fullName" placeholder="e.g. Muhammad Ali" required />
+                </div>
+                <div class="form_group">
+                  <label for="email">Email Address <span class="req">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="e.g. ali@example.com" required />
+                </div>
+              </div>
+
+              <div class="form_row">
+                <div class="form_group">
+                  <label for="phone">Contact Number <span class="req">*</span></label>
+                  <input type="tel" id="phone" name="phone" placeholder="e.g. +92 300 1234567" required />
+                </div>
+                <div class="form_group">
+                  <label for="department">Target Department <span class="req">*</span></label>
+                  <select id="department" name="department" required>
+                    <option value="" disabled selected>Select Department</option>
+                    {departments.map((dept) => (
+                      <option value={dept}>{dept}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div class="form_row">
+                <div class="form_group">
+                  <label for="qualification">Highest Qualification <span class="req">*</span></label>
+                  <select id="qualification" name="qualification" required>
+                    <option value="" disabled selected>Select Qualification</option>
+                    <option value="Bachelor's Degree">Bachelor's Degree (BS / BE / BBA)</option>
+                    <option value="Master's Degree">Master's Degree (MS / MBA / M.Sc)</option>
+                    <option value="CA / ACCA / ICMA">CA / ACCA / ICMA Professional</option>
+                    <option value="Diploma / DAE">Associate Diploma (DAE)</option>
+                    <option value="Intermediate / Other">Intermediate / Other</option>
+                  </select>
+                </div>
+                <div class="form_group">
+                  <label for="experience">Years of Experience <span class="req">*</span></label>
+                  <select id="experience" name="experience" required>
+                    <option value="" disabled selected>Select Experience</option>
+                    <option value="Fresh Graduate / Student">Fresh Graduate / Student</option>
+                    <option value="1 - 3 Years">1 - 3 Years</option>
+                    <option value="4 - 7 Years">4 - 7 Years</option>
+                    <option value="8 - 12 Years">8 - 12 Years</option>
+                    <option value="12+ Years">12+ Years Executive</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form_group">
+                <label for="resumeFile">Attach Resume Document (.pdf, .doc, .docx) <span class="req">*</span></label>
+                <div class="file_upload_wrapper">
+                  <input type="file" id="resumeFile" name="resumeFile" accept=".pdf,.doc,.docx" required />
+                  <div class="file_upload_box">
+                    <i class="fa fa-file-text-o"></i>
+                    <span id="fileNameDisplay">Choose a CV file or drag it here</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form_group">
+                <label for="coverNote">Cover Note / Purpose of Application</label>
+                <textarea id="coverNote" name="coverNote" rows="3" placeholder="Briefly describe your career background and key skills..."></textarea>
+              </div>
+
+              <button type="submit" class="submit_btn" id="submitBtn">
+                <span>Submit CV to HR Division</span>
+                <i class="fa fa-paper-plane"></i>
+              </button>
+
+              <div class="form_alert" id="formAlert" style="display: none;"></div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Facility Photo & HR Info Column -->
+        <div class="info_col">
+          <div class="photo_card">
+            <img 
+              src={careersPhoto} 
+              alt="Shakarganj Industrial Facility" 
+              loading="lazy"
+              onerror={`this.src='${localCareersPhoto}'`}
+            />
+            <div class="photo_caption">
+              <h4>Modern Industrial Operations</h4>
+              <p>Join over 3,000+ professionals shaping Pakistan's agro-industrial future across sugar, bio-energy, and consumer product divisions.</p>
+            </div>
+          </div>
+
+          <div class="hr_contact_card">
+            <h3><i class="fa fa-building-o"></i> Human Resources Division</h3>
+            <p><strong>Head Office:</strong> Shakarganj Limited, Executive HR Tower, Lahore / Jhang, Pakistan.</p>
+            <p><strong>Official Email:</strong> <a href="mailto:info@shakarganj.pk">info@shakarganj.pk</a></p>
+            <p><strong>Work Hours:</strong> Monday – Friday: 9:00 AM – 5:00 PM (PKT)</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Why Work With Us Section -->
+      <div class="culture_section">
+        <div class="section_intro text-center">
+          <span class="sub_title">LIFE AT SHAKARGANJ</span>
+          <h2 class="main_title">Why Build Your Career With Us?</h2>
+          <div class="heading_divider"></div>
+          <p class="header_desc">We empower our workforce through structured development, industrial innovation, and a culture of mutual respect.</p>
+        </div>
+
+        <div class="culture_grid">
+          {cultureValues.map((val) => (
+            <div class="culture_card">
+              <div class="culture_icon">
+                <i class={`fa fa-${val.icon}`}></i>
+              </div>
+              <h3 class="culture_title">{val.title}</h3>
+              <p class="culture_desc">{val.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('careerForm');
+    const fileInput = document.getElementById('resumeFile');
+    const fileNameDisplay = document.getElementById('fileNameDisplay');
+    const formAlert = document.getElementById('formAlert');
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (!form) return;
+
+    if (fileInput && fileNameDisplay) {
+      fileInput.addEventListener('change', (e) => {
+        if (fileInput.files && fileInput.files.length > 0) {
+          fileNameDisplay.textContent = fileInput.files[0].name;
+          fileNameDisplay.style.color = '#1e293b';
+          fileNameDisplay.style.fontWeight = '600';
+        } else {
+          fileNameDisplay.textContent = 'Choose a CV file or drag it here';
+        }
+      });
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Submitting Application...</span> <i class="fa fa-spinner fa-spin"></i>';
+      }
+
+      setTimeout(() => {
+        if (formAlert) {
+          formAlert.className = 'form_alert success';
+          formAlert.style.display = 'block';
+          formAlert.innerHTML = '<i class="fa fa-check-circle"></i> Thank you! Your CV has been registered successfully with Shakarganj HR Division. Our recruitment team will contact you if your profile matches open roles.';
+        }
+
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Application Submitted Successfully</span> <i class="fa fa-check"></i>';
+        }
+
+        form.reset();
+        if (fileNameDisplay) fileNameDisplay.textContent = 'Choose a CV file or drag it here';
+      }, 1200);
+    });
+  });
+</script>
+
+<style>
+  /* Page Hero Banner */
+  .page_hero_banner {
+    background: linear-gradient(135deg, #004d00 0%, #002b00 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Main Section */
+  .careers_main_section {
+    padding: 55px 0 80px 0;
+    background: #f8fafc;
+  }
+
+  /* HR Invitation Card */
+  .hr_invitation_card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    padding: 32px;
+    margin-bottom: 50px;
+  }
+
+  .invitation_grid {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .invitation_icon_col {
+    flex-shrink: 0;
+  }
+
+  .icon_circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 6px 16px rgba(22, 101, 52, 0.15);
+  }
+
+  .icon_circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .invitation_text_col {
+    flex-grow: 1;
+  }
+
+  .hr_badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+  }
+
+  .invitation_title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 10px 0;
+  }
+
+  .invitation_desc {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0 0 12px 0;
+  }
+
+  .hr_email_line {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin: 0;
+  }
+
+  .email_link {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+
+  /* Form & Facility Grid */
+  .application_section_grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 35px;
+    margin-bottom: 65px;
+  }
+
+  .form_card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    padding: 32px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  }
+
+  .form_header {
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 16px;
+  }
+
+  .form_title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .form_subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+  }
+
+  .career_form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form_row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form_group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+  }
+
+  .req {
+    color: #dc2626;
+  }
+
+  .form_group input[type="text"],
+  .form_group input[type="email"],
+  .form_group input[type="tel"],
+  .form_group select,
+  .form_group textarea {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e0;
+    font-size: 14px;
+    color: #1e293b;
+    background: #ffffff;
+    transition: all 0.25s ease;
+  }
+
+  .form_group input:focus,
+  .form_group select:focus,
+  .form_group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(22, 101, 52, 0.15);
+  }
+
+  .file_upload_wrapper {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .file_upload_wrapper input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+  }
+
+  .file_upload_box {
+    padding: 14px 18px;
+    border: 2px dashed #cbd5e0;
+    border-radius: 8px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #64748b;
+    font-size: 13px;
+    transition: all 0.25s ease;
+  }
+
+  .file_upload_wrapper:hover .file_upload_box {
+    border-color: var(--primary-color);
+    background: #f0fdf4;
+  }
+
+  .submit_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 24px;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.25s ease;
+    margin-top: 6px;
+  }
+
+  .submit_btn:hover {
+    background: #14532d;
+  }
+
+  .form_alert.success {
+    padding: 14px 18px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Info Column */
+  .info_col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .photo_card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  }
+
+  .photo_card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .photo_caption {
+    padding: 20px;
+  }
+
+  .photo_caption h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 6px 0;
+  }
+
+  .photo_caption p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+  }
+
+  .hr_contact_card {
+    background: linear-gradient(135deg, #0f291e 0%, #166534 100%);
+    border-radius: 14px;
+    padding: 24px;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(22, 101, 52, 0.2);
+  }
+
+  .hr_contact_card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 14px 0;
+    color: #ffffff;
+  }
+
+  .hr_contact_card p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #e2e8f0;
+    margin: 0 0 10px 0;
+  }
+
+  .hr_contact_card a {
+    color: #81c784;
+    text-decoration: underline;
+  }
+
+  /* Culture Section */
+  .section_intro {
+    margin-bottom: 40px;
+  }
+
+  .sub_title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .main_title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 10px 0;
+  }
+
+  .heading_divider {
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 0 auto 14px auto;
+    border-radius: 2px;
+  }
+
+  .header_desc {
+    font-size: 15px;
+    color: #64748b;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .culture_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .culture_card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+  }
+
+  .culture_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e0;
+  }
+
+  .culture_icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #f0fdf4;
+    color: var(--primary-color);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .culture_title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 8px 0;
+  }
+
+  .culture_desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .application_section_grid {
+      grid-template-columns: 1fr;
+    }
+
+    .culture_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .invitation_grid {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .form_row {
+      grid-template-columns: 1fr;
+    }
+
+    .culture_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
