@@ -184,8 +184,27 @@ npm install @aws-sdk/client-s3
 ### Step 4: Add Blueprint & Start Antigravity Session
 1. Copy this `CLONING_ARCHITECTURAL_BLUEPRINT.md` file into the root of your new workspace folder.
 2. Open the new workspace in **Antigravity IDE**.
-3. Send your prompt to Antigravity:
+3. Send your initial setup prompt to Antigravity:
    > *"Hello Antigravity! I have placed `CLONING_ARCHITECTURAL_BLUEPRINT.md` in the workspace root. Please review it and help me clone [Target Website URL]."*
+
+---
+
+## 6. 🔄 One-Page-At-A-Time (Iterative) Cloning Workflow
+
+To ensure maximum quality, clean code, and easy testing, clone pages **one by one**:
+
+1. **Start with the Homepage**:
+   - Command: `"Clone homepage from https://www.target-website.com/"`
+   - Antigravity will build `src/pages/index.astro`, set up layout/header/footer, ingest assets to Cloudflare R2, and start localhost for testing.
+
+2. **Clone Inner Pages Sequentially**:
+   - Command: `"Clone https://www.target-website.com/about-us/"`
+   - Command: `"Clone https://www.target-website.com/services/"`
+   - Command: `"Clone https://www.target-website.com/contact/"`
+
+3. **Review & Push When Ready**:
+   - Test each page locally on `http://localhost:4321`.
+   - Tell Antigravity `"git push"` when you are ready to send your commits to GitHub.
 
 ---
 *Created and verified on sml-portal architecture framework.*
