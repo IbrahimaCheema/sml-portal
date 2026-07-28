@@ -92,6 +92,9 @@ All Astro image tags MUST include a local fallback handler:
 
 ## 3. 🎨 UI Design System & Component Standardization
 
+> [!IMPORTANT]
+> **MANDATORY DESIGN CONTINUITY RULE**: All cloned inner pages MUST automatically inherit the master design system, color palette, typography, button styles, and card aesthetics established on the Homepage. Do not introduce disconnected or non-standard styles on inner pages.
+
 ### Standard Top Page Hero Banner (`.page_hero_banner`)
 Every inner page must utilize the standardized corporate top page hero banner:
 
