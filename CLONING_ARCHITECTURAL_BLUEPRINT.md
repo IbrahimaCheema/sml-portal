@@ -36,8 +36,8 @@ import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 const ACCOUNT_ID = 'YOUR_CLOUDFLARE_ACCOUNT_ID';
 const ACCESS_KEY_ID = 'YOUR_R2_ACCESS_KEY_ID';
 const SECRET_ACCESS_KEY = 'YOUR_R2_SECRET_ACCESS_KEY';
-const BUCKET_NAME = 'sml-uploads';
-const PUBLIC_DOMAIN = 'https://docs.sml.com.pk';
+const BUCKET_NAME = 'sf-uploads';
+const PUBLIC_DOMAIN = 'https://docs.sf.com.pk';
 
 const r2 = new S3Client({
   region: 'auto',
@@ -210,4 +210,4 @@ To ensure maximum quality, clean code, and easy testing, clone pages **one by on
    - Tell Antigravity `"git push"` when you are ready to send your commits to GitHub.
 
 ---
-*Created and verified on sml-portal architecture framework.*
+*Created and verified on sf-portal architecture framework.*
