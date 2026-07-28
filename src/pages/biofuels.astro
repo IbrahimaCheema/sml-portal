@@ -1,0 +1,510 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Page Metadata
+const pageTitle = "Biofuels & Bio-Refinery Division | Shakarganj Limited";
+const metaDescription = "Shakarganj Limited is Pakistan's leading producer and exporter of concentrated ethyl alcohol, fuel bioethanol, rectified spirit (>96% ABV), denatured spirit, and methylated spirit.";
+
+// R2 Asset Image URLs
+const imgEthylAlcohol = "https://docs.sml.com.pk/images/biofuels_ethyl_alcohol.jpg";
+const localEthylAlcohol = "/images/biofuels_ethyl_alcohol.jpg";
+const imgDenaturedSpirit = "https://docs.sml.com.pk/images/biofuels_denatured_spirit.jpg";
+const localDenaturedSpirit = "/images/biofuels_denatured_spirit.jpg";
+const imgFuelBioethanol = "https://docs.sml.com.pk/images/biofuels_fuel_bioethanol.jpg";
+const localFuelBioethanol = "/images/biofuels_fuel_bioethanol.jpg";
+
+// Export & Performance Stats
+const stats = [
+  { label: "Export Excellence", value: "4x FPCCI Award", desc: "Highest Ethyl Alcohol Exporter in Pakistan" },
+  { label: "Global Export Share", value: "90%+ Exported", desc: "Exported to international industrial buyers" },
+  { label: "Distillation Strength", value: ">96% ABV", desc: "Double-effect vacuum distillation purity" },
+  { label: "Dehydration Tech", value: "Zero Chemical", desc: "Dry molecular-sieve bioethanol technology" }
+];
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Modernized Page Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>Segments</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Biofuels</span>
+      </div>
+      <h1 class="hero_page_title">Biofuels & Bio-Refinery Division</h1>
+      <p class="hero_subtitle">Pakistan's premier exporter of concentrated ethyl alcohol, fuel bioethanol, and industrial specialty spirits.</p>
+    </div>
+  </section>
+
+  <!-- Key Export & Performance Stats Strip -->
+  <section class="stats_strip">
+    <div class="container">
+      <div class="stats_grid">
+        {stats.map((item) => (
+          <div class="stat_card">
+            <span class="stat_value">{item.value}</span>
+            <h4 class="stat_label">{item.label}</h4>
+            <p class="stat_desc">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Products & Bio-Refinery Section -->
+  <section class="biofuels_products_section">
+    <div class="container">
+      
+      <!-- Section Intro Header -->
+      <div class="section_intro text-center">
+        <span class="sub_title">RENEWABLE ENERGY & CHEMICAL PRODUCTS</span>
+        <h2 class="main_title">Bio-Refinery Product Portfolio</h2>
+        <div class="heading_divider"></div>
+        <p class="header_desc">
+          Utilizing sugarcane molasses through advanced microbial fermentation and molecular dehydration to produce international-standard biofuels and industrial alcohols.
+        </p>
+      </div>
+
+      <!-- Feature Card 1: Concentrated Ethyl Alcohol (Text Left, Image Right) -->
+      <div class="product_feature_card">
+        <div class="feature_grid">
+          <div class="feature_text_col">
+            <span class="product_badge primary_badge">EXPORT EXCELLENCE AWARD WINNER</span>
+            <h3 class="product_title">Concentrated Ethyl Alcohol (Rectified Spirit >96%)</h3>
+            <p class="product_lead">
+              Ethyl alcohol is produced through the microbial fermentation of sugarcane molasses and concentrated via double-effect vacuum distillation to achieve a alcohol strength exceeding <strong>96% by volume</strong>.
+            </p>
+            <p class="product_body">
+              Over <strong>90% of our total ethyl alcohol production is exported</strong> globally. Shakarganj is proud to be a <strong>four-time FPCCI Best Export Award winner</strong> conferred by the Federation of Pakistan Chambers of Commerce and Industry for achieving the highest export of ethyl alcohol from Pakistan.
+            </p>
+
+            <div class="bullet_highlights">
+              <span><i class="fa fa-trophy"></i> 4-Time FPCCI Highest Export Trophy Winner</span>
+              <span><i class="fa fa-globe"></i> Exported to global buyers across Europe, Asia & Africa</span>
+              <span><i class="fa fa-flask"></i> Double-effect vacuum distillation for superior purity</span>
+            </div>
+          </div>
+
+          <div class="feature_img_col">
+            <div class="img_card_frame">
+              <img 
+                src={imgEthylAlcohol} 
+                alt="Concentrated Ethyl Alcohol Distillery" 
+                loading="eager"
+                onerror={`this.src='${localEthylAlcohol}'`}
+              />
+              <span class="img_tag">Bio-Distillery Complex</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Card 2: Denatured & Methylated Spirits (Image Left, Text Right) -->
+      <div class="product_feature_card reverse_card">
+        <div class="feature_grid">
+          <div class="feature_img_col">
+            <div class="img_card_frame">
+              <img 
+                src={imgDenaturedSpirit} 
+                alt="Denatured & Methylated Spirits Production" 
+                loading="lazy"
+                onerror={`this.src='${localDenaturedSpirit}'`}
+              />
+              <span class="img_tag">European Standards Production</span>
+            </div>
+          </div>
+
+          <div class="feature_text_col">
+            <span class="product_badge amber_badge">EUROPEAN SPECIFICATION STANDARDS</span>
+            <h3 class="product_title">Denatured Spirit & Methylated Spirits</h3>
+            <p class="product_lead">
+              We manufacture a broad range of specialized industrial spirits formulated strictly according to European Union quality standards to meet diverse manufacturing needs.
+            </p>
+            <p class="product_body">
+              To support the domestic wood-finishing and high-end furniture industry, we supply premium denatured spirits. Furthermore, our <strong>White Spirit / Methylated Spirit</strong> serves as an essential chemical solvent ingredient for paint formulation, lacquers, and industrial cleaning applications.
+            </p>
+            
+            <div class="bullet_highlights">
+              <span><i class="fa fa-check-circle"></i> Formulated to European Union specification standards</span>
+              <span><i class="fa fa-check-circle"></i> High-solvency methylated spirit for paint industries</span>
+              <span><i class="fa fa-check-circle"></i> Trusted by wood products & furniture manufacturers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Card 3: Fuel Bioethanol (Text Left, Image Right) -->
+      <div class="product_feature_card">
+        <div class="feature_grid">
+          <div class="feature_text_col">
+            <span class="product_badge green_badge">CLEAN GREEN RENEWABLE ENERGY</span>
+            <h3 class="product_title">Fuel Bioethanol (Anhydrous Alcohol)</h3>
+            <p class="product_lead">
+              Bioethanol is an environmentally friendly renewable biofuel produced as <strong>anhydrous ethanol (99.9% purity)</strong> without any chemical additives, using cutting-edge dry molecular-sieve dehydration technology.
+            </p>
+            <p class="product_body">
+              As bioethanol represents one of the most effective, clean-burning alternatives to conventional fossil fuels, Shakarganj maximizes bioethanol integration across industrial processes to drastically reduce greenhouse gas emissions and environmental footprint.
+            </p>
+
+            <div class="bullet_highlights">
+              <span><i class="fa fa-leaf"></i> 100% Chemical-free dry molecular dehydration</span>
+              <span><i class="fa fa-bolt"></i> Clean-burning renewable fuel blend</span>
+              <span><i class="fa fa-shield"></i> Substantial reduction in carbon emissions</span>
+            </div>
+          </div>
+
+          <div class="feature_img_col">
+            <div class="img_card_frame">
+              <img 
+                src={imgFuelBioethanol} 
+                alt="Fuel Bioethanol Dehydration Plant" 
+                loading="lazy"
+                onerror={`this.src='${localFuelBioethanol}'`}
+              />
+              <span class="img_tag">Molecular Dehydration Plant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FPCCI Award & Sustainability Banner -->
+      <div class="award_banner">
+        <div class="award_content">
+          <div class="award_icon">
+            <i class="fa fa-trophy"></i>
+          </div>
+          <div class="award_text">
+            <h3>4-Time FPCCI National Export Excellence Winner</h3>
+            <p>
+              Shakarganj Limited has been repeatedly honored by the Federation of Pakistan Chambers of Commerce and Industry (FPCCI) with the Best Export Award for leadership in exporting high-purity ethyl alcohol worldwide, establishing Pakistan as a trusted global producer of sustainable bio-refinery products.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Page Hero Banner */
+  .page_hero_banner {
+    background: linear-gradient(135deg, #004d00 0%, #002b00 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Stats Strip */
+  .stats_strip {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 30px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  }
+  .stats_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .stat_card {
+    text-align: center;
+    padding: 10px 15px;
+    border-right: 1px solid #e2e8f0;
+  }
+  .stat_card:last-child {
+    border-right: none;
+  }
+  .stat_value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary-color);
+    display: block;
+    line-height: 1.2;
+  }
+  .stat_label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 4px 0 2px 0;
+  }
+  .stat_desc {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0;
+  }
+
+  /* Main Products Section */
+  .biofuels_products_section {
+    padding: 60px 0 80px 0;
+    background: #f8fafc;
+  }
+
+  .section_intro {
+    margin-bottom: 50px;
+  }
+
+  .sub_title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .main_title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 10px 0;
+  }
+
+  .heading_divider {
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 0 auto 14px auto;
+    border-radius: 2px;
+  }
+
+  .header_desc {
+    font-size: 15px;
+    color: #64748b;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  /* Product Feature Cards */
+  .product_feature_card {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    padding: 36px;
+    margin-bottom: 35px;
+    transition: all 0.3s ease;
+  }
+
+  .product_feature_card:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e0;
+  }
+
+  .feature_grid {
+    display: grid;
+    grid-template-columns: 6fr 5fr;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .reverse_card .feature_grid {
+    grid-template-columns: 5fr 6fr;
+  }
+
+  .product_badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+  }
+
+  .primary_badge {
+    background: rgba(22, 101, 52, 0.1);
+    color: var(--primary-color);
+  }
+
+  .amber_badge {
+    background: rgba(217, 119, 6, 0.1);
+    color: #d97706;
+  }
+
+  .green_badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+  }
+
+  .product_title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+  }
+
+  .product_lead {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.65;
+    color: #334155;
+    margin: 0 0 14px 0;
+  }
+
+  .product_body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0 0 16px 0;
+  }
+
+  .bullet_highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .bullet_highlights span {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .bullet_highlights i {
+    color: var(--primary-color);
+  }
+
+  .img_card_frame {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+
+  .img_card_frame img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .product_feature_card:hover .img_card_frame img {
+    transform: scale(1.03);
+  }
+
+  .img_tag {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(15, 23, 42, 0.75);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* FPCCI Award Banner */
+  .award_banner {
+    background: linear-gradient(135deg, #0f291e 0%, #166534 100%);
+    border-radius: 16px;
+    padding: 36px 40px;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(22, 101, 52, 0.25);
+    margin-top: 20px;
+  }
+
+  .award_content {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .award_icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 28px;
+    color: #fbbf24;
+  }
+
+  .award_text h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+  }
+
+  .award_text p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #e2e8f0;
+    margin: 0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .stats_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .stat_card {
+      border-right: none;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 15px;
+    }
+    .feature_grid,
+    .reverse_card .feature_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .stats_grid {
+      grid-template-columns: 1fr;
+    }
+    .award_content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
