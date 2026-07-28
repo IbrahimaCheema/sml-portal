@@ -37,7 +37,7 @@ const ACCOUNT_ID = 'YOUR_CLOUDFLARE_ACCOUNT_ID';
 const ACCESS_KEY_ID = 'YOUR_R2_ACCESS_KEY_ID';
 const SECRET_ACCESS_KEY = 'YOUR_R2_SECRET_ACCESS_KEY';
 const BUCKET_NAME = 'sf-uploads';
-const PUBLIC_DOMAIN = 'https://docs.sf.com.pk';
+const PUBLIC_DOMAIN = 'https://docs.sf.org.pk';
 
 const r2 = new S3Client({
   region: 'auto',
