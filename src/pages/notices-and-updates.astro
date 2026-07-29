@@ -1,0 +1,580 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { newsPosts } from '../data/newsPosts';
+
+// Page Title & Metadata
+const pageTitle = "Notices & Updates | Shakarganj Limited";
+const metaDescription = "Official corporate notices, financial results, shareholder announcements, and corporate briefing updates from Shakarganj Limited.";
+
+// Extract unique categories and years for dynamic filters
+const categories = ['All', 'Financial Results', 'Shareholder Notice', 'Corporate Notice', 'Investor Relations'];
+const uniqueYears = Array.from(
+  new Set(newsPosts.map((post) => post.date.substring(0, 4)))
+).filter(y => y && y.length === 4 && parseInt(y) > 2000).sort((a, b) => parseInt(b) - parseInt(a));
+
+const years = ['All Years', ...uniqueYears];
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Modernized Page Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>Media</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Notices & Updates</span>
+      </div>
+      <h1 class="hero_page_title">Notices & Updates</h1>
+      <p class="hero_subtitle">
+        Official corporate announcements, financial statements, shareholder meeting notices, and event updates from Shakarganj Limited.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Feed Section -->
+  <section class="news_feed_section">
+    <div class="container">
+      
+      <!-- Filter & Search Bar -->
+      <div class="news_filter_bar">
+        <div class="filter_group categories_group">
+          <span class="filter_label"><i class="fa fa-filter"></i> Category:</span>
+          {categories.map((cat, idx) => (
+            <button 
+              class={`filter_btn ${idx === 0 ? 'active' : ''}`} 
+              data-category={cat}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        <div class="filter_group search_year_group">
+          <div class="year_filter_tabs">
+            {years.map((y, idx) => (
+              <button 
+                class={`year_tab ${idx === 0 ? 'active' : ''}`}
+                data-year={y}
+              >
+                {y}
+              </button>
+            ))}
+          </div>
+
+          <div class="news_search_box">
+            <i class="fa fa-search search_icon"></i>
+            <input 
+              type="text" 
+              id="newsSearchInput" 
+              placeholder="Search announcements..." 
+              aria-label="Search notices and updates"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Feed Grid -->
+      <div class="news_grid" id="newsGrid">
+        {newsPosts.map((post) => {
+          const postYear = post.date.substring(0, 4);
+          let badgeClass = 'badge_general';
+          if (post.category === 'Financial Results') badgeClass = 'badge_financial';
+          if (post.category === 'Shareholder Notice') badgeClass = 'badge_shareholder';
+          if (post.category === 'Corporate Notice') badgeClass = 'badge_corporate';
+          if (post.category === 'Investor Relations') badgeClass = 'badge_investor';
+
+          return (
+            <article 
+              class="news_card"
+              data-category={post.category}
+              data-year={postYear}
+              data-title={post.title.toLowerCase()}
+            >
+              <div class="card_image_wrapper">
+                <img 
+                  src={post.featuredImage} 
+                  alt={post.title} 
+                  loading="lazy"
+                  class="card_thumb"
+                  onerror="this.src='https://docs.sml.com.pk/images/report_2026_q2_thumb.jpg'"
+                />
+                <span class={`category_badge ${badgeClass}`}>{post.category}</span>
+              </div>
+
+              <div class="card_body">
+                <div class="card_meta">
+                  <span class="post_date">
+                    <i class="fa fa-calendar-o"></i> {post.displayDate}
+                  </span>
+                </div>
+
+                <h3 class="card_title">
+                  <a href={post.pdfUrl || post.linkUrl} target={post.pdfUrl ? "_blank" : "_self"} rel="noopener noreferrer">
+                    {post.title}
+                  </a>
+                </h3>
+              </div>
+
+              <div class="card_footer">
+                {post.pdfUrl && post.pdfUrl.startsWith('http') ? (
+                  <a href={post.pdfUrl} target="_blank" rel="noopener noreferrer" class="btn_action pdf_btn">
+                    <i class="fa fa-external-link"></i> View Notice Document
+                  </a>
+                ) : (
+                  <a href={post.linkUrl} class="btn_action link_btn">
+                    View Financial Reports <i class="fa fa-arrow-right"></i>
+                  </a>
+                )}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <!-- Empty Search Fallback -->
+      <div id="noResultsState" class="no_results_box" style="display: none;">
+        <i class="fa fa-newspaper-o empty_icon"></i>
+        <h3>No matching notices found</h3>
+        <p>Try adjusting your category filter, year, or search terms.</p>
+        <button id="resetFiltersBtn" class="reset_btn">Reset Filters</button>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Page Hero Banner */
+  .page_hero_banner {
+    background: linear-gradient(135deg, #004d00 0%, #002b00 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* News Feed Section */
+  .news_feed_section {
+    padding: 40px 0 60px 0;
+    background: #f8fafc;
+    min-height: 500px;
+  }
+
+  /* Filter Bar */
+  .news_filter_bar {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .filter_group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .filter_label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-right: 4px;
+  }
+
+  .filter_btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #cbd5e0;
+    background: #ffffff;
+    color: #4a5568;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .filter_btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: rgba(46, 125, 50, 0.05);
+  }
+
+  .filter_btn.active {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3);
+  }
+
+  .search_year_group {
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid #edf2f7;
+    padding-top: 12px;
+  }
+
+  .year_filter_tabs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .year_tab {
+    padding: 4px 12px;
+    border-radius: 6px;
+    background: #edf2f7;
+    color: #4a5568;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .year_tab:hover {
+    background: #e2e8f0;
+  }
+
+  .year_tab.active {
+    background: #2d3748;
+    color: #ffffff;
+  }
+
+  .news_search_box {
+    position: relative;
+    min-width: 250px;
+  }
+
+  .news_search_box .search_icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0aec0;
+    font-size: 13px;
+  }
+
+  .news_search_box input {
+    width: 100%;
+    padding: 7px 12px 7px 34px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e0;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .news_search_box input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+  }
+
+  /* Grid Layout */
+  .news_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .news_card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .news_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .card_image_wrapper {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: #edf2f7;
+    overflow: hidden;
+  }
+
+  .card_thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .news_card:hover .card_thumb {
+    transform: scale(1.05);
+  }
+
+  .category_badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+  }
+
+  .badge_financial { background: #2b6cb0; }
+  .badge_shareholder { background: #c53030; }
+  .badge_corporate { background: #2f855a; }
+  .badge_investor { background: #805ad5; }
+  .badge_general { background: #4a5568; }
+
+  .card_body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card_meta {
+    font-size: 12px;
+    color: #718096;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card_title {
+    font-size: 16px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .card_title a {
+    color: #2d3748;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .card_title a:hover {
+    color: var(--primary-color);
+  }
+
+  .card_footer {
+    padding: 14px 20px;
+    background: #f7fafc;
+    border-top: 1px solid #edf2f7;
+  }
+
+  .btn_action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .pdf_btn {
+    color: #c53030;
+  }
+
+  .pdf_btn:hover {
+    color: #9b2c2c;
+  }
+
+  .link_btn {
+    color: var(--primary-color);
+  }
+
+  .link_btn:hover {
+    color: var(--primary-hover);
+  }
+
+  /* No Results Fallback */
+  .no_results_box {
+    text-align: center;
+    padding: 60px 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px dashed #cbd5e0;
+  }
+
+  .empty_icon {
+    font-size: 48px;
+    color: #a0aec0;
+    margin-bottom: 16px;
+  }
+
+  .no_results_box h3 {
+    font-size: 18px;
+    color: #2d3748;
+    margin-bottom: 8px;
+  }
+
+  .no_results_box p {
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: 16px;
+  }
+
+  .reset_btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .reset_btn:hover {
+    background: var(--primary-hover);
+  }
+
+  @media (max-width: 768px) {
+    .page_hero_banner {
+      padding: 40px 0 30px;
+    }
+    .hero_page_title {
+      font-size: 28px;
+    }
+    .search_year_group {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+    }
+    .news_search_box {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const categoryBtns = document.querySelectorAll<HTMLButtonElement>('.filter_btn');
+    const yearTabs = document.querySelectorAll<HTMLButtonElement>('.year_tab');
+    const searchInput = document.getElementById('newsSearchInput') as HTMLInputElement;
+    const cards = document.querySelectorAll<HTMLElement>('.news_card');
+    const noResults = document.getElementById('noResultsState') as HTMLElement;
+    const resetBtn = document.getElementById('resetFiltersBtn') as HTMLButtonElement;
+
+    let selectedCategory = 'All';
+    let selectedYear = 'All Years';
+    let searchQuery = '';
+
+    function applyFilters() {
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const cardCategory = card.dataset.category || '';
+        const cardYear = card.dataset.year || '';
+        const cardTitle = card.dataset.title || '';
+
+        const matchCategory = selectedCategory === 'All' || cardCategory === selectedCategory;
+        const matchYear = selectedYear === 'All Years' || cardYear === selectedYear;
+        const matchSearch = searchQuery === '' || cardTitle.includes(searchQuery);
+
+        if (matchCategory && matchYear && matchSearch) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResults.style.display = 'block';
+      } else {
+        noResults.style.display = 'none';
+      }
+    }
+
+    categoryBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        categoryBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedCategory = btn.dataset.category || 'All';
+        applyFilters();
+      });
+    });
+
+    yearTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        yearTabs.forEach((t) => t.classList.remove('active'));
+        tab.classList.add('active');
+        selectedYear = tab.dataset.year || 'All Years';
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = (e.target as HTMLInputElement).value.toLowerCase().trim();
+        applyFilters();
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        selectedCategory = 'All';
+        selectedYear = 'All Years';
+        searchQuery = '';
+        if (searchInput) searchInput.value = '';
+
+        categoryBtns.forEach((b, i) => b.classList.toggle('active', i === 0));
+        yearTabs.forEach((t, i) => t.classList.toggle('active', i === 0));
+
+        applyFilters();
+      });
+    }
+  });
+</script>
