@@ -1,0 +1,329 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Sitemap | Shakarganj Limited";
+const metaDescription = "Complete corporate sitemap of Shakarganj Limited (SML) providing direct access to all portal pages, investor relations, financial reports, segments, and sustainability updates.";
+
+const sitemapSections = [
+  {
+    category: "Main Portal",
+    icon: "fa-home",
+    links: [
+      { name: "Home Page", url: "/", desc: "Shakarganj corporate homepage, executive overview, & latest news highlights." },
+      { name: "Instant Portal Search", url: "/search", desc: "Instant corporate keyword search across disclosures, pages, & reports." },
+      { name: "Contact Us", url: "/contact-us", desc: "Corporate head office contact info, mill locations, & inquiry forms." }
+    ]
+  },
+  {
+    category: "About Us",
+    icon: "fa-building",
+    links: [
+      { name: "Company's Profile", url: "/company-profile", desc: "Background overview, incorporation history (1967), & PSX listing details." },
+      { name: "Mission and Vision", url: "/mission-and-vision", desc: "Corporate vision statement, strategic mission, & core ethical values." },
+      { name: "Company History", url: "/company-history", desc: "Chronological milestone timeline from incorporation to present market leadership." },
+      { name: "Associated Companies", url: "/associated-companies", desc: "Group portfolio overview including Crescent Steel, Premier Insurance, etc." },
+      { name: "Corporate Strategy", url: "/corporate-strategy", desc: "Operational growth roadmap, diversification strategy, & value creation." },
+      { name: "Sitemap", url: "/sitemap", desc: "Structured index of all pages and resources across the Shakarganj website." },
+      { name: "Historical Reports", url: "/historical-reports", desc: "Archival financial statements, annual reports, & historical filings." }
+    ]
+  },
+  {
+    category: "Business Segments",
+    icon: "fa-cubes",
+    links: [
+      { name: "Sugar Segment", url: "/sugar", desc: "Refined sugar manufacturing capacity, allied products, & mill facilities." },
+      { name: "Biofuels Segment", url: "/biofuels", desc: "Industrial ethanol distillery, power generation, & green renewable biofuels." }
+    ]
+  },
+  {
+    category: "Investor Relations",
+    icon: "fa-line-chart",
+    links: [
+      { name: "Profile of Board of Directors", url: "/board-of-directors", desc: "Profiles and leadership experience of SML executive and non-executive directors." },
+      { name: "Shareholder's Information", url: "/shareholder-information", desc: "Stock exchange symbol (SML), share registrar contact, & investor grievance cell." },
+      { name: "Financial Reports", url: "/financial-reports", desc: "Download quarterly, half-yearly, & annual audited financial statements." },
+      { name: "Financial Highlights", url: "/financial-highlights", desc: "Multi-year key financial metrics, revenues, assets, & operating performance." },
+      { name: "Shareholding Pattern", url: "/shareholding-pattern", desc: "Form 34 shareholding distribution pattern and institutional holding breakdown." },
+      { name: "Corporate Briefing Session", url: "/corporate-briefing-session", desc: "Investor briefing presentations, Q&A summaries, & management briefings." },
+      { name: "Free Float of The Shares", url: "/free-float-of-the-shares", desc: "PSX free float share breakdown & quarterly compliance statements." }
+    ]
+  },
+  {
+    category: "Sustainability & EHS",
+    icon: "fa-leaf",
+    links: [
+      { name: "Health Safety & Environment", url: "/health-safety-environment", desc: "Mission Zero Agenda, Red Crescent First Aid training, & EHS policy framework." },
+      { name: "Corporate Social Responsibility", url: "/corporate-social-responsibility", desc: "Shakarganj Foundation (sf.org.pk) Sukh Char Social Action Programme & community welfare." },
+      { name: "Quality Assurance", url: "/quality-assurance", desc: "Independent Quality Management System, verifiable standards, & technical precision." }
+    ]
+  },
+  {
+    category: "Media & Careers",
+    icon: "fa-newspaper-o",
+    links: [
+      { name: "Notices & Updates", url: "/blog", desc: "Official announcements, Board Meeting notices, EGM notices, & corporate updates." },
+      { name: "Awards and Accolades", url: "/awards-and-accolades", desc: "Industry recognitions, export trophies, & corporate excellence awards." },
+      { name: "Certifications", url: "/certifications", desc: "ISO certifications, food safety accreditations, & international quality standards." },
+      { name: "Careers", url: "/careers", desc: "Job openings, management trainee programs, & professional development." }
+    ]
+  }
+];
+
+const totalPagesCount = sitemapSections.reduce((acc, sec) => acc + sec.links.length, 0);
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>About Us</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Sitemap</span>
+      </div>
+      <h1 class="hero_page_title">Corporate Sitemap</h1>
+      <p class="hero_subtitle">
+        Structured directory providing direct access to all pages, investor disclosures, financial reports, and corporate information across Shakarganj Limited.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sitemap Body Section -->
+  <section class="sitemap_content_section">
+    <div class="container">
+      
+      <!-- Top Stat Bar -->
+      <div class="sitemap_meta_bar">
+        <div class="meta_item">
+          <i class="fa fa-sitemap"></i>
+          <span><strong>Total Portal Sections:</strong> {sitemapSections.length} Categories</span>
+        </div>
+        <div class="meta_item">
+          <i class="fa fa-file-text-o"></i>
+          <span><strong>Indexed Pages:</strong> {totalPagesCount} Active Routes</span>
+        </div>
+        <div class="meta_item">
+          <i class="fa fa-shield"></i>
+          <span><strong>Status:</strong> Official SML Portal v1.0</span>
+        </div>
+      </div>
+
+      <!-- Main Sitemap Grid -->
+      <div class="sitemap_grid">
+        {sitemapSections.map((section) => (
+          <div class="sitemap_card">
+            <div class="card_header">
+              <div class="card_icon">
+                <i class={`fa fa-solid ${section.icon}`}></i>
+              </div>
+              <h3 class="card_title">{section.category}</h3>
+            </div>
+            
+            <ul class="sitemap_links_list">
+              {section.links.map((link) => (
+                <li class="sitemap_link_item">
+                  <a href={link.url} class="link_title">
+                    <i class="fa fa-angle-right link_arrow"></i>
+                    {link.name}
+                  </a>
+                  <p class="link_desc">{link.desc}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page_hero_banner {
+    background: linear-gradient(135deg, #0d3b13 0%, #1e5e22 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .sitemap_content_section {
+    padding: 45px 0 75px;
+    background: #f8fafc;
+  }
+
+  /* Stat Bar */
+  .sitemap_meta_bar {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 25px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  }
+
+  .meta_item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #334155;
+  }
+
+  .meta_item i {
+    color: var(--primary-color);
+    font-size: 16px;
+  }
+
+  /* Sitemap Grid */
+  .sitemap_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+  }
+
+  .sitemap_card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .sitemap_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    border-color: #cbd5e1;
+  }
+
+  .card_header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #f1f5f9;
+  }
+
+  .card_icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #f0fdf4;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .card_title {
+    font-size: 19px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+  }
+
+  .sitemap_links_list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .sitemap_link_item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .link_title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s ease;
+  }
+
+  .link_arrow {
+    color: var(--primary-color);
+    font-size: 14px;
+    transition: transform 0.2s ease;
+  }
+
+  .link_title:hover {
+    color: var(--primary-color);
+  }
+
+  .link_title:hover .link_arrow {
+    transform: translateX(3px);
+  }
+
+  .link_desc {
+    font-size: 12.5px;
+    color: #64748b;
+    line-height: 1.45;
+    margin: 0 0 0 16px;
+  }
+
+  @media (max-width: 768px) {
+    .sitemap_grid {
+      grid-template-columns: 1fr;
+    }
+    .page_hero_banner {
+      padding: 40px 0 30px;
+    }
+    .hero_page_title {
+      font-size: 28px;
+    }
+    .sitemap_meta_bar {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+</style>
