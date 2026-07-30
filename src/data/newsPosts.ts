@@ -13,6 +13,17 @@ export interface NewsPost {
 
 export const newsPosts: NewsPost[] = [
   {
+    "id": "financial-results-for-the-3rd-quarter-ended-30-june-2026",
+    "title": "Financial results for the 3rd Quarter Ended 30 June 2026",
+    "date": "2026-07-30",
+    "displayDate": "30 July 2026",
+    "category": "Financial Results",
+    "excerpt": "Financial statements and performance overview of Shakarganj Limited for the 3rd quarter ended 30 June 2026.",
+    "featuredImage": "https://docs.sml.com.pk/images/report_2026_q3_thumb.jpg",
+    "linkUrl": "/financial-reports",
+    "pdfUrl": "/financial-reports"
+  },
+  {
     "id": "notice-of-board-meeting-2026-07-22",
     "title": "Notice of Board Meeting",
     "date": "2026-07-22",

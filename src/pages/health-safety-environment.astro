@@ -1,0 +1,377 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Health Safety & Environment | Shakarganj Limited";
+const metaDescription = "Health, safety, and environmental practices, Mission Zero agenda, employee safety training, and EHS policy at Shakarganj Limited.";
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>Sustainability</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Health Safety & Environment</span>
+      </div>
+      <h1 class="hero_page_title">Health Safety & Environment</h1>
+      <p class="hero_subtitle">
+        Our commitment to providing a healthy, safe, and clean working environment for all employees, contractors, and visitors.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="hse_content_section">
+    <div class="container">
+      <div class="hse_layout">
+        
+        <!-- Sidebar Image Widget -->
+        <div class="hse_sidebar">
+          <div class="sustainability_badge_box">
+            <img 
+              src="https://docs.sml.com.pk/images/segment-sustainability.jpg" 
+              alt="Sustainability at Shakarganj" 
+              class="sustainability_img"
+              onerror="this.src='https://docs.sml.com.pk/images/logo.png';"
+            />
+            <h4 class="sidebar_badge_title">Sustainability & HSE</h4>
+            <p class="sidebar_badge_text">Continuous improvement targeting zero recordable injuries and work-related illness.</p>
+          </div>
+        </div>
+
+        <!-- Main Copy Content -->
+        <div class="hse_main_body">
+          
+          <!-- Lead Paragraph -->
+          <p class="lead_text">
+            As we always aim to be an exemplary corporate citizen, health, safety, and environmental concerns are always among our key focal points. We are committed to providing healthy, safe, and clean conditions for our employees, contractors and visitors. In providing a good working environment there is no higher priority than safety and we target continuous improvement to reduce record-able injury and accident times to zero.
+          </p>
+
+          <p class="body_paragraph">
+            Nearly six hundred and fifty members of Team Shakarganj have participated in a structured Programme to obtain professional training and certification in first aid in collaboration with Pakistan Red Crescent Society – Punjab. Preventive action and training and timely response procedures to deal with potential accidents have resulted in minimizing recordable injuries and accidents.
+          </p>
+
+          <!-- Highlight Box 1 -->
+          <div class="highlight_quote_card">
+            <div class="quote_icon"><i class="fa fa-shield"></i></div>
+            <div class="quote_text">
+              <h3>Safety is not an Act, it is a Habit</h3>
+              <p>Our approach to HSE is apparent in our Mission Zero Agenda that targets zero accidents and work-related illnesses. To effectively implement the mission zero agenda, we empower and encourage our people to play their part.</p>
+            </div>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="hse_block">
+            <h3 class="section_heading"><i class="fa fa-bullhorn"></i> Raising Awareness and Engaging our People</h3>
+            <p>
+              We all have a part to play in keeping our workplaces safe. One of the most effective ways we can do this is by being aware of the risks around us and taking action to address these. That’s why we actively encourage all our people to regularly assess their working environments and report any identified risks – as they arise.
+            </p>
+          </div>
+
+          <!-- Section 3 -->
+          <div class="hse_block">
+            <h3 class="section_heading"><i class="fa fa-heartbeat"></i> Enhancing Wellbeing</h3>
+            <p>
+              A key priority of our agenda is the prevention of work-related illness. While there is clear evidence that employment can have a positive effect on personal wellbeing, poor health in the workplace can present significant safety risks. We offer a range of services to help enhance the health of our employees. These include medical checkups for employees in certain roles and healthcare benefits for staff – as well as targeted communication campaigns aimed at tackling lifestyle-related issues.
+            </p>
+          </div>
+
+          <!-- Section 4 -->
+          <div class="hse_block">
+            <h3 class="section_heading"><i class="fa fa-comments-o"></i> Cultural Change Through Communication</h3>
+            <p>
+              We believe communication is critical to creating the conditions to meet our objectives on Safety at the workplace. We have one-on-one HSE orientations for all new starters and an HSE briefing for all new visitors. One of the key aims of this exercise is to encourage a culture of care and safe practices.
+            </p>
+          </div>
+
+          <!-- Policy Box -->
+          <div class="policy_card">
+            <h3 class="policy_title"><i class="fa fa-file-text-o"></i> Our EHS Policy</h3>
+            <p>
+              Shakarganj is committed to providing a healthy and safe workplace for all personnel performing their duties on its behalf, in a manner that protects the environment, prevention of pollution, and compliance of applicable legal and other requirements.
+            </p>
+            <h4 class="policy_subheading">We achieve this by:</h4>
+            <ul class="policy_list">
+              <li><i class="fa fa-check-circle"></i> Developing and implementing management structures and standard procedures at all our workplaces.</li>
+              <li><i class="fa fa-check-circle"></i> Creating EHS awareness amongst all employees through comprehensive Programme of training & education.</li>
+              <li><i class="fa fa-check-circle"></i> Making top management, managers, supervisors, and lead technicians accountable for EHS management effort towards elimination of causes that might lead to harm people, environment and assets.</li>
+              <li><i class="fa fa-check-circle"></i> Recognizing that EHS is everyone’s direct responsibility.</li>
+              <li><i class="fa fa-check-circle"></i> Monitoring, evaluating and continually improving our EHS performance through operational standards, training, assessments and audits.</li>
+              <li><i class="fa fa-check-circle"></i> Working and maintaining 3R strategy (Reduce, Reuse, and Recycle) in all our operations.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page_hero_banner {
+    background: linear-gradient(135deg, #0d3b13 0%, #1e5e22 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .hse_content_section {
+    padding: 50px 0 70px;
+    background: #f8fafc;
+  }
+
+  .hse_layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  /* Sidebar */
+  .sustainability_badge_box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    text-align: center;
+    position: sticky;
+    top: 100px;
+  }
+
+  .sustainability_img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border: 4px solid #e2e8f0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+
+  .sidebar_badge_title {
+    font-size: 17px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+  }
+
+  .sidebar_badge_text {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Main Body */
+  .hse_main_body {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .lead_text {
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: #1e293b;
+    font-weight: 500;
+  }
+
+  .body_paragraph {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #334155;
+  }
+
+  /* Quote Card */
+  .highlight_quote_card {
+    background: #f0fdf4;
+    border-left: 5px solid var(--primary-color);
+    padding: 22px 25px;
+    border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.08);
+  }
+
+  .quote_icon {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-top: 2px;
+  }
+
+  .quote_text h3 {
+    font-size: 18px;
+    font-family: var(--font-heading);
+    color: #14532d;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .quote_text p {
+    font-size: 14.5px;
+    color: #166534;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Content Blocks */
+  .hse_block {
+    background: #ffffff;
+    padding: 24px 28px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  }
+
+  .section_heading {
+    font-size: 18px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section_heading i {
+    color: var(--primary-color);
+    font-size: 18px;
+  }
+
+  .hse_block p {
+    font-size: 14.5px;
+    color: #475569;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Policy Card */
+  .policy_card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  .policy_title {
+    font-size: 20px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+  }
+
+  .policy_title i {
+    color: var(--primary-color);
+  }
+
+  .policy_card > p {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+
+  .policy_subheading {
+    font-size: 16px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+  }
+
+  .policy_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .policy_list li {
+    font-size: 14.5px;
+    color: #334155;
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .policy_list i {
+    color: var(--primary-color);
+    font-size: 16px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 991px) {
+    .hse_layout {
+      grid-template-columns: 1fr;
+    }
+    .sustainability_badge_box {
+      position: static;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page_hero_banner {
+      padding: 40px 0 30px;
+    }
+    .hero_page_title {
+      font-size: 28px;
+    }
+    .highlight_quote_card {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .policy_card {
+      padding: 20px;
+    }
+  }
+</style>

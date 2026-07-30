@@ -1,0 +1,337 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Quality Assurance | Shakarganj Limited";
+const metaDescription = "Strict quality policy, independent quality management system, cutting-edge technology, and quality objectives across sugar, biofuel, and yarn value chains at Shakarganj Limited.";
+
+const qaPillars = [
+  { icon: "fa-sliders", title: "Cutting-Edge Technology", desc: "Applying modern processing equipment to guarantee precision and top product grade delivery." },
+  { icon: "fa-shield-halved", title: "Independent Quality Function", desc: "An autonomous QA audit team ensuring transparent compliance and uncompromised standards." },
+  { icon: "fa-crosshairs", title: "Measurable Objectives", desc: "Verifiable benchmarks tracked from raw material inspection through to final dispatch." },
+  { icon: "fa-leaf", title: "Eco-Friendly Operations", desc: "Environmentally friendly, safe manufacturing operations minimizing carbon and waste footprints." }
+];
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>Sustainability</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Quality Assurance</span>
+      </div>
+      <h1 class="hero_page_title">Quality Assurance</h1>
+      <p class="hero_subtitle">
+        Strict quality management systems ensuring excellence from raw material inspection to final customer delivery.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="qa_content_section">
+    <div class="container">
+      <div class="qa_layout">
+        
+        <!-- Left: Image Badge Card -->
+        <div class="qa_sidebar">
+          <div class="qa_badge_card">
+            <img 
+              src="https://docs.sml.com.pk/images/quality-assurance-1.png" 
+              alt="Quality Assurance at Shakarganj" 
+              class="qa_badge_img"
+              onerror="this.onerror=null; this.src='/images/quality-assurance-1.png';"
+            />
+            <h4 class="qa_badge_title">Excellence Guaranteed</h4>
+            <p class="qa_badge_desc">Uncompromising quality policy across refined sugar, biofuel, textile yarn, and allied products.</p>
+          </div>
+        </div>
+
+        <!-- Right: Content Body -->
+        <div class="qa_main_body">
+          
+          <p class="lead_text">
+            We strive to apply cutting edge technology to ensure the highest standards of quality in product delivery and remain client centric to drive profitability and efficiency. The effectiveness of our Quality Management System is ensured through an independent quality function.
+          </p>
+
+          <p class="body_paragraph">
+            Shakarganj strictly adheres to its quality policy to ensure that quality is embedded from the start to the end of the value chain. The management ensures measurable and verifiable quality objectives are set throughout the organization, from the initial inspection of raw materials to the transportation of the finished product to the customer.
+          </p>
+
+          <!-- Quality Policy Highlight Card -->
+          <div class="quality_policy_card">
+            <div class="policy_icon_box">
+              <i class="fa fa-certificate"></i>
+            </div>
+            <div class="policy_content">
+              <h3>Our Quality Policy</h3>
+              <p>
+                Our quality policy, stemming from our vision, is to maintain industry leadership and customer satisfaction through production of high quality sugar, biofuel, yarn, and other allied products at lowest cost, using environment friendly technology in safe working conditions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Quality Pillars Grid -->
+          <div class="qa_pillars_section">
+            <h3 class="pillars_heading">Core Pillars of Quality Management</h3>
+            <div class="pillars_grid">
+              {qaPillars.map(item => (
+                <div class="pillar_card">
+                  <div class="pillar_icon">
+                    <i class={`fa fa-solid ${item.icon}`}></i>
+                  </div>
+                  <div class="pillar_body">
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page_hero_banner {
+    background: linear-gradient(135deg, #0d3b13 0%, #1e5e22 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .qa_content_section {
+    padding: 50px 0 70px;
+    background: #f8fafc;
+  }
+
+  .qa_layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  /* Sidebar Badge */
+  .qa_badge_card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    text-align: center;
+    position: sticky;
+    top: 100px;
+  }
+
+  .qa_badge_img {
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto 18px;
+    object-fit: contain;
+  }
+
+  .qa_badge_title {
+    font-size: 18px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+
+  .qa_badge_desc {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Main Body */
+  .qa_main_body {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .lead_text {
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: #0f172a;
+    font-weight: 500;
+  }
+
+  .body_paragraph {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #334155;
+  }
+
+  /* Quality Policy Card */
+  .quality_policy_card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 5px solid var(--primary-color);
+    padding: 28px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.06);
+  }
+
+  .policy_icon_box {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+  }
+
+  .policy_content h3 {
+    font-size: 20px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #14532d;
+    margin-bottom: 8px;
+  }
+
+  .policy_content p {
+    font-size: 15px;
+    color: #166534;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* Core Pillars Grid */
+  .qa_pillars_section {
+    margin-top: 10px;
+  }
+
+  .pillars_heading {
+    font-size: 20px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 18px;
+  }
+
+  .pillars_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .pillar_card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .pillar_card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    border-color: var(--primary-color);
+  }
+
+  .pillar_icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #f0fdf4;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .pillar_body h4 {
+    font-size: 15px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+  }
+
+  .pillar_body p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media (max-width: 991px) {
+    .qa_layout {
+      grid-template-columns: 1fr;
+    }
+    .qa_badge_card {
+      position: static;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page_hero_banner {
+      padding: 40px 0 30px;
+    }
+    .hero_page_title {
+      font-size: 28px;
+    }
+    .quality_policy_card {
+      flex-direction: column;
+      padding: 20px;
+    }
+  }
+</style>

@@ -1,0 +1,463 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Corporate Social Responsibility (CSR) | Shakarganj Limited";
+const metaDescription = "Community development, Shakarganj Foundation (sf.org.pk), Sukh Char Social Action Programme, education, healthcare, and community welfare initiatives by Shakarganj Limited.";
+
+const sapInitiatives = [
+  { icon: "fa-graduation-cap", title: "Adoption of Schools", desc: "Upgrading school infrastructure and supporting educational operations." },
+  { icon: "fa-truck", title: "Furniture Distribution", desc: "Providing desks and benches to underprivileged schools across Punjab." },
+  { icon: "fa-apple", title: "Nutritional Programme", desc: "Free healthy meal plans for school children to fight malnutrition." },
+  { icon: "fa-book", title: "Adult Female Literacy Programme", desc: "Empowering rural women with essential reading and numeracy skills." },
+  { icon: "fa-globe", title: "USAID Funded Projects", desc: "Collaborative community development and vocational growth projects." },
+  { icon: "fa-university", title: "Shakarganj Sponsored TCF School", desc: "Fully funded campus providing quality formal education to rural youth." },
+  { icon: "fa-paint-brush", title: "School of Calligraphy & Art (Jhang Art Gallery)", desc: "Preserving traditional Islamic calligraphy and fine arts heritage." },
+  { icon: "fa-picture-o", title: "Annual Exhibitions", desc: "Showcasing local artisan work and student cultural projects." },
+  { icon: "fa-certificate", title: "Talib Hussain Education Scholarships", desc: "Financial grants awarded to deserving merit students for higher education." },
+  { icon: "fa-laptop", title: "Shakarganj Training & Resource Centre (TARC)", desc: "Technical and computer skills training for local youth employability." },
+  { icon: "fa-hospital-o", title: "Stationed Free Dispensaries", desc: "Free healthcare facilities operating in rural plant vicinities." },
+  { icon: "fa-ambulance", title: "Flood Medical Relief Camps", desc: "Emergency mobile medical units dispatched during natural flood disasters." },
+  { icon: "fa-medkit", title: "Animal Vaccination Drives", desc: "Free livestock medical camps safeguarding rural farmer livelihoods." },
+  { icon: "fa-wheelchair", title: "Plantation of Artificial Limbs", desc: "Rehabilitation camps providing free prosthetics and mobility aids." },
+  { icon: "fa-user-md", title: "Blood Grouping, Screening & Vaccination", desc: "Preventive health screenings and hepatitis vaccination drives." },
+  { icon: "fa-trophy", title: "Annual Sports Events", desc: "Sponsoring local youth sports tournaments and physical fitness." },
+  { icon: "fa-tags", title: "Winter Clothing Distribution Drive", desc: "Warm clothes and blankets for vulnerable families during winter months." },
+  { icon: "fa-cutlery", title: "Community Food Drive", desc: "Free food distribution for needy families during Ramazan and emergencies." },
+  { icon: "fa-stethoscope", title: "Dermatology & Skin Camps", desc: "Specialist skin care consultations and free prescribed medicines." },
+  { icon: "fa-eye", title: "Eye Examination & Cataract Camps", desc: "Free eye checkups, glasses, and surgical procedures for rural elders." },
+  { icon: "fa-futbol-o", title: "Sports Gear Donation Seminars", desc: "Donating sports equipment to rural public schools and sports clubs." },
+  { icon: "fa-leaf", title: "Fruit Distribution Drive", desc: "Fresh produce drives for community health and nutrition." }
+];
+---
+
+<Layout title={pageTitle} description={metaDescription}>
+  <!-- Page Hero Banner -->
+  <section class="page_hero_banner">
+    <div class="container">
+      <div class="hero_breadcrumbs">
+        <a href="/">Home</a> <i class="fa fa-angle-right"></i>
+        <span>Sustainability</span> <i class="fa fa-angle-right"></i>
+        <span class="current">Corporate Social Responsibility</span>
+      </div>
+      <h1 class="hero_page_title">Corporate Social Responsibility</h1>
+      <p class="hero_subtitle">
+        Empowering communities, driving social welfare, and nurturing sustainable growth through the Shakarganj Foundation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="csr_content_section">
+    <div class="container">
+      
+      <!-- Top Overview Grid -->
+      <div class="csr_overview_grid">
+        
+        <!-- Left: Image Badge -->
+        <div class="csr_badge_card">
+          <div class="circle_img_wrapper">
+            <img 
+              src="https://docs.sml.com.pk/images/sf_logo.png" 
+              alt="Shakarganj Foundation Logo" 
+              class="sf_logo_badge"
+              onerror="this.onerror=null; this.src='/images/sf_logo.png';"
+            />
+          </div>
+          <h3 class="sf_badge_title">Shakarganj Foundation</h3>
+          <p class="sf_badge_desc">Driving the "Sukh Char Programme" to uplift education, healthcare, and cultural preservation.</p>
+          <a href="http://sf.org.pk" target="_blank" rel="noopener noreferrer" class="btn_sf_site">
+            <i class="fa fa-external-link"></i> Visit sf.org.pk
+          </a>
+        </div>
+
+        <!-- Right: Vision Copy -->
+        <div class="csr_text_card">
+          <span class="sub_tagline">COMMUNITY DEVELOPMENT, ALWAYS & FOREVER</span>
+          <h2 class="csr_section_title">Exemplary Corporate Citizenship</h2>
+          <p class="csr_paragraph">
+            There is never any compromise at Shakarganj on being anything less than an exemplary corporate citizen. We are committed to following the highest social standards in every way we conduct our business. At Shakarganj, Corporate Social Responsibility (CSR) is a strategic management driven initiative that incorporates our business, environmental, and citizenship activities in a manner that supports our vision and upholds our values.
+          </p>
+          <p class="csr_paragraph">
+            We aim to play a positive role in the communities in which we operate. Our community involvement policy is one of the core components underpinning our ethical behavior. Our programmes involve building long term relationships with local communities to deliver our shared objective: establishing strong, safe, healthy and educated communities by investing time and resources into projects that directly address local needs.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Shakarganj Foundation Highlight Banner -->
+      <div class="sf_banner_box">
+        <div class="sf_banner_content">
+          <div class="sf_icon"><i class="fa fa-heartbeat"></i></div>
+          <div class="sf_info">
+            <h3>Shakarganj Foundation & Sukh Char Programme</h3>
+            <p>Our Social Action Programme (under Shakarganj Foundation) delivers a variety of social services in our extended community under the banner of <strong>“Sukh Char Programme”</strong>. These services include education, healthcare, promotion of arts, and protection of our cultural heritage.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Action Programme (SAP) Initiatives Grid -->
+      <div class="sap_section">
+        <div class="section_header_box">
+          <h2 class="sap_title">Social Action Programme (SAP) Initiatives</h2>
+          <p class="sap_subtitle">Comprehensive community development programs delivered across rural Pakistan:</p>
+        </div>
+
+        <div class="sap_grid">
+          {sapInitiatives.map((item) => (
+            <div class="sap_card">
+              <div class="sap_card_icon">
+                <i class={`fa fa-solid ${item.icon}`}></i>
+              </div>
+              <div class="sap_card_body">
+                <h4 class="sap_card_title">{item.title}</h4>
+                <p class="sap_card_desc">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Footer Callout -->
+      <div class="csr_footer_callout">
+        <p>To learn more about ongoing projects and support initiatives, click <a href="http://sf.org.pk" target="_blank" rel="noopener noreferrer">here</a> to visit the official <strong>Shakarganj Foundation</strong> website (sf.org.pk).</p>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page_hero_banner {
+    background: linear-gradient(135deg, #0d3b13 0%, #1e5e22 100%);
+    color: #ffffff;
+    padding: 55px 0 45px;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .hero_breadcrumbs {
+    font-size: 13px;
+    color: #a0c8a0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero_breadcrumbs a {
+    color: #a0c8a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .hero_breadcrumbs a:hover {
+    color: #ffffff;
+  }
+  .hero_breadcrumbs .current {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .hero_page_title {
+    font-size: 36px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+  .hero_subtitle {
+    font-size: 16px;
+    color: #e0f0e0;
+    max-width: 750px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .csr_content_section {
+    padding: 50px 0 70px;
+    background: #f8fafc;
+  }
+
+  /* Overview Grid */
+  .csr_overview_grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 45px;
+  }
+
+  .csr_badge_card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 14px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  .circle_img_wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+  }
+
+  .sf_logo_badge {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .sf_badge_title {
+    font-size: 19px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+
+  .sf_badge_desc {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .btn_sf_site {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 9px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .btn_sf_site:hover {
+    background: var(--primary-hover);
+  }
+
+  /* Vision Copy */
+  .csr_text_card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  }
+
+  .sub_tagline {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .csr_section_title {
+    font-size: 26px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #0f172a;
+    margin: 6px 0 16px;
+  }
+
+  .csr_paragraph {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #334155;
+    margin-bottom: 14px;
+  }
+
+  .csr_paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  /* SF Banner Callout */
+  .sf_banner_box {
+    background: linear-gradient(135deg, #14532d 0%, #166534 100%);
+    color: #ffffff;
+    border-radius: 14px;
+    padding: 30px 35px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 30px rgba(22, 101, 52, 0.2);
+  }
+
+  .sf_banner_content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .sf_icon {
+    font-size: 40px;
+    color: #86efac;
+    flex-shrink: 0;
+  }
+
+  .sf_info h3 {
+    font-size: 20px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  .sf_info p {
+    font-size: 14.5px;
+    color: #dcfce7;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .sf_action {
+    flex-shrink: 0;
+  }
+
+  .sf_primary_btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    color: #14532d;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .sf_primary_btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+
+  /* SAP Grid */
+  .sap_section {
+    margin-bottom: 40px;
+  }
+
+  .section_header_box {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  .sap_title {
+    font-size: 24px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+
+  .sap_subtitle {
+    font-size: 15px;
+    color: #64748b;
+  }
+
+  .sap_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .sap_card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .sap_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    border-color: var(--primary-color);
+  }
+
+  .sap_card_icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    background: #f0fdf4;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .sap_card_title {
+    font-size: 15px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+  }
+
+  .sap_card_desc {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Footer Callout */
+  .csr_footer_callout {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    font-size: 14.5px;
+    color: #334155;
+  }
+
+  .csr_footer_callout a {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 991px) {
+    .csr_overview_grid {
+      grid-template-columns: 1fr;
+    }
+    .csr_badge_card {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    .sf_banner_content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page_hero_banner {
+      padding: 40px 0 30px;
+    }
+    .hero_page_title {
+      font-size: 28px;
+    }
+    .csr_text_card {
+      padding: 22px;
+    }
+    .sf_banner_box {
+      padding: 25px 20px;
+    }
+  }
+</style>
