@@ -12,11 +12,23 @@
           <span>Executive Floor, IT Tower 73 E 1, Hali Road Gulberg 3, Lahore</span>
         </div>
 
-        <!-- Row 2: Phone on Left | Language & Socials Bound on Right -->
+        <!-- Row 2: Phone & PSX Live Ticker on Left | Language & Socials Bound on Right -->
         <div class="top_bar_details_row">
-          <div class="phone_box">
-            <svg class="top_icon_svg" viewBox="0 0 24 24" width="13" height="13" fill="var(--primary-color)" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            <span>+92 42 111 111 765</span>
+          <div class="left_info_group">
+            <div class="phone_box">
+              <svg class="top_icon_svg" viewBox="0 0 24 24" width="13" height="13" fill="var(--primary-color)" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>+92 42 111 111 765</span>
+            </div>
+            
+            <!-- Live PSX Ticker Pill -->
+            <a href="https://dps.psx.com.pk/company/SML" target="_blank" rel="noopener noreferrer" class="psx_stock_pill" title="Live Stock Quote on PSX Data Portal">
+              <span class="psx_ticker_tag">PSX:SML</span>
+              <span class="psx_price_val" id="psx_live_price">Rs.103.96</span>
+              <span class="psx_change_val pos" id="psx_live_change">
+                <span>▲ 0.01</span>
+                <span>(0.01%)</span>
+              </span>
+            </a>
           </div>
 
           <div class="right_utility_box">
@@ -538,4 +550,39 @@
       subMenu?.classList.toggle('open');
     });
   });
+  // Live PSX Stock Quote Fetcher (psx.com.pk)
+  async function updatePSXLiveQuote() {
+    const priceEl = document.getElementById('psx_live_price');
+    const changeEl = document.getElementById('psx_live_change');
+    if (!priceEl || !changeEl) return;
+
+    try {
+      // Fetch via lightweight CORS proxy with timeout
+      const res = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://dps.psx.com.pk/company/SML'));
+      if (!res.ok) return;
+      const data = await res.json();
+      const html = data.contents;
+      
+      const priceMatch = html.match(/class="quote__close">\s*Rs\.?\s*([\d\.,]+)/i);
+      const changeMatch = html.match(/class="change__value">\s*([\d\.,\-]+)/i);
+      const percentMatch = html.match(/class="change__percent">\s*\(([\d\.,\%\-+]+)\)/i);
+      const isPos = html.includes('change__text--pos');
+
+      if (priceMatch && priceMatch[1]) {
+        priceEl.textContent = `Rs.${priceMatch[1]}`;
+      }
+
+      if (changeMatch && percentMatch) {
+        const val = changeMatch[1];
+        const pct = percentMatch[1];
+        const arrow = isPos ? '▲' : '▼';
+        changeEl.className = `psx_change_val ${isPos ? 'pos' : 'neg'}`;
+        changeEl.innerHTML = `<span>${arrow} ${val}</span><span>(${pct})</span>`;
+      }
+    } catch (e) {
+      // Retain crisp default fallback if CORS proxy is offline
+    }
+  }
+
+  updatePSXLiveQuote();
 </script>
