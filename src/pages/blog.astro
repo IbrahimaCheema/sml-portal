@@ -96,7 +96,7 @@ const years = ['All Years', ...uniqueYears];
                   alt={post.title} 
                   loading="lazy"
                   class="card_thumb"
-                  onerror="this.src='https://docs.sml.com.pk/images/report_2026_q2_thumb.jpg'"
+                  onerror="this.onerror=null; this.src='/images/report_2026_q2_thumb.jpg';"
                 />
                 <span class={`category_badge ${badgeClass}`}>{post.category}</span>
               </div>
@@ -336,23 +336,25 @@ const years = ['All Years', ...uniqueYears];
   .card_image_wrapper {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 190px;
     overflow: hidden;
-    background: radial-gradient(circle, #ffffff 0%, #f1f5f9 100%);
+    background: #f8fafc;
     border-bottom: 1px solid #e2e8f0;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px;
+    padding: 12px;
   }
 
   .card_thumb {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
     object-position: center;
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.12));
   }
 
   .news_card:hover .card_thumb {

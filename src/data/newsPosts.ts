@@ -19,7 +19,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "22 July 2026",
     "category": "Corporate Notice",
     "excerpt": "Official notification regarding the upcoming meeting of the Board of Directors of Shakarganj Limited.",
-    "featuredImage": "https://docs.sml.com.pk/images/notice_board_meeting_jul2026.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_notice_board_meeting_jul2026.jpg",
     "linkUrl": "https://docs.sml.com.pk/pdf/notice_board_meeting_2026_07_22.pdf",
     "pdfUrl": "https://docs.sml.com.pk/pdf/notice_board_meeting_2026_07_22.pdf"
   },
@@ -30,7 +30,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "25 May 2026",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_1_2026.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_SML-2026.03.3111-Q2_page-0002-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -41,7 +41,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "08 May 2026",
     "category": "Shareholder Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_2_2026.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_egm-350x204.png",
     "linkUrl": "https://dps.psx.com.pk/download/document/276918.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/276918.pdf"
   },
@@ -52,7 +52,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "27 February 2026",
     "category": "Investor Relations",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_3_2026.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_corp-brief-350x204.png",
     "linkUrl": "https://dps.psx.com.pk/download/document/271326.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/271326.pdf"
   },
@@ -63,7 +63,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "10 February 2026",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_4_2026.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_SML-2025.12.31-Q1_page-0001-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -74,7 +74,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "03 February 2026",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_5_2026.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/269619.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/269619.pdf"
   },
@@ -85,7 +85,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "19 January 2026",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_6_2026.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_SML5.09.30thumb.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -96,7 +96,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "16 January 2026",
     "category": "Shareholder Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_7_2026.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_agm-new-1-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/268823.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/268823.pdf"
   },
@@ -107,7 +107,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "30 July 2025",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_8_2025.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_SML-2025.06.30-Q3.pdf_news-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -118,7 +118,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "23 July 2025",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_9_2025.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/256839.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/256839.pdf"
   },
@@ -129,7 +129,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "30 May 2025",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_10_2025.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_mar-2025-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -140,7 +140,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "21 May 2025",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_11_2025.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/254171.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/254171.pdf"
   },
@@ -162,7 +162,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "30 January 2025",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_13_2025.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_SML-2024.12.31-Q1_news-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -173,7 +173,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "23 January 2025",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_14_2025.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/246240.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/246240.pdf"
   },
@@ -184,7 +184,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "10 January 2025",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_15_2025.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_Annual_2024_feature02-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -195,7 +195,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "06 January 2025",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_16_2025.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_agm-new-1-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -206,7 +206,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "30 December 2024",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_17_2024.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/245171.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/245171.pdf"
   },
@@ -217,7 +217,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "18 October 2024",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_18_2024.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -228,7 +228,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "11 October 2024",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_19_2024.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -239,7 +239,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "30 July 2024",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_20_2024.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_SML-2024.06.30-Q3_news-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -250,7 +250,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "22 July 2024",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_21_2024.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/234299.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/234299.pdf"
   },
@@ -261,7 +261,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "30 May 2024",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_22_2024.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_SML-2024.03.31-Q2_page-0001-1-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -272,7 +272,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "20 March 2024",
     "category": "Investor Relations",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_23_2024.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_corp_briefing-350x204.png",
     "linkUrl": "https://dps.psx.com.pk/download/document/227681.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/227681.pdf"
   },
@@ -283,7 +283,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "07 February 2024",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_24_2024.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_news-dec2023-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -294,7 +294,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "06 February 2024",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_25_2024.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_agm-new-1-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -305,7 +305,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "06 February 2024",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_26_2024.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_news-sep2023-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -316,7 +316,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "30 January 2024",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_27_2024.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/220714.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/220714.pdf"
   },
@@ -327,7 +327,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "16 November 2023",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_28_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_update-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -338,7 +338,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "08 November 2023",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_29_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/220714.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/220714.pdf"
   },
@@ -349,7 +349,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "31 July 2023",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_30_2023.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_Financial-results-1-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -360,7 +360,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "21 July 2023",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_31_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/212278.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/212278.pdf"
   },
@@ -371,7 +371,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "01 June 2023",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_32_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_update-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/209663.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/209663.pdf"
   },
@@ -382,7 +382,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "31 May 2023",
     "category": "Shareholder Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_33_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_update-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/209523.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/209523.pdf"
   },
@@ -393,7 +393,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "31 May 2023",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_34_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/209547.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/209547.pdf"
   },
@@ -404,7 +404,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "30 May 2023",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_35_2023.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_Financial-results-1-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -415,7 +415,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "23 May 2023",
     "category": "Shareholder Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_36_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_update-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/208813.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/208813.pdf"
   },
@@ -426,7 +426,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "23 May 2023",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_37_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/208767.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/208767.pdf"
   },
@@ -437,7 +437,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "19 May 2023",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_38_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_update-350x204.jpg",
     "linkUrl": "https://www.sml.com.pk/disclosure-of-interest/",
     "pdfUrl": "https://www.sml.com.pk/disclosure-of-interest/"
   },
@@ -448,7 +448,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "09 May 2023",
     "category": "Shareholder Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_39_2023.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_egm-350x204.png",
     "linkUrl": "https://dps.psx.com.pk/download/document/208156.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/208156.pdf"
   },
@@ -459,7 +459,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "08 March 2023",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_40_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_update-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -470,7 +470,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "28 February 2023",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_41_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_update-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -481,7 +481,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "21 February 2023",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_42_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_update-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/202461.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/202461.pdf"
   },
@@ -492,7 +492,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "10 February 2023",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_43_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_update-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/201782.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/201782.pdf"
   },
@@ -503,7 +503,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "04 February 2023",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_44_2023.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_Financial-results-1-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -514,7 +514,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "03 February 2023",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_45_2023.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_agm-new-1-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -525,7 +525,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "03 February 2023",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_46_2023.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_annual-2022-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -536,7 +536,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "08 February 2022",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_47_2022.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_agm-new-1-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -547,7 +547,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "08 February 2022",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_48_2022.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_annual2021-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -558,7 +558,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "05 November 2021",
     "category": "Shareholder Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_49_2021.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_egm-350x204.png",
     "linkUrl": "https://dps.psx.com.pk/download/document/176867.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/176867.pdf"
   },
@@ -569,7 +569,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "30 July 2021",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_50_2021.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_title2020-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -580,7 +580,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "19 July 2021",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_51_2021.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/169583.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/169583.pdf"
   },
@@ -591,7 +591,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "31 May 2021",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_52_2021.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_title2020-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -602,7 +602,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "29 January 2021",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_53_2021.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_title2020-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -613,7 +613,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "07 January 2021",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_54_2021.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_title2020-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -624,7 +624,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "06 January 2021",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_55_2021.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_agm-new-1-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -635,7 +635,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "30 July 2020",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_56_2020.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_newsjune2020-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -646,7 +646,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "03 June 2020",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_57_2020.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_news310320201-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -657,7 +657,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "08 May 2020",
     "category": "Shareholder Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_58_2020.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_egm-350x204.png",
     "linkUrl": "https://www.sml.com.pk/notice-of-extraordinary-general-meeting/",
     "pdfUrl": "https://www.sml.com.pk/notice-of-extraordinary-general-meeting/"
   },
@@ -668,7 +668,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "27 January 2020",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_59_2020.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_31dec2019-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -679,7 +679,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "20 January 2020",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_60_2020.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/141591.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/141591.pdf"
   },
@@ -690,7 +690,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "06 January 2020",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_61_2020.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_sep2019_2-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -701,7 +701,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "04 January 2020",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_62_2020.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_agm-new-1-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -712,7 +712,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "20 December 2019",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_63_2019.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/140674.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/140674.pdf"
   },
@@ -723,7 +723,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "30 July 2019",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_64_2019.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_news-20190730-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -734,7 +734,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "22 July 2019",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_65_2019.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/132748.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/132748.pdf"
   },
@@ -745,7 +745,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "29 May 2019",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_66_2019.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_news-2019-03-31-Q2-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -756,7 +756,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "21 May 2019",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_67_2019.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/download/document/131119.pdf",
     "pdfUrl": "https://dps.psx.com.pk/download/document/131119.pdf"
   },
@@ -767,7 +767,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "28 January 2019",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_68_2019.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_news-2018-12-31-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -778,7 +778,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "21 January 2019",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_69_2019.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://dps.psx.com.pk/dataportal/download/document/124631.pdf",
     "pdfUrl": "https://dps.psx.com.pk/dataportal/download/document/124631.pdf"
   },
@@ -789,7 +789,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "03 January 2019",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_70_2019.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_agm-new-1-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -800,7 +800,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "03 January 2019",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_71_2019.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_SML0920181-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -811,7 +811,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "27 December 2018",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_72_2018.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://www.sml.com.pk/notice-of-184th-board-of-directors-meeting/",
     "pdfUrl": "https://www.sml.com.pk/notice-of-184th-board-of-directors-meeting/"
   },
@@ -822,7 +822,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "07 August 2018",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_73_2018.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_award-2018-2-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -833,7 +833,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "31 July 2018",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_74_2018.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_Q32018-new-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -844,7 +844,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "23 July 2018",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_75_2018.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://www.psx.com.pk/newsattachment/116247.pdf",
     "pdfUrl": "https://www.psx.com.pk/newsattachment/116247.pdf"
   },
@@ -855,7 +855,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "31 May 2018",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_76_2018.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_q2-2018-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -866,7 +866,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "22 May 2018",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_77_2018.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "http://www.psx.com.pk/newsattachment/114770.pdf",
     "pdfUrl": "http://www.psx.com.pk/newsattachment/114770.pdf"
   },
@@ -877,7 +877,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "09 April 2018",
     "category": "Shareholder Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_78_2018.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_egm-350x204.png",
     "linkUrl": "https://www.sml.com.pk/notice-extraordinary-general-meeting/",
     "pdfUrl": "https://www.sml.com.pk/notice-extraordinary-general-meeting/"
   },
@@ -888,7 +888,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "29 March 2018",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_79_2018.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://www.sml.com.pk/notice-181th-board-directors-meeting/",
     "pdfUrl": "https://www.sml.com.pk/notice-181th-board-directors-meeting/"
   },
@@ -899,7 +899,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "20 January 2018",
     "category": "Corporate Notice",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_80_2018.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_board-meeting-350x204.jpg",
     "linkUrl": "https://www.sml.com.pk/notice-of-180th-board-of-directors-meeting/",
     "pdfUrl": "https://www.sml.com.pk/notice-of-180th-board-of-directors-meeting/"
   },
@@ -910,7 +910,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "10 January 2018",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_82_2018.png",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_q1-2018-350x204.png",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -921,7 +921,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "06 January 2018",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_83_2018.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_agm-new-1-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -932,7 +932,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "31 December 2017",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_84_2017.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_SML-2017.09.30-title-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   },
@@ -943,7 +943,7 @@ export const newsPosts: NewsPost[] = [
     "displayDate": "06 January 2017",
     "category": "Financial Results",
     "excerpt": "",
-    "featuredImage": "https://docs.sml.com.pk/images/news_thumb_86_2017.jpg",
+    "featuredImage": "https://docs.sml.com.pk/images/wp_agm-new-1-350x204.jpg",
     "linkUrl": "/financial-reports",
     "pdfUrl": "/financial-reports"
   }
