@@ -556,31 +556,42 @@
     const changeEl = document.getElementById('psx_live_change');
     if (!priceEl || !changeEl) return;
 
-    try {
-      // Fetch via lightweight CORS proxy with timeout
-      const res = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://dps.psx.com.pk/company/SML'));
-      if (!res.ok) return;
-      const data = await res.json();
-      const html = data.contents;
-      
-      const priceMatch = html.match(/class="quote__close">\s*Rs\.?\s*([\d\.,]+)/i);
-      const changeMatch = html.match(/class="change__value">\s*([\d\.,\-]+)/i);
-      const percentMatch = html.match(/class="change__percent">\s*\(([\d\.,\%\-+]+)\)/i);
-      const isPos = html.includes('change__text--pos');
+    function applyPSXData(priceStr, changeStr, percentStr) {
+      if (!priceStr) return;
+      const cleanPrice = parseFloat(priceStr.replace(/,/g, '')).toFixed(2);
+      priceEl.textContent = `Rs.${cleanPrice}`;
 
-      if (priceMatch && priceMatch[1]) {
-        priceEl.textContent = `Rs.${priceMatch[1]}`;
-      }
-
-      if (changeMatch && percentMatch) {
-        const val = changeMatch[1];
-        const pct = percentMatch[1];
+      if (changeStr && percentStr) {
+        const valNum = parseFloat(changeStr);
+        const isPos = valNum >= 0;
+        const absVal = Math.abs(valNum).toFixed(2);
+        const rawP = percentStr.replace('%', '').replace('+', '').replace('-', '');
+        const absPct = Math.abs(parseFloat(rawP) || 0).toFixed(2);
         const arrow = isPos ? '▲' : '▼';
         changeEl.className = `psx_change_val ${isPos ? 'pos' : 'neg'}`;
-        changeEl.innerHTML = `<span>${arrow} ${val}</span><span>(${pct})</span>`;
+        changeEl.innerHTML = `<span>${arrow} ${isPos ? '+' : '-'}${absVal}</span> <span>(${isPos ? '+' : '-'}${absPct}%)</span>`;
+      }
+    }
+
+    try {
+      const res = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://dps.psx.com.pk/company/SML'));
+      if (res.ok) {
+        const data = await res.json();
+        const html = data.contents || '';
+        const priceMatch = html.match(/class="quote__close">\s*Rs\.?\s*([\d\.,]+)/i);
+        const changeMatch = html.match(/class="change__value">\s*([\d\.,\-]+)/i);
+        const percentMatch = html.match(/class="change__percent">\s*\(([\d\.,\%\-+]+)\)/i);
+
+        if (priceMatch && priceMatch[1]) {
+          applyPSXData(
+            priceMatch[1],
+            changeMatch ? changeMatch[1] : '0.00',
+            percentMatch ? percentMatch[1] : '0.00%'
+          );
+        }
       }
     } catch (e) {
-      // Retain crisp default fallback if CORS proxy is offline
+      console.error("Live PSX fetch error:", e);
     }
   }
 
