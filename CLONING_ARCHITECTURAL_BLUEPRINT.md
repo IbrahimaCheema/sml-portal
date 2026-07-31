@@ -4,6 +4,13 @@ This document defines the exact architecture, technology stack, asset storage st
 
 Feed this document directly to **Antigravity AI** at the start of any new website cloning session to instantly enforce project standards without manual context setup.
 
+## 0. 🔐 Security & Secret Management Protocols (MANDATORY)
+
+- **Strict Zero-Hardcoded-Secrets Policy**: NEVER hardcode API keys, secret access keys, account IDs, tokens, database URIs, or passwords in source files, scripts, or markdown documents.
+- **Environment Variable Usage**: Always load sensitive credentials via `process.env` (e.g. `process.env.R2_SECRET_ACCESS_KEY`).
+- **`.env` File Isolation**: Store all local keys in `.env` or `.env.local` files, ensuring they are ignored in `.gitignore`.
+- **Boilerplate Placeholders**: Use only generic tokens (e.g., `YOUR_R2_ACCESS_KEY_ID`, `YOUR_CLOUDFLARE_ACCOUNT_ID`) in any shared examples or documentation.
+
 ---
 
 ## 1. 🛠️ Core Technology Stack

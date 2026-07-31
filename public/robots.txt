@@ -1,0 +1,9 @@
+# Shakarganj Limited (SML) - Robots.txt Rules
+User-agent: *
+Allow: /
+
+# Exclude non-public search utility endpoints
+Disallow: /search?
+
+# Sitemap location
+Sitemap: https://www.sml.com.pk/sitemap.xml

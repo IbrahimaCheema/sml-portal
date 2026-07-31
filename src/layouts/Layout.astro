@@ -7,13 +7,78 @@ interface Props {
   title?: string;
   description?: string;
   isHome?: boolean;
+  image?: string;
+  type?: string;
+  canonical?: string;
 }
 
 const { 
-  title = "Shakarganj Limited - SML",
-  description = "Shakarganj Limited, incorporated in 1967, is listed on the Pakistan Stock Exchange. Market leader in refined sugar and biofuels.",
-  isHome
+  title = "Shakarganj Limited - SML | Premier Sugar, Biofuels & Energy Group",
+  description = "Shakarganj Limited (SML), incorporated in 1967, is a leading diversified industrial group in Pakistan producing high-grade refined sugar, biofuels, bio-energy, and textiles.",
+  isHome = false,
+  image = "https://docs.sml.com.pk/images/sml_logo.png",
+  type = "website",
+  canonical
 } = Astro.props;
+
+const siteUrl = "https://www.sml.com.pk";
+const canonicalURL = canonical || new URL(Astro.url.pathname, siteUrl).href;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Shakarganj Limited",
+  "legalName": "Shakarganj Limited",
+  "alternateName": ["SML", "Shakarganj"],
+  "url": siteUrl,
+  "logo": "https://docs.sml.com.pk/images/sml_logo.png",
+  "foundingDate": "1967",
+  "tickerSymbol": "PSX:SML",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "E-10, Main Boulevard, Gulberg III",
+    "addressLocality": "Lahore",
+    "addressRegion": "Punjab",
+    "postalCode": "54660",
+    "addressCountry": "PK"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+92-42-35757108",
+      "contactType": "corporate office",
+      "email": "info@shakarganj.pk",
+      "areaServed": "PK",
+      "availableLanguage": ["English", "Urdu"]
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+92-47-111-111-117",
+      "contactType": "head office",
+      "areaServed": "PK"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/ShakarganjLimited",
+    "https://www.linkedin.com/company/shakarganj-limited"
+  ]
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Shakarganj Limited",
+  "alternateName": "SML",
+  "url": siteUrl,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${siteUrl}/search?q={search_term_string}`
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
 ---
 
 <!DOCTYPE html>
@@ -23,7 +88,33 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content="Shakarganj, Shakarganj Limited, SML, Shakarganj Sugar, Shakarganj Biofuels, Shakarganj Pakistan, SML Portal, Refined Sugar Pakistan, Bioethanol Pakistan" />
+    <meta name="author" content="Shakarganj Limited" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:site_name" content="Shakarganj Limited" />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Favicon & Apple Touch Icons -->
     <link rel="icon" type="image/png" href="https://docs.sml.com.pk/images/favicon.png" />
+    <link rel="apple-touch-icon" href="https://docs.sml.com.pk/images/favicon.png" />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +124,10 @@ const {
     <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   </head>
   <body>
     <div id="wrapper">
