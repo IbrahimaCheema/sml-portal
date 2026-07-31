@@ -1,0 +1,44 @@
+name: PSX Stock Live Price 30-Min Cron Sync
+
+on:
+  schedule:
+    # Runs every 30 minutes
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  sync-psx-price:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Fetch Latest PSX Data & Update Static Assets
+        run: |
+          python scripts/update_psx_json.py
+
+      - name: Commit and Push Changes if Updated
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/api/psx.json public/api/psx
+          if git diff --staged --quiet; then
+            echo "No changes in PSX quote."
+          else
+            git commit -m "chore(cron): auto-update PSX:SML live price quote [30-min cron]"
+            git push
+          fi

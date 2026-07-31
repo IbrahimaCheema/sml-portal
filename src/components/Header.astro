@@ -613,7 +613,7 @@
       }
     }
 
-    // 1. Try backend endpoint
+    // 1. Try backend endpoint or static JSON asset
     try {
       const res = await fetchTimeout('/api/psx', {}, 2500);
       if (res.ok) {
@@ -624,6 +624,18 @@
         }
       }
     } catch (e) {}
+
+    try {
+      const res = await fetchTimeout('/api/psx.json', {}, 2500);
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.current && !data.error) {
+          applyData(data);
+          return;
+        }
+      }
+    } catch (e) {}
+
 
     // 2. Try direct PSX Intraday Timeseries API
     try {
