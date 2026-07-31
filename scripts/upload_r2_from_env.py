@@ -16,13 +16,13 @@ def load_env():
 def upload_r2():
     load_env()
     
-    account_id = os.getenv('R2_ACCOUNT_ID', '9594508e0e41ab8192d129114cd8a539')
+    account_id = os.getenv('R2_ACCOUNT_ID')
     access_key = os.getenv('R2_ACCESS_KEY_ID')
     secret_key = os.getenv('R2_SECRET_ACCESS_KEY')
     bucket_name = os.getenv('R2_BUCKET_NAME', 'sml-uploads')
 
-    if not access_key or not secret_key:
-        print("ERROR: Missing R2_ACCESS_KEY_ID or R2_SECRET_ACCESS_KEY in environment or ~/.env")
+    if not account_id or not access_key or not secret_key:
+        print("ERROR: Missing R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, or R2_SECRET_ACCESS_KEY in environment or ~/.env")
         sys.exit(1)
 
     try:
