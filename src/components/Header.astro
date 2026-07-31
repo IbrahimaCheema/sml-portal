@@ -23,10 +23,10 @@
             <!-- Live PSX Ticker Pill -->
             <a href="https://dps.psx.com.pk/company/SML" target="_blank" rel="noopener noreferrer" class="psx_stock_pill" title="Live Stock Quote on PSX Data Portal">
               <span class="psx_ticker_tag">PSX:SML</span>
-              <span class="psx_price_val" id="psx_live_price">Rs.103.96</span>
-              <span class="psx_change_val pos" id="psx_live_change">
-                <span>▲ 0.01</span>
-                <span>(0.01%)</span>
+              <span class="psx_price_val" id="psx_live_price">Rs.103.80</span>
+              <span class="psx_change_val neg" id="psx_live_change">
+                <span>▼ -0.15</span>
+                <span>(-0.14%)</span>
               </span>
             </a>
           </div>
@@ -503,7 +503,7 @@
   }
 </style>
 
-<script>
+<script is:inline>
   const header = document.getElementById('header');
   let headerHeight = header ? header.offsetHeight : 90;
 
