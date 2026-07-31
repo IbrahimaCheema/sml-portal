@@ -552,47 +552,151 @@
   });
   // Live PSX Stock Quote Fetcher (psx.com.pk)
   async function updatePSXLiveQuote() {
-    const priceEl = document.getElementById('psx_live_price');
-    const changeEl = document.getElementById('psx_live_change');
-    if (!priceEl || !changeEl) return;
+    function applyData(data) {
+      if (!data || !data.current) return;
+      const priceNum = parseFloat(data.current.toString().replace(/,/g, '')).toFixed(2);
+      const numChange = parseFloat(data.change || 0);
+      const absChange = Math.abs(numChange).toFixed(2);
+      const rawP = (data.percent || '0').toString().replace('%', '').replace('+', '').replace('-', '');
+      const absPercent = Math.abs(parseFloat(rawP) || 0).toFixed(2);
+      const isPositive = numChange >= 0;
+      const arrow = isPositive ? '▲' : '▼';
+      const sign = isPositive ? '+' : '-';
+      const changeFormatted = `${arrow} ${sign}${absChange} (${sign}${absPercent}%)`;
 
-    function applyPSXData(priceStr, changeStr, percentStr) {
-      if (!priceStr) return;
-      const cleanPrice = parseFloat(priceStr.replace(/,/g, '')).toFixed(2);
-      priceEl.textContent = `Rs.${cleanPrice}`;
+      // 1. Header elements
+      const priceEl = document.getElementById('psx_live_price');
+      const changeEl = document.getElementById('psx_live_change');
+      if (priceEl) priceEl.textContent = 'Rs.' + priceNum;
+      if (changeEl) {
+        changeEl.className = `psx_change_val ${isPositive ? 'pos' : 'neg'}`;
+        changeEl.innerHTML = `<span>${arrow} ${sign}${absChange}</span> <span>(${sign}${absPercent}%)</span>`;
+      }
 
-      if (changeStr && percentStr) {
-        const valNum = parseFloat(changeStr);
-        const isPos = valNum >= 0;
-        const absVal = Math.abs(valNum).toFixed(2);
-        const rawP = percentStr.replace('%', '').replace('+', '').replace('-', '');
-        const absPct = Math.abs(parseFloat(rawP) || 0).toFixed(2);
-        const arrow = isPos ? '▲' : '▼';
-        changeEl.className = `psx_change_val ${isPos ? 'pos' : 'neg'}`;
-        changeEl.innerHTML = `<span>${arrow} ${isPos ? '+' : '-'}${absVal}</span> <span>(${isPos ? '+' : '-'}${absPct}%)</span>`;
+      // 2. Generic page stock elements
+      const stockPrice = document.getElementById('stockPrice');
+      const stockChange = document.getElementById('stockChange');
+      const stockLdcp = document.getElementById('stockLdcp');
+      const stockVolume = document.getElementById('stockVolume');
+
+      if (stockPrice) stockPrice.textContent = 'Rs. ' + priceNum;
+      if (stockChange) {
+        stockChange.className = isPositive ? 'stock-item change positive' : 'stock-item change negative';
+        stockChange.textContent = changeFormatted;
+      }
+      if (stockLdcp && data.ldcp) stockLdcp.textContent = data.ldcp;
+      if (stockVolume && data.volume) stockVolume.textContent = (data.volume + '').replace(' shares', '') + ' shares';
+
+      // 3. Investor page stock elements
+      const invPrice = document.getElementById('investorStockPrice');
+      const invChange = document.getElementById('investorStockChange');
+      const invLdcp = document.getElementById('investorStockLdcp');
+
+      if (invPrice) invPrice.textContent = 'Rs. ' + priceNum;
+      if (invChange) {
+        invChange.style.color = isPositive ? '#4ade80' : '#f87171';
+        invChange.textContent = changeFormatted;
+      }
+      if (invLdcp && data.ldcp) invLdcp.textContent = data.ldcp;
+    }
+
+    async function fetchTimeout(url, options = {}, timeoutMs = 2500) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeoutMs);
+      try {
+        const res = await fetch(url, { ...options, signal: controller.signal });
+        clearTimeout(timer);
+        return res;
+      } catch (e) {
+        clearTimeout(timer);
+        throw e;
       }
     }
 
+    // 1. Try backend endpoint
     try {
-      const res = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://dps.psx.com.pk/company/SML'));
+      const res = await fetchTimeout('/api/psx', {}, 2500);
       if (res.ok) {
         const data = await res.json();
-        const html = data.contents || '';
+        if (data && data.current && !data.error) {
+          applyData(data);
+          return;
+        }
+      }
+    } catch (e) {}
+
+    // 2. Try direct PSX Intraday Timeseries API
+    try {
+      const res = await fetchTimeout('https://dps.psx.com.pk/timeseries/int/SML', {}, 2500);
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.data && data.data.length > 0) {
+          const latest = data.data[0];
+          if (latest && latest[1]) {
+            const currentPrice = parseFloat(latest[1]).toFixed(2);
+            applyData({
+              current: currentPrice,
+              change: '0.00',
+              percent: '0.00%',
+              ldcp: currentPrice,
+              volume: (latest[2] || '25') + ' shares'
+            });
+            return;
+          }
+        }
+      }
+    } catch (e) {}
+
+    // 3. Try AllOrigins Proxy
+    try {
+      const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://dps.psx.com.pk/company/SML');
+      const res = await fetchTimeout(proxyUrl, {}, 3000);
+      if (res.ok) {
+        const json = await res.json();
+        const html = json.contents || '';
         const priceMatch = html.match(/class="quote__close">\s*Rs\.?\s*([\d\.,]+)/i);
         const changeMatch = html.match(/class="change__value">\s*([\d\.,\-]+)/i);
         const percentMatch = html.match(/class="change__percent">\s*\(([\d\.,\%\-+]+)\)/i);
+        const volumeMatch = html.match(/Volume<\/div>\s*<div class="stats_value">([0-9,]+)<\/div>/i);
+        const ldcpMatch = html.match(/LDCP<\/div>\s*<div class="stats_value">([0-9\.]+)<\/div>/i);
 
         if (priceMatch && priceMatch[1]) {
-          applyPSXData(
-            priceMatch[1],
-            changeMatch ? changeMatch[1] : '0.00',
-            percentMatch ? percentMatch[1] : '0.00%'
-          );
+          applyData({
+            current: priceMatch[1],
+            change: changeMatch ? changeMatch[1] : '0.00',
+            percent: percentMatch ? percentMatch[1] : '0.00%',
+            ldcp: ldcpMatch ? ldcpMatch[1] : priceMatch[1],
+            volume: volumeMatch ? volumeMatch[1] : '25'
+          });
+          return;
         }
       }
-    } catch (e) {
-      console.error("Live PSX fetch error:", e);
-    }
+    } catch (e) {}
+
+    // 4. Try CodeTabs Proxy
+    try {
+      const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent('https://dps.psx.com.pk/company/SML');
+      const res = await fetchTimeout(proxyUrl, {}, 3000);
+      if (res.ok) {
+        const html = await res.text();
+        const priceMatch = html.match(/class="quote__close">\s*Rs\.?\s*([\d\.,]+)/i);
+        const changeMatch = html.match(/class="change__value">\s*([\d\.,\-]+)/i);
+        const percentMatch = html.match(/class="change__percent">\s*\(([\d\.,\%\-+]+)\)/i);
+        const volumeMatch = html.match(/Volume<\/div>\s*<div class="stats_value">([0-9,]+)<\/div>/i);
+        const ldcpMatch = html.match(/LDCP<\/div>\s*<div class="stats_value">([0-9\.]+)<\/div>/i);
+
+        if (priceMatch && priceMatch[1]) {
+          applyData({
+            current: priceMatch[1],
+            change: changeMatch ? changeMatch[1] : '0.00',
+            percent: percentMatch ? percentMatch[1] : '0.00%',
+            ldcp: ldcpMatch ? ldcpMatch[1] : priceMatch[1],
+            volume: volumeMatch ? volumeMatch[1] : '25'
+          });
+          return;
+        }
+      }
+    } catch (e) {}
   }
 
   updatePSXLiveQuote();
