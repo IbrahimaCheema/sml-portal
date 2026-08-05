@@ -1,11 +1,11 @@
 {
   "symbol": "SML",
   "name": "Shakarganj Limited",
-  "current": "103.95",
-  "change": "0.00",
-  "percent": "0.00%",
+  "current": "103.00",
+  "change": "-0.95",
+  "percent": "-0.91%",
   "ldcp": "103.95",
-  "volume": "33 shares",
+  "volume": "7 shares",
   "source": "https://dps.psx.com.pk/company/SML",
-  "last_updated": "2026-08-05T07:55:48.002133+05:00"
+  "last_updated": "2026-08-05T10:47:20.294360+05:00"
 }
