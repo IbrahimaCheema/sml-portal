@@ -15,6 +15,17 @@ const R2_DOMAIN = 'https://docs.sml.com.pk';
 
 export const newsPosts: NewsPost[] = [
   {
+    "id": "notice-board-meeting-july-2026",
+    "title": "Notice of Board of Directors Meeting",
+    "date": "2026-07-22",
+    "displayDate": "22 July 2026",
+    "category": "Corporate Notice",
+    "excerpt": "Notice is hereby given that a meeting of the Board of Directors of Shakarganj Limited will be held on 22 July 2026 to consider corporate business.",
+    "featuredImage": `${R2_DOMAIN}/images/wp_notice_board_meeting_jul2026.jpg`,
+    "linkUrl": "/shareholder-information",
+    "pdfUrl": `${R2_DOMAIN}/docs/SML-Board-Meeting-2026-07-22.pdf`
+  },
+  {
     "id": "financial-results-half-year-31-mar-2026",
     "title": "Financial results for the Half Year Ended 31 Mar 2026",
     "date": "2026-05-25",
