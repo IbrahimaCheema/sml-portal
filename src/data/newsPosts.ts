@@ -15,6 +15,17 @@ const R2_DOMAIN = 'https://docs.sml.com.pk';
 
 export const newsPosts: NewsPost[] = [
   {
+    "id": "financial-results-3rd-quarter-30-june-2026",
+    "title": "Transmission of Quarterly Report for the Period Ended June 30, 2026",
+    "date": "2026-07-30",
+    "displayDate": "30 July 2026",
+    "category": "Financial Results",
+    "excerpt": "Condensed interim financial information and operational performance highlights of Shakarganj Limited for the 3rd quarter ended 30 June 2026.",
+    "featuredImage": `${R2_DOMAIN}/images/report_2026_q3_thumb.jpg`,
+    "linkUrl": "/financial-reports",
+    "pdfUrl": `${R2_DOMAIN}/docs/SML-2026.06.30-Q3.pdf`
+  },
+  {
     "id": "notice-board-meeting-july-2026",
     "title": "Notice of Board of Directors Meeting",
     "date": "2026-07-22",
