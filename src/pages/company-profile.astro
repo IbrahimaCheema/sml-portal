@@ -7,9 +7,9 @@ const metaDescription = "Explore the official corporate profile of Shakarganj Li
 
 // Cloudflare R2 Image Endpoints & Local Fallbacks
 const sugarImgUrl = "https://docs.sml.com.pk/images/company_profile_sugar.jpg";
-const sugarImgLocal = "/images/company_profile_sugar.jpg";
+const sugarImgLocal = "https://docs.sml.com.pk/images/company_profile_sugar.jpg";
 const biofuelImgUrl = "https://docs.sml.com.pk/images/company_profile_biofuel.jpg";
-const biofuelImgLocal = "/images/company_profile_biofuel.jpg";
+const biofuelImgLocal = "https://docs.sml.com.pk/images/company_profile_biofuel.jpg";
 ---
 
 <Layout title={pageTitle} description={metaDescription}>
@@ -34,7 +34,7 @@ const biofuelImgLocal = "/images/company_profile_biofuel.jpg";
       <div class="overview_card">
         <div class="overview_header">
           <div class="overview_icon logo_box">
-            <img src="https://www.sml.com.pk/wp-content/uploads/2023/12/SML-Logo-Icon-1-100x100.png" alt="Shakarganj Logo Icon" width="40" height="40" onerror="this.src='/images/logo.png'" />
+            <img src="https://docs.sml.com.pk/images/sml_official_logo.jpg" alt="Shakarganj Logo Icon" width="40" height="40" onerror="this.onerror=null; this.src='https://docs.sml.com.pk/images/logo.png'" />
           </div>
           <div>
             <h2 class="overview_title">Profile of Company</h2>
