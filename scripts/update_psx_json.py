@@ -1,14 +1,20 @@
 import urllib.request
 import re
 import json
+import sys
 from datetime import datetime, timezone, timedelta
 
 def update_psx_data():
     url = 'https://dps.psx.com.pk/company/SML'
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'})
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.5'
+    }
+    req = urllib.request.Request(url, headers=headers)
     
     try:
-        with urllib.request.urlopen(req, timeout=10) as response:
+        with urllib.request.urlopen(req, timeout=15) as response:
             html = response.read().decode('utf-8')
             
             price_match = re.search(r'class="quote__close">\s*Rs\.?\s*([\d\.,]+)', html)
@@ -50,4 +56,7 @@ def update_psx_data():
         return False
 
 if __name__ == "__main__":
-    update_psx_data()
+    success = update_psx_data()
+    if not success:
+        sys.exit(1)
+

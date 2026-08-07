@@ -40,5 +40,6 @@ jobs:
             echo "No changes in PSX quote."
           else
             git commit -m "chore(cron): auto-update PSX:SML live price quote [30-min cron]"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
