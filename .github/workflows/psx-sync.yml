@@ -29,6 +29,7 @@ jobs:
 
       - name: Fetch Latest PSX Data & Update Static Assets
         run: |
+          pip install cloudscraper
           python scripts/update_psx_json.py
 
       - name: Commit and Push Changes if Updated
