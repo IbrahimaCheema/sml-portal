@@ -10,6 +10,9 @@ on:
       - main
       - master
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: 'true'
+
 jobs:
   sync-psx-price:
     runs-on: ubuntu-latest
@@ -29,7 +32,7 @@ jobs:
 
       - name: Fetch Latest PSX Data & Update Static Assets
         run: |
-          pip install cloudscraper
+          pip install cloudscraper requests
           python scripts/update_psx_json.py
 
       - name: Commit and Push Changes if Updated
@@ -41,6 +44,7 @@ jobs:
             echo "No changes in PSX quote."
           else
             git commit -m "chore(cron): auto-update PSX:SML live price quote [30-min cron]"
-            git pull --rebase origin main
+            git pull --rebase origin main || true
             git push origin HEAD:main
           fi
+
