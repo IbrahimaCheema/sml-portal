@@ -15,6 +15,17 @@ const R2_DOMAIN = 'https://docs.sml.com.pk';
 
 export const newsPosts: NewsPost[] = [
   {
+    "id": "notice-board-meeting-other-than-financial-results-sep-2026",
+    "title": "Board Meeting Other Than Financial Results",
+    "date": "2026-09-23",
+    "displayDate": "23 September 2026",
+    "category": "Corporate Notice",
+    "excerpt": "Notice is hereby given that a meeting of the Board of Directors of Shakarganj Limited will be held to consider corporate matters other than financial results.",
+    "featuredImage": `${R2_DOMAIN}/images/wp_notice_board_meeting_jul2026.jpg`,
+    "linkUrl": "/shareholder-information",
+    "pdfUrl": "https://dps.psx.com.pk/download/document/283277.pdf"
+  },
+  {
     "id": "financial-results-3rd-quarter-30-june-2026",
     "title": "Transmission of Quarterly Report for the Period Ended June 30, 2026",
     "date": "2026-07-30",
