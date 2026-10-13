@@ -44,7 +44,7 @@ const biofuelImgLocal = "https://docs.sml.com.pk/images/company_profile_biofuel.
 
         <div class="overview_body">
           <p>
-            <strong>Shakarganj Limited</strong>, incorporated in 1967, is listed on the Pakistan Stock Exchange with the trading symbol <strong>SML</strong>. The company is a recognized market leader across key agro-industrial business sectors, transforming renewable crops such as sugarcane into high-value added products comprising refined sugar and biofuels.
+            Shakarganj Limited, incorporated in 1967, is listed on the Pakistan Stock Exchange with the trading symbol SML. The company is a recognized market leader across key agro-industrial business sectors, transforming renewable crops such as sugarcane into high-value added products comprising refined sugar and biofuels.
           </p>
           <p>
             Shakarganj operates two state-of-the-art manufacturing complexes strategically located in the Jhang District of Punjab, supported by a registered Head Office in Lahore.
@@ -69,7 +69,7 @@ const biofuelImgLocal = "https://docs.sml.com.pk/images/company_profile_biofuel.
             </div>
             <div class="meta_info">
               <span class="meta_label">Registration Number</span>
-              <span class="meta_value">0002546</span>
+              <span class="meta_value"><bdi>0002546</bdi></span>
             </div>
           </div>
 
@@ -82,7 +82,7 @@ const biofuelImgLocal = "https://docs.sml.com.pk/images/company_profile_biofuel.
             </div>
             <div class="meta_info">
               <span class="meta_label">National Tax Number (NTN)</span>
-              <span class="meta_value">1413603-1</span>
+              <span class="meta_value"><bdi>1413603-1</bdi></span>
             </div>
           </div>
 
@@ -103,7 +103,7 @@ const biofuelImgLocal = "https://docs.sml.com.pk/images/company_profile_biofuel.
             </div>
             <div class="meta_info">
               <span class="meta_label">Sales Tax Number (STRN)</span>
-              <span class="meta_value">04-06-1703-002-46</span>
+              <span class="meta_value"><bdi>04-06-1703-002-46</bdi></span>
             </div>
           </div>
 
@@ -131,7 +131,7 @@ const biofuelImgLocal = "https://docs.sml.com.pk/images/company_profile_biofuel.
             </div>
             <div class="meta_info">
               <span class="meta_label">PSX Symbol</span>
-              <span class="meta_value symbol_tag">SML</span>
+              <span class="meta_value symbol_tag"><bdi>SML</bdi></span>
             </div>
           </div>
 
@@ -144,7 +144,7 @@ const biofuelImgLocal = "https://docs.sml.com.pk/images/company_profile_biofuel.
             </div>
             <div class="meta_info">
               <span class="meta_label">Official Contact</span>
-              <a href="mailto:info@shakarganj.pk" class="meta_link">info@shakarganj.pk</a>
+              <a href="mailto:info@shakarganj.pk" class="meta_link"><bdi>info@shakarganj.pk</bdi></a>
             </div>
           </div>
 
@@ -584,5 +584,122 @@ const biofuelImgLocal = "https://docs.sml.com.pk/images/company_profile_biofuel.
     .overview_card {
       padding: 20px;
     }
+  }
+
+  /* RTL & Urdu Specific Layout Adjustments */
+  html[dir="rtl"] .overview_card {
+    text-align: right;
+  }
+  html[dir="rtl"] .overview_header {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  html[dir="rtl"] .overview_title {
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+    font-size: 26px !important;
+    line-height: 1.8 !important;
+    text-align: right !important;
+  }
+  html[dir="rtl"] .overview_tagline {
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+    font-size: 15px !important;
+    line-height: 1.8 !important;
+    display: block !important;
+    text-align: right !important;
+  }
+  html[dir="rtl"] .overview_body p {
+    text-align: right !important;
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+    font-size: 18px !important;
+    line-height: 2.2 !important;
+    color: #334155 !important;
+  }
+  html[dir="rtl"] .section_heading {
+    padding-left: 0 !important;
+    padding-right: 14px !important;
+    text-align: right !important;
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+    font-size: 24px !important;
+    line-height: 1.8 !important;
+  }
+  html[dir="rtl"] .section_heading::before {
+    left: auto !important;
+    right: 0 !important;
+  }
+  html[dir="rtl"] .section_sub {
+    margin: 4px 14px 0 0 !important;
+    text-align: right !important;
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+    font-size: 16px !important;
+    line-height: 2.0 !important;
+  }
+  html[dir="rtl"] .meta_card {
+    direction: rtl !important;
+    text-align: right !important;
+  }
+  html[dir="rtl"] .meta_info {
+    text-align: right !important;
+    align-items: flex-start !important;
+  }
+  html[dir="rtl"] .meta_label {
+    text-align: right !important;
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    color: #64748b !important;
+  }
+  html[dir="rtl"] .meta_value {
+    text-align: right !important;
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+  }
+  html[dir="rtl"] .meta_value bdi,
+  html[dir="rtl"] .meta_link bdi {
+    direction: ltr !important;
+    display: inline-block !important;
+    font-family: var(--font-main) !important;
+  }
+  html[dir="rtl"] .activity_badge {
+    right: auto !important;
+    left: 14px !important;
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+  }
+  html[dir="rtl"] .activity_body {
+    text-align: right !important;
+    direction: rtl !important;
+  }
+  html[dir="rtl"] .activity_title_row {
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+  }
+  html[dir="rtl"] .activity_title {
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+    font-size: 24px !important;
+    line-height: 1.8 !important;
+    text-align: right !important;
+  }
+  html[dir="rtl"] .activity_desc {
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+    font-size: 16px !important;
+    line-height: 2.2 !important;
+    text-align: right !important;
+  }
+  html[dir="rtl"] .activity_btn {
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+    font-size: 15px !important;
+    line-height: 1.8 !important;
+    flex-direction: row-reverse !important;
+    margin-right: 0 !important;
+    margin-left: auto !important;
+  }
+  html[dir="rtl"] .activity_btn i {
+    transform: rotate(180deg) !important;
   }
 </style>

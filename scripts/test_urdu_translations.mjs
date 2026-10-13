@@ -84,7 +84,21 @@ const testCases = [
   ['Download PDF', 'پی ڈی ایف ڈاؤن لوڈ کریں'],
   ['Full Name', 'مکمل نام'],
   ['Email Address', 'ای میل ایڈریس'],
-  ['Audit Committee', 'آڈٹ کمیٹی']
+  ['Audit Committee', 'آڈٹ کمیٹی'],
+
+  // Company Profile Specific Assertions
+  ['National Tax Number (NTN)', 'قومی ٹیکس نمبر (NTN)'],
+  ['Sales Tax Number (STRN)', 'سیلز ٹیکس نمبر (STRN)'],
+  ['Registration Number', 'رجسٹریشن نمبر'],
+  ['Incorporation Date', 'تاریخِ قیام / رجسٹریشن'],
+  ['20 September 1967', '20 ستمبر 1967ء'],
+  ['Official Contact', 'سرکاری رابطہ / ای میل'],
+  ['Core Segment', 'بنیادی شعبہ'],
+  ['Renewable Energy', 'قابلِ تجدید توانائی'],
+  ['Explore Segment', 'شعبہ دیکھیں'],
+  ['Shakarganj Limited (PSX: SML)', 'شکر گنج لمیٹڈ (PSX: SML)'],
+  ['Discover our primary industrial production segments transforming natural resources.', 'قدرتی وسائل کو کارآمد بنانے والے ہمارے بنیادی صنعتی پیداواری شعبے دریافت کیجیے۔'],
+  ['Shakarganj operates two state-of-the-art manufacturing complexes strategically located in the Jhang District of Punjab, supported by a registered Head Office in Lahore.', 'شکر گنج پنجاب کے ضلع جھنگ میں واقع دو جدید ترین مینوفیکچرنگ کمپلیکسز چلاتا ہے، جن کی معاونت لاہور میں واقع رجسٹرڈ ہیڈ آفس کرتا ہے۔']
 ];
 
 let failed = 0;
