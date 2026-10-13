@@ -127,7 +127,16 @@ const websiteSchema = {
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <!-- Immediate Inline Script to prevent FOUC for saved language -->
+    <script is:inline>
+      try {
+        const savedLang = localStorage.getItem('sml_lang');
+        if (savedLang === 'ur') {
+          document.documentElement.setAttribute('lang', 'ur');
+          document.documentElement.setAttribute('dir', 'rtl');
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="wrapper">
@@ -179,6 +188,12 @@ const websiteSchema = {
         font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', 'Poppins', serif !important;
       }
 
+      /* CRITICAL: Never apply letter-spacing to Arabic/Urdu scripts (causes detached glyphs) */
+      html[lang="ur"] *,
+      html[dir="rtl"] * {
+        letter-spacing: normal !important;
+      }
+
       html[lang="ur"] body,
       html[dir="rtl"] body {
         direction: rtl !important;
@@ -191,33 +206,255 @@ const websiteSchema = {
         padding-bottom: 4px;
       }
       html[dir="rtl"] p {
-        line-height: 2.0 !important;
+        line-height: 2.1 !important;
       }
+
+      /* Navigation & Submenus */
       html[dir="rtl"] .top_bar_right {
         direction: ltr;
       }
+      html[dir="rtl"] .top_bar_address_row {
+        direction: rtl !important;
+        font-size: 14px !important;
+      }
+      html[dir="rtl"] .phone_box,
+      html[dir="rtl"] .psx_stock_pill {
+        direction: ltr !important;
+        display: inline-flex !important;
+        font-family: var(--font-main) !important;
+      }
       html[dir="rtl"] .main_menu {
-        direction: rtl;
+        direction: rtl !important;
       }
       html[dir="rtl"] .main_menu > li > a {
         font-family: 'Jameel Noori Nastaleeq', serif !important;
         font-size: 18px !important;
         line-height: 1.8 !important;
       }
+      html[dir="rtl"] .main_menu > li > a i {
+        margin-right: 4px;
+        margin-left: 0;
+      }
+
+      /* Submenu Dropdown in RTL */
+      html[dir="rtl"] .has-dropdown .sub-menu {
+        right: 0 !important;
+        left: auto !important;
+        text-align: right !important;
+        min-width: 240px !important;
+      }
+      html[dir="rtl"] .sub-menu a {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 16px !important;
+        line-height: 2.1 !important;
+        text-align: right !important;
+        padding: 8px 18px !important;
+      }
+      html[dir="rtl"] .sub-menu a:hover {
+        padding-right: 24px !important;
+        padding-left: 18px !important;
+      }
+
+      /* Mobile Navigation Drawer in RTL */
+      html[dir="rtl"] .mobile_menu_nav {
+        direction: rtl !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .mobile_single_link,
+      html[dir="rtl"] .mobile_item_row,
+      html[dir="rtl"] .mobile_sub_menu a {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 17px !important;
+        line-height: 1.9 !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .mobile_sub_menu {
+        padding-right: 15px;
+        padding-left: 0;
+      }
+
+      /* Notices & Cards */
+      html[dir="rtl"] .notices_header_flex {
+        direction: rtl !important;
+      }
+      html[dir="rtl"] .view_all_link {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 15px !important;
+        flex-direction: row-reverse !important;
+      }
+      html[dir="rtl"] .view_all_link i {
+        transform: rotate(180deg) !important;
+      }
+      html[dir="rtl"] .notice_card {
+        direction: rtl !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .notice_title {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 18px !important;
+        line-height: 1.7 !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .notice_cat_badge {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+        text-transform: none !important;
+        padding: 3px 10px !important;
+      }
+      html[dir="rtl"] .notice_date {
+        direction: rtl !important;
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 14px !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+      }
+
+      /* Complaint & SECP Section */
+      html[dir="rtl"] .complaint_content h3 {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 26px !important;
+        line-height: 1.8 !important;
+      }
+      html[dir="rtl"] .complaint_content p {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 16px !important;
+        line-height: 2.2 !important;
+        text-align: center !important;
+      }
+
+      /* Footer */
       html[dir="rtl"] .footer_grid {
-        direction: rtl;
+        direction: rtl !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .footer_title {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 20px !important;
+        line-height: 1.8 !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .about_text {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 15px !important;
+        line-height: 2.1 !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .registration_info li {
+        text-align: right !important;
+      }
+      html[dir="rtl"] .registration_info strong {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 15px !important;
+      }
+      html[dir="rtl"] .registration_info span {
+        direction: ltr !important;
+        text-align: right !important;
+        display: inline-block !important;
+        font-family: var(--font-main) !important;
+      }
+      html[dir="rtl"] .footer_links {
+        text-align: right !important;
+      }
+      html[dir="rtl"] .footer_links a {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 16px !important;
+        line-height: 2.0 !important;
+      }
+      html[dir="rtl"] .footer_search_form {
+        display: flex !important;
+        flex-direction: row-reverse !important;
+      }
+      html[dir="rtl"] .footer_search_form input {
+        direction: rtl !important;
+        text-align: right !important;
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 14px !important;
+      }
+      html[dir="rtl"] .footer_search_form button {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 16px !important;
+      }
+      html[dir="rtl"] .updated_timestamp {
+        text-align: right !important;
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 14px !important;
       }
       html[dir="rtl"] .copyright_flex {
-        direction: rtl;
+        direction: rtl !important;
       }
+      html[dir="rtl"] .copyright_text {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 15px !important;
+      }
+
+      /* Home Page Elements */
       html[dir="rtl"] .read_more, html[dir="rtl"] .result_link {
         font-family: 'Jameel Noori Nastaleeq', serif !important;
         font-size: 16px !important;
+        flex-direction: row-reverse !important;
+        justify-content: flex-end !important;
       }
       html[dir="rtl"] .read_more i,
       html[dir="rtl"] .result_link i {
         transform: rotate(180deg);
         display: inline-block;
+      }
+      html[dir="rtl"] .card_header {
+        flex-direction: row-reverse !important;
+        justify-content: flex-end !important;
+      }
+      html[dir="rtl"] .card_title {
+        font-size: 20px !important;
+        line-height: 1.8 !important;
+      }
+      html[dir="rtl"] .card_text {
+        font-size: 15px !important;
+        line-height: 2.1 !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .motto_title {
+        font-size: 34px !important;
+        line-height: 1.8 !important;
+      }
+      html[dir="rtl"] .stat_label {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+      }
+      html[dir="rtl"] .stat_number {
+        direction: ltr !important;
+        display: inline-block !important;
+      }
+      html[dir="rtl"] .stakeholder_card {
+        flex-direction: row-reverse !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .stakeholder_card .card_text h3 {
+        font-size: 20px !important;
+        line-height: 1.8 !important;
+      }
+      html[dir="rtl"] .stakeholder_card .card_text p {
+        font-size: 15px !important;
+        line-height: 2.0 !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .product_details h3 {
+        font-size: 28px !important;
+        line-height: 1.8 !important;
+      }
+      html[dir="rtl"] .product_details .description {
+        font-size: 15px !important;
+        line-height: 2.1 !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .availability {
+        border-left: none !important;
+        border-right: 4px solid var(--primary-color) !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .availability strong,
+      html[dir="rtl"] .availability span {
+        font-size: 16px !important;
       }
 
       #scroll-to-top {
@@ -257,10 +494,258 @@ const websiteSchema = {
 
     <!-- Recursive Deep Text Node Urdu Translation Engine -->
     <script is:inline>
-      const translationList = [
-        // Financial Reports Page
-        ["Financial Reports & Annual Statements", "مالیاتی رپورٹس اور سالانہ گوشوارے"],
+      const rawTranslationList = [
+        // ==========================================
+        // 1. NOTICES & UPDATES — TITLES & FULL PHRASES (Exact matches prevent BiDi scrambling)
+        // ==========================================
+        ["Board Meeting Other Than Financial Results", "بورڈ کا اجلاس (بغیر مالیاتی نتائج)"],
+        ["Transmission of Quarterly Report for the Period Ended June 30, 2026", "30 جون 2026ء کو ختم ہونے والے عرصے کی سہ ماہی رپورٹ کی ترسیل"],
+        ["Notice of Board of Directors Meeting", "بورڈ آف ڈائریکٹرز کے اجلاس کا نوٹس"],
+        ["Financial results for the Half Year Ended 31 Mar 2026", "31 مارچ 2026ء کو ختم ہونے والے نصف سال کے مالیاتی نتائج"],
+        ["Notice of Extraordinary General Meeting", "غیر معمولی جنرل اجلاس کا نوٹس"],
+        ["Corporate Briefing Session 2025", "کارپوریٹ بریفنگ سیشن 2025ء"],
+        ["Quarterly Report for the Period Ended 31 December 2025", "31 دسمبر 2025ء کو ختم ہونے والے عرصے کی سہ ماہی رپورٹ"],
+        ["Annual Report for the Year Ended 30 September 2025", "30 ستمبر 2025ء کو ختم ہونے والے سال کی سالانہ رپورٹ"],
+        ["Notice of Annual General Meeting", "سالانہ جنرل اجلاس کا نوٹس"],
+        ["Notice Of Annual General Meeting", "سالانہ جنرل اجلاس کا نوٹس"],
+        ["Financial results for the 3rd Quarter Ended 30 June 2025", "30 جون 2025ء کو ختم ہونے والی تیسری سہ ماہی کے مالیاتی نتائج"],
+        ["Financial results for the Half Year Ended 31 Mar 2025", "31 مارچ 2025ء کو ختم ہونے والے نصف سال کے مالیاتی نتائج"],
+        ["Corporate Briefing Session 2024", "کارپوریٹ بریفنگ سیشن 2024ء"],
+        ["Quarterly Report for the Period Ended 31 December 2024", "31 دسمبر 2024ء کو ختم ہونے والے عرصے کی سہ ماہی رپورٹ"],
+        ["Annual Report for the Year Ended 30 September 2024", "30 ستمبر 2024ء کو ختم ہونے والے سال کی سالانہ رپورٹ"],
+        ["Financial results for the 3rd Quarter Ended 30 June 2024", "30 جون 2024ء کو ختم ہونے والی تیسری سہ ماہی کے مالیاتی نتائج"],
+        ["Financial results for the Half Year Ended 31 Mar 2024", "31 مارچ 2024ء کو ختم ہونے والے نصف سال کے مالیاتی نتائج"],
+        ["Corporate Briefing Session FY 2023", "کارپوریٹ بریفنگ سیشن مالی سال 2023ء"],
+        ["Quarterly Report for the Period Ended 31 December 2023", "31 دسمبر 2023ء کو ختم ہونے والے عرصے کی سہ ماہی رپورٹ"],
+        ["Annual Report for the Year Ended 30 September 2023", "30 ستمبر 2023ء کو ختم ہونے والے سال کی سالانہ رپورٹ"],
+        ["Notice of Election of Directors (EOGM)", "ڈائریکٹرز کے انتخاب کا نوٹس (EOGM)"],
+        ["Notice of Election of Directors", "ڈائریکٹرز کے انتخاب کا نوٹس"],
+        ["Election of Directors (01 June 2026)", "ڈائریکٹرز کا انتخاب (01 جون 2026ء)"],
+        ["Election of Directors Results 2026", "ڈائریکٹرز کے انتخاب کے نتائج 2026ء"],
+        ["Report of Scrutinizer 2026", "اسکروٹنائزر کی رپورٹ 2026ء"],
+        ["Election of Directors", "ڈائریکٹرز کا انتخاب"],
+
+        // Notice Categories & Badges
+        ["Corporate Notice", "کارپوریٹ نوٹس"],
+        ["Financial Results", "مالیاتی نتائج"],
+        ["Shareholder Notice", "شیئر ہولڈر نوٹس"],
+        ["Investor Relations", "سرمایہ کار تعلقات"],
+        ["Company Updates", "کمپنی اپ ڈیٹس"],
+        ["View All Notices", "تمام نوٹسز دیکھیں"],
+        ["View Notice Document", "نوٹس دستاویز دیکھیں"],
+        ["View Financial Reports", "مالیاتی رپورٹس دیکھیں"],
+        ["No matching notices found", "کوئی متعلقہ نوٹس نہیں ملا"],
+        ["Try adjusting your category filter, year, or search terms.", "براہ کرم کیٹیگری، سال یا تلاش کے الفاظ تبدیل کر کے کوشش کریں۔"],
+        ["Reset Filters", "فلٹرز ری سیٹ کریں"],
+        ["Search announcements...", "اطلاعات تلاش کریں..."],
+        ["All Years", "تمام سال"],
+        ["Category:", "کیٹیگری:"],
+        ["All", "تمام"],
+
+        // ==========================================
+        // 2. DATES & CALENDAR (Full dates & standalone months)
+        // ==========================================
+        ["23 September 2026", "23 ستمبر 2026ء"],
+        ["30 July 2026", "30 جولائی 2026ء"],
+        ["22 July 2026", "22 جولائی 2026ء"],
+        ["25 May 2026", "25 مئی 2026ء"],
+        ["8 May 2026", "8 مئی 2026ء"],
+        ["27 February 2026", "27 فروری 2026ء"],
+        ["10 February 2026", "10 فروری 2026ء"],
+        ["3 February 2026", "3 فروری 2026ء"],
+        ["19 January 2026", "19 جنوری 2026ء"],
+        ["16 January 2026", "16 جنوری 2026ء"],
+        ["30 July 2025", "30 جولائی 2025ء"],
+        ["23 July 2025", "23 جولائی 2025ء"],
+        ["30 May 2025", "30 مئی 2025ء"],
+        ["21 May 2025", "21 مئی 2025ء"],
+        ["20 February 2025", "20 فروری 2025ء"],
+        ["30 January 2025", "30 جنوری 2025ء"],
+        ["10 January 2025", "10 جنوری 2025ء"],
+        ["6 January 2025", "6 جنوری 2025ء"],
+        ["30 July 2024", "30 جولائی 2024ء"],
+        ["30 May 2024", "30 مئی 2024ء"],
+        ["20 March 2024", "20 مارچ 2024ء"],
+        ["7 February 2024", "7 فروری 2024ء"],
+        ["6 February 2024", "6 فروری 2024ء"],
+        ["26 July, 2026", "26 جولائی 2026ء"],
+        ["26 July 2026", "26 جولائی 2026ء"],
+        ["31 Mar 2026", "31 مارچ 2026ء"],
+        ["30 June 2026", "30 جون 2026ء"],
+        ["June 30, 2026", "30 جون 2026ء"],
+        ["31 December 2025", "31 دسمبر 2025ء"],
+        ["30 September 2025", "30 ستمبر 2025ء"],
+        ["30 June 2025", "30 جون 2025ء"],
+        ["31 March 2025", "31 مارچ 2025ء"],
+        ["31 Mar 2025", "31 مارچ 2025ء"],
+        ["31 December 2024", "31 دسمبر 2024ء"],
+        ["30 September 2024", "30 ستمبر 2024ء"],
+        ["30 June 2024", "30 جون 2024ء"],
+        ["31 March 2024", "31 مارچ 2024ء"],
+        ["31 Mar 2024", "31 مارچ 2024ء"],
+        ["31 December 2023", "31 دسمبر 2023ء"],
+        ["30 September 2023", "30 ستمبر 2023ء"],
+
+        ["January", "جنوری"],
+        ["February", "فروری"],
+        ["March", "مارچ"],
+        ["April", "اپریل"],
+        ["May", "مئی"],
+        ["June", "جون"],
+        ["July", "جولائی"],
+        ["August", "اگست"],
+        ["September", "ستمبر"],
+        ["October", "اکتوبر"],
+        ["November", "نومبر"],
+        ["December", "دسمبر"],
+        ["Jan", "جنوری"],
+        ["Feb", "فروری"],
+        ["Mar", "مارچ"],
+        ["Apr", "اپریل"],
+        ["Jun", "جون"],
+        ["Jul", "جولائی"],
+        ["Aug", "اگست"],
+        ["Sep", "ستمبر"],
+        ["Oct", "اکتوبر"],
+        ["Nov", "نومبر"],
+        ["Dec", "دسمبر"],
+
+        // ==========================================
+        // 3. SECP & COMPLAINT HANDLING SECTION
+        // ==========================================
+        ["Company's Own Complaint Handling Cell", "کمپنی کا اپنا شکایات سیل"],
+        ["In case your complaint has not been properly redressed by us, you may lodge your complaint with Securities and Exchange Commission of Pakistan (the “SECP”). However, please note that SECP will entertain only those complaints which were at first directly requested to be redressed by the company and the company has failed to redress the same. Further, the complaints that are not relevant to SECP’s regulatory domain/competence shall not be entertained by the SECP.", "اگر آپ کی شکایت کا ہمارے ذریعے تسلی بخش ازالہ نہیں ہو سکا تو آپ سیکیورٹیز اینڈ ایکسچینج کمیشن آف پاکستان (SECP) کو اپنی شکایت درج کروا سکتے ہیں۔ تاہم، براہِ کرم نوٹ فرمائیں کہ SECP صرف ان شکایات کی سماعت کرے گا جن کے ازالے کی پہلے براہ راست کمپنی سے درخواست کی گئی ہو اور کمپنی اس کا ازالہ کرنے میں ناکام رہی ہو۔ مزید برآں، ایسی شکایات جو SECP کے دائرہ اختیار یا اہلیت سے متعلق نہیں ہیں، ان پر SECP غور نہیں کرے گا۔"],
+
+        // ==========================================
+        // 4. FOOTER & CORPORATE REGISTRATION
+        // ==========================================
+        ["Shakarganj Limited, incorporated in 1967, is a leading diversified industrial group in Pakistan producing high-grade refined sugar, biofuels, and power.", "شکر گنج لمیٹڈ، 1967ء میں قائم شدہ، پاکستان کا ایک سرفہرست کثیر الشعبہ صنعتی گروپ ہے جو اعلیٰ معیار کی ریفائنڈ چینی، بائیو فیولز اور بجلی پیدا کرتا ہے۔"],
+        ["Registration / NTN", "رجسٹریشن / این ٹی این"],
+        ["Company Registration Number", "کمپنی رجسٹریشن نمبر"],
+        ["National Tax Number", "قومی ٹیکس نمبر (NTN)"],
+        ["Sales Tax Number", "سیلز ٹیکس نمبر"],
+        ["Quick Links", "اہم لنکس"],
+        ["Corporate Sitemap", "کارپوریٹ سائٹ میپ"],
+        ["Search portal...", "پورٹل تلاش کریں..."],
+        ["Search", "تلاش کریں"],
+        ["Language / زبان", "زبان / Language"],
+        ["Updated on: 26 July, 2026", "آخری اپ ڈیٹ: 26 جولائی 2026ء"],
+        ["Updated on:", "آخری اپ ڈیٹ:"],
+        ["Copyright © Shakarganj Limited", "جملہ حقوق محفوظ ہیں © شکر گنج لمیٹڈ"],
+
+        // ==========================================
+        // 5. TOP BAR & NAVIGATION MENUS & SUBMENUS
+        // ==========================================
+        ["Executive Floor, IT Tower 73 E 1, Hali Road Gulberg 3, Lahore", "ایگزیکٹو فلور، آئی ٹی ٹاور 73 ای 1، حالی روڈ گلبرگ 3، لاہور"],
+        ["Home", "صفحہ اول"],
+        ["About Us", "ہمارے بارے میں"],
+        ["Segments", "ہمارے شعبہ جات"],
+        ["Investor Relations", "سرمایہ کار پورٹل"],
+        ["Sustainability", "پائیداری"],
+        ["Media", "میڈیا"],
+        ["Contact Us", "رابطہ کریں"],
+
+        // Dropdown Items
+        ["Company's Profile", "کمپنی پروفائل"],
+        ["Company Profile", "کمپنی پروفائل"],
+        ["Mission and Vision", "مشن اور وژن"],
+        ["Company History", "کمپنی کی تاریخ"],
+        ["Associated Companies", "ملحقہ کمپنیاں"],
+        ["Corporate Strategy", "کارپوریٹ حکمت عملی"],
+        ["Sitemap", "سائٹ میپ"],
+        ["Historical Reports", "تاریخی رپورٹس"],
+        ["Sugar", "شوگر"],
+        ["Biofuels", "بائیو فیولز"],
+        ["Profile of Board of Directors", "بورڈ آف ڈائریکٹرز کا پروفائل"],
+        ["Shareholder's Information", "شیئر ہولڈرز کی معلومات"],
+        ["Shareholder Information", "شیئر ہولڈرز کی معلومات"],
         ["Financial Reports", "مالیاتی رپورٹس"],
+        ["Financial Highlights", "مالیاتی جھلکیاں"],
+        ["Shareholding Pattern", "شیئر ہولڈنگ پیٹرن"],
+        ["Share Registrar", "شیئر رجسٹرار"],
+        ["Corporate Briefing Session", "کارپوریٹ بریفنگ سیشن"],
+        ["Free Float of The Shares", "شیئرز کا فری فلوٹ"],
+        ["Health Safety & Envir.", "صحت، تحفظ اور ماحول"],
+        ["Health, Safety & Environment", "صحت، تحفظ اور ماحول"],
+        ["CSR", "سی ایس آر"],
+        ["Corporate Social Responsibility", "کارپوریٹ سماجی ذمہ داری"],
+        ["Quality Assurance", "کوالٹی اشورنس"],
+        ["Notices & Updates", "اطلاعات اور اپ ڈیٹس"],
+        ["Awards and Accolades", "اعزازات اور انعامات"],
+        ["Awards & Accolades", "اعزازات اور انعامات"],
+        ["Certifications", "سرٹیفیکیشنز"],
+        ["Careers", "ملازمت کے مواقع"],
+
+        // ==========================================
+        // 6. HOME PAGE BANNERS & SECTIONS
+        // ==========================================
+        ["50+ Years of Corporate Legacy", "50+ سالہ کارپوریٹ وراثت"],
+        ["Sustainable Industrial Excellence Since 1967", "1967ء سے پائیدار صنعتی فضیلت"],
+        ["Excellence Isn't Luck. It's a Track Record.", "فضیلت کوئی اتفاق نہیں، یہ ہمارا روشن ریکارڈ ہے۔"],
+        ["Excellence Isn't Luck.", "فضیلت کوئی اتفاق نہیں۔"],
+        ["Excellence Isn't Luck", "فضیلت کوئی اتفاق نہیں"],
+        ["It's a Track Record.", "یہ ہمارا روشن ریکارڈ ہے۔"],
+        ["It's a Track Record", "یہ ہمارا روشن ریکارڈ ہے"],
+        ["Excellence Isn't an Accident. It's a Track Record.", "فضیلت کوئی اتفاق نہیں، یہ ہمارا روشن ریکارڈ ہے۔"],
+        ["Excellence Isn't an Accident", "فضیلت کوئی اتفاق نہیں"],
+        ["Years of Industry Leadership", "صنعتی قیادت کے شاندار سال"],
+        ["Cane Crushing Capacity", "گنا کرشنگ کی صلاحیت"],
+        ["Biofuel & Ethanol Distillery", "بائیو فیول اور ایتھنول ڈسٹلری"],
+        ["Zero-Waste Sustainable Model", "زیرو ویسٹ پائیدار ماڈل"],
+
+        // Info Cards
+        ["Sugar & Allied Products", "شوگر اور متعلقہ مصنوعات"],
+        ["High-grade refined food & pharmaceutical sugar serving top multinational beverage brands across Pakistan.", "اعلیٰ معیار کی ریفائنڈ فوڈ اور فارماسیوٹیکل شوگر جو پاکستان بھر کے معروف ملٹی نیشنل برانڈز کو فراہم کی جاتی ہے۔"],
+        ["Biofuels & Power", "بائیو فیولز اور بجلی"],
+        ["Anhydrous ethanol distillery producing eco-friendly fuel-grade bio-ethanol and renewable export power.", "ماحول دوست فیول گریڈ بائیو ایتھنول اور قابلِ تجدید بجلی پیدا کرنے والی اینہائیڈرس ایتھنول ڈسٹلری۔"],
+        ["Health, Safety & Environment, Corporate Social Responsibility, and Quality Assurance — our commitment to a sustainable approach.", "صحت، تحفظ اور ماحول، کارپوریٹ سماجی ذمہ داری، اور کوالٹی اشورنس — پائیدار ترقی کے لیے ہمارا غیر متزلزل عزم۔"],
+        ["read more", "مزید پڑھیں"],
+
+        // Stakeholders
+        ["Stakeholder Engagement Approach", "اسٹیک ہولڈرز کے ساتھ روابط کی حکمت عملی"],
+        ["Our Shareholders", "ہمارے شیئر ہولڈرز"],
+        ["To help grow shareholders investments and provide them with stable and attractive return", "شیئر ہولڈرز کی سرمایہ کاری میں اضافہ اور انہیں مستحکم اور پرکشش منافع کی فراہمی۔"],
+        ["Our Customers", "ہمارے صارفین"],
+        ["To win and maintain customers by developing and providing products that offer value in terms of price and quality", "قیمت اور معیار دونوں میں قدر کی حامل مصنوعات فراہم کر کے صارفین کا اعتماد حاصل کرنا اور برقرار رکھنا۔"],
+        ["Our People", "ہمارے ملازمین"],
+        ["To respect and protect all rights of our employees with safe and healthy working conditions along with competitive terms of service", "ملازمین کے حقوق کا تحفظ، محفوظ و صحت مند ماحول اور مسابقتی مراعات کی فراہمی۔"],
+        ["Our Farmers", "ہمارے کاشتکار"],
+        ["To seek mutually beneficial relationships with our Farmers who form the backbone of our agricultural economy", "کاشتکاروں کے ساتھ باہمی طور پر فائدہ مند تعلقات استوار کرنا جو زرعی معیشت کی ریڑھ کی ہڈی ہیں۔"],
+        ["Our Society", "ہمارا معاشرہ"],
+        ["To conduct business as a responsible member of society, keeping in view our position as the largest employer in our local area", "معاشرے کے ذمہ دار رکن کے طور پر کاروبار چلانا اور مقامی سطح پر روزگار کے وسیع مواقع فراہم کرنا۔"],
+        ["Our Country", "ہمارا ملک"],
+        ["our home, our pride, our future, our freedom", "ہمارا گھر، ہمارا فخر، ہمارا مستقبل، ہماری آزادی"],
+
+        // Products
+        ["Crafting Sugar since 1972", "1972ء سے شوگر کی معیاری پیداوار"],
+        ["White Crystalline Sugar", "سفید کرسٹلائن شوگر"],
+        ["Shakarganj Limited's Crystalline White Sugar is meticulously crafted to offer the highest quality. It is pure, refined, and manufactured in a thoroughly hygienic environment. This premium sugar is carefully processed to ensure that every grain is of uniform size and sweetness, resulting in a consistent texture and flavor.", "شکر گنج لمیٹڈ کی کرسٹلائن وائٹ شوگر کو اعلیٰ ترین معیار فراہم کرنے کے لیے نہایت مہارت سے تیار کیا جاتا ہے۔ یہ خالص، ریفائنڈ اور مکمل طور پر حفظان صحت کے اصولوں کے مطابق تیار کی جاتی ہے۔"],
+        ["1kg, 2kg, 5kg and Sachet Pack", "1 کلو، 2 کلو، 5 کلو اور ساشے پیک"],
+        ["Crystal and Soft Brown Sugar", "کرسٹل اور سافٹ براؤن شوگر"],
+        ["Shakarganj Limited's Crystal and Soft Brown sugar are two popular variations of sugar used in cooking and baking. Crystal brown sugar, often called light brown sugar, has a mild molasses flavor and a fine, sand-like texture. It's great for cookies and cakes. On the other hand, soft brown sugar, also known as dark brown sugar, has a stronger molasses taste and a moist, clumpy texture. It's ideal for rich, flavorful dishes like barbecue sauces and gingerbread. Both sugars bring their unique characteristics to recipes, adding depth and sweetness to a wide range of culinary delights.", "شکر گنج لمیٹڈ کی کرسٹل اور سافٹ براؤن شوگر کھانا پکانے اور بیکنگ میں استعمال ہونے والی دو مقبول اقسام ہیں۔ لائٹ براؤن شوگر کا ہلکا شیریں ذائقہ ہوتا ہے جبکہ ڈارک براؤن شوگر کا ذائقہ زیادہ گہرا ہوتا ہے۔ دونوں اقسام پکوانوں کو منفرد ذائقہ اور مٹھاس بخشتی ہیں۔"],
+        ["0.5kg and Sachet Pack", "0.5 کلو اور ساشے پیک"],
+        ["Available in", "دستیاب پیکنگ"],
+
+        // Hero Slider
+        ["Building Value", "قدر کی تعمیر"],
+        ["Strengthening Communities.", "کمیونٹیز کا استحکام۔"],
+        ["Strengthening Communities", "کمیونٹیز کا استحکام"],
+        ["Building", "تعمیر"],
+        ["Value", "قدر"],
+        ["Strengthening", "استحکام"],
+        ["Communities", "کمیونٹیز"],
+        ["Principal Facility", "اہم صنعتی سہولیات"],
+        ["Shakarganj Foundation", "شکر گنج فاؤنڈیشن"],
+        ["SSRI", "ایس ایس آر آئی"],
+        ["Ethyl Alcohol", "ایتھائل الکحل"],
+        ["Denatured Spirit", "ڈی نیچرڈ اسپرٹ"],
+        ["Methylated Spirit", "میثائیلیٹڈ اسپرٹ"],
+        ["Fuel Bioethanol", "فیول بائیو ایتھنول"],
+
+        // ==========================================
+        // 7. FINANCIAL REPORTS & STATEMENTS
+        // ==========================================
+        ["Financial Reports & Annual Statements", "مالیاتی رپورٹس اور سالانہ گوشوارے"],
         ["Financial Statements", "مالیاتی گوشوارے"],
         ["Audited annual financial statements, half-yearly reviews, and quarterly reports for Shakarganj Limited investors (Last 5 Years: 2022 – 2026).", "شکر گنج لمیٹڈ کے سرمایہ کاروں کے لیے سالانہ آڈٹ شدہ مالیاتی گوشوارے، ششماہی اور سہ ماہی رپورٹس (گزشتہ 5 سال: 2022ء – 2026ء)۔"],
         ["Fiscal Year End", "مالیاتی سال کا اختتام"],
@@ -273,27 +758,12 @@ const websiteSchema = {
         ["Q3 - Third Quarter", "Q3 - تیسری سہ ماہی"],
         ["Download PDF", "پی ڈی ایف ڈاؤن لوڈ کریں"],
         ["Quick View", "فوری جائزہ"],
+        ["View PDF", "پی ڈی ایف دیکھیں"],
 
-        // Shareholder's Information Page
-        ["Shareholder's Information", "شیئر ہولڈر کی معلومات"],
-        ["Share Registrar", "شیئر رجسٹرار"],
-        ["Company Secretary", "کمپنی سیکرٹری"],
-        ["Stock Exchange Listing", "اسٹاک ایکسچینج لسٹنگ"],
-        ["Election of Directors (01 June 2026)", "بورڈ آف ڈائریکٹرز کا انتخاب (01 جون 2026ء)"],
-        ["Election of Directors Results 2026", "ڈائریکٹرز کے انتخاب کے نتائج 2026ء"],
-        ["Report of Scrutinizer 2026", "اسکروٹنائزر کی رپورٹ 2026ء"],
-        ["Corporate Governance Policies & Statements", "کارپوریٹ گورننس پالیسیاں اور بیانات"],
-        ["SECP Investor Complaint Section", "ایس ای سی پی انویسٹر شکایات سیل"],
-        ["Corporate Auditors & Advisors", "کارپوریٹ آڈیٹرز اور قانونی مشیر"],
-        ["Code of Conduct", "ضابطہ اخلاق"],
-        ["Policies Register", "پالیسیز رجسٹر"],
-        ["Website Compliance Certificate (Sep 2025)", "ویب سائٹ کمپلائنس سرٹیفکیٹ (ستمبر 2025ء)"],
-        ["Gender Pay Gap Statement (Circular 10 of 2024)", "جینڈر پے گیپ اسٹیٹمنٹ (سرکولر 10 آف 2024ء)"],
-        ["Unclaimed Dividend Details 2023", "غیر دعویٰ شدہ ڈیویڈنڈ کی تفصیلات 2023ء"],
-
-        // Board of Directors & Committees Titles
+        // ==========================================
+        // 8. CORPORATE GOVERNANCE & DIRECTORS
+        // ==========================================
         ["Profile of Board of Directors & Management", "بورڈ آف ڈائریکٹرز اور انتظامیہ کا پروفائل"],
-        ["Profile of Board of Directors", "بورڈ آف ڈائریکٹرز کا پروفائل"],
         ["Guiding Shakarganj Limited with integrity, strategic vision, and corporate governance excellence.", "دیانتداری، اسٹریٹجک بصیرت، اور گورننس کی اعلیٰ ترین روایت کے ساتھ شکر گنج لمیٹڈ کی رہنمائی۔"],
         ["HR, Remuneration and Nomination Committee", "ایچ آر، ریمونریشن اور نامزدگی کمیٹی"],
         ["HR & Remuneration", "ایچ آر اور ریمونریشن"],
@@ -306,8 +776,6 @@ const websiteSchema = {
         ["Executive Committee", "ایگزیکٹو کمیٹی"],
         ["Business Strategy Committee", "بزنس اسٹریٹجی کمیٹی"],
         ["System & Technology Committee", "سسٹم اینڈ ٹیکنالوجی کمیٹی"],
-
-        // Roles & Badges
         ["Chief Executive Officer", "چیف ایگزیکٹو آفیسر"],
         ["Deputy Chief Executive Officer", "ڈپٹی چیف ایگزیکٹو آفیسر"],
         ["Chief Financial Officer", "چیف فنانشل آفیسر"],
@@ -318,72 +786,74 @@ const websiteSchema = {
         ["Independent Director", "انڈیپنڈنٹ ڈائریکٹر"],
         ["Chairperson", "چیئرپرسن"],
         ["Chairman", "چیئرمین"],
+        ["Company Secretary", "کمپنی سیکرٹری"],
         ["Member", "رکن"],
         ["Joined Board:", "بورڈ میں شمولیت:"],
         ["Address:", "پتہ:"],
         ["Other Engagements:", "دیگر وابستگی:"],
+        ["Stock Exchange Listing", "اسٹاک ایکسچینج لسٹنگ"],
+        ["Corporate Governance Policies & Statements", "کارپوریٹ گورننس پالیسیاں اور بیانات"],
+        ["SECP Investor Complaint Section", "ایس ای سی پی انویسٹر شکایات سیل"],
+        ["Corporate Auditors & Advisors", "کارپوریٹ آڈیٹرز اور قانونی مشیر"],
+        ["Code of Conduct", "ضابطہ اخلاق"],
+        ["Policies Register", "پالیسیز رجسٹر"],
+        ["Website Compliance Certificate (Sep 2025)", "ویب سائٹ کمپلائنس سرٹیفکیٹ (ستمبر 2025ء)"],
+        ["Gender Pay Gap Statement (Circular 10 of 2024)", "جینڈر پے گیپ اسٹیٹمنٹ (سرکولر 10 آف 2024ء)"],
+        ["Unclaimed Dividend Details 2023", "غیر دعویٰ شدہ ڈیویڈنڈ کی تفصیلات 2023ء"],
 
-        // Hero Slider Words & Phrases
-        ["Building Value", "قدر کی تعمیر"],
-        ["Strengthening Communities.", "کمیونٹیز کا استحکام"],
-        ["Strengthening Communities", "کمیونٹیز کا استحکام"],
-        ["Building", "تعمیر"],
-        ["Value", "قدر"],
-        ["Strengthening", "استحکام"],
-        ["Communities", "کمیونٹیز"],
-
-        ["Principal Facility", "اہم صنعتی سہولیات"],
-        ["Shakarganj Foundation", "شکر گنج فاؤنڈیشن"],
-        ["SSRI", "ایس ایس آر آئی"],
-
-        ["Ethyl Alcohol", "ایتھائل الکحل"],
-        ["Denatured Spirit", "ڈی نیچرڈ اسپرٹ"],
-        ["Methylated Spirit", "میثائیلیٹڈ اسپرٹ"],
-        ["Fuel Bioethanol", "فیول بائیو ایتھنول"],
-        ["Bioethanol", "بائیو ایتھنول"],
-        ["Denatured", "ڈی نیچرڈ"],
-        ["Methylated", "میثائیلیٹڈ"],
-        ["Spirit", "اسپرٹ"],
-        ["CSR", "سی ایس آر"],
-
-        // Mottos & Banners
-        ["Excellence Isn't Luck. It's a Track Record.", "فضیلت کوئی اتفاق نہیں، یہ ہمارا روشن ریکارڈ ہے۔"],
-        ["Excellence Isn't Luck", "فضیلت کوئی اتفاق نہیں"],
-        ["Excellence Isn't an Accident. It's a Track Record.", "فضیلت کوئی اتفاق نہیں، یہ ہمارا روشن ریکارڈ ہے۔"],
-        ["Excellence Isn't an Accident", "فضیلت کوئی اتفاق نہیں"],
-        ["It's a Track Record", "یہ ہمارا روشن ریکارڈ ہے"],
-
-        ["Sustainable Industrial Excellence Since 1967", "1967ء سے پائیدار صنعتی فضیلت"],
-        ["50+ Years of Corporate Legacy", "50+ سالہ کارپوریٹ وراثت"],
-        ["Leading Diversified Industrial Group", "پاکستان کا سرفہرست کثیر الشعبہ صنعتی گروپ"],
-        ["High-Grade Refined Sugar", "اعلیٰ معیار کی ریفائنڈ شوگر"],
-        ["Anhydrous Biofuel Ethanol", "ایکو فرینڈلی ایندھن کا بائیو ایتھنول"],
-
-        ["Notices & Updates", "اطلاعات اور اپ ڈیٹس"],
-        ["Quick Links", "اہم لنکس"],
-        ["Company Profile", "کمپنی پروفائل"],
-        ["Financial Highlights", "مالیاتی جھلکیاں"],
-        ["Search portal...", "پورٹل تلاش کریں..."],
-        ["Search", "تلاش کریں"],
-
-        // Single Words & Menu Items
-        ["Home", "صفحہ اول"],
-        ["About Us", "ہمارے بارے میں"],
-        ["Segments", "ہمارے شعبہ جات"],
-        ["Sugar", "شوگر"],
-        ["Biofuels", "بائیو فیول"],
-        ["Investor Relations", "سرمایہ کار پورٹل"],
-        ["Sustainability", "پائیداری"],
-        ["Media", "میڈیا"],
-        ["Contact Us", "رابطہ کریں"],
-        ["Careers", "ملازمت کے مواقع"]
+        // ==========================================
+        // 9. GENERAL CONTACT & ACTIONS
+        // ==========================================
+        ["Get in Touch", "رابطہ کیجیے"],
+        ["Head Office", "ہیڈ آفس"],
+        ["Registered Office", "رجسٹرڈ آفس"],
+        ["Send Message", "پیغام بھیجیں"],
+        ["Your Name", "آپ کا نام"],
+        ["Email Address", "ای میل ایڈریس"],
+        ["Phone Number", "فون نمبر"],
+        ["Subject", "موضوع"],
+        ["Message", "پیغام"],
+        ["Apply Now", "درخواست دیں"]
       ];
+
+      // Pre-sort dictionary descending by English phrase length
+      // Ensures long compound phrases match BEFORE shorter substrings!
+      const sortedTranslations = [...rawTranslationList].sort((a, b) => b[0].length - a[0].length);
+
+      // Fast-path exact match Map
+      const exactTranslationMap = new Map();
+      for (const [en, ur] of sortedTranslations) {
+        exactTranslationMap.set(en.trim(), ur);
+      }
 
       function escapeRegex(str) {
         return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       }
 
-      // Recursive Text Node Walker that translates all text nodes inside any HTML structure
+      function translateText(val) {
+        if (!val || !val.trim()) return val;
+        const trimmed = val.trim();
+
+        // 1. Exact match fast path
+        if (exactTranslationMap.has(trimmed)) {
+          const lead = val.match(/^\s*/)[0];
+          const trail = val.match(/\s*$/)[0];
+          return lead + exactTranslationMap.get(trimmed) + trail;
+        }
+
+        // 2. Phrase replacements in length-descending order
+        let result = val;
+        for (let i = 0; i < sortedTranslations.length; i++) {
+          const en = sortedTranslations[i][0];
+          const ur = sortedTranslations[i][1];
+          if (result.includes(en)) {
+            result = result.replace(new RegExp(escapeRegex(en), 'g'), ur);
+          }
+        }
+        return result;
+      }
+
+      // Recursive Text Node Walker that translates all text nodes and input placeholders
       function translateDOMNode(node, lang) {
         if (node.nodeType === Node.TEXT_NODE) {
           const raw = node.nodeValue;
@@ -394,21 +864,33 @@ const websiteSchema = {
           }
 
           if (lang === 'ur') {
-            let val = node._origValue;
-            for (const [en, ur] of translationList) {
-              if (val.includes(en)) {
-                val = val.replace(new RegExp(escapeRegex(en), 'g'), ur);
-              }
-            }
-            node.nodeValue = val;
+            node.nodeValue = translateText(node._origValue);
           } else {
             node.nodeValue = node._origValue;
           }
         } else if (node.nodeType === Node.ELEMENT_NODE) {
           const tag = node.tagName;
-          if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'INPUT' || tag === 'TEXTAREA' || node.id === 'live_results_dropdown' || node.id === 'footer_live_dropdown') {
+          if (tag === 'SCRIPT' || tag === 'STYLE' || node.id === 'live_results_dropdown' || node.id === 'footer_live_dropdown') {
             return;
           }
+
+          // Handle input & textarea placeholders
+          if (tag === 'INPUT' || tag === 'TEXTAREA') {
+            if (node.placeholder) {
+              if (!node._origPlaceholder) {
+                node._origPlaceholder = node.placeholder;
+              }
+              if (lang === 'ur') {
+                node.placeholder = translateText(node._origPlaceholder);
+                node.setAttribute('dir', 'rtl');
+              } else {
+                node.placeholder = node._origPlaceholder;
+                node.setAttribute('dir', 'ltr');
+              }
+            }
+            return;
+          }
+
           for (let i = 0; i < node.childNodes.length; i++) {
             translateDOMNode(node.childNodes[i], lang);
           }
