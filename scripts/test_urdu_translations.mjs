@@ -59,7 +59,32 @@ const testCases = [
   ['30 July 2026', '30 جولائی 2026ء'],
   ['23 September 2026', '23 ستمبر 2026ء'],
   ['Corporate Notice', 'کارپوریٹ نوٹس'],
-  ['Financial Results', 'مالیاتی نتائج']
+  ['Financial Results', 'مالیاتی نتائج'],
+
+  // Subpage Specific Assertions (Zero BiDi Collisions)
+  ['Health Safety & Environment', 'صحت، تحفظ اور ماحول'],
+  ['Sustainability & HSE', 'پائیداری اور ایچ ایس ای (HSE)'],
+  ['Profile of Board of Directors & Management', 'بورڈ آف ڈائریکٹرز اور مینجمنٹ کا تعارف'],
+  ['Profile of Company', 'کمپنی کا تعارف'],
+  ['Associated Companies', 'ملحقہ کمپنیاں'],
+  ['Biofuels & Bio-Refinery Division', 'بائیو فیولز اور بائیو ریفائنری ڈویژن'],
+  ['Sugar & By-Products Division', 'شوگر اور بائی پراڈکٹس ڈویژن'],
+  ['Careers at Shakarganj', 'شکر گنج میں ملازمت کے مواقع'],
+  ['Quality & Compliance Certifications', 'کوالٹی اور کمپلائنس سرٹیفیکیشنز'],
+  ['Corporate Strategy', 'کارپوریٹ حکمت عملی'],
+  ['Corporate Social Responsibility', 'کارپوریٹ سماجی ذمہ داری'],
+  ['Financial Highlights', 'مالیاتی جھلکیاں'],
+  ['Free Float of The Shares', 'شیئرز کا فری فلوٹ'],
+  ['Historical Financial Reports', 'تاریخی مالیاتی رپورٹس'],
+  ['SML Portal Search', 'ایس ایم ایل پورٹل تلاش'],
+  ['Concentrated Ethyl Alcohol (Rectified Spirit >96%)', 'مرکوز ایتھائل الکحل (ریکٹیفائیڈ اسپرٹ >96%)'],
+  ['Fuel Bioethanol (Anhydrous Alcohol)', 'فیول بائیو ایتھنول (اینہائیڈرس الکحل)'],
+  ['Refined Cane Sugar & Specialty Products', 'ریفائنڈ کین شوگر اور خصوصی مصنوعات'],
+  ['Audited annual financial statements, half-yearly reviews, and quarterly reports for Shakarganj Limited investors (10 Years Archive: 2017 – 2026).', 'شکر گنج لمیٹڈ کے سرمایہ کاروں کے لیے آڈٹ شدہ سالانہ مالیاتی گوشوارے، ششماہی جائزے اور سہ ماہی رپورٹس (10 سالہ آرکائیو: 2017ء – 2026ء)۔'],
+  ['Download PDF', 'پی ڈی ایف ڈاؤن لوڈ کریں'],
+  ['Full Name', 'مکمل نام'],
+  ['Email Address', 'ای میل ایڈریس'],
+  ['Audit Committee', 'آڈٹ کمیٹی']
 ];
 
 let failed = 0;
@@ -74,7 +99,7 @@ for (const [input, expected] of testCases) {
 }
 
 if (failed === 0) {
-  console.log('\nALL 19 VERIFICATION TESTS PASSED 100%!');
+  console.log(`\nALL ${testCases.length} VERIFICATION TESTS PASSED 100%!`);
   process.exit(0);
 } else {
   console.error(`\n${failed} TESTS FAILED`);

@@ -209,6 +209,176 @@ const websiteSchema = {
         line-height: 2.1 !important;
       }
 
+      /* BiDi Direction Guard: ensures proper paragraph direction for mixed/untranslated text */
+      html[dir="rtl"] p,
+      html[dir="rtl"] li,
+      html[dir="rtl"] .hero_subtitle,
+      html[dir="rtl"] .lead_text,
+      html[dir="rtl"] .body_paragraph {
+        unicode-bidi: plaintext;
+      }
+
+      /* Global Subpages Hero Banner & Breadcrumbs */
+      html[dir="rtl"] .page_hero_banner {
+        direction: rtl !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .hero_breadcrumbs {
+        direction: rtl !important;
+        justify-content: flex-start !important;
+      }
+      html[dir="rtl"] .hero_breadcrumbs i {
+        transform: rotate(180deg) !important;
+      }
+      html[dir="rtl"] .hero_page_title {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 38px !important;
+        line-height: 1.8 !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .hero_subtitle {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 17px !important;
+        line-height: 2.1 !important;
+        text-align: right !important;
+      }
+
+      /* Subpage Section Headers & Cards */
+      html[dir="rtl"] .main_title,
+      html[dir="rtl"] .section_heading,
+      html[dir="rtl"] .section_title,
+      html[dir="rtl"] .review_title,
+      html[dir="rtl"] .policy_title,
+      html[dir="rtl"] .sub_group_title,
+      html[dir="rtl"] .sidebar_badge_title,
+      html[dir="rtl"] .product_title,
+      html[dir="rtl"] .company_name {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        text-align: right !important;
+        line-height: 1.8 !important;
+      }
+      html[dir="rtl"] .section_heading i,
+      html[dir="rtl"] .policy_title i,
+      html[dir="rtl"] .sub_group_title i {
+        margin-left: 8px !important;
+        margin-right: 0 !important;
+      }
+
+      html[dir="rtl"] .highlight_quote_card {
+        border-left: none !important;
+        border-right: 5px solid var(--primary-color) !important;
+        flex-direction: row-reverse !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .quote_text h3 {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 20px !important;
+        line-height: 1.8 !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .quote_text p {
+        font-size: 15px !important;
+        line-height: 2.1 !important;
+        text-align: right !important;
+      }
+
+      html[dir="rtl"] .policy_card {
+        text-align: right !important;
+      }
+      html[dir="rtl"] .policy_subheading {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 18px !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .policy_list li {
+        text-align: right !important;
+        display: flex !important;
+        flex-direction: row-reverse !important;
+        justify-content: flex-end !important;
+        gap: 10px !important;
+      }
+      html[dir="rtl"] .policy_list li i {
+        margin-top: 5px !important;
+      }
+
+      html[dir="rtl"] .lead_text,
+      html[dir="rtl"] .body_paragraph,
+      html[dir="rtl"] .hse_block p,
+      html[dir="rtl"] .company_desc {
+        font-size: 15.5px !important;
+        line-height: 2.2 !important;
+        text-align: right !important;
+      }
+
+      html[dir="rtl"] .visit_btn {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 15px !important;
+        flex-direction: row-reverse !important;
+        justify-content: center !important;
+      }
+      html[dir="rtl"] .visit_btn i {
+        transform: rotate(180deg) !important;
+      }
+
+      /* Subpage Forms, Cards, Tabs & Controls in RTL */
+      html[dir="rtl"] input:not([type="checkbox"]):not([type="radio"]),
+      html[dir="rtl"] textarea,
+      html[dir="rtl"] select {
+        direction: rtl !important;
+        text-align: right !important;
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+      }
+      html[dir="rtl"] .form_group label,
+      html[dir="rtl"] .contact_form label,
+      html[dir="rtl"] .career_form label {
+        text-align: right !important;
+        display: block !important;
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 16px !important;
+      }
+      html[dir="rtl"] .dir_tab_btn,
+      html[dir="rtl"] .fac_tab_btn,
+      html[dir="rtl"] .era_btn,
+      html[dir="rtl"] .filter_btn,
+      html[dir="rtl"] .year_tab,
+      html[dir="rtl"] .btn_action,
+      html[dir="rtl"] .submit_btn,
+      html[dir="rtl"] .reset_btn {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+      }
+      html[dir="rtl"] .director_info,
+      html[dir="rtl"] .committee_card,
+      html[dir="rtl"] .company_card,
+      html[dir="rtl"] .mission_card,
+      html[dir="rtl"] .pillar_card,
+      html[dir="rtl"] .product_feature_card,
+      html[dir="rtl"] .cbs_card,
+      html[dir="rtl"] .contact_card,
+      html[dir="rtl"] .overview_card,
+      html[dir="rtl"] .pioneer_card,
+      html[dir="rtl"] .sitemap_card {
+        text-align: right !important;
+        direction: rtl !important;
+      }
+      html[dir="rtl"] .director_info h3,
+      html[dir="rtl"] .committee_card h3,
+      html[dir="rtl"] .pillar_title,
+      html[dir="rtl"] .overview_title,
+      html[dir="rtl"] .pioneer_name,
+      html[dir="rtl"] .grid_heading {
+        font-family: 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif !important;
+        font-size: 22px !important;
+        line-height: 1.8 !important;
+        text-align: right !important;
+      }
+      html[dir="rtl"] .fa-angle-right,
+      html[dir="rtl"] .fa-arrow-right {
+        transform: rotate(180deg) !important;
+        display: inline-block !important;
+      }
+
       /* Navigation & Submenus */
       html[dir="rtl"] .top_bar_right {
         direction: ltr;
@@ -813,7 +983,378 @@ const websiteSchema = {
         ["Phone Number", "فون نمبر"],
         ["Subject", "موضوع"],
         ["Message", "پیغام"],
-        ["Apply Now", "درخواست دیں"]
+        ["Apply Now", "درخواست دیں"],
+
+        // ==========================================
+        // 10. SUBPAGES: HEALTH, SAFETY & ENVIRONMENT (HSE)
+        // ==========================================
+        ["Health Safety & Environment", "صحت، تحفظ اور ماحول"],
+        ["Health, Safety & Environment", "صحت، تحفظ اور ماحول"],
+        ["Health Safety & Envir.", "صحت، تحفظ اور ماحول"],
+        ["Sustainability & HSE", "پائیداری اور ایچ ایس ای (HSE)"],
+        ["Our commitment to providing a healthy, safe, and clean working environment for all employees, contractors, and visitors.", "تمام ملازمین، ٹھیکیداروں اور زائرین کے لیے صحت مند، محفوظ اور صاف ستھرا کام کا ماحول فراہم کرنے کا ہمارا عزم۔"],
+        ["Continuous improvement targeting zero recordable injuries and work-related illness.", "صفر قابلِ اندراج چوٹوں اور کام سے متعلقہ بیماریوں کے ہدف کے ساتھ مسلسل بہتری۔"],
+        ["Safety is not an Act, it is a Habit", "حفاظت کوئی وقتی عمل نہیں، یہ ایک عادت ہے"],
+        ["Our approach to HSE is apparent in our Mission Zero Agenda that targets zero accidents and work-related illnesses. To effectively implement the mission zero agenda, we empower and encourage our people to play their part.", "ایچ ایس ای کے حوالے سے ہماری حکمت عملی ہمارے مشن زیرو ایجنڈے سے عیاں ہے جس کا ہدف صفر حادثات اور کام سے متعلقہ بیماریاں ہیں۔ اس ایجنڈے کے مؤثر نفاذ کے لیے ہم اپنے تمام افراد کو فعال کردار ادا کرنے کی ترغیب دیتے ہیں۔"],
+        ["Raising Awareness and Engaging our People", "آگاہی کا فروغ اور افراد کی شمولیت"],
+        ["We all have a part to play in keeping our workplaces safe. One of the most effective ways we can do this is by being aware of the risks around us and taking action to address these. That’s why we actively encourage all our people to regularly assess their working environments and report any identified risks – as they arise.", "کام کی جگہ کو محفوظ رکھنے میں ہم سب کا کردار ہے۔ اپنے اردگرد کے خطرات سے باخبر رہنا اور ان کے تدارک کے لیے بروقت اقدام کرنا سب سے مؤثر طریقہ ہے۔ اسی لیے ہم تمام افراد کی حوصلہ افزائی کرتے ہیں کہ وہ ماحول کا باقاعدگی سے جائزہ لیں اور خطرات کی فوری اطلاع دیں۔"],
+        ["Enhancing Wellbeing", "صحت اور فلاح و بہبود کا فروغ"],
+        ["A key priority of our agenda is the prevention of work-related illness. While there is clear evidence that employment can have a positive effect on personal wellbeing, poor health in the workplace can present significant safety risks. We offer a range of services to help enhance the health of our employees. These include medical checkups for employees in certain roles and healthcare benefits for staff – as well as targeted communication campaigns aimed at tackling lifestyle-related issues.", "ہمارے ایجنڈے کی اہم ترجیح کام سے متعلقہ بیماریوں کی روک تھام ہے۔ کام کی جگہ پر ناقص صحت حفاظت کے لیے خطرہ بن سکتی ہے۔ ہم ملازمین کی صحت کے لیے باقاعدہ میڈیکل چیک اپ، طبی مراعات اور آگاہی مہمات جیسی متعدد سہولیات فراہم کرتے ہیں۔"],
+        ["Cultural Change Through Communication", "رابطے اور ابلاغ کے ذریعے مثبت ثقافتی تبدیلی"],
+        ["We believe communication is critical to creating the conditions to meet our objectives on Safety at the workplace. We have one-on-one HSE orientations for all new starters and an HSE briefing for all new visitors. One of the key aims of this exercise is to encourage a culture of care and safe practices.", "ہمیں یقین ہے کہ کام کی جگہ پر تحفظ کے اہداف حاصل کرنے کے لیے مؤثر ابلاغ انتہائی ضروری ہے۔ ہم تمام نئے ملازمین کے لیے انفرادی ایچ ایس ای بریفنگ اور تمام نئے زائرین کے لیے تعارفی سیشن منعقد کرتے ہیں تاکہ حفاظت اور دیکھ بھال کا کلچر پروان چڑھے۔"],
+        ["Our EHS Policy", "ہماری ای ایچ ایس (EHS) پالیسی"],
+        ["Shakarganj is committed to providing a healthy and safe workplace for all personnel performing their duties on its behalf, in a manner that protects the environment, prevention of pollution, and compliance of applicable legal and other requirements.", "شکر گنج اپنے تمام اہلکاروں کو ایک صحت مند اور محفوظ ماحول فراہم کرنے کے لیے پرعزم ہے جو ماحول کے تحفظ، آلودگی کی روک تھام اور تمام قانونی تقاضوں کی پابندی کو یقینی بناتا ہے۔"],
+        ["We achieve this by:", "ہم یہ درج ذیل اقدامات سے حاصل کرتے ہیں:"],
+        ["Developing and implementing management structures and standard procedures at all our workplaces.", "تمام ورک پلیسز پر انتظامی ڈھانچے اور معیاری طریقہ کار (SOPs) کا نفاذ۔"],
+        ["Creating EHS awareness amongst all employees through comprehensive Programme of training & education.", "جامع تربیتی پروگراموں کے ذریعے تمام ملازمین میں ای ایچ ایس کی آگاہی پیدا کرنا۔"],
+        ["Making top management, managers, supervisors, and lead technicians accountable for EHS management effort towards elimination of causes that might lead to harm people, environment and assets.", "اعلیٰ انتظامیہ، مینیجرز اور سپروائزرز کو خطرات کے خاتمے کے لیے جوابدہ بنانا۔"],
+        ["Recognizing that EHS is everyone’s direct responsibility.", "اس بات کا اعتراف کہ ای ایچ ایس ہر فرد کی براہ راست ذمہ داری ہے۔"],
+        ["Monitoring, evaluating and continually improving our EHS performance through operational standards, training, assessments and audits.", "آڈٹ، جائزے اور آپریشنل معیارات کے ذریعے کارکردگی کی مسلسل نگرانی اور بہتری۔"],
+        ["Working and maintaining 3R strategy (Reduce, Reuse, and Recycle) in all our operations.", "تمام آپریشنز میں 3R حکمت عملی (کمی، دوبارہ استعمال، اور ری سائیکلنگ) کو برقرار رکھنا۔"],
+        ["As we always aim to be an exemplary corporate citizen, health, safety, and environmental concerns are always among our key focal points. We are committed to providing healthy, safe, and clean conditions for our employees, contractors and visitors. In providing a good working environment there is no higher priority than safety and we target continuous improvement to reduce record-able injury and accident times to zero.", "ایک مثالی کارپوریٹ ادارہ ہونے کے ناطے، صحت، تحفظ اور ماحولیاتی امور ہمیشہ ہماری اولین ترجیحات میں شامل ہیں۔ ہم اپنے ملازمین، ٹھیکیداروں اور زائرین کے لیے صحت مند، محفوظ اور صاف ستھرے حالات فراہم کرنے کے لیے پرعزم ہیں۔ اچھے کام کے ماحول میں حفاظت سے بالاتر کوئی ترجیح نہیں اور ہم حادثات و چوٹوں کو صفر پر لانے کے لیے مسلسل بہتری کے خواہاں ہیں۔"],
+        ["Nearly six hundred and fifty members of Team Shakarganj have participated in a structured Programme to obtain professional training and certification in first aid in collaboration with Pakistan Red Crescent Society – Punjab. Preventive action and training and timely response procedures to deal with potential accidents have resulted in minimizing recordable injuries and accidents.", "پاکستان ریڈ کریسنٹ سوسائٹی پنجاب کے تعاون سے ٹیم شکر گنج کے تقریباً 650 ارکان نے فرسٹ ایڈ کی پیشہ ورانہ تربیت اور سرٹیفیکیشن حاصل کی ہے۔ پیشگی حفاظتی اقدامات، بروقت تربیت اور ہنگامی طریقہ کار سے ممکنہ حادثات اور چوٹوں میں نمایاں کمی واقع ہوئی ہے۔"],
+
+        // ==========================================
+        // 11. SUBPAGES: ASSOCIATED COMPANIES
+        // ==========================================
+        ["Associated Companies", "ملحقہ کمپنیاں"],
+        ["Strategic equity holdings, joint ventures, and affiliated corporate entities driving industrial growth across energy, manufacturing, and consumer sectors.", "توانائی، مینوفیکچرنگ اور کنزیومر سیکٹرز میں صنعتی ترقی کو فروغ دینے والے اسٹریٹجک ایکویٹی شیئرز، مشترکہ منصوبے اور ملحقہ کارپوریٹ ادارے"],
+        ["Corporate Synergy & Investment Portfolio", "کارپوریٹ ہم آہنگی اور سرمایہ کاری پورٹ فولیو"],
+        ["Our Affiliated Corporate Network", "ہمارا ملحقہ کارپوریٹ نیٹ ورک"],
+        ["Shakarganj Limited maintains strategic partnerships and equity investments in leading industrial enterprises across Pakistan.", "شکر گنج لمیٹڈ پاکستان بھر کے سرکردہ صنعتی اداروں میں اسٹریٹجک شراکت داری اور ایکویٹی سرمایہ کاری کو برقرار رکھے ہوئے ہے۔"],
+        ["Shakarganj Food Products Limited", "شکر گنج فوڈ پروڈکٹس لمیٹڈ"],
+        ["Crescent Steel and Allied Products Limited", "کریسنٹ اسٹیل اینڈ الائیڈ پروڈکٹس لمیٹڈ"],
+        ["Solution De Energy (Private) Limited", "سولوشن ڈی انرجی (پرائیویٹ) لمیٹڈ"],
+        ["Visit Official Website", "سرکاری ویب سائٹ ملاحظہ کریں"],
+        ["Affiliated Strategic Entity", "ملحقہ اسٹریٹجک ادارہ"],
+        ["Shared Governance & Corporate Excellence", "مشترکہ گورننس اور کارپوریٹ فضیلت"],
+
+        // ==========================================
+        // 12. SUBPAGES: AWARDS & ACCOLADES
+        // ==========================================
+        ["Awards & Accolades", "اعزازات اور انعامات"],
+        ["Recognizing five decades of industrial excellence, export leadership, corporate governance, CSR, and environmental stewardship.", "پانچ دہائیوں کی صنعتی فضیلت، برآمدی قیادت، کارپوریٹ گورننس، سی ایس آر اور ماحولیاتی تحفظ کا اعتراف۔"],
+        ["Excellence Acknowledged", "فضیلت اور عمدگی کا اعتراف"],
+        ["Distinguished Corporate Honours", "نمایاں کارپوریٹ اعزازات"],
+        ["Shakarganj Limited's relentless pursuit of manufacturing precision, shareholder transparency, export quality, and social impact has garnered prestigious recognitions from national institutions.", "شکر گنج لمیٹڈ کی مینوفیکچرنگ مہارت، شیئر ہولڈرز کے ساتھ شفافیت، برآمدی معیار اور سماجی خدمات کو قومی اداروں کی جانب سے باوقار اعزازات سے نوازا گیا ہے۔"],
+        ["View Certificate / Trophy Archive", "سرٹیفکیٹ و ٹرافی آرکائیو دیکھیں"],
+
+        // ==========================================
+        // 13. SUBPAGES: BIOFUELS & BIO-REFINERY
+        // ==========================================
+        ["Biofuels & Bio-Refinery Division", "بائیو فیولز اور بائیو ریفائنری ڈویژن"],
+        ["Pakistan's premier exporter of concentrated ethyl alcohol, fuel bioethanol, and industrial specialty spirits.", "کنڈینسڈ ایتھائل الکحل، فیول بائیو ایتھنول اور صنعتی اسپرٹ کا پاکستان کا سرفہرست برآمد کنندہ۔"],
+        ["Leading Biofuel Production", "بائیو فیول کی سرکردہ پیداوار"],
+        ["Renewable Energy & Ethanol Excellence", "قابلِ تجدید توانائی اور ایتھنول کی فضیلت"],
+        ["Denatured Spirit & Methylated Spirits", "ڈی نیچرڈ اسپرٹ اور میتھائیلیٹڈ اسپرٹس"],
+        ["Fuel Grade Bioethanol (Anhydrous)", "فیول گریڈ بائیو ایتھنول (اینہائیڈرس)"],
+        ["Raw Material & Sustainable Sourcing", "خام مال اور پائیدار ذرائع"],
+
+        // ==========================================
+        // 14. SUBPAGES: SUGAR & BY-PRODUCTS
+        // ==========================================
+        ["Sugar & By-Products Division", "شوگر اور بائی پراڈکٹس ڈویژن"],
+        ["Pakistan's market leader in refined cane sugar, pharmaceutical-grade sucrose, specialty retail sugars, and sustainable bio-refinery co-products.", "ریفائنڈ کین شوگر، فارماسیوٹیکل گریڈ سوکروز، اسپیشلٹی شوگر اور پائیدار بائیو ریفائنری مصنوعات میں پاکستان کا مارکیٹ لیڈر۔"],
+        ["Refined Sugars & Value-Added Co-Products", "ریفائنڈ شوگر اور ویلیو ایڈڈ مشترکہ مصنوعات"],
+        ["Refined Cane Sugar & Specialty Products", "ریفائنڈ کین شوگر اور خصوصی مصنوعات"],
+        ["Press Mud (Filter Cake & Bio-Compost)", "پریس مڈ (فلٹر کیک اور بائیو کمپوسٹ)"],
+        ["Bagasse (Green Co-Generation Power)", "بگاس (گرین کو-جنریشن پاور)"],
+        ["Molasses (Bio-Ethanol Feedstock)", "شیرہ / ملاسس (بائیو ایتھنول فیڈ اسٹاک)"],
+
+        // ==========================================
+        // 15. SUBPAGES: CAREERS
+        // ==========================================
+        ["Careers at Shakarganj", "شکر گنج میں ملازمت کے مواقع"],
+        ["Build a rewarding career with Pakistan's leading agro-industrial conglomerate. Explore opportunities, register your CV, and join our high-performance team.", "پاکستان کے معروف ایگرو انڈسٹریل گروپ کے ساتھ ایک شاندار کیریئر بنائیں۔ مواقع تلاش کریں، اپنا سی وی جمع کروائیں اور ہماری ٹیم کا حصہ بنیں۔"],
+        ["Why Join Shakarganj?", "شکر گنج میں کیوں شامل ہوں؟"],
+        ["Career Development", "کیریئر کی ترقی"],
+        ["Equal Opportunity Employer", "مساوی مواقع فراہم کرنے والا ادارہ"],
+        ["Competitive Compensation", "پرکشش اور مسابقتی مراعات"],
+        ["Current Job Openings", "موجودہ خالی اسامیاں"],
+        ["Register Your CV", "اپنا سی وی رجسٹر کریں"],
+        ["Submit Application", "درخواست جمع کروائیں"],
+
+        // ==========================================
+        // 16. SUBPAGES: CERTIFICATIONS & QUALITY
+        // ==========================================
+        ["Quality & Compliance Certifications", "کوالٹی اور کمپلائنس سرٹیفیکیشنز"],
+        ["Accredited international standards governing ISO quality management, food safety, environmental stewardship, Halal compliance, and Shariah governance.", "آئی ایس او کوالٹی مینجمنٹ، فوڈ سیفٹی، ماحولیاتی تحفظ، حلال کمپلائنس اور شریعہ گورننس کے بین الاقوامی معیارات۔"],
+        ["Official Quality & Compliance Documents", "سرکاری کوالٹی اور کمپلائنس دستاویزات"],
+        ["ISO 9001:2015 Quality Management System", "آئی ایس او 9001:2015 کوالٹی مینجمنٹ سسٹم"],
+        ["ISO 14001:2015 Environmental Management", "آئی ایس او 14001:2015 ماحولیاتی مینجمنٹ"],
+        ["FSSC 22000 Food Safety System Certification", "ایف ایس ایس سی 22000 فوڈ سیفٹی سسٹم سرٹیفیکیشن"],
+        ["Halal Food Certification (SANHA / PSQCA)", "حلال فوڈ سرٹیفیکیشن (SANHA / PSQCA)"],
+        ["Quality Assurance", "کوالٹی اشورنس"],
+        ["Strict quality management systems ensuring excellence from raw material inspection to final customer delivery.", "خام مال کے معائنے سے لے کر صارف تک حتمی ترسیل تک فضیلت کو یقینی بنانے والے سخت کوالٹی مینجمنٹ سسٹمز۔"],
+        ["Total Quality Management", "مکمل کوالٹی مینجمنٹ (TQM)"],
+        ["Laboratory Testing & Analysis", "لیبارٹری ٹیسٹنگ اور تجزیہ"],
+
+        // ==========================================
+        // 17. SUBPAGES: COMPANY PROFILE & HISTORY
+        // ==========================================
+        ["Company History", "کمپنی کی تاریخ"],
+        ["Over 55 years of visionary industrial leadership, agricultural innovation, renewable energy, and community development.", "55 سال سے زائد کی بصیرت افروز صنعتی قیادت، زرعی جدت، قابلِ تجدید توانائی اور کمیونٹی کی ترقی۔"],
+        ["Milestones of Excellence", "فضیلت اور کامیابیوں کے سنگِ میل"],
+        ["From Sugarcane Pioneers to Biofuel Exporters", "گنے کی کاشت کے سرخیل سے بائیو فیول کے برآمد کنندہ تک"],
+        ["Leading Pakistan's renewable agro-industrial transformation since 1967 with premier manufacturing in refined sugar and biofuels.", "1967ء سے ریفائنڈ شوگر اور بائیو فیولز کی اعلیٰ پیداوار کے ساتھ پاکستان کی صنعتی تبدیلی کی قیادت۔"],
+        ["Corporate Information & Regulatory Credentials", "کارپوریٹ معلومات اور ریگولیٹری اسناد"],
+        ["Business Philosophy", "کاروباری فلسفہ"],
+        ["Operations & Facilities", "آپریشنز اور سہولیات"],
+
+        // ==========================================
+        // 18. SUBPAGES: CONTACT US
+        // ==========================================
+        ["Contact Shakarganj Limited", "شکر گنج لمیٹڈ سے رابطہ کریں"],
+        ["Get in Touch with Shakarganj", "شکر گنج سے رابطہ کیجیے"],
+        ["Get in touch with our corporate head office, manufacturing facilities, or customer support team.", "ہمارے ہیڈ آفس، مینوفیکچرنگ سہولیات یا کسٹمر سپورٹ ٹیم سے رابطہ کریں۔"],
+        ["Our Offices & Manufacturing Facilities", "ہمارے دفاتر اور مینوفیکچرنگ سہولیات"],
+        ["General Contact & Feedback Form", "عام رابطہ اور فیڈ بیک فارم"],
+        ["Head Office (Lahore)", "ہیڈ آفس (لاہور)"],
+        ["Manufacturing Facilities (Jhang)", "مینوفیکچرنگ سہولیات (جھنگ)"],
+        ["Send an Inquiry", "معلومات یا استفسار بھیجیں"],
+
+        // ==========================================
+        // 19. SUBPAGES: CORPORATE STRATEGY & CSR
+        // ==========================================
+        ["Corporate Strategy", "کارپوریٹ حکمت عملی"],
+        ["Fostering operational agility, financial growth, sustainable innovation, and market leadership across Pakistan's agro-industrial sector.", "پاکستان کے زرعی و صنعتی شعبے میں آپریشنل چستی، مالیاتی ترقی، پائیدار جدت اور مارکیٹ کی قیادت کو فروغ دینا۔"],
+        ["Strategic Pillars", "اسٹریٹجک ستون"],
+        ["Adaptive Growth & Resilience", "موافقت پذیر ترقی اور استحکام"],
+        ["Corporate Social Responsibility", "کارپوریٹ سماجی ذمہ داری"],
+        ["Empowering communities, driving social welfare, and nurturing sustainable growth through the Shakarganj Foundation.", "شکر گنج فاؤنڈیشن کے ذریعے کمیونٹیز کو بااختیار بنانا، سماجی بہبود کو فروغ دینا اور پائیدار ترقی کی آبیاری۔"],
+        ["Shakarganj Foundation & Sukh Char Programme", "شکر گنج فاؤنڈیشن اور سکھ چن پروگرام"],
+        ["Healthcare & Hospitals", "صحت کی سہولیات اور ہسپتال"],
+        ["Education & Vocational Training", "تعلیم اور پیشہ ورانہ تربیت"],
+        ["Community Uplift", "کمیونٹی کی فلاح و بہبود"],
+
+        // ==========================================
+        // 20. SUBPAGES: FINANCIAL & INVESTOR PAGES
+        // ==========================================
+        ["Financial Highlights", "مالیاتی جھلکیاں"],
+        ["Comprehensive financial performance indicators, multi-year revenue growth, capital expenditure, profitability metrics, and balance sheet summary for Shakarganj Limited.", "شکر گنج لمیٹڈ کے مالیاتی کارکردگی کے اشاریے، سالانہ آمدنی میں اضافہ، کیپیٹل اخراجات، منافع بخش اشاریے اور بیلنس شیٹ کا خلاصہ۔"],
+        ["Key Financial Metrics", "اہم مالیاتی اشاریے"],
+        ["Revenue Growth", "آمدنی میں اضافہ"],
+        ["Profitability Indicators", "منافع کے اشاریے"],
+        ["Free Float of The Shares", "شیئرز کا فری فلوٹ"],
+        ["Official free float certificate, quarterly floating capital distribution, public vs. strategic shareholding metrics, and Pakistan Stock Exchange (PSX) regulatory filings for Shakarganj Limited.", "شکر گنج لمیٹڈ کے سرکاری فری فلوٹ سرٹیفکیٹ، سہ ماہی فلوٹنگ کیپیٹل کی تقسیم، اور پاکستان اسٹاک ایکسچینج (PSX) کی ریگولیٹری فائلنگز۔"],
+        ["Free Float Certificate", "فری فلوٹ سرٹیفکیٹ"],
+        ["Quarterly Distribution", "سہ ماہی تقسیم"],
+        ["Shareholding Pattern", "شیئر ہولڈنگ پیٹرن"],
+        ["Official pattern of shareholding, distribution of equity shares among directors, executives, associated companies, financial institutions, and general public for Shakarganj Limited.", "ڈائریکٹرز، ایگزیکٹوز، ملحقہ کمپنیوں، مالیاتی اداروں اور عوام الناس کے درمیان ایکویٹی شیئرز کی تقسیم کا باضابطہ پیٹرن۔"],
+        ["Pattern of Shareholding", "شیئر ہولڈنگ کا پیٹرن"],
+        ["Categories of Shareholders", "شیئر ہولڈرز کی اقسام"],
+        ["Historical Financial Reports", "تاریخی مالیاتی رپورٹس"],
+        ["Complete 38-Year Financial Statements Archive of Shakarganj Limited (1979 – 2016) documenting over 45 years of industrial excellence.", "شکر گنج لمیٹڈ کا مکمل 38 سالہ مالیاتی گوشواروں کا آرکائیو (1979ء – 2016ء) جو 45 سال سے زائد کی صنعتی فضیلت کا شاہد ہے۔"],
+        ["Historical Archive", "تاریخی آرکائیو"],
+        ["Mission & Vision", "مشن اور وژن"],
+        ["Guided by sustainable principles, operational excellence, and long-term value creation for all stakeholders.", "پائیدار اصولوں، آپریشنل فضیلت اور تمام اسٹیک ہولڈرز کے لیے طویل مدتی قدر کی تخلیق کی رہنمائی۔"],
+        ["Our Mission", "ہمارا مشن"],
+        ["Our Vision", "ہمارا وژن"],
+        ["Core Values", "بنیادی اقدار"],
+        ["Corporate Sitemap", "کارپوریٹ سائٹ میپ"],
+        ["Structured directory providing direct access to all pages, investor disclosures, financial reports, and corporate information across Shakarganj Limited.", "شکر گنج لمیٹڈ کے تمام صفحات، انویسٹر ڈسکلوژرز، مالیاتی رپورٹس اور کارپوریٹ معلومات تک براہ راست رسائی کے لیے منظم ڈائریکٹری۔"],
+        ["Main Navigation Pages", "اہم نیویگیشن صفحات"],
+        ["Investor & Financial Pages", "انویسٹر اور مالیاتی صفحات"],
+        ["Sustainability & Media Pages", "پائیداری اور میڈیا کے صفحات"],
+        ["Corporate Briefing Session", "کارپوریٹ بریفنگ سیشن"],
+        ["Official investor presentation materials, corporate briefing session decks, business segment updates, and financial performance summaries presented to analysts, fund managers, and shareholders.", "تجزیہ کاروں، فنڈ مینیجرز اور شیئر ہولڈرز کے لیے باضابطہ انویسٹر پریزنٹیشن، بریفنگ سیشن دستاویزات اور مالیاتی کارکردگی کے خلاصے۔"],
+        ["Briefing Presentation Archive", "بریفنگ پریزنٹیشن آرکائیو"],
+
+        // ==========================================
+        // 21. SUBPAGES: BOARD OF DIRECTORS & COMMITTEES
+        // ==========================================
+        ["Profile of Board of Directors & Management", "بورڈ آف ڈائریکٹرز اور مینجمنٹ کا تعارف"],
+        ["Guiding Shakarganj Limited with integrity, strategic vision, and corporate governance excellence.", "دیانت داری، اسٹریٹجک وژن اور بہترین کارپوریٹ گورننس کے ساتھ شکر گنج لمیٹڈ کی رہنمائی۔"],
+        ["Profile of Board of Directors", "بورڈ آف ڈائریکٹرز کا تعارف"],
+        ["HR, Remuneration and Nomination Committee", "ایچ آر، معاوضہ اور نامزدگی کمیٹی"],
+        ["Risk Management Committee of the Board", "بورڈ کی رسک مینجمنٹ کمیٹی"],
+        ["Chairman (Non-Executive Director)", "چیئرمین (نان ایگزیکٹو ڈائریکٹر)"],
+        ["Chairperson (Independent Director)", "چیئرپرسن (آزاد ڈائریکٹر)"],
+        ["Chairman (Independent Director)", "چیئرمین (آزاد ڈائریکٹر)"],
+        ["Deputy CEO (Executive Director)", "ڈپٹی سی ای او (ایگزیکٹو ڈائریکٹر)"],
+        ["Deputy Chief Executive Officer", "ڈپٹی چیف ایگزیکٹو آفیسر"],
+        ["Chief Executive Officer", "چیف ایگزیکٹو آفیسر"],
+        ["Non-Executive Director", "نان ایگزیکٹو ڈائریکٹر"],
+        ["Independent Director", "آزاد ڈائریکٹر"],
+        ["Executive Director", "ایگزیکٹو ڈائریکٹر"],
+        ["Vice President (Operations)", "وائس پریذیڈنٹ (آپریشنز)"],
+        ["Chief Financial Officer", "چیف فنانشل آفیسر"],
+        ["Chief Information Officer", "چیف انفارمیشن آفیسر"],
+        ["Company Secretary", "کمپنی سیکرٹری"],
+        ["Member (Non-Executive Director)", "ممبر (نان ایگزیکٹو ڈائریکٹر)"],
+        ["Member (Independent Director)", "ممبر (آزاد ڈائریکٹر)"],
+        ["Member (Executive Director)", "ممبر (ایگزیکٹو ڈائریکٹر)"],
+        ["Business Strategy Committee", "بزنس اسٹریٹجی کمیٹی"],
+        ["System & Technology Committee", "سسٹم اور ٹیکنالوجی کمیٹی"],
+        ["Executive Committee", "ایگزیکٹو کمیٹی"],
+        ["The Management", "مینجمنٹ"],
+        ["Management Committees", "مینجمنٹ کمیٹیاں"],
+        ["HR & Remuneration", "ایچ آر اور معاوضہ"],
+        ["Risk Management", "رسک مینجمنٹ"],
+        ["Audit Committee", "آڈٹ کمیٹی"],
+        ["Joined Board:", "بورڈ میں شمولیت:"],
+        ["Other Engagements:", "دیگر عہدے / مصروفیات:"],
+
+        // ==========================================
+        // 22. SUBPAGES: FINANCIAL REPORTS & INVESTOR NOTICES
+        // ==========================================
+        ["Audited annual financial statements, half-yearly reviews, and quarterly reports for Shakarganj Limited investors (10 Years Archive: 2017 – 2026).", "شکر گنج لمیٹڈ کے سرمایہ کاروں کے لیے آڈٹ شدہ سالانہ مالیاتی گوشوارے، ششماہی جائزے اور سہ ماہی رپورٹس (10 سالہ آرکائیو: 2017ء – 2026ء)۔"],
+        ["Essential corporate disclosures, stock registrar contacts, governance policies, and election results for Shakarganj Limited investors.", "شکر گنج لمیٹڈ کے سرمایہ کاروں کے لیے اہم کارپوریٹ ڈسکلوژرز، شیئر رجسٹرار کے رابطے، گورننس پالیسیز اور انتخابی نتائج۔"],
+        ["Official corporate announcements, financial statements, shareholder meeting notices, and event updates from Shakarganj Limited.", "شکر گنج لمیٹڈ کے سرکاری کارپوریٹ اعلانات، مالیاتی گوشوارے، شیئر ہولڈر اجلاس کے نوٹسز اور اہم اپ ڈیٹس۔"],
+        ["Notice under Section 159(4) of Companies Act 2017", "کمپنیز ایکٹ 2017ء کے سیکشن 159(4) کے تحت نوٹس"],
+        ["Form of Proxy for Election of Directors", "ڈائریکٹرز کے انتخاب کے لیے پراکسی فارم"],
+        ["List of Shareholders for EOGM", "ای او جی ایم کے لیے شیئر ہولڈرز کی فہرست"],
+        ["Contact Company Secretary for Login Details", "لاگ ان تفصیلات کے لیے کمپنی سیکرٹری سے رابطہ کریں"],
+        ["Official Voting Results", "سرکاری ووٹنگ کے نتائج"],
+        ["Independent Scrutinizer Audit Report", "آزاد اسکروٹنائزر کی آڈٹ رپورٹ"],
+        ["Code of Conduct", "ضابطہ اخلاق (کوڈ آف کنڈکٹ)"],
+        ["Policies Register", "پالیسیز رجسٹر"],
+        ["Website Compliance Certificate (Sep 2025)", "ویب سائٹ کمپلائنس سرٹیفکیٹ (ستمبر 2025ء)"],
+        ["Gender Pay Gap Statement (Circular 10 of 2024)", "جنڈر پے گیپ بیان (سرکلر 10 آف 2024ء)"],
+        ["Unclaimed Dividend Details 2023", "غیر دعویٰ شدہ ڈیویڈنڈ کی تفصیلات 2023ء"],
+        ["Download English PDF", "انگریزی پی ڈی ایف ڈاؤن لوڈ کریں"],
+        ["Download Urdu PDF", "اردو پی ڈی ایف ڈاؤن لوڈ کریں"],
+        ["Download PDF", "پی ڈی ایف ڈاؤن لوڈ کریں"],
+        ["Open Fullscreen", "مکمل اسکرین میں دیکھیں"],
+        ["View Presentation", "پریزنٹیشن دیکھیں"],
+        ["View Notice Document", "نوٹس دستاویز دیکھیں"],
+        ["View Financial Reports", "مالیاتی رپورٹس دیکھیں"],
+        ["Reset Filters", "فلٹرز دوبارہ ترتیب دیں"],
+        ["No matching notices found", "کوئی مماثل نوٹس نہیں ملا"],
+        ["Try adjusting your category filter, year, or search terms.", "اپنے کیٹیگری فلٹر، سال یا تلاش کے الفاظ کو تبدیل کر کے دیکھیں۔"],
+        ["Q1 - First Quarter", "Q1 - پہلی سہ ماہی"],
+        ["Q2 - Half Yearly", "Q2 - ششماہی / نصف سال"],
+        ["Q3 - Third Quarter", "Q3 - تیسری سہ ماہی"],
+        ["Annual Report", "سالانہ رپورٹ"],
+        ["Period Ended:", "اختتامی مدت:"],
+        ["Year Ended:", "اختتامی سال:"],
+        ["Shareholder Notice", "شیئر ہولڈر نوٹس"],
+        ["All Years", "تمام سال"],
+        ["Category:", "زمرہ:"],
+        ["Search announcements...", "اعلانات تلاش کریں..."],
+        ["Documents Available", "دستاویزات دستیاب ہیں"],
+
+        // ==========================================
+        // 23. SUBPAGES: SEARCH, AWARDS & CERTIFICATIONS
+        // ==========================================
+        ["SML Portal Search", "ایس ایم ایل پورٹل تلاش"],
+        ["Search across divisions, financial reports, notices, products & corporate information", "ڈویژنز، مالیاتی رپورٹس، نوٹسز، مصنوعات اور کارپوریٹ معلومات میں تلاش کریں"],
+        ["Type to search (e.g. sugar, biofuel, registrar, dividend, notices)...", "تلاش کے لیے لکھیں (مثلاً چینی، بائیو فیول، رجسٹرار، ڈیویڈنڈ، نوٹسز)..."],
+        ["Start typing above or click popular portal topics below:", "اوپر لکھنا شروع کریں یا نیچے دیے گئے مقبول موضوعات پر کلک کریں:"],
+        ["Featured Corporate Recognitions", "نمایاں کارپوریٹ اعزازات"],
+        ["Complete Accredited Honor Roll", "مکمل تسلیم شدہ اعزازی فہرست"],
+        ["Export Trophies (10)", "برآمدی ٹرافیاں (10)"],
+        ["CSR & Environment (3)", "سی ایس آر اور ماحولیات (3)"],
+        ["Reporting & Governance (5)", "رپورٹنگ اور گورننس (5)"],
+        ["Tax & Stock Exchange (3)", "ٹیکس اور اسٹاک ایکسچینج (3)"],
+        ["Asian CSR Award (Intel - AIM)", "ایشین سی ایس آر ایوارڈ (انٹیل - اے آئی ایم)"],
+        ["FPCCI Export Trophy Awards", "FPCCI ایکسپورٹ ٹرافی ایوارڈز"],
+        ["Best Taxpayer Award (FBR)", "بہترین ٹیکس دہندہ ایوارڈ (ایف بی آر)"],
+        ["Best Corporate Report Awards", "بہترین کارپوریٹ رپورٹ ایوارڈز"],
+        ["Environmental Excellence Award", "ماحولیاتی فضیلت کا ایوارڈ"],
+        ["KSE Top Company Award", "کے ایس ای ٹاپ کمپنی ایوارڈ"],
+        ["Certificate Preview", "سرٹیفکیٹ کا پیش منظر"],
+        ["View Certificate", "سرٹیفکیٹ دیکھیں"],
+        ["Active / Accredited", "فعال / تسلیم شدہ"],
+        ["Active / Verified", "فعال / تصدیق شدہ"],
+        ["Accredited Halal", "تصدیق شدہ حلال"],
+        ["Organic Accredited", "تصدیق شدہ آرگینک"],
+        ["Shariah Compliant", "شریعہ سے ہم آہنگ"],
+        ["Excellence Guaranteed", "فضیلت کی ضمانت"],
+        ["Our Quality Policy", "ہماری کوالٹی پالیسی"],
+        ["Core Pillars of Quality Management", "کوالٹی مینجمنٹ کے بنیادی ستون"],
+        ["Cutting-Edge Technology", "جدید ترین ٹیکنالوجی"],
+        ["Independent Quality Function", "خود مختار کوالٹی آڈٹ"],
+        ["Measurable Objectives", "قابل پیمائش اہداف"],
+        ["Eco-Friendly Operations", "ماحول دوست آپریشنز"],
+
+        // ==========================================
+        // 24. SUBPAGES: SUGAR, BIOFUELS & TECHNICAL DATA
+        // ==========================================
+        ["Bio-Refinery Product Portfolio", "بائیو ریفائنری مصنوعات کا پورٹ فولیو"],
+        ["Concentrated Ethyl Alcohol (Rectified Spirit >96%)", "مرکوز ایتھائل الکحل (ریکٹیفائیڈ اسپرٹ >96%)"],
+        ["96% by volume", "96 فیصد بلحاظ حجم"],
+        ["90% of our total ethyl alcohol production is exported", "ہماری ایتھائل الکحل کی کل پیداوار کا 90 فیصد سے زائد برآمد کیا جاتا ہے"],
+        ["four-time FPCCI Best Export Award winner", "چار مرتبہ ایف پی سی سی آئی (FPCCI) بہترین برآمدی ایوارڈ کا فاتح"],
+        ["White Spirit / Methylated Spirit", "وائٹ اسپرٹ / میتھائیلیٹڈ اسپرٹ"],
+        ["Fuel Bioethanol (Anhydrous Alcohol)", "فیول بائیو ایتھنول (اینہائیڈرس الکحل)"],
+        ["anhydrous ethanol (99.9% purity)", "اینہائیڈرس ایتھنول (99.9 فیصد خالص)"],
+        ["4-Time FPCCI National Export Excellence Winner", "4 مرتبہ FPCCI قومی برآمدی فضیلت کا فاتح"],
+        ["Export Excellence", "برآمدی فضیلت"],
+        ["Global Export Share", "عالمی برآمدی حصہ"],
+        ["Distillation Strength", "کشیدگی کی شدت"],
+        ["Dehydration Tech", "ڈی ہائیڈریشن ٹیکنالوجی"],
+        ["Refined Cane Sugar & Specialty Products", "ریفائنڈ کین شوگر اور خصوصی مصنوعات"],
+        ["Pharmaceutical Grade:", "فارماسیوٹیکل گریڈ:"],
+        ["Beverage & Fine Commercial:", "مشروبات اور تجارتی گریڈ:"],
+        ["Specialty Retail Products:", "خصوصی ریٹیل مصنوعات:"],
+        ["Molasses (Cane Treacle)", "شیرہ / ملاسس (کین ٹریکل)"],
+        ["45% uncrystallized fermentable sugars", "45 فیصد غیر قلمی خمیر پذیر شوگر"],
+        ["Sugarcane Bagasse", "گنے کی بگاس"],
+        ["Sustainable Zero-Waste Manufacturing Philosophy", "پائیدار زیرو ویسٹ مینوفیکچرنگ فلسفہ"],
+        ["Daily Crushing Capacity", "یومیہ کرشنگ کی صلاحیت"],
+        ["Refined Sugar Grades", "ریفائنڈ شوگر کے درجات"],
+        ["Resource Efficiency", "وسائل کی مؤثر کارکردگی"],
+        ["Market Leadership", "مارکیٹ کی قیادت"],
+
+        // ==========================================
+        // 25. SUBPAGES: FORMS, CAREERS & CONTACT DETAILS
+        // ==========================================
+        ["Join Our Talent Network", "ہمارے ٹیلنٹ نیٹ ورک میں شامل ہوں"],
+        ["Why Build Your Career With Us?", "ہمارے ساتھ اپنا کیریئر کیوں بنائیں؟"],
+        ["Full Name", "مکمل نام"],
+        ["Email Address", "ای میل ایڈریس"],
+        ["Contact Number", "رابطہ نمبر"],
+        ["Target Department", "متعلقہ شعبہ"],
+        ["Highest Qualification", "اعلیٰ ترین تعلیمی قابلیت"],
+        ["Years of Experience", "تجربہ (سالوں میں)"],
+        ["Upload Your Resume", "اپنا ریزیومے / سی وی اپ لوڈ کریں"],
+        ["Select Department", "شعبہ منتخب کریں"],
+        ["Select Qualification", "تعلیمی قابلیت منتخب کریں"],
+        ["Select Experience", "تجربہ منتخب کریں"],
+        ["Subject / Topic", "موضوع / عنوان"],
+        ["Your Message / Requirements", "آپ کا پیغام / تفصیلات"],
+        ["Send Message to Shakarganj", "شکر گنج کو پیغام بھیجیں"],
+        ["General Corporate Inquiry", "عام کارپوریٹ استفسار"],
+        ["Sugar Sales & Distribution", "چینی کی فروخت اور تقسیم"],
+        ["Biofuels & Ethanol Exports", "بائیو فیولز اور ایتھنول برآمدات"],
+        ["Investor & Shareholder Relations", "انویسٹر اور شیئر ہولڈر تعلقات"],
+        ["Careers & HR Department", "کیریئر اور ایچ آر شعبہ"],
+        ["Registered & Principal Office", "رجسٹرڈ اور پرنسپل آفس"],
+        ["Principal Facility", "پرنسپل فیسیلٹی"],
+        ["Satellite Facility", "سیٹلائٹ فیسیلٹی"],
+        ["Faisalabad Office", "فیصل آباد آفس"],
+        ["Lahore Head Office", "لاہور ہیڈ آفس"],
+        ["Jhang Sugar & Biofuel Complex", "جھنگ شوگر اور بائیو فیول کمپلیکس"],
+        ["Bhone Bio-Refinery", "بھون بائیو ریفائنری"],
+        ["Nishatabad Office", "نشاط آباد آفس"],
+        ["Phone Number:", "فون نمبر:"],
+        ["Fax Line:", "فیکس لائن:"],
+        ["Email Contact:", "ای میل رابطہ:"],
+        ["Trading Symbol:", "ٹریڈنگ سمبل:"],
+        ["Auditors:", "آڈیٹرز:"],
+        ["Legal Advisors:", "قانونی مشیران:"],
+        ["Bankers:", "بینکرز:"],
+        ["Total Portal Sections:", "پورٹل کے کل سیکشنز:"],
+        ["Indexed Pages:", "شامل صفحات:"],
+        ["Monday, 01 June 2026", "پیر، 01 جون 2026ء"],
+        ["Mian Altaf M. Saleem", "میاں الطاف ایم سلیم"],
+        ["Chronological Milestones", "تاریخی سنگ میل"],
+        ["Profile of Company", "کمپنی کا تعارف"],
+        ["Core Business Activities", "بنیادی کاروباری سرگرمیاں"],
+        ["Exemplary Corporate Citizenship", "مثالی کارپوریٹ شہریت"],
+        ["“Sukh Char Programme”", "”سکھ چن پروگرام“"],
+        ["Social Action Programme (SAP) Initiatives", "سوشل ایکشن پروگرام (SAP) کے اقدامات"],
+        ["Four Operational Pillars", "چار آپریشنل ستون"],
+        ["Strategic Growth Drivers", "اسٹریٹجک ترقی کے محرکات"],
+        ["Total Statements", "کل گوشوارے"],
+        ["Industry Leadership", "صنعتی قیادت"],
+        ["Shareholder Returns", "شیئر ہولڈر ریٹرنز"],
+        ["Customer Value", "کسٹمر ویلیو"],
+        ["Strategic Partnerships", "اسٹریٹجک شراکت داری"],
+        ["Environmental Stewardship", "ماحولیاتی تحفظ"],
+        ["Social Responsibility", "سماجی ذمہ داری"],
+        ["Workforce Empowerment", "افرادی قوت کو بااختیار بنانا"]
       ];
 
       // Pre-sort dictionary descending by English phrase length
